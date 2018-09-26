@@ -33,6 +33,7 @@ IMAGE_INSTALL = "\
 	sdparm \
 	tuxbox-common \
 	tzdata \
+	vision-bootlogo \
 	volatile-media \
 	vsftpd \
 "
