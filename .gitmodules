@@ -82,3 +82,6 @@
 [submodule "meta-odroid"]
 	path = meta-odroid
 	url = https://github.com/PLi-metas/meta-odroid.git
+[submodule "meta-uclan"]
+	path = meta-uclan
+	url = https://github.com/PLi-metas/meta-uclan.git
