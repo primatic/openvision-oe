@@ -11,7 +11,7 @@ echo -e "${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}
 echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Entwopia"
 echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid ${NC}- ${GREEN}MINIX"
 echo -e "${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}Tiviar"
-echo -e "${GREEN}Tripledot ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT ${NC}- ${GREEN}ALL ${NC}(Compiles all brands/models)"
+echo -e "${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT ${NC}- ${GREEN}ALL ${NC}(Compiles all brands/models)"
 echo -e ""
 echo -e "Enter the meta name:"
 echo -e ""
@@ -340,6 +340,10 @@ then
 	MACHINE=x1plus $IMAGECMD
 	MACHINE=xcombo $IMAGECMD
 fi
+if [ $META = "Uclan" ]
+then
+	MACHINE=ustym4kpro $IMAGECMD
+fi
 if [ $META = "WeTek" ]
 then
 	MACHINE=wetekhub $IMAGECMD
@@ -571,6 +575,7 @@ then
 	MACHINE=tyrant $IMAGECMD
 	MACHINE=x1plus $IMAGECMD
 	MACHINE=xcombo $IMAGECMD
+	MACHINE=ustym4kpro $IMAGECMD
 	MACHINE=wetekhub $IMAGECMD
 	MACHINE=wetekplay $IMAGECMD
 	MACHINE=wetekplay2 $IMAGECMD

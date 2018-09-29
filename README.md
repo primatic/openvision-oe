@@ -260,6 +260,9 @@
 * x1plus
 * xcombo
 
+# Uclan
+* ustym4kpro
+
 # WeTek
 * wetekhub
 * wetekplay

@@ -154,6 +154,12 @@ git checkout develop
 git pull
 echo -e "\n"
 cd ..
+cd meta-uclan
+echo "Checking out meta-uclan develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
 cd meta-wetek
 echo "Checking out meta-wetek develop branch:"
 git checkout develop
