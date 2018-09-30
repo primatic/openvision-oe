@@ -154,6 +154,7 @@ then
 	MACHINE=dinobot4kmini $IMAGECMD
 	MACHINE=dinobot4kplus $IMAGECMD
 	MACHINE=dinobot4kse $IMAGECMD
+	MACHINE=ferguson4k $IMAGECMD
 	MACHINE=mediabox4k $IMAGECMD
 fi
 if [ $META = "Dreambox" ]
@@ -438,6 +439,7 @@ then
 	MACHINE=dinobot4kmini $IMAGECMD
 	MACHINE=dinobot4kplus $IMAGECMD
 	MACHINE=dinobot4kse $IMAGECMD
+	MACHINE=ferguson4k $IMAGECMD
 	MACHINE=mediabox4k $IMAGECMD
 	MACHINE=dm500hd $IMAGECMD
 	MACHINE=dm500hdv2 $IMAGECMD

@@ -90,6 +90,7 @@
 * dinobot4kmini
 * dinobot4kplus
 * dinobot4kse
+* ferguson4k
 * mediabox4k
 
 # Dreambox
