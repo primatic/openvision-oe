@@ -8,7 +8,7 @@ RREPLACES_${PN} = "kernel-module-rtl8192cu"
 
 DEPENDS = "firmware-rtl8192cu"
 
-COMPATIBLE_MACHINE = "dm800|cube"
+COMPATIBLE_MACHINE = "dm800|cube|su980"
 
 inherit module
 
