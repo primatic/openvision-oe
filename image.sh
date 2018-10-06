@@ -9,7 +9,7 @@ echo -e "Answers are in green:"
 echo -e ""
 echo -e "${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon ${NC}- ${GREEN}Clap"
 echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Entwopia"
-echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid ${NC}- ${GREEN}MINIX"
+echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid ${NC}- ${GREEN}MINIX"
 echo -e "${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}Tiviar"
 echo -e "${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT ${NC}- ${GREEN}ALL ${NC}(Compiles all brands/models)"
 echo -e ""
@@ -242,6 +242,10 @@ then
 	MACHINE=gbx2 $IMAGECMD
 	MACHINE=gbx3 $IMAGECMD
 	MACHINE=gbx3h $IMAGECMD
+fi
+if [ $META = "HyperCube" ]
+then
+	MACHINE=su980 $IMAGECMD
 fi
 if [ $META = "INI" ]
 then
@@ -512,6 +516,7 @@ then
 	MACHINE=gbx2 $IMAGECMD
 	MACHINE=gbx3 $IMAGECMD
 	MACHINE=gbx3h $IMAGECMD
+	MACHINE=su980 $IMAGECMD
 	MACHINE=atemio5x00 $IMAGECMD
 	MACHINE=atemio6000 $IMAGECMD
 	MACHINE=atemio6100 $IMAGECMD

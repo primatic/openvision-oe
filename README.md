@@ -174,6 +174,9 @@
 * gbx3
 * gbx3h
 
+# HyperCube
+* su980
+
 # INI
 * atemio5x00
 * atemio6000

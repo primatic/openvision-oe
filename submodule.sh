@@ -88,6 +88,12 @@ git checkout develop
 git pull
 echo -e "\n"
 cd ..
+cd meta-hypercube
+echo "Checking out meta-hypercube develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
 cd meta-ini
 echo "Checking out meta-ini develop branch:"
 git checkout develop
