@@ -85,3 +85,6 @@
 [submodule "meta-uclan"]
 	path = meta-uclan
 	url = https://github.com/PLi-metas/meta-uclan.git
+[submodule "meta-hypercube"]
+	path = meta-hypercube
+	url = https://github.com/PLi-metas/meta-hypercube.git
