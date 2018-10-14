@@ -4,6 +4,7 @@ SRC_URI_append += "\
 	file://defaultskin.patch \
 	file://09-undefine-macro-HAVE_CONFIG_H.patch \
 	${@bb.utils.contains("IMAGE_BASENAME", "vision", "file://vision.patch", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
 	"
 
 DEPENDS += "rc-models"
