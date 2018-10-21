@@ -1,0 +1,26 @@
+diff --git a/argp/argp-fmtstream.c b/argp/argp-fmtstream.c
+index e43a0c7cf1..3ab7e52fc0 100644
+--- a/argp/argp-fmtstream.c
++++ b/argp/argp-fmtstream.c
+@@ -24,6 +24,7 @@
+ # include <config.h>
+ #endif
+ 
++#include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
+@@ -48,6 +49,13 @@
+ #define INIT_BUF_SIZE 200
+ #define PRINTF_SIZE_GUESS 150
+ 
++
++int
++_IO_fwide ( __FILE *fp, int mode)
++{
++    return fp->_mode;
++}
++
+ /* Return an argp_fmtstream that outputs to STREAM, and which prefixes lines
+    written on it with LMARGIN spaces and limits them to RMARGIN columns
+    total.  If WMARGIN >= 0, words that extend past RMARGIN are wrapped by
