@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://../../COPYING;md5=94d55d512a9ba36caa9b7df079bae19f"
 RREPLACES_${PN} = "rt73-k2wrlz"
 RCONFLICTS_${PN} = "rt73-k2wrlz"
 
-SRC_URI = "http://impex-sat.de/gigablue/wlan/RT73.tar.gz \
+SRC_URI = "https://raw.githubusercontent.com/PLi-metas/hypercube-files/master/RT73.tar.gz \
            file://COPYING"
 
 inherit module
