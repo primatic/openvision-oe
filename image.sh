@@ -147,6 +147,8 @@ fi
 if [ $META = "Dinobot" ]
 then
 	MACHINE=anadol4k $IMAGECMD
+	MACHINE=anadol4kcombo $IMAGECMD
+	MACHINE=anadol4kv2 $IMAGECMD
 	MACHINE=axashis4kcombo $IMAGECMD
 	MACHINE=axashis4kcomboplus $IMAGECMD
 	MACHINE=dinobot4k $IMAGECMD
@@ -436,6 +438,8 @@ then
 	MACHINE=worldvisionf1 $IMAGECMD
 	MACHINE=worldvisionf1plus $IMAGECMD
 	MACHINE=anadol4k $IMAGECMD
+	MACHINE=anadol4kcombo $IMAGECMD
+	MACHINE=anadol4kv2 $IMAGECMD
 	MACHINE=axashis4kcombo $IMAGECMD
 	MACHINE=axashis4kcomboplus $IMAGECMD
 	MACHINE=dinobot4k $IMAGECMD

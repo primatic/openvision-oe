@@ -83,6 +83,8 @@
 
 # Dinobot
 * anadol4k
+* anadol4kcombo
+* anadol4kv2
 * axashis4kcombo
 * axashis4kcomboplus
 * dinobot4k
