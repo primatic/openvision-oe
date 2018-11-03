@@ -22,6 +22,7 @@
 # Ceryon
 * 9910lx
 * 9911lx
+* 9920lx
 * e4hd
 * e4hdcombo
 * e4hdhybrid
