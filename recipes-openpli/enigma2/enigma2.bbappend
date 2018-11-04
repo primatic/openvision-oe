@@ -1,7 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI_append += "\
-	file://defaultskin.patch \
 	file://09-undefine-macro-HAVE_CONFIG_H.patch \
 	${@bb.utils.contains("IMAGE_BASENAME", "vision", "file://vision.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
@@ -11,9 +10,10 @@ DEPENDS += "rc-models"
 
 inherit upx_compress
 
-SRC_URI = " git://github.com/OpenPLi/enigma2.git;branch=develop;name=enigma2 \
-			${@bb.utils.contains("TARGET_ARCH", "sh4", "", "git://github.com/PLi-metas/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels", d)} \
-			"
+SRC_URI = "\
+	git://github.com/OpenPLi/enigma2.git;branch=develop;name=enigma2 \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "git://github.com/PLi-metas/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels", d)} \
+	"
 
 SRCREV_extrarcmodels_pn-${PN} = "${AUTOREV}"
 SRCREV_FORMAT = "enigma2"
