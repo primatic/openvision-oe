@@ -63,8 +63,8 @@ do_install () {
         fi
 
         chown -R root:root ${D}
-	rm -rf ${D}${datadir}/zoneinfo/posix
-	rm -rf ${D}${datadir}/zoneinfo/right
+        rm -rf ${D}${datadir}/zoneinfo/posix
+        rm -rf ${D}${datadir}/zoneinfo/right
 }
 
 pkg_postinst_${PN} () {
@@ -97,9 +97,9 @@ pkg_postinst_${PN} () {
 PACKAGES = "tzdata"
 
 FILES_${PN} = "${datadir}/zoneinfo/* \
-                ${datadir}/zoneinfo/*.* \
-                ${sysconfdir}/localtime \
-                ${sysconfdir}/timezone"
+		${datadir}/zoneinfo/*.* \
+		${sysconfdir}/localtime \
+		${sysconfdir}/timezone"
 
 CONFFILES_${PN} += "${@ "${sysconfdir}/timezone" if bb.utils.to_boolean(d.getVar('INSTALL_TIMEZONE_FILE')) else "" }"
 CONFFILES_${PN} += "${sysconfdir}/localtime"
