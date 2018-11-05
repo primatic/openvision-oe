@@ -44,3 +44,4 @@ do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> build/conf/bblayers.conf
 done
 echo "BBLAYERS_append = \" ${SCRIPTPATH}\"" >> build/conf/bblayers.conf
+rm -rf meta-openpli/recipes-extended/tzdata
