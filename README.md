@@ -326,3 +326,8 @@ Hint: Each time you run the command from step 4 all git repositories will get up
 ```
 You can use "image.sh" for all of your compiles.
 ```
+# Hints for multiple architectures:
+* Removing the "build" directory solves most of the errors but if you just want to reduce the build size use "cleanup.sh". For a fast remove use "rm -rf build"
+* If you want to compile images for old machines like dm800/cube/su980, first build for them.
+* If you want to compile images for x64 machines like alien5/kxpx series, first build for them.
+* If you want to compile images for 4K machines with ARM architecture and you get error each time, try compile for a Mipsel machine like dm7020hd first then compile your ARM images.
