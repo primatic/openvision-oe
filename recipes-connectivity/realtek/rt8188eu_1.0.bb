@@ -2,7 +2,7 @@ SUMMARY = "Ralink 8188EU v1.0"
 HOMEPAGE = "http://www.realtek.com.tw"
 SECTION = "kernel/modules"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://ifcfg-wlan0;md5=a84acae65af4b2d44d5035aa9f63cd85"
+LIC_FILES_CHKSUM = "file://ifcfg-wlan0;md5=59ef6f2246904f7919c0b0d0a81156b1"
 
 inherit module
 
