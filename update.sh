@@ -11,7 +11,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
 git pull
 git submodule sync
-git submodule update --init
+git submodule update --init --depth 1
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 echo ""

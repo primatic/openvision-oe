@@ -291,13 +291,13 @@
 
 # How to build an Open PLi image (PLi experience):
 1. Clone openpli-oe-core somewhere:
-* git clone -b develop https://github.com/OpenPLi/openpli-oe-core.git
+* git clone -b develop --depth 1 https://github.com/OpenPLi/openpli-oe-core.git
 
 2. Enter the openpli-oe-core directory:
 * cd openpli-oe-core
 
 3. Clone pli-extras:
-* git clone -b develop https://github.com/PLi-metas/pli-extras.git
+* git clone -b develop --depth 1 https://github.com/PLi-metas/pli-extras.git
 
 4. Initialize and update all repositories:
 * cd pli-extras
