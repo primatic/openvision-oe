@@ -29,7 +29,6 @@ else
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/$(MACHINE)/$(MACHINE)$(DMTYPE)/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/"MACHINE"/"MACHINE DMTYPE"/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i "s/.@echo 'export MACHINE' >> $@.*/&\n\t@echo 'export DMTYPE' >> \$\@/" {} \;
-    find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/submodule update --init/submodule update --init --depth 1/g' {} \;
     cat pli-extras/Makefile-dm7020hdv2 >> Makefile
     rm -f build/env.source
     echo "Done, now you can compile dm7020hdv2 image too."
