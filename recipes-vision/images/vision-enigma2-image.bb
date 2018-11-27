@@ -115,8 +115,7 @@ IMAGE_INSTALL += "\
 	parted \
 	strace \
 	nbench-byte \
-	wscan \
-	iptraf", d)} \
+	wscan", d)} \
 	"
 
 export IMAGE_BASENAME = "vision-enigma2"
