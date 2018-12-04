@@ -340,3 +340,5 @@ If you just want to reduce the build size use "cleanup.sh".
 This is for Persian Prince's builds on mediafire and future development, If you're interested in monthly builds (It could be twice a month also) or future development feel free to donate via this Bitcoin Address: 3Pn9DhEusjoAsjGqAF49VAnzn62CYZUWdg
 
 We may have online feeds if the donation could cover it.
+
+Test images are here: http://www.mediafire.com/folder/p0hyt9w5cq4d9/pli-extras
