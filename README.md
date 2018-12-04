@@ -334,3 +334,9 @@ If you just want to reduce the build size use "cleanup.sh".
 * If you want to compile images for old machines like dm800/cube/su980, first build for them.
 * If you want to compile images for x64 machines like alien5/kxpx series, first build for them.
 * If you want to compile images for 4K machines with ARM architecture and you get error each time, try compile for a Mipsel machine like dm7020hd first then compile your ARM images.
+
+# Donation
+
+This is for Persian Prince's builds on mediafire and future development, If you're interested in monthly builds (It could be twice a month also) or future development feel free to donate via this Bitcoin Address: 3Pn9DhEusjoAsjGqAF49VAnzn62CYZUWdg
+
+We may have online feeds if the donation could cover it.
