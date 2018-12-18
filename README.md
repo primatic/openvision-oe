@@ -337,7 +337,7 @@ If you just want to reduce the build size use "cleanup.sh".
 
 # Donation
 
-This is for Persian Prince's builds on mediafire and future development, If you're interested in monthly builds (It could be twice a month also) or future development feel free to donate via this Bitcoin Address: 3Pn9DhEusjoAsjGqAF49VAnzn62CYZUWdg
+If you're interested in monthly builds (It could be twice a month also) or future developments, please contact https://forums.openpli.org/user/25911-persian-prince/
 
 We may have online feeds if the donation could cover it.
 
