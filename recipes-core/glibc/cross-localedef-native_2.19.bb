@@ -20,6 +20,8 @@ FILESEXTRAPATHS =. "${FILE_DIRNAME}/${P}:"
 
 SRC_URI = "http://downloads.yoctoproject.org/releases/eglibc/eglibc-${PV}-svnr25243.tar.bz2 \
 	   file://fix_for_centos_5.8.patch;patchdir=.. \
+	   file://0001-Include-locale_t.h-compatibility-header.patch;patchdir=.. \
+	   file://0002-fix__locale_t-redefinition-on-newer-host-glibc.patch;patchdir=.. \
 	  "
 SRC_URI[md5sum] = "197836c2ba42fb146e971222647198dd"
 SRC_URI[sha256sum] = "baaa030531fc308f7820c46acdf8e1b2f8e3c1f40bcd28b6e440d1c95d170d4c"
