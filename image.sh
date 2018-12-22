@@ -156,6 +156,7 @@ then
 	MACHINE=dinobot4kl $IMAGECMD
 	MACHINE=dinobot4kmini $IMAGECMD
 	MACHINE=dinobot4kplus $IMAGECMD
+	MACHINE=dinobot4kpro $IMAGECMD
 	MACHINE=dinobot4kse $IMAGECMD
 	MACHINE=ferguson4k $IMAGECMD
 	MACHINE=mediabox4k $IMAGECMD
@@ -448,6 +449,7 @@ then
 	MACHINE=dinobot4kl $IMAGECMD
 	MACHINE=dinobot4kmini $IMAGECMD
 	MACHINE=dinobot4kplus $IMAGECMD
+	MACHINE=dinobot4kpro $IMAGECMD
 	MACHINE=dinobot4kse $IMAGECMD
 	MACHINE=ferguson4k $IMAGECMD
 	MACHINE=mediabox4k $IMAGECMD
