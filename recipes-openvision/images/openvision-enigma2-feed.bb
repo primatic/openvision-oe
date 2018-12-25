@@ -168,11 +168,15 @@ ENIGMA2_OPTIONAL = " \
 	softcams-enigma2-meta \
 	packagegroup-openplugins \
 	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
+	${@bb.utils.contains("OPENPLI_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
 	enigma2-plugin-extensions-backupsuite \
-	${@bb.utils.contains('EXTRA_IMAGEDEPENDS', 'vuplus-tuner-turbo', 'enigma2-plugin-drivers-dvb-usb-turbo', '', d)} \
+	${@bb.utils.contains("EXTRA_IMAGEDEPENDS", "vuplus-tuner-turbo", "enigma2-plugin-drivers-dvb-usb-turbo", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "streamproxy", "", d)} \
+	${@bb.utils.contains("OPENPLI_FEATURES", "transcoding", "streamproxy", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "streamproxy", "", d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'qtplugins', 'enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker', '', d)} \
+	${@bb.utils.contains("OPENPLI_FEATURES", "multitranscoding", "streamproxy", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
+	${@bb.utils.contains("OPENPLI_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
 	dvb-usb-drivers-meta \
 	cdtextinfo \
 	meta-enigma2-dvdburn \
