@@ -4,26 +4,28 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 GREEN='\033[0;32m'
 echo -e "Welcome to Persian Prince's image compile script!"
-echo -e "Check README.md and enter the meta you want to compile."
+echo -e "Check README.md and enter a meta or a specific machine to compile."
 echo -e "Answers are in green:"
 echo -e ""
 echo -e "${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon ${NC}- ${GREEN}Clap"
 echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Entwopia"
-echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid ${NC}- ${GREEN}MINIX"
-echo -e "${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}Tiviar"
-echo -e "${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT ${NC}- ${GREEN}ALL ${NC}(Compiles all brands/models)"
+echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid"
+echo -e "${GREEN}MINIX ${NC}- ${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi"
+echo -e "${GREEN}Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT"
+echo -e "${GREEN}ALL ${NC}(Compiles all brands/models)"
+echo -e "${GREEN}Specific ${NC}(I have a specific machine in my mind)"
 echo -e ""
 echo -e "Enter the meta name:"
 echo -e ""
 read META
 echo -e ""
-echo -e "Now choose what kind of enigma2 image do you want."
+echo -e "Now choose whether you want to compile Open Vision or the online feeds."
 echo -e "Answers are in red:"
 echo -e ""
-echo -e "${RED}Vision ${NC}(Which is our vision of enigma2)"
-echo -e "${RED}Vision-Feed ${NC}(Which compiles the online feeds)"
+echo -e "${RED}Vision"
+echo -e "${RED}Feed"
 echo -e ""
-echo -e "Enter image type:"
+echo -e "${NC}Enter image type:"
 echo -e ""
 read IMAGETYPE
 echo -e ""
@@ -41,11 +43,21 @@ then
 	cd build
 	source ./env.source
 fi
-if [ $IMAGETYPE = "Vision-Feed" ]
+if [ $IMAGETYPE = "Feed" ]
 then
 	IMAGECMD='bitbake vision-enigma2-feed'
 	cd build
 	source ./env.source
+fi
+if [ $META = "Specific" ]
+then
+	echo -e "Enter your specific machine name exactly like what you see in README.md"
+	echo -e ""
+	read MACHINESPECIFIC
+	echo -e ""
+	echo -e "Compiling $MACHINESPECIFIC image, please wait ..."
+	echo -e ""
+	MACHINE=$MACHINESPECIFIC $IMAGECMD
 fi
 if [ $META = "AX" ]
 then

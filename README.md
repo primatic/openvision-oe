@@ -302,27 +302,7 @@
 
 4. Initialize and update all repositories:
 * cd pli-extras
-* ./update.sh
-* cd ..
-
-5. Build Vision image for your machine (Example: dm7020hd):
-* cd build
-* source env.source
-* MACHINE=dm7020hd bitbake vision-enigma2-image
-
-6. (Optional) Build the feed for your machine:
-* MACHINE=dm7020hd bitbake vision-enigma2-feed
-```
-Hint: Each time you run the command from step 4 all git repositories will get updated to their latest versions.
-You can use "image.sh" for all of your compiles.
-```
-# If you got machine error the next time you wanted to build an image:
-* cd pli-extras
-* ./update.sh
-* cd ..
-* cd build
-* source env.source
-* MACHINE=dm7020hd bitbake vision-enigma2-image
+* ./image.sh
 
 # Hints for multiple architectures:
 * Removing the "build" directory solves most of the errors. For a fast remove use "rm -rf build".
