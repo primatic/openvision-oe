@@ -1,4 +1,4 @@
-# Extra repositories for PLi's OE: https://github.com/OpenPLi/openpli-oe-core
+# Open Vision enigma2 images based on Open PLi sources
 
 # AX
 * triplex
