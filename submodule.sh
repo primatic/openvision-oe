@@ -1,6 +1,6 @@
 #!/bin/sh
 echo ""
-echo "This is only for PLi-metas members with push access"
+echo "This is only for Open Vision members with push access"
 echo ""
 echo "Stage 1: git pull for new changes"
 echo ""
@@ -188,7 +188,7 @@ echo "Stage 2: git add for new changes"
 echo ""
 git add meta-*
 git commit --dry-run
-read -p "The above changes will be committed and pushed, [A]bort [P]roceed: " choice
+read -p "The above changes will be committed and pushed to Open Vision, [A]bort [P]roceed: " choice
 if [ "$choice" = "P" -o "$choice" = "p" ];then
 	git commit -S -m "Update submodules"
 	echo "Stage 3: git push for new changes"
