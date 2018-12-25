@@ -290,7 +290,7 @@
 # Ubuntu 18.04.x LTS setup:
 * Run our ltsubuntu.sh
 
-# How to build an Open PLi image (PLi experience):
+# How to build an Open Vision image:
 1. Clone openpli-oe-core somewhere:
 * git clone -b develop --depth 1 https://github.com/OpenPLi/openpli-oe-core.git
 
@@ -305,28 +305,25 @@
 * ./update.sh
 * cd ..
 
-5. Build PLi image for your machine (Example: dm7020hd):
-* MACHINE=dm7020hd make image
+5. Build Vision image for your machine (Example: dm7020hd):
+* cd build
+* source env.source
+* MACHINE=dm7020hd bitbake vision-enigma2-image
 
 6. (Optional) Build the feed for your machine:
-* MACHINE=dm7020hd make feed
+* MACHINE=dm7020hd bitbake vision-enigma2-feed
 ```
 Hint: Each time you run the command from step 4 all git repositories will get updated to their latest versions.
+You can use "image.sh" for all of your compiles.
 ```
 # If you got machine error the next time you wanted to build an image:
 * cd pli-extras
 * ./update.sh
 * cd ..
-* MACHINE=dm7020hd make image
-
-# How to build our vision image:
-5. Build our vision of enigma2 image for your machine (Example: dm7020hd):
 * cd build
 * source env.source
 * MACHINE=dm7020hd bitbake vision-enigma2-image
-```
-You can use "image.sh" for all of your compiles.
-```
+
 # Hints for multiple architectures:
 * Removing the "build" directory solves most of the errors. For a fast remove use "rm -rf build".
 ```
@@ -335,11 +332,3 @@ If you just want to reduce the build size use "cleanup.sh".
 * If you want to compile images for old machines like dm800/cube/su980, first build for them.
 * If you want to compile images for x64 machines like alien5/kxpx series, first build for them.
 * If you want to compile images for 4K machines with ARM architecture and you get error each time, try compile for a Mipsel machine like dm7020hd first then compile your ARM images.
-
-# Donation
-
-If you're interested in monthly builds (It could be twice a month also) or future developments, please contact https://forums.openpli.org/user/25911-persian-prince/
-
-We may have online feeds if the donation could cover it.
-
-Test images are here: http://www.mediafire.com/folder/p0hyt9w5cq4d9/pli-extras
