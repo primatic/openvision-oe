@@ -20,8 +20,8 @@ echo -e ""
 echo -e "Now choose what kind of enigma2 image do you want."
 echo -e "Answers are in red:"
 echo -e ""
-echo -e "${RED}PLi ${NC}(Which is PLi experience) and ${RED}Vision ${NC}(Which is our vision of enigma2)"
-echo -e "${RED}PLi-Feed ${NC}- ${RED}Vision-Feed ${NC}(Which compiles the online feeds)"
+echo -e "${RED}Vision ${NC}(Which is our vision of enigma2)"
+echo -e "${RED}Vision-Feed ${NC}(Which compiles the online feeds)"
 echo -e ""
 echo -e "Enter image type:"
 echo -e ""
@@ -35,19 +35,11 @@ echo -e ""
 echo -e "Compiling $META images, please wait ..."
 echo -e ""
 cd ..
-if [ $IMAGETYPE = "PLi" ]
-then
-	IMAGECMD='make image'
-fi
 if [ $IMAGETYPE = "Vision" ]
 then
 	IMAGECMD='bitbake vision-enigma2-image'
 	cd build
 	source ./env.source
-fi
-if [ $IMAGETYPE = "PLi-Feed" ]
-then
-	IMAGECMD='make feed'
 fi
 if [ $IMAGETYPE = "Vision-Feed" ]
 then
