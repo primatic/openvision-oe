@@ -1,11 +1,11 @@
 #!/bin/sh
 echo ""
-echo "pli-extras by"
+echo "Open Vision by"
 echo "https://github.com/orgs/PLi-metas/people"
 echo ""
 echo "Each time you run this script all git repositories will get updated to their latest versions!"
 echo ""
-echo "For extra rc support you need to add your STB files to https://github.com/PLi-metas/extra_rc_models"
+echo "For extra RC support you need to add your STB files to https://github.com/PLi-metas/extra_rc_models"
 echo ""
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
