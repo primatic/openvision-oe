@@ -14,6 +14,8 @@ git submodule sync
 git submodule update --init --depth 1
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/openpli.conf/openvision.conf/g' {} \;
 echo ""
 echo "Check for dm7020hdv2 required changes ..."
 if grep -Fqi "DMTYPE" Makefile
@@ -25,7 +27,6 @@ then
 else
     echo ""
     echo "We need to modify Makefile ..."
-    cat Makefile > Makefile.backup
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/$(MACHINE)/$(MACHINE)$(DMTYPE)/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/"MACHINE"/"MACHINE DMTYPE"/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i "s/.@echo 'export MACHINE' >> $@.*/&\n\t@echo 'export DMTYPE' >> \$\@/" {} \;
