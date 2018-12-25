@@ -23,6 +23,7 @@ IMAGE_INSTALL = "\
 	nfs-utils-client \
 	openssh-sftp \
 	openssh-sftp-server \
+	openvision-bootlogo \
 	opkg \
 	packagegroup-base \
 	packagegroup-core-boot \
@@ -33,12 +34,11 @@ IMAGE_INSTALL = "\
 	sdparm \
 	tuxbox-common \
 	tzdata \
-	vision-bootlogo \
 	volatile-media \
 	vsftpd \
 "
 
-export IMAGE_BASENAME = "vision"
+export IMAGE_BASENAME = "openvision"
 IMAGE_LINGUAS = ""
 IMAGE_FEATURES += "package-management"
 

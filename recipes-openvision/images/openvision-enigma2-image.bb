@@ -1,4 +1,4 @@
-require vision-image.bb
+require openvision-image.bb
 
 KERNEL_WIFI_DRIVERS += "\
 	firmware-carl9170 \
@@ -118,4 +118,4 @@ IMAGE_INSTALL += "\
 	wscan", d)} \
 	"
 
-export IMAGE_BASENAME = "vision-enigma2"
+export IMAGE_BASENAME = "openvision-enigma2"

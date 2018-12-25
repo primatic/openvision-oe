@@ -2,7 +2,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI_append += "\
 	file://09-undefine-macro-HAVE_CONFIG_H.patch \
-	${@bb.utils.contains("IMAGE_BASENAME", "vision", "file://vision.patch file://biss-caid.patch", "", d)} \
+	file://openvision.patch \
+	file://biss-caid.patch \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
 	"
 

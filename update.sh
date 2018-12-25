@@ -16,6 +16,7 @@ METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/openpli.conf/openvision.conf/g' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/bitbake openpli/bitbake openvision/g' {} \;
 echo ""
 echo "Check for dm7020hdv2 required changes ..."
 if grep -Fqi "DMTYPE" Makefile
@@ -30,7 +31,7 @@ else
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/$(MACHINE)/$(MACHINE)$(DMTYPE)/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/"MACHINE"/"MACHINE DMTYPE"/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i "s/.@echo 'export MACHINE' >> $@.*/&\n\t@echo 'export DMTYPE' >> \$\@/" {} \;
-    cat pli-extras/Makefile-dm7020hdv2 >> Makefile
+    cat pli-extras/dm7020hdv2-changes >> Makefile
     rm -f build/env.source
     echo "Done, now you can compile dm7020hdv2 image too."
     echo ""

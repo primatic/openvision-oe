@@ -10,7 +10,7 @@ require recipes-core/meta/package-index.bb
 require conf/license/openpli-gplv2.inc
 
 # Depend on the image, so that it gets build
-DEPENDS = "vision-enigma2-image"
+DEPENDS = "openvision-enigma2-image"
 
 OPTIONAL_PACKAGES_BROKEN = "samba"
 OPTIONAL_PACKAGES ?= ""
