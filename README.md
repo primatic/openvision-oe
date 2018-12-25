@@ -298,7 +298,7 @@
 * cd openpli-oe-core
 
 3. Clone pli-extras:
-* git clone -b develop --depth 1 https://github.com/PLi-metas/pli-extras.git
+* git clone --depth 1 https://github.com/PLi-metas/pli-extras.git
 
 4. Run our image.sh script:
 * cd pli-extras
