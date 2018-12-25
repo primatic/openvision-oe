@@ -300,7 +300,7 @@
 3. Clone pli-extras:
 * git clone -b develop --depth 1 https://github.com/PLi-metas/pli-extras.git
 
-4. Initialize and update all repositories:
+4. Run our image.sh script:
 * cd pli-extras
 * ./image.sh
 
