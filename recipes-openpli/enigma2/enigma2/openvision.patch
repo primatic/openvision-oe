@@ -1,6 +1,7 @@
-diff -Naur enigma2-PLi/data/setup.xml enigma2-PersianPrince/data/setup.xml
---- enigma2-PLi/data/setup.xml	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/data/setup.xml	2018-08-15 08:42:15.453936741 +0430
+diff --git a/data/setup.xml b/data/setup.xml
+index dae1d7559..8b8474281 100644
+--- a/data/setup.xml
++++ b/data/setup.xml
 @@ -1,6 +1,7 @@
  <setupxml>
  	<setup key="timezone" title="Timezone">
@@ -9,10 +10,11 @@ diff -Naur enigma2-PLi/data/setup.xml enigma2-PersianPrince/data/setup.xml
  	</setup>
  	<setup key="avsetup">
  		<!-- this is just a placeholder, the Videomode plugin implements this submenu -->
-diff -Naur enigma2-PLi/lib/driver/hdmi_cec.cpp enigma2-PersianPrince/lib/driver/hdmi_cec.cpp
---- enigma2-PLi/lib/driver/hdmi_cec.cpp	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/driver/hdmi_cec.cpp	2018-08-13 13:01:36.620318262 +0430
-@@ -501,6 +501,12 @@
+diff --git a/lib/driver/hdmi_cec.cpp b/lib/driver/hdmi_cec.cpp
+index bef0d2346..3653010ec 100644
+--- a/lib/driver/hdmi_cec.cpp
++++ b/lib/driver/hdmi_cec.cpp
+@@ -501,6 +501,12 @@ long eHdmiCEC::translateKey(unsigned char code)
  		case 0x0d:
  			key = 0xae;
  			break;
@@ -25,10 +27,11 @@ diff -Naur enigma2-PLi/lib/driver/hdmi_cec.cpp enigma2-PersianPrince/lib/driver/
  		case 0x72:
  			key = 0x18e;
  			break;
-diff -Naur enigma2-PLi/lib/python/Components/AVSwitch.py enigma2-PersianPrince/lib/python/Components/AVSwitch.py
---- enigma2-PLi/lib/python/Components/AVSwitch.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/AVSwitch.py	2018-08-13 12:40:46.385946042 +0430
-@@ -111,7 +111,7 @@
+diff --git a/lib/python/Components/AVSwitch.py b/lib/python/Components/AVSwitch.py
+index 1e5f9ef5c..18893055e 100644
+--- a/lib/python/Components/AVSwitch.py
++++ b/lib/python/Components/AVSwitch.py
+@@ -111,7 +111,7 @@ def InitAVSwitch():
  			policy2_choices.update({"auto": _("Auto")})
  	except:
  		pass
@@ -37,7 +40,7 @@ diff -Naur enigma2-PLi/lib/python/Components/AVSwitch.py enigma2-PersianPrince/l
  	policy_choices = {
  	# TRANSLATORS: (aspect ratio policy: black bars on left/right) in doubt, keep english term.
  	"pillarbox": _("Pillarbox"),
-@@ -137,7 +137,7 @@
+@@ -137,7 +137,7 @@ def InitAVSwitch():
  			policy_choices.update({"auto": _("Auto")})
  	except:
  		pass
@@ -46,10 +49,11 @@ diff -Naur enigma2-PLi/lib/python/Components/AVSwitch.py enigma2-PersianPrince/l
  	config.av.tvsystem = ConfigSelection(choices = {"pal": _("PAL"), "ntsc": _("NTSC"), "multinorm": _("multinorm")}, default="pal")
  	config.av.wss = ConfigEnableDisable(default = True)
  	config.av.generalAC3delay = ConfigSelectionNumber(-1000, 1000, 5, default = 0)
-diff -Naur enigma2-PLi/lib/python/Components/Network.py enigma2-PersianPrince/lib/python/Components/Network.py
---- enigma2-PLi/lib/python/Components/Network.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/Network.py	2018-08-13 12:47:38.125713914 +0430
-@@ -421,7 +421,7 @@
+diff --git a/lib/python/Components/Network.py b/lib/python/Components/Network.py
+index d3c5e6ebd..fe8223829 100644
+--- a/lib/python/Components/Network.py
++++ b/lib/python/Components/Network.py
+@@ -423,7 +423,7 @@ class Network:
  	def checkNetworkState(self,statecallback):
  		self.NetworkState = 0
  		self.pingConsole = Console()
@@ -58,7 +62,7 @@ diff -Naur enigma2-PLi/lib/python/Components/Network.py enigma2-PersianPrince/li
  			self.pingConsole.ePopen(("/bin/ping", "/bin/ping", "-c", "1", server), self.checkNetworkStateFinished,statecallback)
  
  	def checkNetworkStateFinished(self, result, retval,extra_args):
-@@ -493,7 +493,7 @@
+@@ -495,7 +495,7 @@ class Network:
  	def checkDNSLookup(self,statecallback):
  		self.DnsState = 0
  		self.dnsConsole = Console()
@@ -67,10 +71,11 @@ diff -Naur enigma2-PLi/lib/python/Components/Network.py enigma2-PersianPrince/li
  			self.dnsConsole.ePopen(("/usr/bin/nslookup", "/usr/bin/nslookup", server), self.checkDNSLookupFinished, statecallback)
  
  	def checkDNSLookupFinished(self, result, retval,extra_args):
-diff -Naur enigma2-PLi/lib/python/Components/NimManager.py enigma2-PersianPrince/lib/python/Components/NimManager.py
---- enigma2-PLi/lib/python/Components/NimManager.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/NimManager.py	2018-08-13 12:46:10.253841495 +0430
-@@ -1568,7 +1568,7 @@
+diff --git a/lib/python/Components/NimManager.py b/lib/python/Components/NimManager.py
+index 6f9e0b56e..42d5ebb7d 100644
+--- a/lib/python/Components/NimManager.py
++++ b/lib/python/Components/NimManager.py
+@@ -1574,7 +1574,7 @@ def InitNimManager(nimmgr, update_slots = []):
  					"enabled": _("enabled"),
  					"nothing": _("disabled"),
  					},
@@ -79,7 +84,7 @@ diff -Naur enigma2-PLi/lib/python/Components/NimManager.py enigma2-PersianPrince
  			createCableConfig(nim, x)
  		elif slot.isCompatible("DVB-T"):
  			nim.configMode = ConfigSelection(
-@@ -1576,7 +1576,7 @@
+@@ -1582,7 +1582,7 @@ def InitNimManager(nimmgr, update_slots = []):
  					"enabled": _("enabled"),
  					"nothing": _("disabled"),
  					},
@@ -88,7 +93,7 @@ diff -Naur enigma2-PLi/lib/python/Components/NimManager.py enigma2-PersianPrince
  			createTerrestrialConfig(nim, x)
  		elif slot.isCompatible("ATSC"):
  			nim.configMode = ConfigSelection(
-@@ -1584,7 +1584,7 @@
+@@ -1590,7 +1590,7 @@ def InitNimManager(nimmgr, update_slots = []):
  					"enabled": _("enabled"),
  					"nothing": _("disabled"),
  					},
@@ -97,10 +102,11 @@ diff -Naur enigma2-PLi/lib/python/Components/NimManager.py enigma2-PersianPrince
  			createATSCConfig(nim, x)
  		else:
  			empty_slots += 1
-diff -Naur enigma2-PLi/lib/python/Components/Sources/FrontendStatus.py enigma2-PersianPrince/lib/python/Components/Sources/FrontendStatus.py
---- enigma2-PLi/lib/python/Components/Sources/FrontendStatus.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/Sources/FrontendStatus.py	2018-08-13 12:45:02.640230690 +0430
-@@ -21,6 +21,8 @@
+diff --git a/lib/python/Components/Sources/FrontendStatus.py b/lib/python/Components/Sources/FrontendStatus.py
+index 0e2235089..f6f4b09cd 100644
+--- a/lib/python/Components/Sources/FrontendStatus.py
++++ b/lib/python/Components/Sources/FrontendStatus.py
+@@ -21,6 +21,8 @@ class FrontendStatus(Source):
  			self.invalidate()
  		else:
  			self.snr = status.get("tuner_signal_quality")
@@ -109,10 +115,11 @@ diff -Naur enigma2-PLi/lib/python/Components/Sources/FrontendStatus.py enigma2-P
  			self.snr_db = status.get("tuner_signal_quality_db")
  			self.agc = status.get("tuner_signal_power")
  			self.ber = status.get("tuner_bit_error_rate")
-diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrince/lib/python/Components/UsageConfig.py
---- enigma2-PLi/lib/python/Components/UsageConfig.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/UsageConfig.py	2018-08-13 12:35:47.068656039 +0430
-@@ -27,11 +27,11 @@
+diff --git a/lib/python/Components/UsageConfig.py b/lib/python/Components/UsageConfig.py
+index 7c452942e..f84872ce0 100644
+--- a/lib/python/Components/UsageConfig.py
++++ b/lib/python/Components/UsageConfig.py
+@@ -27,11 +27,11 @@ def InitUsageConfig():
  	config.usage.hide_number_markers = ConfigYesNo(default = True)
  	config.usage.hide_number_markers.addNotifier(refreshServiceList)
  
@@ -127,7 +134,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	config.usage.record_indicator_mode.addNotifier(refreshServiceList)
  
  	choicelist = [("-1", _("Disable"))]
-@@ -40,7 +40,7 @@
+@@ -40,7 +40,7 @@ def InitUsageConfig():
  	config.usage.servicelist_column = ConfigSelection(default="-1", choices=choicelist)
  	config.usage.servicelist_column.addNotifier(refreshServiceList)
  
@@ -136,7 +143,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	config.usage.service_icon_enable.addNotifier(refreshServiceList)
  	config.usage.servicelist_cursor_behavior = ConfigSelection(default = "standard", choices = [
  		("standard", _("Standard")),
-@@ -57,7 +57,7 @@
+@@ -57,7 +57,7 @@ def InitUsageConfig():
  	config.usage.multiepg_ask_bouquet = ConfigYesNo(default = False)
  
  	config.usage.quickzap_bouquet_change = ConfigYesNo(default = False)
@@ -145,11 +152,11 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	choicelist = [("0", _("No timeout"))]
  	for i in range(1, 12):
  		choicelist.append((str(i), ngettext("%d second", "%d seconds", i) % i))
-@@ -80,13 +80,13 @@
+@@ -80,13 +80,13 @@ def InitUsageConfig():
  		("a_z", _("alphabetical")),
  		("default", _("Default")),
  		("user", _("user defined")),])
--	config.usage.menu_show_numbers = ConfigYesNo(default = False)
+-	config.usage.menu_show_numbers = ConfigSelection(default = "no", choices = [("no", _("no")), ("menu&plugins", _("in menu and plugins")), ("menu", _("in menu only")), ("plugins", _("in plugins only"))])
 +	config.usage.menu_show_numbers = ConfigYesNo(default = True)
  	config.usage.menu_path = ConfigSelection(default = "off", choices = [
  		("off", _("Disabled")),
@@ -161,7 +168,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	choicelist = []
  	for i in (10, 30):
  		choicelist.append((str(i), ngettext("%d second", "%d seconds", i) % i))
-@@ -118,7 +118,7 @@
+@@ -118,7 +118,7 @@ def InitUsageConfig():
  	config.usage.allowed_timeshift_paths = ConfigLocations(default = ["/media/hdd/"])
  
  	config.usage.movielist_trashcan = ConfigYesNo(default=True)
@@ -170,7 +177,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	config.usage.movielist_trashcan_reserve = ConfigNumber(default=40)
  	config.usage.on_movie_start = ConfigSelection(default = "resume", choices = [
  		("ask yes", _("Ask user") + " " + _("default") + " " + _("yes")),
-@@ -135,7 +135,7 @@
+@@ -135,7 +135,7 @@ def InitUsageConfig():
  	config.usage.leave_movieplayer_onExit = ConfigSelection(default = "popup", choices = [
  		("no", _("no")), ("popup", _("With popup")), ("without popup", _("Without popup")), ("movielist", _("Return to movie list")) ])
  
@@ -179,7 +186,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  		("simple", _("Normal")),
  		("intermediate", _("Advanced")),
  		("expert", _("Expert")) ])
-@@ -215,7 +215,7 @@
+@@ -215,7 +215,7 @@ def InitUsageConfig():
  		choicelist.append((str(i), ngettext("%d minute", "%d minutes", m) % m))
  	config.usage.timeshift_start_delay = ConfigSelection(default = "0", choices = choicelist)
  
@@ -188,21 +195,20 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  		("0", "DVB-S/-C/-T"),
  		("1", "DVB-S/-T/-C"),
  		("2", "DVB-C/-S/-T"),
-@@ -281,9 +281,9 @@
- 	SystemInfo["DVB-C_priority_tuner_available"] = len(dvbc_nims) > 3 and any(len(i) > 2 for i in (dvbs_nims, dvbt_nims, atsc_nims))
- 	SystemInfo["ATSC_priority_tuner_available"] = len(atsc_nims) > 3 and any(len(i) > 2 for i in (dvbs_nims, dvbc_nims, dvbt_nims))
+@@ -283,7 +283,7 @@ def InitUsageConfig():
  
-	config.misc.disable_background_scan = ConfigYesNo(default = False)
+ 	config.misc.disable_background_scan = ConfigYesNo(default = False)
  	config.misc.use_ci_assignment = ConfigYesNo(default = False)
 -	config.usage.show_event_progress_in_servicelist = ConfigSelection(default = 'barright', choices = [
 +	config.usage.show_event_progress_in_servicelist = ConfigSelection(default = 'percright', choices = [
  		('barleft', _("Progress bar left")),
  		('barright', _("Progress bar right")),
  		('percleft', _("Percentage left")),
-diff -Naur enigma2-PLi/lib/service/servicedvb.cpp enigma2-PersianPrince/lib/service/servicedvb.cpp
---- enigma2-PLi/lib/service/servicedvb.cpp	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/service/servicedvb.cpp	2018-08-13 12:16:03.984525152 +0430
-@@ -1737,9 +1737,9 @@
+diff --git a/lib/service/servicedvb.cpp b/lib/service/servicedvb.cpp
+index d1118ad7f..9791c3315 100644
+--- a/lib/service/servicedvb.cpp
++++ b/lib/service/servicedvb.cpp
+@@ -1737,9 +1737,9 @@ RESULT eDVBServicePlay::timeshift(ePtr<iTimeshiftService> &ptr)
  				return -2;
  			}
  
