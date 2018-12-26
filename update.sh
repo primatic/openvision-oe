@@ -11,7 +11,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
 git pull
 git submodule sync
-git submodule update --init --depth 1
+git submodule update --init
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
