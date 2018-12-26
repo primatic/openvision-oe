@@ -39,13 +39,13 @@ echo -e ""
 cd ..
 if [ $IMAGETYPE = "Vision" ]
 then
-	IMAGECMD='bitbake openvision-enigma2-image'
+	IMAGECMD='make image'
 	cd build
 	source ./env.source
 fi
 if [ $IMAGETYPE = "Feed" ]
 then
-	IMAGECMD='bitbake openvision-enigma2-feed'
+	IMAGECMD='make feed'
 	cd build
 	source ./env.source
 fi
