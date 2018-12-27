@@ -6,6 +6,7 @@ SRC_URI_append += "\
 	file://biss-caid.patch \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://revert-gamma-changes.patch", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "file://Revert-font-support-fallback-font-to-display-east-as.patch", "", d)} \
 	"
 
 DEPENDS += "rc-models"
