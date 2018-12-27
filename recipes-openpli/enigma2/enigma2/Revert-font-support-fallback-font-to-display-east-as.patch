@@ -20,7 +20,7 @@ index 395407421..268c5f698 100644
 -	LiberationSans-Regular.ttf \
 -	wqy-microhei.ttc
 -
--install-exec-hook:
+-install-data-hook:
 -	cd $(DESTDIR)$(datadir)/fonts && \
 -	$(LN_S) wqy-microhei.ttc fallback.font
 +	LiberationSans-Regular.ttf
