@@ -40,14 +40,10 @@ cd ..
 if [ $IMAGETYPE = "Vision" ]
 then
 	IMAGECMD='make image'
-	cd build
-	source ./env.source
 fi
 if [ $IMAGETYPE = "Feed" ]
 then
 	IMAGECMD='make feed'
-	cd build
-	source ./env.source
 fi
 if [ $META = "Specific" ]
 then
