@@ -19,6 +19,12 @@ echo -e "Enter the meta name:"
 echo -e ""
 read META
 echo -e ""
+if [ $META != "AX" -o $META != "AZBox" -o $META != "BlackBox" -o $META != "BroadMedia" -o $META != "Ceryon" -o $META != "Clap" -o $META != "Cube" -o $META != "DAGS" -o $META != "Dinobot" -o $META != "Dreambox" -o $META != "EBox" -o $META != "Entwopia" -o $META != "Fulan" -o $META != "GB" -o $META != "HyperCube" -o $META != "INI" -o $META != "IXUSS" -o $META != "Linkdroid" -o $META != "MINIX" -o $META != "Octagon" -o $META != "Odin" -o $META != "Odroid" -o $META != "Protek" -o $META != "RaspberryPi" -o $META != "Tiviar" -o $META != "Tripledot" -o $META != "Uclan" -o $META != "WeTek" -o $META != "XCore" -o $META != "XT" -o $META != "ALL" -o $META != "Specific" ]
+then
+	echo -e "Not a valid answer!"
+	echo -e ""
+	exit 0
+fi
 echo -e "Now choose whether you want to compile Open Vision or the online feeds."
 echo -e "Answers are in red:"
 echo -e ""
@@ -29,6 +35,12 @@ echo -e "${NC}Enter image type:"
 echo -e ""
 read IMAGETYPE
 echo -e ""
+if [ $IMAGETYPE != "Vision" -o $IMAGETYPE != "Feed" ]
+then
+	echo -e "Not a valid answer!"
+	echo -e ""
+	exit 0
+fi
 echo -e "First update everything, please wait ..."
 /bin/sh update.sh
 echo -e ""
