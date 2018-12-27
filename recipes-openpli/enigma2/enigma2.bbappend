@@ -37,3 +37,7 @@ do_configure_prepend() {
 		cat "${WORKDIR}/extra_rc_models/rc_models.cfg" >> "${S}/data/rc_models/rc_models.cfg"
 	fi
 }
+
+do_install_append() {
+	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "rm ${B}/data/fonts/wqy-microhei.ttc", "", d)}
+}
