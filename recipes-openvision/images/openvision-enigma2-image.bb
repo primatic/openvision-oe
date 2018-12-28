@@ -127,7 +127,6 @@ IMAGE_INSTALL += "\
 	libbluray \
 	hddtemp \
 	ntfs-3g \
-	parted \
 	wscan", d)} \
 	"
 
