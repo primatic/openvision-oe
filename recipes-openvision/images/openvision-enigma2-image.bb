@@ -53,17 +53,16 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-osdpositionsetup \
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-cacheflush \
+	enigma2-plugin-systemplugins-hdmicec \
 	enigma2-plugin-systemplugins-wirelesslan \
 	${@bb.utils.contains("MACHINE_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "hdmicec", "enigma2-plugin-systemplugins-hdmicec" , "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "hdmicec", "enigma2-plugin-systemplugins-hdmicec" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "enigma2-plugin-extensions-dvdplayer", "", d)} \
+	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "enigma2-plugin-extensions-dvdplayer", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "fan", "enigma2-plugin-systemplugins-extrafancontrol", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "fan", "enigma2-plugin-systemplugins-extrafancontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "7seg", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
@@ -117,8 +116,6 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains("OPENPLI_FEATURES", "extrakernelwifi", "${EXTRA_KERNEL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "externalwifi", "${EXTERNAL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "externalwifi", "${EXTERNAL_WIFI_DRIVERS}", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "cdtextinfo", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "cdtextinfo", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	ofgwrite \
 	samba-base \
@@ -131,8 +128,6 @@ IMAGE_INSTALL += "\
 	hddtemp \
 	ntfs-3g \
 	parted \
-	strace \
-	nbench-byte \
 	wscan", d)} \
 	"
 
