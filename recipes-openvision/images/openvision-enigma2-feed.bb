@@ -56,6 +56,7 @@ OPTIONAL_PACKAGES += " \
 	mtd-utils \
 	mtools \
 	nano \
+	nbench-byte \
 	net-tools \
 	${@bb.utils.contains('TARGET_FPU', 'soft', '', 'nodejs', d)} \
 	ntfs-3g \
@@ -167,8 +168,6 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-skins \
 	softcams-enigma2-meta \
 	packagegroup-openplugins \
-	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
 	enigma2-plugin-extensions-backupsuite \
 	${@bb.utils.contains("EXTRA_IMAGEDEPENDS", "vuplus-tuner-turbo", "enigma2-plugin-drivers-dvb-usb-turbo", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "streamproxy", "", d)} \
