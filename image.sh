@@ -8,18 +8,18 @@ echo -e "Check ${NC}README.md ${RED}or ${NC}PLi-metas.md ${RED}and enter a meta 
 echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
 echo -e "${GREEN}Amiko ${NC}- ${GREEN}AX ${NC}- ${GREEN}AXAS ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon ${NC}- ${GREEN}Clap"
-echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Edision ${NC}- ${GREEN}Entwopia"
-echo -e "${GREEN}Formuler ${NC}- ${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}GFutures ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid"
-echo -e "${GREEN}MINIX ${NC}- ${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi"
-echo -e "${GREEN}Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT"
-echo -e "${GREEN}ALL ${RED}(Compiles all brands/models, As it requires huge free space it's not recommended)"
+echo -e "Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Edision ${NC}- ${GREEN}Entwopia"
+echo -e "Formuler ${NC}- ${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}GFutures ${NC}- ${GREEN}GI ${NC}- ${GREEN}GigaBlue ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid"
+echo -e "MINIX ${NC}- ${GREEN}MiracleBox ${NC}- ${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}Qviart ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}Sab ${NC}- ${GREEN}SpyCat"
+echo -e "Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT"
+echo -e "ALL ${RED}(Compiles all brands/models, As it requires huge free space it's not recommended)"
 echo -e "${GREEN}Specific ${RED}(I have a specific machine in mind)"
 echo -e ""
 echo -e "Enter the meta name:${NC}"
 echo -e ""
 read META
 echo -e ""
-if [ $META != "Amiko" -a $META != "AX" -a $META != "AXAS" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "Fulan" -a $META != "GB" -a $META != "GFutures" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MINIX" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "RaspberryPi" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "WeTek" -a $META != "XCore" -a $META != "XT" -a $META != "ALL" -a $META != "Specific" ]
+if [ $META != "Amiko" -a $META != "AX" -a $META != "AXAS" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "Fulan" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "WeTek" -a $META != "XCore" -a $META != "XT" -a $META != "ALL" -a $META != "Specific" ]
 then
 	echo -e "${RED}Not a valid answer!${NC}"
 	echo -e ""
@@ -302,6 +302,16 @@ then
 	MACHINE=vs1000 $IMAGECMD
 	MACHINE=vs1500 $IMAGECMD
 fi
+if [ $META = "GI" ]
+then
+	MACHINE=et1x000 $IMAGECMD
+	MACHINE=et7000mini $IMAGECMD
+fi
+if [ $META = "GigaBlue" ]
+then
+	MACHINE=gbquad4k $IMAGECMD
+	MACHINE=gbue4k $IMAGECMD
+fi
 if [ $META = "HyperCube" ]
 then
 	MACHINE=su980 $IMAGECMD
@@ -350,6 +360,12 @@ if [ $META = "MINIX" ]
 then
 	MACHINE=x8hp $IMAGECMD
 fi
+if [ $META = "MiracleBox" ]
+then
+	MACHINE=mbmicro $IMAGECMD
+	MACHINE=mbmicrov2 $IMAGECMD
+	MACHINE=mbtwinplus $IMAGECMD
+fi
 if [ $META = "Octagon" ]
 then
 	MACHINE=sf4008 $IMAGECMD
@@ -379,12 +395,28 @@ if [ $META = "Protek" ]
 then
 	MACHINE=9900lx $IMAGECMD
 fi
+if [ $META = "Qviart" ]
+then
+	MACHINE=lunix $IMAGECMD
+	MACHINE=lunix3-4k $IMAGECMD
+	MACHINE=lunix4k $IMAGECMD
+fi
 if [ $META = "RaspberryPi" ]
 then
 	MACHINE=raspberrypi $IMAGECMD
 	MACHINE=raspberrypi0 $IMAGECMD
 	MACHINE=raspberrypi2 $IMAGECMD
 	MACHINE=raspberrypi3 $IMAGECMD
+fi
+if [ $META = "Sab" ]
+then
+	MACHINE=alphatriplehd $IMAGECMD
+fi
+if [ $META = "SpyCat" ]
+then
+	MACHINE=spycat $IMAGECMD
+	MACHINE=spycatmini $IMAGECMD
+	MACHINE=spycatminiplus $IMAGECMD
 fi
 if [ $META = "Tiviar" ]
 then
@@ -608,6 +640,10 @@ then
 	MACHINE=hd60 $IMAGECMD
 	MACHINE=vs1000 $IMAGECMD
 	MACHINE=vs1500 $IMAGECMD
+	MACHINE=et1x000 $IMAGECMD
+	MACHINE=et7000mini $IMAGECMD
+	MACHINE=gbquad4k $IMAGECMD
+	MACHINE=gbue4k $IMAGECMD
 	MACHINE=su980 $IMAGECMD
 	MACHINE=atemio5x00 $IMAGECMD
 	MACHINE=atemio6000 $IMAGECMD
@@ -641,6 +677,9 @@ then
 	MACHINE=k2prov2 $IMAGECMD
 	MACHINE=k3pro $IMAGECMD
 	MACHINE=x8hp $IMAGECMD
+	MACHINE=mbmicro $IMAGECMD
+	MACHINE=mbmicrov2 $IMAGECMD
+	MACHINE=mbtwinplus $IMAGECMD
 	MACHINE=sf4008 $IMAGECMD
 	MACHINE=sf5008 $IMAGECMD
 	MACHINE=sf8008 $IMAGECMD
@@ -658,10 +697,17 @@ then
 	MACHINE=starsatlx $IMAGECMD
 	MACHINE=odroidc2 $IMAGECMD
 	MACHINE=9900lx $IMAGECMD
+	MACHINE=lunix $IMAGECMD
+	MACHINE=lunix3-4k $IMAGECMD
+	MACHINE=lunix4k $IMAGECMD
 	MACHINE=raspberrypi $IMAGECMD
 	MACHINE=raspberrypi0 $IMAGECMD
 	MACHINE=raspberrypi2 $IMAGECMD
 	MACHINE=raspberrypi3 $IMAGECMD
+	MACHINE=alphatriplehd $IMAGECMD
+	MACHINE=spycat $IMAGECMD
+	MACHINE=spycatmini $IMAGECMD
+	MACHINE=spycatminiplus $IMAGECMD
 	MACHINE=tiviaraplus $IMAGECMD
 	MACHINE=tiviarmin $IMAGECMD
 	MACHINE=enibox $IMAGECMD
