@@ -59,7 +59,7 @@ then
 fi
 if [ $META = "Specific" ]
 then
-	echo -e "Enter your specific machine name exactly like what you see in README.md"
+	echo -e "${GREEN}Enter your specific machine name exactly like what you see in README.md${NC}"
 	echo -e ""
 	read MACHINESPECIFIC
 	echo -e ""
