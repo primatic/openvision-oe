@@ -15,14 +15,14 @@ echo -e "Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}Qviart 
 echo -e "Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}VuPlus ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XP"
 echo -e "Xpeed ${NC}- ${GREEN}Xsarius ${NC}- ${GREEN}XT ${NC}- ${GREEN}Xtrend ${NC}- ${GREEN}Zgemma ${NC}- ${GREEN}ALL ${NC}- ${GREEN}Specific"
 echo -e ""
-echo -e "${RED}ALL: Compiles all brands/models, As it requires huge free space it's not recommended!"
+echo -e "${GREEN}ALL${RED}: Compiles all brands/models, As it requires huge free space it's not recommended!"
 echo -e ""
-echo -e "Specific: You have a specific machine in mind, Check ${NC}README.md ${RED}or ${NC}PLi-metas.md"
+echo -e "${GREEN}Specific${RED}: You have a specific machine in mind, Check ${NC}README.md ${RED}or ${NC}PLi-metas.md"
 echo -e ""
 echo -e "${RED}Enter the meta name:${NC}"
-echo -e ""
+echo -e "${GREEN}"
 read META
-echo -e ""
+echo -e "${NC}"
 if [ $META != "Amiko" -a $META != "AX" -a $META != "AXAS" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "Fulan" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xpeed" -a $META != "Xsarius" -a $META != "XT" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
 then
 	echo -e "${RED}Not a valid answer!${NC}"
@@ -35,9 +35,9 @@ echo -e ""
 echo -e "${GREEN}Vision ${NC}- ${GREEN}Feed${NC}"
 echo -e ""
 echo -e "${RED}Enter image type:${NC}"
-echo -e ""
+echo -e "${GREEN}"
 read IMAGETYPE
-echo -e ""
+echo -e "${NC}"
 if [ $IMAGETYPE != "Vision" -a $IMAGETYPE != "Feed" ]
 then
 	echo -e "${RED}Not a valid answer!${NC}"
@@ -63,9 +63,9 @@ fi
 if [ $META = "Specific" ]
 then
 	echo -e "${RED}Enter your specific machine name exactly like what you see in ${NC}README.md ${RED}or ${NC}PLi-metas.md"
-	echo -e ""
+	echo -e "${GREEN}"
 	read MACHINESPECIFIC
-	echo -e ""
+	echo -e "${NC}"
 	echo -e "${RED}Compiling${GREEN} $MACHINESPECIFIC ${RED}image, please wait ...${NC}"
 	echo -e ""
 	MACHINE=$MACHINESPECIFIC $IMAGECMD
@@ -837,5 +837,5 @@ then
 	MACHINE=sh1 $IMAGECMD
 fi
 echo -e ""
-echo -e "${RED}Done, the compiled image is in build/tmp/deploy/images/${GREEN}$MACHINE$MACHINESPECIFIC ${RED}folder!"
+echo -e "${RED}Done, the compiled image is in ${NC}build/tmp/deploy/images/${GREEN}$MACHINE$MACHINESPECIFIC ${RED}folder!"
 echo -e "It's a zipped file like ${NC}openvision-enigma2-develop-${GREEN}$MACHINE$MACHINESPECIFIC${NC}.zip"
