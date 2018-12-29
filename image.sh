@@ -19,7 +19,7 @@ echo -e "Enter the meta name:"
 echo -e ""
 read META
 echo -e ""
-if [ $META != "AX" -o $META != "AZBox" -o $META != "BlackBox" -o $META != "BroadMedia" -o $META != "Ceryon" -o $META != "Clap" -o $META != "Cube" -o $META != "DAGS" -o $META != "Dinobot" -o $META != "Dreambox" -o $META != "EBox" -o $META != "Entwopia" -o $META != "Fulan" -o $META != "GB" -o $META != "HyperCube" -o $META != "INI" -o $META != "IXUSS" -o $META != "Linkdroid" -o $META != "MINIX" -o $META != "Octagon" -o $META != "Odin" -o $META != "Odroid" -o $META != "Protek" -o $META != "RaspberryPi" -o $META != "Tiviar" -o $META != "Tripledot" -o $META != "Uclan" -o $META != "WeTek" -o $META != "XCore" -o $META != "XT" -o $META != "ALL" -o $META != "Specific" ]
+if [ $META != "AX" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Entwopia" -a $META != "Fulan" -a $META != "GB" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MINIX" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "RaspberryPi" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "WeTek" -a $META != "XCore" -a $META != "XT" -a $META != "ALL" -a $META != "Specific" ]
 then
 	echo -e "Not a valid answer!"
 	echo -e ""
@@ -35,7 +35,7 @@ echo -e "${NC}Enter image type:"
 echo -e ""
 read IMAGETYPE
 echo -e ""
-if [ $IMAGETYPE != "Vision" -o $IMAGETYPE != "Feed" ]
+if [ $IMAGETYPE != "Vision" -a $IMAGETYPE != "Feed" ]
 then
 	echo -e "Not a valid answer!"
 	echo -e ""
