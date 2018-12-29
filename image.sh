@@ -3,50 +3,49 @@ echo -e ""
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 GREEN='\033[0;32m'
-echo -e "Welcome to Persian Prince's image compile script!"
+echo -e "${RED}Welcome to Persian Prince's image compile script!"
 echo -e "Check README.md and enter a meta or a specific machine to compile."
-echo -e "Answers are in green:"
+echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
 echo -e "${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon ${NC}- ${GREEN}Clap"
 echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Entwopia"
 echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid"
 echo -e "${GREEN}MINIX ${NC}- ${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi"
 echo -e "${GREEN}Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT"
-echo -e "${GREEN}ALL ${NC}(Compiles all brands/models, As it requires huge free space it's not recommended)"
-echo -e "${GREEN}Specific ${NC}(I have a specific machine in mind)"
+echo -e "${GREEN}ALL ${RED}(Compiles all brands/models, As it requires huge free space it's not recommended)"
+echo -e "${GREEN}Specific ${RED}(I have a specific machine in mind)"
 echo -e ""
-echo -e "Enter the meta name:"
+echo -e "Enter the meta name:${NC}"
 echo -e ""
 read META
 echo -e ""
 if [ $META != "AX" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Entwopia" -a $META != "Fulan" -a $META != "GB" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MINIX" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "RaspberryPi" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "WeTek" -a $META != "XCore" -a $META != "XT" -a $META != "ALL" -a $META != "Specific" ]
 then
-	echo -e "Not a valid answer!"
+	echo -e "${RED}Not a valid answer!${NC}"
 	echo -e ""
 	exit 0
 fi
-echo -e "Now choose whether you want to compile Open Vision or the online feeds."
-echo -e "Answers are in red:"
+echo -e "${RED}Now choose whether you want to compile Open Vision or the online feeds."
+echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
-echo -e "${RED}Vision"
-echo -e "${RED}Feed"
+echo -e "${GREEN}Vision ${NC}- ${GREEN}Feed${NC}"
 echo -e ""
-echo -e "${NC}Enter image type:"
+echo -e "${RED}Enter image type:${NC}"
 echo -e ""
 read IMAGETYPE
 echo -e ""
 if [ $IMAGETYPE != "Vision" -a $IMAGETYPE != "Feed" ]
 then
-	echo -e "Not a valid answer!"
+	echo -e "${RED}Not a valid answer!${NC}"
 	echo -e ""
 	exit 0
 fi
-echo -e "First update everything, please wait ..."
+echo -e "${RED}First update everything, please wait ...${NC}"
 /bin/sh update.sh
 echo -e ""
-echo -e "Updated."
+echo -e "${RED}Updated.${NC}"
 echo -e ""
-echo -e "Compiling $META images, please wait ..."
+echo -e "${RED}Compiling${GREEN} $META ${RED}images, please wait ...${NC}"
 echo -e ""
 cd ..
 if [ $IMAGETYPE = "Vision" ]
@@ -59,11 +58,11 @@ then
 fi
 if [ $META = "Specific" ]
 then
-	echo -e "${GREEN}Enter your specific machine name exactly like what you see in README.md${NC}"
+	echo -e "${RED}Enter your specific machine name exactly like what you see in README.md${NC}"
 	echo -e ""
 	read MACHINESPECIFIC
 	echo -e ""
-	echo -e "Compiling $MACHINESPECIFIC image, please wait ..."
+	echo -e "${RED}Compiling${GREEN} $MACHINESPECIFIC ${RED}image, please wait ...${NC}"
 	echo -e ""
 	MACHINE=$MACHINESPECIFIC $IMAGECMD
 fi
@@ -615,4 +614,4 @@ then
 	MACHINE=et13000 $IMAGECMD
 fi
 echo -e ""
-echo -e "Done."
+echo -e "${RED}Done.${NC}"
