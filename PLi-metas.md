@@ -1,3 +1,5 @@
+# Here is the list of what PLi supports:
+
 # Amiko
 * vipercombo
 * vipercombohdd
@@ -92,3 +94,26 @@
 * purehd
 * purehdse
 * revo4k
+
+# Xtrend
+* et10000
+* et4x00
+* et5x00
+* et6x00
+* et7x00
+* et8000
+* et8500
+* et9x00
+
+# Zgemma
+* h3
+* h4
+* h5
+* h6
+* h7
+* h9
+* h9combo
+* i55
+* i55plus
+* lc
+* sh1
