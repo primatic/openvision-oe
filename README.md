@@ -288,7 +288,7 @@
 * et13000
 
 # You could compile Open Vision for other brands/models which PLi maintains them:
-https://github.com/OpenVisionE2/openvision-oe/blob/develop/OpenVisionE2.md
+https://github.com/OpenVisionE2/openvision-oe/blob/develop/PLi-metas.md
 
 # Ubuntu 18.04.x LTS setup:
 * Run our ltsubuntu.sh
