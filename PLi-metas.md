@@ -6,7 +6,7 @@
 * viperslim
 * vipert2c
 
-# Axas
+# AXAS
 * e4hd
 
 # Edision

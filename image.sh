@@ -4,12 +4,12 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 GREEN='\033[0;32m'
 echo -e "${RED}Welcome to Persian Prince's image compile script!"
-echo -e "Check README.md and enter a meta or a specific machine to compile."
+echo -e "Check ${NC}README.md ${RED}or ${NC}PLi-metas.md ${RED}and enter a meta or a specific machine to compile."
 echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
-echo -e "${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon ${NC}- ${GREEN}Clap"
-echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Entwopia"
-echo -e "${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid"
+echo -e "${GREEN}Amiko ${NC}- ${GREEN}AX ${NC}- ${GREEN}AXAS ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon ${NC}- ${GREEN}Clap"
+echo -e "${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Edision ${NC}- ${GREEN}Entwopia"
+echo -e "${GREEN}Formuler ${NC}- ${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}GFutures ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid"
 echo -e "${GREEN}MINIX ${NC}- ${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}RaspberryPi"
 echo -e "${GREEN}Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XT"
 echo -e "${GREEN}ALL ${RED}(Compiles all brands/models, As it requires huge free space it's not recommended)"
@@ -19,7 +19,7 @@ echo -e "Enter the meta name:${NC}"
 echo -e ""
 read META
 echo -e ""
-if [ $META != "AX" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Entwopia" -a $META != "Fulan" -a $META != "GB" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MINIX" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "RaspberryPi" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "WeTek" -a $META != "XCore" -a $META != "XT" -a $META != "ALL" -a $META != "Specific" ]
+if [ $META != "Amiko" -a $META != "AX" -a $META != "AXAS" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "Fulan" -a $META != "GB" -a $META != "GFutures" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MINIX" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "RaspberryPi" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "WeTek" -a $META != "XCore" -a $META != "XT" -a $META != "ALL" -a $META != "Specific" ]
 then
 	echo -e "${RED}Not a valid answer!${NC}"
 	echo -e ""
@@ -66,10 +66,21 @@ then
 	echo -e ""
 	MACHINE=$MACHINESPECIFIC $IMAGECMD
 fi
+if [ $META = "Amiko" ]
+then
+	MACHINE=vipercombo $IMAGECMD
+	MACHINE=vipercombohdd $IMAGECMD
+	MACHINE=viperslim $IMAGECMD
+	MACHINE=vipert2c $IMAGECMD
+fi
 if [ $META = "AX" ]
 then
 	MACHINE=triplex $IMAGECMD
 	MACHINE=ultrabox $IMAGECMD
+fi
+if [ $META = "AXAS" ]
+then
+	MACHINE=e4hd $IMAGECMD
 fi
 if [ $META = "AZBox" ]
 then
@@ -195,6 +206,16 @@ then
 	MACHINE=ebox7358 $IMAGECMD
 	MACHINE=eboxlumi $IMAGECMD
 fi
+if [ $META = "Edision" ]
+then
+	MACHINE=osmega $IMAGECMD
+	MACHINE=osmini $IMAGECMD
+	MACHINE=osminiplus $IMAGECMD
+	MACHINE=osmio4k $IMAGECMD
+	MACHINE=osnino $IMAGECMD
+	MACHINE=osninoplus $IMAGECMD
+	MACHINE=osninopro $IMAGECMD
+fi
 if [ $META = "Entwopia" ]
 then
 	MACHINE=bre2ze $IMAGECMD
@@ -203,6 +224,13 @@ then
 	MACHINE=evominiplus $IMAGECMD
 	MACHINE=marvel1 $IMAGECMD
 	MACHINE=x2plus $IMAGECMD
+fi
+if [ $META = "Formuler" ]
+then
+	MACHINE=formuler1 $IMAGECMD
+	MACHINE=formuler3 $IMAGECMD
+	MACHINE=formuler4 $IMAGECMD
+	MACHINE=formuler4turbo $IMAGECMD
 fi
 if [ $META = "Fulan" ]
 then
@@ -257,6 +285,22 @@ then
 	MACHINE=gbx2 $IMAGECMD
 	MACHINE=gbx3 $IMAGECMD
 	MACHINE=gbx3h $IMAGECMD
+fi
+if [ $META = "GFutures" ]
+then
+	MACHINE=bre2ze4k $IMAGECMD
+	MACHINE=hd11 $IMAGECMD
+	MACHINE=hd1100 $IMAGECMD
+	MACHINE=hd1200 $IMAGECMD
+	MACHINE=hd1265 $IMAGECMD
+	MACHINE=hd1500 $IMAGECMD
+	MACHINE=hd2400 $IMAGECMD
+	MACHINE=hd500c $IMAGECMD
+	MACHINE=hd51 $IMAGECMD
+	MACHINE=hd530c $IMAGECMD
+	MACHINE=hd60 $IMAGECMD
+	MACHINE=vs1000 $IMAGECMD
+	MACHINE=vs1500 $IMAGECMD
 fi
 if [ $META = "HyperCube" ]
 then
@@ -385,8 +429,13 @@ then
 fi
 if [ $META = "ALL" ]
 then
+	MACHINE=vipercombo $IMAGECMD
+	MACHINE=vipercombohdd $IMAGECMD
+	MACHINE=viperslim $IMAGECMD
+	MACHINE=vipert2c $IMAGECMD
 	MACHINE=triplex $IMAGECMD
 	MACHINE=ultrabox $IMAGECMD
+	MACHINE=e4hd $IMAGECMD
 	MACHINE=azboxhd $IMAGECMD
 	MACHINE=azboxme $IMAGECMD
 	MACHINE=azboxminime $IMAGECMD
@@ -481,12 +530,23 @@ then
 	MACHINE=ebox5100 $IMAGECMD
 	MACHINE=ebox7358 $IMAGECMD
 	MACHINE=eboxlumi $IMAGECMD
+	MACHINE=osmega $IMAGECMD
+	MACHINE=osmini $IMAGECMD
+	MACHINE=osminiplus $IMAGECMD
+	MACHINE=osmio4k $IMAGECMD
+	MACHINE=osnino $IMAGECMD
+	MACHINE=osninoplus $IMAGECMD
+	MACHINE=osninopro $IMAGECMD
 	MACHINE=bre2ze $IMAGECMD
 	MACHINE=enfinity $IMAGECMD
 	MACHINE=evomini $IMAGECMD
 	MACHINE=evominiplus $IMAGECMD
 	MACHINE=marvel1 $IMAGECMD
 	MACHINE=x2plus $IMAGECMD
+	MACHINE=formuler1 $IMAGECMD
+	MACHINE=formuler3 $IMAGECMD
+	MACHINE=formuler4 $IMAGECMD
+	MACHINE=formuler4turbo $IMAGECMD
 	MACHINE=adb_box $IMAGECMD
 	MACHINE=arivalink200 $IMAGECMD
 	MACHINE=atemio520 $IMAGECMD
@@ -535,6 +595,19 @@ then
 	MACHINE=gbx2 $IMAGECMD
 	MACHINE=gbx3 $IMAGECMD
 	MACHINE=gbx3h $IMAGECMD
+	MACHINE=bre2ze4k $IMAGECMD
+	MACHINE=hd11 $IMAGECMD
+	MACHINE=hd1100 $IMAGECMD
+	MACHINE=hd1200 $IMAGECMD
+	MACHINE=hd1265 $IMAGECMD
+	MACHINE=hd1500 $IMAGECMD
+	MACHINE=hd2400 $IMAGECMD
+	MACHINE=hd500c $IMAGECMD
+	MACHINE=hd51 $IMAGECMD
+	MACHINE=hd530c $IMAGECMD
+	MACHINE=hd60 $IMAGECMD
+	MACHINE=vs1000 $IMAGECMD
+	MACHINE=vs1500 $IMAGECMD
 	MACHINE=su980 $IMAGECMD
 	MACHINE=atemio5x00 $IMAGECMD
 	MACHINE=atemio6000 $IMAGECMD
