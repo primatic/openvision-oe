@@ -58,7 +58,7 @@ then
 fi
 if [ $META = "Specific" ]
 then
-	echo -e "${RED}Enter your specific machine name exactly like what you see in README.md${NC}"
+	echo -e "${RED}Enter your specific machine name exactly like what you see in ${NC}README.md ${RED}or ${NC}PLi-metas.md"
 	echo -e ""
 	read MACHINESPECIFIC
 	echo -e ""
@@ -614,4 +614,5 @@ then
 	MACHINE=et13000 $IMAGECMD
 fi
 echo -e ""
-echo -e "${RED}Done.${NC}"
+echo -e "${RED}Done, the compiled image is in build/tmp/deploy/images/${GREEN}$MACHINE$MACHINESPECIFIC ${RED}folder!"
+echo -e "It's a zipped file like ${NC}openvision-enigma2-develop-${GREEN}$MACHINE$MACHINESPECIFIC${NC}.zip"
