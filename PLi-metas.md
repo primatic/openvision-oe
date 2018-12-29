@@ -36,3 +36,59 @@
 * hd60
 * vs1000
 * vs1500
+
+# GI
+* et1x000
+* et7000mini
+
+# GigaBlue
+* gbquad4k
+* gbue4k
+
+# MiracleBox
+* mbmicro
+* mbmicrov2
+* mbtwinplus
+
+# Qviart
+* lunix
+* lunix3-4k
+* lunix4k
+
+# Sab
+* alphatriplehd
+
+# SpyCat
+* spycat
+* spycatmini
+* spycatminiplus
+
+# VuPlus
+* vuduo
+* vuduo2
+* vuduo4k
+* vusolo
+* vusolo2
+* vusolo4k
+* vusolose
+* vuultimo
+* vuultimo4k
+* vuuno
+* vuuno4k
+* vuuno4kse
+* vuzero
+* vuzero4k
+
+# XP
+* xp1000
+
+# Xpeed
+* xpeedc
+
+# Xsarius
+* fusionhd
+* fusionhdse
+* galaxy4k
+* purehd
+* purehdse
+* revo4k
