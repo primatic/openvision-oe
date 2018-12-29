@@ -288,7 +288,7 @@
 * et13000
 
 # You could compile Open Vision for other brands/models which PLi maintains them:
-https://github.com/PLi-metas/pli-extras/blob/develop/PLi-metas.md
+https://github.com/OpenVisionE2/openvision-oe/blob/develop/OpenVisionE2.md
 
 # Ubuntu 18.04.x LTS setup:
 * Run our ltsubuntu.sh
@@ -300,11 +300,11 @@ https://github.com/PLi-metas/pli-extras/blob/develop/PLi-metas.md
 2. Enter the openpli-oe-core directory:
 * cd openpli-oe-core
 
-3. Clone pli-extras:
-* git clone --depth 1 https://github.com/PLi-metas/pli-extras.git
+3. Clone openvision-oe:
+* git clone --depth 1 https://github.com/OpenVisionE2/openvision-oe.git
 
 4. Run our image.sh script:
-* cd pli-extras
+* cd openvision-oe
 * ./image.sh
 
 # Hints for multiple architectures:

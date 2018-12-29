@@ -1,7 +1,7 @@
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
-SRC_URI = "https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/rtl8192cufw_TMSC.zip"
+SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/rtl8192cufw_TMSC.zip"
 
 SRC_URI[md5sum] = "fbdc2178258a6afb3378b8e3dab709fa"
 SRC_URI[sha256sum] = "2bed1a398f43146ff0c9e12b70a976043cfee0b699ea0788a7ff50e8214e92fa"

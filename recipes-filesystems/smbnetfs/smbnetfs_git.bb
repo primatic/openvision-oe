@@ -18,7 +18,7 @@ PKGV = "${GITPKGVTAG}"
 
 SRCREV = "398e8169ea6d3d854af0173b1e66bf13c124f901"
 
-SRC_URI = "git://github.com/PLi-metas/smbnetfs.git;branch=master \
+SRC_URI = "git://github.com/OpenVisionE2/smbnetfs.git;branch=master \
 			file://configure.patch \
 			file://Using-PKG_CHECK_MODULES-to-found-headers-and-libraries.patch \
 			file://smbnetfs.common.conf \

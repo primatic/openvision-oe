@@ -1,5 +1,5 @@
 LICENSE = "CLOSED"
-SRC_URI = "https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/mn8847x.zip"
+SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/mn8847x.zip"
 
 SRC_URI[md5sum] = "cdd7da2423417aa0024998ae77e86ad8"
 SRC_URI[sha256sum] = "23bebdfe5b10eff4434093e915f52b51bb06481a6715954acec2c97685c945ff"

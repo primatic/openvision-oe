@@ -1,1 +1,1 @@
-SRC_URI = "git://github.com/PLi-metas/f4mdump.git"
+SRC_URI = "git://github.com/OpenVisionE2/f4mdump.git"

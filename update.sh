@@ -1,11 +1,11 @@
 #!/bin/sh
 echo ""
 echo "Open Vision by"
-echo "https://github.com/orgs/PLi-metas/people"
+echo "https://github.com/orgs/OpenVisionE2/people"
 echo ""
 echo "Each time you run this script all git repositories will get updated to their latest versions!"
 echo ""
-echo "For extra RC support you need to add your STB files to https://github.com/PLi-metas/extra_rc_models"
+echo "For extra RC support you need to add your STB files to https://github.com/OpenVisionE2/extra_rc_models"
 echo ""
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
@@ -31,7 +31,7 @@ else
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/$(MACHINE)/$(MACHINE)$(DMTYPE)/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/"MACHINE"/"MACHINE DMTYPE"/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i "s/.@echo 'export MACHINE' >> $@.*/&\n\t@echo 'export DMTYPE' >> \$\@/" {} \;
-    cat pli-extras/dm7020hdv2-changes >> Makefile
+    cat openvision-oe/dm7020hdv2-changes >> Makefile
     rm -f build/env.source
     echo "Done, now you can compile dm7020hdv2 image too."
     echo ""

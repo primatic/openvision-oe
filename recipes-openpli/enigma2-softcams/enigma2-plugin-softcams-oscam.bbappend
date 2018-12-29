@@ -2,7 +2,7 @@ inherit upx_compress
 
 PV = "git${SRCPV}"
 SRC_URI = " \
-	git://github.com/PLi-metas/oscam.git;protocol=git;name=trunk \
+	git://github.com/OpenVisionE2/oscam.git;protocol=git;name=trunk \
 	file://oscam.conf \
 	file://oscam.server \
 	file://oscam.srvid \

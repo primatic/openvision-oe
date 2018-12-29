@@ -30,7 +30,7 @@ SRCREV_extrarcmodels_pn-${PN} = "${AUTOREV}"
 
 SRC_URI = "\
 	git://github.com/E2OpenPlugins/e2openplugin-${MODULE}.git;protocol=git;name=${MODULE} \
-	git://github.com/PLi-metas/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels \
+	git://github.com/OpenVisionE2/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels \
 	"
 
 SRC_URI_append_sh4 += " file://revert_grab_for_sh4.patch "

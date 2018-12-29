@@ -8,7 +8,7 @@ SRCREV = "${AUTOREV}"
 PV = "1.1.0"
 PR = "r3"
 
-SRC_URI += "git://github.com/PLi-metas/libdvbcsa.git"
+SRC_URI += "git://github.com/OpenVisionE2/libdvbcsa.git"
 
 S = "${WORKDIR}/git"
 

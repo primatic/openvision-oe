@@ -4,7 +4,7 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "all"
 
-SRC_URI = "https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/firmware-ap6xxx-mecool.zip"
+SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/firmware-ap6xxx-mecool.zip"
 
 SRC_URI[md5sum] = "324c6e281dfc648a3532c73a62a71132"
 SRC_URI[sha256sum] = "1aea21cc51d5eefc67119186b4a6f0c5da195ba4cadb28af48ce20a1f8bd10fd"

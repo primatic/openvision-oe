@@ -5,7 +5,7 @@ LICENSE = "GPLv3"
 LIC_FILES_CHKSUM="file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 DEPENDS = "openssl libdvbcsa"
 
-SRC_URI = "git://github.com/PLi-metas/astra-sm.git;protocol=http \
+SRC_URI = "git://github.com/OpenVisionE2/astra-sm.git;protocol=http \
     file://astra \
     file://config.lua \
 "

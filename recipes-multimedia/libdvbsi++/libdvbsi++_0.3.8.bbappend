@@ -1,1 +1,1 @@
-SRC_URI = "git://github.com/PLi-metas/libdvbsi.git"
+SRC_URI = "git://github.com/OpenVisionE2/libdvbsi.git"

@@ -4,7 +4,7 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "all"
 
-SRC_URI = "https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/firmware-ap6210.zip"
+SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/firmware-ap6210.zip"
 
 SRC_URI[md5sum] = "0e797a699e29df0c3fc729335477394d"
 SRC_URI[sha256sum] = "36a6b1df79344e07abe9d9619e5f844ac94573cd2f3c2a298f20006fb1f5f938"

@@ -2,8 +2,8 @@ LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
 SRC_URI = " \
-    https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/rtl8723a_fw.zip;name=rtl8723a \
-    https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/rtl8723aufw_B_NoBT.zip;name=rtl8723aufw \
+    https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/rtl8723a_fw.zip;name=rtl8723a \
+    https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/rtl8723aufw_B_NoBT.zip;name=rtl8723aufw \
 "
 
 SRC_URI[rtl8723a.md5sum] = "4ce2b5ba6dbdd726a41470969141dbb4"

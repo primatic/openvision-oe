@@ -4,7 +4,7 @@ require conf/license/license-close.inc
 
 inherit allarch
 
-SRC_URI = "https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/firmware-avl6211.zip"
+SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/firmware-avl6211.zip"
 
 SRC_URI[md5sum] = "45f55bfec9954ea26923ad442fb3336b"
 SRC_URI[sha256sum] = "c47ba63cce9527c668efe45b86aa5d5aa84c475bc9debce07f18e362c578f382"

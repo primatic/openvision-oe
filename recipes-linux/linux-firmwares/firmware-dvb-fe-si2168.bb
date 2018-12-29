@@ -1,7 +1,7 @@
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
-SRC_URI = "https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/firmware-si2158.zip"
+SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/firmware-si2158.zip"
 
 SRC_URI[md5sum] = "9ac3cd2d28752242caa7ead0bf5e6eb0"
 SRC_URI[sha256sum] = "dcb99aa1b66ec16997f1c2316e2abd83318772b27b09089aa4aef9191490c9c5"

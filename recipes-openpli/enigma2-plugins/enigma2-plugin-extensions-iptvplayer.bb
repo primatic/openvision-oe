@@ -4,7 +4,7 @@ HOMEPAGE = "https://gitlab.com/iptvplayer-for-e2/"
 SECTION = "multimedia"
 LICENSE = "PD"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
-SRC_URI = "git://github.com/PLi-metas/iptvplayer-for-e2.git;protocol=http"
+SRC_URI = "git://github.com/OpenVisionE2/iptvplayer-for-e2.git;protocol=http"
 
 S = "${WORKDIR}/git"
 

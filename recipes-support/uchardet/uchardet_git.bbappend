@@ -1,1 +1,1 @@
-SRC_URI = "git://github.com/PLi-metas/uchardet.git"
+SRC_URI = "git://github.com/OpenVisionE2/uchardet.git"

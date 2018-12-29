@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;beginline=3;endline=8;md5=17213e93942fd278193
 
 SRCREV = "${AUTOREV}"
 
-SRC_URI = "git://github.com/PLi-metas/extra_rc_models.git"
+SRC_URI = "git://github.com/OpenVisionE2/extra_rc_models.git"
 
 S = "${WORKDIR}/git"
 

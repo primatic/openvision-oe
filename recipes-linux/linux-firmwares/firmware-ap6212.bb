@@ -2,7 +2,7 @@ SUMMARY = "Firmware files for use with Linux kernel"
 SECTION = "kernel"
 LICENSE = "CLOSED"
 
-SRC_URI = "https://raw.githubusercontent.com/PLi-metas/linux-firmwares/master/ap6212-wifi-firmware.zip"
+SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/ap6212-wifi-firmware.zip"
 
 SRC_URI[md5sum] = "c1810ebfb759d995436fcad782b0f511"
 SRC_URI[sha256sum] = "bcd612bf28f3527348f333dda1f678cf024f7e793d1c0c8f01ffc0a839eb902e"
