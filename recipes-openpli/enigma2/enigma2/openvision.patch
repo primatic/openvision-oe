@@ -220,3 +220,116 @@ index d1118ad7f..9791c3315 100644
  				return -3;
  			}
  		}
+diff -Naur enigma2-PLi/configure.ac enigma2-PersianPrince/configure.ac
+--- enigma2-PLi/configure.ac	2018-12-30 16:27:10.128276455 +0330
++++ enigma2-PersianPrince/configure.ac	2018-12-30 16:47:05.221877040 +0330
+@@ -46,7 +46,7 @@
+ 
+ AC_ARG_WITH(crashlogemail,
+ 	[  --with-crashlogemail=crash log email address],
+-	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="the OpenPLi forum"])
++	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="crash@openvision.tech"])
+ AC_SUBST(CRASHLOGEMAIL)
+ AC_DEFINE_UNQUOTED(CRASH_EMAILADDR,"$CRASHLOGEMAIL",[crash log email address])
+ 
+diff -Naur enigma2-PLi/lib/python/Plugins/Extensions/MediaPlayer/settings.py enigma2-PersianPrince/lib/python/Plugins/Extensions/MediaPlayer/settings.py
+--- enigma2-PLi/lib/python/Plugins/Extensions/MediaPlayer/settings.py	2018-12-30 16:27:10.300273466 +0330
++++ enigma2-PersianPrince/lib/python/Plugins/Extensions/MediaPlayer/settings.py	2018-12-30 16:30:10.309082040 +0330
+@@ -13,7 +13,7 @@
+ config.mediaplayer.defaultDir = ConfigDirectory()
+ config.mediaplayer.sortPlaylists = ConfigYesNo(default=False)
+ config.mediaplayer.alwaysHideInfoBar = ConfigYesNo(default=True)
+-config.mediaplayer.onMainMenu = ConfigYesNo(default=False)
++config.mediaplayer.onMainMenu = ConfigYesNo(default=True)
+ 
+ class DirectoryBrowser(Screen, HelpableScreen):
+ 
+diff -Naur enigma2-PLi/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py
+--- enigma2-PLi/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py	2018-12-30 16:27:10.312273257 +0330
++++ enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py	2018-12-30 16:49:12.355409152 +0330
+@@ -90,7 +90,7 @@
+ 			self["introduction"].setText(_("It seems you did not see all the eight arrow heads. This means your TV "
+ 				"has overscan enabled, and is not configured properly.\n\n"
+ 				"Please refer to your TV's manual to find how you can disable overscan on your TV. Look for terms like 'Just fit', 'Full width', etc. "
+-				"If you can't find it, ask other users at http://forums.openpli.org.\n\n"))
++				"If you can't find it, ask other users at http://openvision.tech\n\n"))
+ 			self.list.append(getConfigListEntry(_("Did you see all eight arrow heads?"), self.yes_no))
+ 			self.yes_no.value = True
+ 			self.save_new_position = False
+diff -Naur enigma2-PLi/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py
+--- enigma2-PLi/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py	2018-12-30 16:27:10.320273118 +0330
++++ enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py	2018-12-30 16:30:51.852330057 +0330
+@@ -47,7 +47,7 @@
+ 				 ("N", _("No, never")),
+ 				 ("ask", _("Always ask"))
+ 				], "Y")
+-config.plugins.softwaremanager.onSetupMenu = ConfigYesNo(default=False)
++config.plugins.softwaremanager.onSetupMenu = ConfigYesNo(default=True)
+ config.plugins.softwaremanager.onBlueButton = ConfigYesNo(default=False)
+ config.plugins.softwaremanager.epgcache = ConfigYesNo(default=False)
+ 
+diff -Naur enigma2-PLi/lib/python/Screens/About.py enigma2-PersianPrince/lib/python/Screens/About.py
+--- enigma2-PLi/lib/python/Screens/About.py	2018-12-30 16:27:10.328272979 +0330
++++ enigma2-PersianPrince/lib/python/Screens/About.py	2018-12-30 16:38:44.503509547 +0330
+@@ -193,15 +193,15 @@
+ 
+ 		self.project = 0
+ 		self.projects = [
+-			("https://api.github.com/repos/openpli/enigma2/commits" + branch, "Enigma2"),
+-			("https://api.github.com/repos/openpli/openpli-oe-core/commits" + branch, "Openpli Oe Core"),
++			("https://api.github.com/repos/openpli/enigma2/commits" + branch, "Enigma2 - PLi"),
++			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-pli/commits" + branch, "Enigma2 - RPi"),
++			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-sh4/commits" + branch, "Enigma2 - SH4"),
++			("https://api.github.com/repos/openpli/openpli-oe-core/commits" + branch, "OE - PLi"),
++			("https://api.github.com/repos/OpenVisionE2/openvision-oe/commits" + branch, "OE - Vision"),
++			("https://api.github.com/repos/OpenVisionE2/extra_rc_models/commits", "Extra RC Models"),
+ 			("https://api.github.com/repos/openpli/enigma2-plugins/commits", "Enigma2 Plugins"),
+-			("https://api.github.com/repos/openpli/aio-grab/commits", "Aio Grab"),
+-			("https://api.github.com/repos/openpli/enigma2-plugin-extensions-epgimport/commits", "Plugin EPGImport"),
+-			("https://api.github.com/repos/openpli/enigma2-plugin-skins-magic/commits", "Skin Magic SD"),
+-			("https://api.github.com/repos/littlesat/skin-PLiHD/commits", "Skin PLi HD"),
+-			("https://api.github.com/repos/E2OpenPlugins/e2openplugin-OpenWebif/commits", "OpenWebif"),
+-			("https://api.github.com/repos/haroo/HansSettings/commits", "Hans settings")
++			("https://api.github.com/repos/E2OpenPlugins/e2openplugin-OpenWebif/commits", "Open WebIF"),
++			("https://api.github.com/repos/OpenVisionE2/BackupSuite/commits", "Backup Suite")
+ 		]
+ 		self.cachedProjects = {}
+ 		self.Timer = eTimer()
+diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrince/lib/python/Screens/SoftwareUpdate.py
+--- enigma2-PLi/lib/python/Screens/SoftwareUpdate.py	2018-12-30 16:27:10.336272840 +0330
++++ enigma2-PersianPrince/lib/python/Screens/SoftwareUpdate.py	2018-12-30 16:48:22.892370031 +0330
+@@ -84,7 +84,7 @@
+ 		try:
+ 			# TODO: Use Twisted's URL fetcher, urlopen is evil. And it can
+ 			# run in parallel to the package update.
+-			url = "https://openpli.org/status/"
++			url = "https://openvision.tech/status/"
+ 			try:
+ 				status = urlopen(url, timeout=5).read().split('!', 1)
+ 			except:
+@@ -93,14 +93,14 @@
+ 				status = urlopen(url, timeout=5, context=_create_unverified_context()).read().split('!', 1)
+ 				print status
+ 			if getBoxType() in status[0].split(','):
+-				message = len(status) > 1 and status[1] or _("The current image might not be stable.\nFor more information see %s.") % ("www.openpli.org")
++				message = len(status) > 1 and status[1] or _("The current image might not be stable.\nFor more information see %s.") % ("www.openvision.tech")
+ 				# strip any HTML that may be in the message, but retain line breaks
+ 				import re
+ 				message = message.replace("<br />", "\n\n").replace("<br>", "\n\n")
+ 				message = re.sub('<[^<]+?>', '', re.sub('&#8209;', '-', message))
+ 				picon = MessageBox.TYPE_ERROR
+ 		except:
+-			message = _("The status of the current image could not be checked because %s can not be reached.") % ("www.openpli.org")
++			message = _("The status of the current image could not be checked because %s can not be reached.") % ("www.openvision.tech")
+ 			picon = MessageBox.TYPE_ERROR
+ 		socket.setdefaulttimeout(currentTimeoutDefault)
+ 		if message != "":
+@@ -119,7 +119,7 @@
+ 			from datetime import datetime
+ 			imageVersion = about.getImageTypeString().split(" ")[1]
+ 			imageVersion = (int(imageVersion) < 5 and "%.1f" or "%s") % int(imageVersion)
+-			url = "https://openpli.org/download/timestamp/%s~%s" % (HardwareInfo().get_device_model(), imageVersion)
++			url = "https://openvision.tech/download/timestamp/%s~%s" % (HardwareInfo().get_device_model(), imageVersion)
+ 			try:
+ 				latestImageTimestamp = datetime.fromtimestamp(int(urlopen(url, timeout=5).read())).strftime(_("%Y-%m-%d %H:%M"))
+ 			except:
