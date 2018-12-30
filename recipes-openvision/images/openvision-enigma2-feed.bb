@@ -167,6 +167,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-skins-xionhdf \
 	enigma2-plugins \
 	enigma2-skins \
+	picons-enigma2-meta \
 	softcams-enigma2-meta \
 	packagegroup-openplugins \
 	enigma2-plugin-extensions-backupsuite \
