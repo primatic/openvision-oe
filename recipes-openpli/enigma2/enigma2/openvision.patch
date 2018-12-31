@@ -10,23 +10,6 @@ index dae1d7559..8b8474281 100644
  	</setup>
  	<setup key="avsetup">
  		<!-- this is just a placeholder, the Videomode plugin implements this submenu -->
-diff --git a/lib/driver/hdmi_cec.cpp b/lib/driver/hdmi_cec.cpp
-index bef0d2346..3653010ec 100644
---- a/lib/driver/hdmi_cec.cpp
-+++ b/lib/driver/hdmi_cec.cpp
-@@ -501,6 +501,12 @@ long eHdmiCEC::translateKey(unsigned char code)
- 		case 0x0d:
- 			key = 0xae;
- 			break;
-+		case 0x4c:
-+			key = 0x193;
-+			break;
-+		case 0x4b:
-+			key = 0x192;
-+			break;
- 		case 0x72:
- 			key = 0x18e;
- 			break;
 diff --git a/lib/python/Components/AVSwitch.py b/lib/python/Components/AVSwitch.py
 index 1e5f9ef5c..18893055e 100644
 --- a/lib/python/Components/AVSwitch.py
