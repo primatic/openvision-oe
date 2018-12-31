@@ -283,7 +283,7 @@ diff -Naur enigma2-PLi/lib/python/Screens/About.py enigma2-PersianPrince/lib/pyt
 -			("https://api.github.com/repos/openpli/enigma2/commits" + branch, "Enigma2"),
 -			("https://api.github.com/repos/openpli/openpli-oe-core/commits" + branch, "Openpli Oe Core"),
 +			("https://api.github.com/repos/openpli/enigma2/commits" + branch, "Enigma2 - PLi"),
-+			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-pli/commits" + branch, "Enigma2 - RPi"),
++			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-rpi/commits" + branch, "Enigma2 - RPi"),
 +			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-sh4/commits" + branch, "Enigma2 - SH4"),
 +			("https://api.github.com/repos/openpli/openpli-oe-core/commits" + branch, "OE - PLi"),
 +			("https://api.github.com/repos/OpenVisionE2/openvision-oe/commits" + branch, "OE - Vision"),
