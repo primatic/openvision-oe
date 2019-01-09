@@ -94,6 +94,7 @@
 * dinobot4kplus
 * dinobot4kpro
 * dinobot4kse
+* dinobotu55
 * ferguson4k
 * mediabox4k
 
