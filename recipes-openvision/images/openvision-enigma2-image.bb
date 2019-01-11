@@ -53,6 +53,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-cacheflush \
 	enigma2-plugin-systemplugins-hdmicec \
 	enigma2-plugin-systemplugins-wirelesslan \
+	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-extensions-pluginskinmover", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
