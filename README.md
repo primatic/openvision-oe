@@ -219,6 +219,10 @@
 * k2prov2
 * k3pro
 
+# MaxyTec
+* multibox
+* v8plus
+
 # MINIX
 * x8hp
 
