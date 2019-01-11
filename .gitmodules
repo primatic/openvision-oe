@@ -118,3 +118,6 @@
 	path = meta-hypercube
 	url = https://github.com/OpenVisionE2/meta-hypercube.git
 	shallow = true
+[submodule "meta-maxytec"]
+	path = meta-maxytec
+	url = https://github.com/OpenVisionE2/meta-maxytec.git
