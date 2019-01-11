@@ -112,6 +112,12 @@ git checkout develop
 git pull
 echo -e "\n"
 cd ..
+cd meta-maxytec
+echo "Checking out meta-maxytec develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
 cd meta-minix
 echo "Checking out meta-minix develop branch:"
 git checkout develop
