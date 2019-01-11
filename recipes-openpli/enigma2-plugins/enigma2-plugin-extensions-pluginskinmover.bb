@@ -13,6 +13,7 @@ S = "${WORKDIR}/git"
 
 PV = "0.6+git${SRCPV}"
 PKGV = "0.6+git${GITPKGV}"
+SRCREV = "${AUTOREV}"
 
 FILES_${PN}-src = "\
     /usr/lib/enigma2/python/*/*.py \
