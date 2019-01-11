@@ -61,6 +61,7 @@
 [submodule "meta-ebox"]
 	path = meta-ebox
 	url = https://github.com/OpenVisionE2/meta-ebox.git
+	shallow = true
 [submodule "meta-protek"]
 	path = meta-protek
 	url = https://github.com/OpenVisionE2/meta-protek.git
