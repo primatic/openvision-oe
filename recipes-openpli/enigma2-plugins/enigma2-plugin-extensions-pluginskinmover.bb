@@ -2,7 +2,7 @@ DESCRIPTION = "PluginSkinMover"
 LICENSE = "GPLv3"
 MAINTAINER = "Open Vision Developers"
 AUTHOR = "mfaraj and schomi"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=84dcc94da3adb52b53ae4fa38fe49e5d"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
 SRC_URI = "git://github.com/OpenVisionE2/PluginSkinMover.git;protocol=git"
 
