@@ -131,6 +131,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-iptvplayer \
 	enigma2-plugin-extensions-iptvplayer-deps \
 	enigma2-plugin-extensions-youtube \
+	enigma2-plugin-extensions-youtube-dl \
 	enigma2-plugin-extensions-openmultiboot \
 	enigma2-plugin-extensions-modifyplifullhd \
 	enigma2-plugin-extensions-refreshbouquet \
