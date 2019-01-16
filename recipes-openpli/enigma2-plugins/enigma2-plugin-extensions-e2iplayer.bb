@@ -1,5 +1,5 @@
-SUMMARY = "E2iPlayer Player for E2"
-DESCRIPTION = "IPTV Player for E2"
+SUMMARY = "E2i Player for E2"
+DESCRIPTION = "E2i Player for E2"
 HOMEPAGE = "http://www.iptvplayer.gitlab.io/"
 SECTION = "multimedia"
 LICENSE = "PD"
