@@ -9,7 +9,7 @@ SRC_URI = "git://github.com/OpenVisionE2/e2iplayer-for-e2.git;protocol=http"
 S = "${WORKDIR}/git"
 
 inherit gitpkgv
-SRCREV = "${AUTOREV}"
+
 PV = "git${SRCPV}"
 PKGV = "git${GITPKGV}"
 
