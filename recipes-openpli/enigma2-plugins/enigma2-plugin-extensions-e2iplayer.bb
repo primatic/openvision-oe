@@ -18,7 +18,7 @@ inherit allarch distutils-openplugins gettext
 DEPENDS = "gettext-native python"
 RRECOMMENDS_${PN} = " \
 	python-core \
-	enigma2-plugin-extensions-iptvplayer-deps \
+	enigma2-plugin-extensions-e2iplayer-deps \
 	"
 
 PACKAGES =+ " ${PN}-src"
