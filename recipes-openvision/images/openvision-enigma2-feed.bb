@@ -128,7 +128,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-install-ffmpeg \
 	enigma2-plugin-extensions-install-exteplayer3 \
 	enigma2-plugin-extensions-install-gstplayer \
-	enigma2-plugin-extensions-iptvplayer \
+	enigma2-plugin-extensions-e2iplayer \
 	enigma2-plugin-extensions-iptvplayer-deps \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-youtube-dl \
