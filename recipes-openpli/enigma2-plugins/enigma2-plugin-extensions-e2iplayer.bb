@@ -1,6 +1,6 @@
 SUMMARY = "E2iPlayer Player for E2"
 DESCRIPTION = "IPTV Player for E2"
-HOMEPAGE = "https://gitlab.com/e2iplayer/"
+HOMEPAGE = "http://www.iptvplayer.gitlab.io/"
 SECTION = "multimedia"
 LICENSE = "PD"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
