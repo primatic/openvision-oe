@@ -137,6 +137,7 @@
 * cuberevo_2000hd
 * cuberevo_250hd
 * cuberevo_3000hd
+* cuberevo_9500hd
 * cuberevo_mini
 * cuberevo_mini2
 * fortis_hdbox
@@ -151,6 +152,7 @@
 * ipbox99
 * ipbox9900
 * octagon1008
+* pace7241
 * sagemcom88
 * spark
 * spark7162
@@ -160,6 +162,8 @@
 * ufs912
 * ufs913
 * ufs922
+* vip1_v2
+* vip2_v1
 * vitamin_hd5000
 
 # GB
