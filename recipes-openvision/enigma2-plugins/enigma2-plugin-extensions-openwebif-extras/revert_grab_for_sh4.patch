@@ -1,5 +1,5 @@
---- e2openplugin-OpenWebif.orig/plugin/controllers/models/grab.py	2018-05-28 08:56:51.302472240 +0200
-+++ e2openplugin-OpenWebif/plugin/controllers/models/grab.py	2018-05-28 10:34:52.252204741 +0200
+--- e2openplugin-OpenWebif/plugin/controllers/models/grab.py	2019-01-17 11:19:09.834754194 +0100
++++ e2openplugin-OpenWebif.new/plugin/controllers/models/grab.py	2019-01-17 11:18:12.222232844 +0100
 @@ -9,102 +9,93 @@
  #                                                                            #
  ##############################################################################
@@ -101,9 +101,9 @@
 -		request.notifyFinish().addErrback(self.requestAborted)
 -		request.setHeader('Content-Disposition', 'inline; filename=%s.%s;' % (sref, fileformat))
 -		request.setHeader('Content-Type', 'image/%s' % fileformat.replace("jpg", "jpeg"))
--		request.setHeader('Expires', 'Sat, 26 Jul 1997 05:00:00 GMT')
--		request.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0')
--		request.setHeader('Pragma', 'no-cache')
+-		#request.setHeader('Expires', 'Sat, 26 Jul 1997 05:00:00 GMT')
+-		#request.setHeader('Cache-Control', 'no-store, must-revalidate, post-check=0, pre-check=0')
+-		#request.setHeader('Pragma', 'no-cache')
 -
 -	def requestAborted(self, err):
 -		# Called when client disconnected early, abort the process and
