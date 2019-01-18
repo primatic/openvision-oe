@@ -15,6 +15,8 @@ FILES_${PN} = "/etc /usr"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
+do_configure[nostamp] = "1"
+
 ALLOW_EMPTY_${PN} = "1"
 
 S = "${WORKDIR}"
@@ -22,14 +24,10 @@ S = "${WORKDIR}"
 PACKAGES = "${PN}"
 
 do_install() {
-			if [ "${DISTRO_TYPE}" = "experimental" ] ; then
-				BUILDTYPE="1"
-			else
-				BUILDTYPE="0"
-			fi
 			install -d ${D}/etc
 			echo "STB=${MACHINE}" > ${D}/etc/image-version
-			echo "build_type=${BUILDTYPE}" >> ${D}/etc/image-version
+			echo "box_type=${MACHINE}" >> ${D}/etc/image-version
+			echo "build_type=0" >> ${D}/etc/image-version
 			echo "version=${VISIONVERSION}-${VISIONREVISION}" >> ${D}/etc/image-version
 			echo "build=${VISIONREVISION}" >> ${D}/etc/image-version
 			echo "Python=2.7" >> ${D}/etc/image-version
@@ -37,8 +35,10 @@ do_install() {
 			echo "comment=Open Vision" >> ${D}/etc/image-version
 			echo "target=9" >> ${D}/etc/image-version
 			echo "creator=Open Vision Developers" >> ${D}/etc/image-version
-			echo "url=http://openvision.tech" >> ${D}/etc/image-version
+			echo "url=https://openvision.tech" >> ${D}/etc/image-version
 			echo "catalog=https://github.com/OpenVisionE2" >> ${D}/etc/image-version
+			echo "distro=${DISTRO_NAME}" >> ${D}/etc/image-version
+			echo "${MACHINE}" > ${D}/etc/model
 			install -d ${D}${sysconfdir}/enigma2
 			install -m 0755 ${WORKDIR}/settings	${D}${sysconfdir}/enigma2
 			install -d ${D}/usr/share/enigma2/picon
