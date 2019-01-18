@@ -324,3 +324,11 @@ If you just want to reduce the build size use "cleanup.sh".
 * If you want to compile images for old machines like dm800/cube/su980, first build for them.
 * If you want to compile images for x64 machines like alien5/kxpx series, first build for them.
 * If you want to compile images for 4K machines with ARM architecture and you get error each time, try compile for a Mipsel machine like dm7020hd first then compile your ARM images.
+
+# Download
+
+You could download our builds from https://openvision.tech/stb-images/
+
+# Support
+
+Please use our forum at https://openvision.tech or our issue page at https://github.com/OpenVisionE2/openvision-oe/issues
