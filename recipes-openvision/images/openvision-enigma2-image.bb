@@ -76,7 +76,6 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("OPENPLI_FEATURES", "fanctrl", "enigma2-plugin-extensions-fancontrol2", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	enigma2-plugin-systemplugins-bh-skin-support \
-	enigma2-plugin-extensions-openwebif-extras-terminal \
 	enigma2-plugin-extensions-xmodem \
 	enigma2-plugin-extensions-foreca \
 	enigma2-plugin-extensions-dlnabrowser \
