@@ -221,7 +221,7 @@ addtask do_cleanup after do_populate_sysroot before do_package
 RREPLACES_${PN} = "enigma2-plugin-extensions-openwebif"
 RCONFLICTS_${PN} = "enigma2-plugin-extensions-openwebif"
 RPROVIDES_${PN} =+ "enigma2-plugin-extensions-openwebif"
-
+RPROVIDES_${PN} =+ "${PN}-vxg ${PN}-terminal ${PN}-themes ${PN}-webtv"
 PACKAGES =+ "${PN}-vxg ${PN}-terminal ${PN}-themes ${PN}-webtv"
 DESCRIPTION_${PN}-vxg = "WebTV for Google Chrome"
 DESCRIPTION_${PN}-terminal = "CLI for OpenWebif"
