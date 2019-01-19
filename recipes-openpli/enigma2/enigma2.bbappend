@@ -3,7 +3,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRC_URI_append += "\
 	file://09-undefine-macro-HAVE_CONFIG_H.patch \
 	file://biss-caid.patch \
-	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://openvision-old.patch", "openvision.patch", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://openvision-old.patch", "file://openvision.patch", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "file://Revert-font-support-fallback-font-to-display-east-as.patch", "", d)} \
 	"
