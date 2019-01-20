@@ -26,6 +26,7 @@
 * e4hd
 * e4hdcombo
 * e4hdhybrid
+* e4hdultra
 * odin2hybrid
 * odinplus
 * protek4k

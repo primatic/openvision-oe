@@ -6,9 +6,6 @@
 * viperslim
 * vipert2c
 
-# AXAS
-* e4hd
-
 # Edision
 * osmega
 * osmini

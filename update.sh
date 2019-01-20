@@ -39,8 +39,9 @@ fi
 # Regenerate bblayers.conf so we can add our own
 rm -f build/conf/bblayers.conf
 make init update
-# Remove existing meta-dream from bblayers.conf
+# Remove existing meta-dream and meta-axasuhd from bblayers.conf
 sed -i "s# $(pwd)/meta-dream##g" build/conf/bblayers.conf
+sed -i "s# $(pwd)/meta-axasuhd##g" build/conf/bblayers.conf
 for i in ${METAS}
 do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> build/conf/bblayers.conf
