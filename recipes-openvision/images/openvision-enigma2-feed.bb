@@ -134,6 +134,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-automatic-fullbackup \
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-blurayplayer \
+	enigma2-plugin-extensions-btdevicesmanager \
 	${@bb.utils.contains("MACHINE_FEATURES", "chromium", "enigma2-plugin-extensions-chromium", "", d)} \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \
@@ -155,6 +156,7 @@ ENIGMA2_OPTIONAL = " \
 	${@bb.utils.contains("MACHINE_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
 	enigma2-plugin-extensions-refreshbouquet \
+	enigma2-plugin-extensions-sdgradio \
 	enigma2-plugin-extensions-tmbd \
 	enigma2-plugin-extensions-vcs \
 	enigma2-plugin-extensions-weathermsn \

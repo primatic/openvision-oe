@@ -15,10 +15,20 @@ PKGV = "git${GITPKGV}"
 
 inherit allarch distutils-openplugins gettext
 
+RCONFLICTS_${PN} = "enigma2-plugin-extensions-iptvplayer"
+RREPLACES_${PN} = "enigma2-plugin-extensions-iptvplayer"
+
 DEPENDS = "gettext-native python"
 RRECOMMENDS_${PN} = " \
-	python-core \
 	enigma2-plugin-extensions-e2iplayer-deps \
+	python-compression \
+	python-core \
+	python-e2icjson \
+	python-html \
+	python-json \
+	python-shell \
+	python-subprocess \
+	python-textutils \
 	"
 
 PACKAGES =+ " ${PN}-src"
@@ -34,4 +44,3 @@ FILES_${PN}-src = " \
 	"
 
 deltask package_qa
-
