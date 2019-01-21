@@ -172,6 +172,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-skins-simple-gray-hd \
 	enigma2-plugin-skins-xionhdf \
 	enigma2-plugin-systemplugins-bh-skin-support \
+	enigma2-plugin-systemplugins-crossepg \
 	enigma2-plugin-systemplugins-extnumberzap \
 	enigma2-plugin-systemplugins-extrafancontrol \
 	enigma2-plugin-systemplugins-hrtunerproxy \
