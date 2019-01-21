@@ -153,8 +153,6 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-modifyplifullhd \
 	enigma2-plugin-extensions-moviemanager \
 	enigma2-plugin-extensions-openmultiboot \
-	${@bb.utils.contains("MACHINE_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
 	enigma2-plugin-extensions-refreshbouquet \
 	enigma2-plugin-extensions-sdgradio \
 	enigma2-plugin-extensions-tmbd \
