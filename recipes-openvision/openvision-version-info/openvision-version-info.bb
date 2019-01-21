@@ -9,7 +9,7 @@ PR = "${VISIONREVISION}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI = "file://settings file://openvision-remover.sh"
+SRC_URI = "file://settings file://openvision-remover.sh file://timesync"
 
 FILES_${PN} = "/etc /usr"
 
@@ -22,6 +22,11 @@ ALLOW_EMPTY_${PN} = "1"
 S = "${WORKDIR}"
 
 PACKAGES = "${PN}"
+
+INITSCRIPT_NAME = "timesync"
+INITSCRIPT_PARAMS = "start 19 3 ."
+
+inherit update-rc.d
 
 do_install() {
 			install -d ${D}/etc
@@ -46,4 +51,6 @@ do_install() {
 			install -m 0755 ${WORKDIR}/openvision-remover.sh ${D}${sysconfdir}/init.d
 			install -d ${D}${sysconfdir}/rcS.d
 			ln -sf ../init.d/openvision-remover.sh ${D}${sysconfdir}/rcS.d/S02openvision-remover.sh
+			install -d ${D}/${sysconfdir}/init.d/
+			install -m 0755 ${WORKDIR}/timesync ${D}/${sysconfdir}/init.d/timesync
 }
