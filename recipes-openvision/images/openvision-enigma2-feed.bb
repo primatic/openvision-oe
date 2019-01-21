@@ -35,7 +35,7 @@ OPTIONAL_PACKAGES += " \
 	exfat-utils \
 	exteplayer3 \
 	fuse-exfat \
-	gdb \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gdb", d)} \
 	grep \
 	gstplayer \
 	hddtemp \
@@ -48,6 +48,7 @@ OPTIONAL_PACKAGES += " \
 	iputils \
 	joe \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "lirc", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "lirc", d)} \
 	less \
 	libbluray \
 	libudfread \
@@ -60,6 +61,7 @@ OPTIONAL_PACKAGES += " \
 	nbench-byte \
 	net-tools \
 	${@bb.utils.contains("TARGET_FPU", "soft", "", "nodejs", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "nodejs", d)} \
 	ntfs-3g \
 	ntp \
 	ofgwrite \
@@ -87,9 +89,11 @@ OPTIONAL_PACKAGES += " \
 	rtl8723a \
 	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rtl8723bs", "", "rtl8723bs", d)} \
 	${@bb.utils.contains_any("MACHINE", "dm500hd dm500hdv2 dm800se dm800sev2 dm7020hd dm7020hdv2", "", "rtl8812au", d)} \
-	rtl8814au \
-	rtl8822bu \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8812au", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8814au", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8822bu", d)} \
 	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k dm500hd dm500hdv2 dm800se dm800sev2 dm7020hd dm7020hdv2", "", "rtl8189es", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8189es", d)} \
 	${@bb.utils.contains_any("MACHINE", "osmio4k", "", "rtl8192eu", d)} \
 	sabnzbd \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
@@ -97,7 +101,7 @@ OPTIONAL_PACKAGES += " \
 	sed \
 	shellinabox \
 	smartmontools \
-	smbnetfs \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "smbnetfs", d)} \
 	sshfs-fuse \
 	sshpass \
 	strace \

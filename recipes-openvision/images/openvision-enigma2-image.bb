@@ -68,6 +68,7 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "sh4booster", "enigma2-plugin-systemplugins-sh4boostercontrol", "", d)} \
 	enigma2-plugin-systemplugins-skinselector \
 	enigma2-plugin-systemplugins-softwaremanager \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "enigma2-plugin-systemplugins-sparkvfdcontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "multitranscoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "7seg", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
@@ -113,7 +114,9 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains("OPENPLI_FEATURES", "ctrlrc", "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "transcoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd", "", d)} \
 	libavahi-client \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto", "", d)} \
 	openvision-module \
 	openvision-version-info \
 	settings-autorestore \
