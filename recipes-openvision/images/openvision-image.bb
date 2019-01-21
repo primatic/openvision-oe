@@ -21,7 +21,6 @@ IMAGE_INSTALL = "\
 	modutils-loadscript \
 	nfs-utils-client \
 	openssh-sftp \
-	openssh-sftp-server \
 	openvision-bootlogo \
 	opkg \
 	packagegroup-base \

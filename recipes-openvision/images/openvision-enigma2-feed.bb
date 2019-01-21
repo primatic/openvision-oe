@@ -30,6 +30,7 @@ OPTIONAL_PACKAGES += " \
 	dvblast \
 	dvbsnoop \
 	dvdfs \
+	edid-decode \
 	evtest \
 	exfat-utils \
 	exteplayer3 \
@@ -43,54 +44,62 @@ OPTIONAL_PACKAGES += " \
 	inetutils \
 	iperf3 \
 	iproute2 \
-	iptraf \
+	${@bb.utils.contains_any("MACHINE", "dm800", "", "iptraf", d)} \
 	iputils \
 	joe \
-	lirc \
+	${@bb.utils.contains_any("MACHINE", "dm800", "", "lirc", d)} \
 	less \
 	libbluray \
 	libudfread \
 	mc \
 	mediainfo \
-	pv \
 	minisatip \
 	mtd-utils \
 	mtools \
 	nano \
 	nbench-byte \
 	net-tools \
-	${@bb.utils.contains('TARGET_FPU', 'soft', '', 'nodejs', d)} \
+	${@bb.utils.contains("TARGET_FPU", "soft", "", "nodejs", d)} \
 	ntfs-3g \
 	ntp \
 	ofgwrite \
+	openmultiboot \
 	openresolv \
 	openssh \
 	openvpn \
-	openmultiboot \
 	parted \
-	procps \
-	pyload \
-	python-ipaddress \
-	python-ntplib \
-	python-pip \
-	python-requests \
-	python-mechanize \
-	python-lxml \
-	python-js2py \
-	python-pyexecjs \
-	python-beautifulsoup4 \
 	picocom \
 	ppp \
+	procps \
+	pv \
+	pyload \
+	python-beautifulsoup4 \
+	python-ipaddress \
+	python-js2py \
+	python-lxml \
+	python-mechanize \
+	python-ntplib \
+	python-pip \
+	python-pyexecjs \
+	python-requests \
 	rsync \
 	rtorrent \
+	rtl8723a \
+	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rtl8723bs", "", "rtl8723bs", d)} \
+	${@bb.utils.contains_any("MACHINE", "dm500hd dm500hdv2 dm800se dm800sev2 dm7020hd dm7020hdv2", "", "rtl8812au", d)} \
+	rtl8814au \
+	rtl8822bu \
+	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k dm500hd dm500hdv2 dm800se dm800sev2 dm7020hd dm7020hdv2", "", "rtl8189es", d)} \
+	${@bb.utils.contains_any("MACHINE", "osmio4k", "", "rtl8192eu", d)} \
 	sabnzbd \
-	satipclient \
-	smbnetfs \
+	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
 	screen \
 	sed \
+	shellinabox \
+	smartmontools \
+	smbnetfs \
 	sshfs-fuse \
 	sshpass \
-	smartmontools \
 	strace \
 	tcpdump \
 	tmux \
@@ -110,78 +119,77 @@ OPTIONAL_PACKAGES += " \
 	${OPTIONAL_BSP_PACKAGES} \
 	"
 
-# dvb-apps was skipped: Recipe is blacklisted: Fails to build with RSS http://errors.yoctoproject.org/Errors/Details/130603/ 
-# smbnetfs was skipped: Recipe is blacklisted: Fails to build with RSS http://errors.yoctoproject.org/Errors/Details/132827/
-
 OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
 ENIGMA2_OPTIONAL = " \
+	cdtextinfo \
 	channelsettings-enigma2-meta \
+	dvb-usb-drivers-meta \
 	enigma2-pliplugins \
-	enigma2-plugin-extensions-automatic-fullbackup \
+	${@bb.utils.contains("EXTRA_IMAGEDEPENDS", "vuplus-tuner-turbo", "enigma2-plugin-drivers-dvb-usb-turbo", "", d)} \
 	enigma2-plugin-drivers-usbserial \
+	enigma2-plugin-extensions-automatic-fullbackup \
+	enigma2-plugin-extensions-backupsuite \
+	enigma2-plugin-extensions-blurayplayer \
+	${@bb.utils.contains("MACHINE_FEATURES", "chromium", "enigma2-plugin-extensions-chromium", "", d)} \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \
-	enigma2-plugin-extensions-blurayplayer \
 	enigma2-plugin-extensions-dreamplex \
-	enigma2-plugin-extensions-epgimport \
-	enigma2-plugin-extensions-fontinfo \
-	enigma2-plugin-extensions-install-ffmpeg \
-	enigma2-plugin-extensions-install-exteplayer3 \
-	enigma2-plugin-extensions-install-gstplayer \
 	enigma2-plugin-extensions-e2iplayer \
 	enigma2-plugin-extensions-e2iplayer-deps \
+	enigma2-plugin-extensions-epgimport \
+	enigma2-plugin-extensions-fontinfo \
+	enigma2-plugin-extensions-hdmitest \
+	enigma2-plugin-extensions-historyzapselector \
+	enigma2-plugin-extensions-install-exteplayer3 \
+	enigma2-plugin-extensions-install-ffmpeg \
+	enigma2-plugin-extensions-install-gstplayer \
+	enigma2-plugin-extensions-lcd4linux \
+	enigma2-plugin-extensions-managerautofs \
+	enigma2-plugin-extensions-modifyplifullhd \
+	enigma2-plugin-extensions-moviemanager \
+	enigma2-plugin-extensions-openmultiboot \
+	${@bb.utils.contains("MACHINE_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
+	${@bb.utils.contains("OPENPLI_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
+	enigma2-plugin-extensions-refreshbouquet \
+	enigma2-plugin-extensions-tmbd \
+	enigma2-plugin-extensions-vcs \
+	enigma2-plugin-extensions-weathermsn \
+	enigma2-plugin-extensions-xmodem \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-youtube-dl \
-	enigma2-plugin-extensions-openmultiboot \
-	enigma2-plugin-extensions-modifyplifullhd \
-	enigma2-plugin-extensions-refreshbouquet \
-	enigma2-plugin-extensions-managerautofs \
-	enigma2-plugin-extensions-hdmitest \
-	enigma2-plugin-extensions-moviemanager \
-	enigma2-plugin-extensions-weathermsn \
-	enigma2-plugin-systemplugins-bh-skin-support \
-	enigma2-plugin-systemplugins-mountmanager \
-	enigma2-plugin-systemplugins-signalfinder \
-	enigma2-plugin-systemplugins-extnumberzap \
-	enigma2-plugin-systemplugins-serviceapp \
-	enigma2-plugin-systemplugins-hrtunerproxy \
-	enigma2-plugin-systemplugins-quadpip \
-	enigma2-plugin-systemplugins-extrafancontrol \
-	enigma2-plugin-extensions-historyzapselector \
-	enigma2-plugin-extensions-lcd4linux \
-	enigma2-plugin-extensions-tmbd \
-	enigma2-plugin-extensions-xmodem \
-	enigma2-plugin-extensions-vcs \
 	enigma2-plugin-security-firewall \
-	enigma2-plugin-skins-pli-hd \
-	enigma2-plugin-skins-pli-hd-fullnight \
-	enigma2-plugin-skins-simple-gray-hd \
-	enigma2-plugin-skins-pd1loi-hd-night \
 	enigma2-plugin-skins-dreamplexskins \
-	enigma2-plugin-skins-mx-hq9w \
-	enigma2-plugin-skins-mx-hq7 \
 	enigma2-plugin-skins-glamouraurafhd \
 	enigma2-plugin-skins-kravenfhd \
 	enigma2-plugin-skins-kravenhd \
 	enigma2-plugin-skins-kravenvb \
+	enigma2-plugin-skins-mx-hq7 \
+	enigma2-plugin-skins-mx-hq9w \
+	enigma2-plugin-skins-pd1loi-hd-night \
+	enigma2-plugin-skins-pli-hd \
+	enigma2-plugin-skins-pli-hd-fullnight \
 	enigma2-plugin-skins-sevenhd \
+	enigma2-plugin-skins-simple-gray-hd \
 	enigma2-plugin-skins-xionhdf \
+	enigma2-plugin-systemplugins-bh-skin-support \
+	enigma2-plugin-systemplugins-extnumberzap \
+	enigma2-plugin-systemplugins-extrafancontrol \
+	enigma2-plugin-systemplugins-hrtunerproxy \
+	enigma2-plugin-systemplugins-mountmanager \
+	enigma2-plugin-systemplugins-serviceapp \
+	enigma2-plugin-systemplugins-signalfinder \
+	enigma2-plugin-systemplugins-quadpip \
 	enigma2-plugins \
 	enigma2-skins \
+	libcrypto-compat \
+	meta-enigma2-dvdburn \
+	packagegroup-openplugins \
 	picons-enigma2-meta \
 	softcams-enigma2-meta \
-	packagegroup-openplugins \
-	enigma2-plugin-extensions-backupsuite \
-	${@bb.utils.contains("EXTRA_IMAGEDEPENDS", "vuplus-tuner-turbo", "enigma2-plugin-drivers-dvb-usb-turbo", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "streamproxy", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "transcoding", "streamproxy", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "streamproxy", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "multitranscoding", "streamproxy", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "qtplugins", "enigma2-plugin-extensions-qthbbtv enigma2-plugin-extensions-qtstalker", "", d)} \
-	dvb-usb-drivers-meta \
-	cdtextinfo \
-	meta-enigma2-dvdburn \
 	${OPTIONAL_BSP_ENIGMA2_PACKAGES} \
 	"
 
