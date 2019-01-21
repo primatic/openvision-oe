@@ -38,6 +38,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-cacheflush \
 	enigma2-plugin-extensions-cutlisteditor \
+	${@bb.utils.contains("MACHINE_FEATURES", "bluetooth", "enigma2-plugin-extensions-btdevicesmanager", "", d)} \
 	enigma2-plugin-extensions-graphmultiepg \
 	enigma2-plugin-extensions-mediaplayer \
 	enigma2-plugin-extensions-mediascanner \
