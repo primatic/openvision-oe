@@ -1,12 +1,17 @@
 #!/bin/sh
 echo ""
-echo "Welcome to Persian Prince's OE cleanup script!"
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[0;32m'
+echo "Welcome to Open Vision's OE cleanup script!"
 echo "After using this script the size of the build folder will be reduced."
-echo "Enter the machine name you want to cleanup:"
+echo -e "Check ${RED}README.md ${NC}or ${RED}PLi-metas.md ${NC}and enter a specific machine to cleanup:"
 echo ""
+echo -e "${GREEN}"
 read MACHINE
+echo -e "${NC}"
 echo ""
-echo "Removing $MACHINE build folders, please wait ..."
+echo -e "Removing ${GREEN}$MACHINE${NC} build folders, please wait ..."
 cd ..
 echo ""
 #echo "Space will be freed after this operation:"
@@ -57,6 +62,14 @@ rm -rf build/tmp/stamps/$MACHINE-oe-linu*
 echo ""
 echo "stamps cleaned!"
 echo ""
+cd build/tmp/stamps
+find -name "*.$MACHINE" -type f -exec rm -f {} \;
+cd ..
+cd ..
+cd ..
+echo ""
+echo "packagedata_setscene cleaned!"
+echo ""
 #echo "Space will be freed after this operation:"
 #du -sh build/tmp/sysroots-components/$MACHINE | cut -f1
 rm -rf build/tmp/sysroots-components/$MACHINE
@@ -69,9 +82,28 @@ rm -rf build/tmp/work/$MACHINE-oe-linu*
 echo ""
 echo "work cleaned!"
 echo ""
+cd build/tmp/work
+find -name "*_$MACHINE_*.adb" -type f -exec rm -f {} \;
+find -name "*_$MACHINE_*.ads" -type f -exec rm -f {} \;
+cd ..
+cd ..
+cd ..
+echo ""
+echo "work's adb ads files cleaned!"
+echo ""
 #echo "Space will be freed after this operation:"
 #du -sh build/tmp/work-shared/$MACHINE | cut -f1
 rm -rf build/tmp/work-shared/$MACHINE
 echo ""
 echo "work-shared cleaned!"
+echo ""
+cd build/tmp/work-shared
+find -name "*_$MACHINE_*.adb" -type f -exec rm -f {} \;
+find -name "*_$MACHINE_*.ads" -type f -exec rm -f {} \;
+cd ..
+cd ..
+cd ..
+echo ""
+echo "work-shared's adb ads files cleaned!"
+echo ""
 echo "Done."
