@@ -8,7 +8,7 @@ SRC_URI_append += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "file://Revert-font-support-fallback-font-to-display-east-as.patch", "", d)} \
 	"
 
-DEPENDS += "rc-models"
+DEPENDS += "openvision-extra-rc-models"
 
 inherit upx_compress
 

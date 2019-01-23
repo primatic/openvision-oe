@@ -13,8 +13,6 @@ inherit gitpkgv
 PV = "git${SRCPV}"
 PKGV = "git${GITPKGV}"
 
-SRCREV = "${AUTOREV}"
-
 SRC_URI = "${@bb.utils.contains("IMAGE_FSTYPES", "amlogicsdimg", "git://github.com/OpenVisionE2/amremote.git;protocol=git;branch=arm64", "git://github.com/OpenVisionE2/amremote.git;protocol=git;branch=master", d)}"
 
 S = "${WORKDIR}/git"

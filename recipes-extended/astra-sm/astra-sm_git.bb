@@ -12,7 +12,6 @@ SRC_URI = "git://github.com/OpenVisionE2/astra-sm.git;protocol=http \
 
 inherit gitpkgv autotools-brokensep pkgconfig update-rc.d
 
-SRCREV = "${AUTOREV}"
 PV = "0.2+git${SRCPV}"
 PKGV = "0.2+git${GITPKGV}"
 PR = "1"
