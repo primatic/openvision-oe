@@ -12,7 +12,7 @@ PKGV = "1.0+git${GITPKGV}"
 
 RRECOMMENDS_${PN} = "enigma2-plugin-extensions-weatherplugin"
 
-SRC_URI = "git://github.com//audi06/CinoGriPLi.git;protocol=git"
+SRC_URI = "git://github.com/audi06/CinoGriPLi.git;protocol=git"
 
 FILES_${PN} = "/usr/share/enigma2/ /usr/lib/enigma2/"
 
