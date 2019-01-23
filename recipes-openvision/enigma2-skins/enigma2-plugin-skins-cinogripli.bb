@@ -3,7 +3,7 @@ MAINTAINER = "dreamosat-forum.com"
 SECTION = "misc"
 PRIORITY = "optional"
 LICENSE = "Proprietary"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=9c32b9ca84caf9e08bf1561569d8190a"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=858b014508205322d36421a11207867c"
 
 inherit gitpkgv allarch
 
