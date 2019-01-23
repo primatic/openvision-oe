@@ -3,7 +3,7 @@ echo -e ""
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 GREEN='\033[0;32m'
-echo -e "${RED}Welcome to Persian Prince's image compile script!"
+echo -e "${RED}Welcome to Open Vision's image compile script!"
 echo -e "Check ${NC}README.md ${RED}or ${NC}PLi-metas.md ${RED}and enter a meta or a specific machine to compile."
 echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
