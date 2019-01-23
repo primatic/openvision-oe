@@ -6,7 +6,7 @@ LICENSE = "proprietary"
 
 require conf/license/license-gplv2.inc
 
-inherit gitpkgv gettext
+inherit gitpkgv gettext allarch
 DEPENDS += "gettext-native"
 
 PV = "2.2+git${SRCPV}"
