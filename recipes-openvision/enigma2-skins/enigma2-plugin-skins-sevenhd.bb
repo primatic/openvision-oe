@@ -1,11 +1,13 @@
-SUMMARY = "Skin for Enigma2 (HD, FHD, UHD)"
+SUMMARY = "Seven skin for Enigma2 (HD, FHD, UHD)"
 MAINTAINER = "Team Kraven"
 SECTION = "misc"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
+
 RDEPENDS_${PN} += "python-requests python-subprocess python-imaging enigma2-plugin-systemplugins-mphelp python-lxml"
 
 inherit gitpkgv allarch
+
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
 

@@ -158,6 +158,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-youtube \
 	enigma2-plugin-extensions-youtube-dl \
 	enigma2-plugin-security-firewall \
+	enigma2-plugin-skins-cinogripli \
 	enigma2-plugin-skins-dreamplexskins \
 	enigma2-plugin-skins-glamouraurafhd \
 	enigma2-plugin-skins-kravenfhd \

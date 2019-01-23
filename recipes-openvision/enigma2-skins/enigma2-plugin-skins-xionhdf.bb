@@ -1,11 +1,13 @@
-SUMMARY = "Skin for HDF Images"
+SUMMARY = "XION skin for HDF Images"
 MAINTAINER = "Team Kraven"
 SECTION = "misc"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
+
 RDEPENDS_${PN} += "python-requests"
 
 inherit gitpkgv allarch
+
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
 

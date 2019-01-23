@@ -6,8 +6,6 @@ LICENSE = "CLOSED"
 
 inherit allarch
 
-VER ="1.0"
-
 SRC_URI = "file://tiny.ttf"
 
 S = "${WORKDIR}"

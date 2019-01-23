@@ -1,11 +1,13 @@
-SUMMARY = "Skin for Enigma2"
+SUMMARY = "Kraven VB skin for Enigma2"
 MAINTAINER = "Team Kraven"
 SECTION = "misc"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
+
 RDEPENDS_${PN} += "python-imaging python-subprocess python-requests python-xml enigma2-plugin-systemplugins-mphelp"
 
 inherit gitpkgv allarch
+
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
 
