@@ -163,6 +163,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-skins-kravenfhd \
 	enigma2-plugin-skins-kravenhd \
 	enigma2-plugin-skins-kravenvb \
+	enigma2-plugin-skins-metrix-vision \
 	enigma2-plugin-skins-mx-hq7 \
 	enigma2-plugin-skins-mx-hq9w \
 	enigma2-plugin-skins-pd1loi-hd-night \

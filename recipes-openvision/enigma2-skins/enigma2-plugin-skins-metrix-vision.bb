@@ -9,7 +9,6 @@ require conf/license/license-gplv2.inc
 inherit gitpkgv gettext
 DEPENDS += "gettext-native"
 
-SRCREV = "${AUTOREV}"
 PV = "2.2+git${SRCPV}"
 PKGV = "2.2+git${GITPKGV}"
 

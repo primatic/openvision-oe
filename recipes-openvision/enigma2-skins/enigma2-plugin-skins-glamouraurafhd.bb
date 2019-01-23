@@ -7,7 +7,6 @@ inherit gitpkgv allarch
 
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
-PR = "r0"
 
 RRECOMMENDS_${PN} = "enigma2-plugin-extensions-weathermsn"
 

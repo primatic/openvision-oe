@@ -6,7 +6,6 @@ LICENSE = "CLOSED"
 RDEPENDS_${PN} += "font-tiny enigma2-plugin-systemplugins-bh-skin-support"
 
 inherit gitpkgv allarch
-SRCREV = "${AUTOREV}"
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
 
