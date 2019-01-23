@@ -1,5 +1,18 @@
+diff --git a/configure.ac b/configure.ac
+index 2b19d648f..b9ad23667 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -46,7 +46,7 @@ AC_SUBST(LIBGIF_LIBS)
+ 
+ AC_ARG_WITH(crashlogemail,
+ 	[  --with-crashlogemail=crash log email address],
+-	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="the OpenPLi forum"])
++	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="crash@openvision.tech"])
+ AC_SUBST(CRASHLOGEMAIL)
+ AC_DEFINE_UNQUOTED(CRASH_EMAILADDR,"$CRASHLOGEMAIL",[crash log email address])
+ 
 diff --git a/data/setup.xml b/data/setup.xml
-index dae1d7559..8b8474281 100644
+index 84b7d50cb..b56c02eac 100644
 --- a/data/setup.xml
 +++ b/data/setup.xml
 @@ -1,6 +1,7 @@
@@ -10,28 +23,6 @@ index dae1d7559..8b8474281 100644
  	</setup>
  	<setup key="avsetup">
  		<!-- this is just a placeholder, the Videomode plugin implements this submenu -->
-diff --git a/main/bsod.cpp b/main/bsod.cpp
-index a1bea5f9a..f7fbf028b 100644
---- a/main/bsod.cpp
-+++ b/main/bsod.cpp
-@@ -23,7 +23,7 @@
- 
- static const char *crash_emailaddr =
- #ifndef CRASH_EMAILADDR
--	"the OpenPLi forum";
-+	"the Open Vision forum or https://github.com/OpenVisionE2/openvision-oe/issues";
- #else
- 	CRASH_EMAILADDR;
- #endif
-@@ -155,7 +155,7 @@ void bsodFatal(const char *component)
- 		strftime(tm_str, sizeof(tm_str), "%a %b %_d %T %Y", &tm);
- 
- 		fprintf(f,
--			"OpenPLi Enigma2 crash log\n\n"
-+			"Open Vision Enigma2 crash log\n\n"
- 			"crashdate=%s\n"
- 			"compiledate=%s\n"
- 			"skin=%s\n"
 diff --git a/lib/python/Components/AVSwitch.py b/lib/python/Components/AVSwitch.py
 index 1e5f9ef5c..18893055e 100644
 --- a/lib/python/Components/AVSwitch.py
@@ -55,10 +46,10 @@ index 1e5f9ef5c..18893055e 100644
  	config.av.wss = ConfigEnableDisable(default = True)
  	config.av.generalAC3delay = ConfigSelectionNumber(-1000, 1000, 5, default = 0)
 diff --git a/lib/python/Components/Network.py b/lib/python/Components/Network.py
-index d3c5e6ebd..fe8223829 100644
+index 6295f12fd..c7fd4d39c 100644
 --- a/lib/python/Components/Network.py
 +++ b/lib/python/Components/Network.py
-@@ -423,7 +423,7 @@ class Network:
+@@ -424,7 +424,7 @@ class Network:
  	def checkNetworkState(self,statecallback):
  		self.NetworkState = 0
  		self.pingConsole = Console()
@@ -67,7 +58,7 @@ index d3c5e6ebd..fe8223829 100644
  			self.pingConsole.ePopen(("/bin/ping", "/bin/ping", "-c", "1", server), self.checkNetworkStateFinished,statecallback)
  
  	def checkNetworkStateFinished(self, result, retval,extra_args):
-@@ -495,7 +495,7 @@ class Network:
+@@ -496,7 +496,7 @@ class Network:
  	def checkDNSLookup(self,statecallback):
  		self.DnsState = 0
  		self.dnsConsole = Console()
@@ -77,10 +68,10 @@ index d3c5e6ebd..fe8223829 100644
  
  	def checkDNSLookupFinished(self, result, retval,extra_args):
 diff --git a/lib/python/Components/NimManager.py b/lib/python/Components/NimManager.py
-index 6f9e0b56e..42d5ebb7d 100644
+index 31a6567dc..4c9e935cb 100644
 --- a/lib/python/Components/NimManager.py
 +++ b/lib/python/Components/NimManager.py
-@@ -1574,7 +1574,7 @@ def InitNimManager(nimmgr, update_slots = []):
+@@ -1581,7 +1581,7 @@ def InitNimManager(nimmgr, update_slots = []):
  					"enabled": _("enabled"),
  					"nothing": _("disabled"),
  					},
@@ -89,7 +80,7 @@ index 6f9e0b56e..42d5ebb7d 100644
  			createCableConfig(nim, x)
  		elif slot.isCompatible("DVB-T"):
  			nim.configMode = ConfigSelection(
-@@ -1582,7 +1582,7 @@ def InitNimManager(nimmgr, update_slots = []):
+@@ -1589,7 +1589,7 @@ def InitNimManager(nimmgr, update_slots = []):
  					"enabled": _("enabled"),
  					"nothing": _("disabled"),
  					},
@@ -98,7 +89,7 @@ index 6f9e0b56e..42d5ebb7d 100644
  			createTerrestrialConfig(nim, x)
  		elif slot.isCompatible("ATSC"):
  			nim.configMode = ConfigSelection(
-@@ -1590,7 +1590,7 @@ def InitNimManager(nimmgr, update_slots = []):
+@@ -1597,7 +1597,7 @@ def InitNimManager(nimmgr, update_slots = []):
  					"enabled": _("enabled"),
  					"nothing": _("disabled"),
  					},
@@ -120,10 +111,11 @@ index 0e2235089..f6f4b09cd 100644
  			self.snr_db = status.get("tuner_signal_quality_db")
  			self.agc = status.get("tuner_signal_power")
  			self.ber = status.get("tuner_bit_error_rate")
-diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrince/lib/python/Components/UsageConfig.py
---- enigma2-PLi/lib/python/Components/UsageConfig.py	2018-08-12 13:51:13.000000000 +0430
-+++ enigma2-PersianPrince/lib/python/Components/UsageConfig.py	2018-08-13 12:35:47.068656039 +0430
-@@ -27,11 +27,11 @@
+diff --git a/lib/python/Components/UsageConfig.py b/lib/python/Components/UsageConfig.py
+index 12485b7ae..7052f2557 100644
+--- a/lib/python/Components/UsageConfig.py
++++ b/lib/python/Components/UsageConfig.py
+@@ -27,11 +27,11 @@ def InitUsageConfig():
  	config.usage.hide_number_markers = ConfigYesNo(default = True)
  	config.usage.hide_number_markers.addNotifier(refreshServiceList)
  
@@ -138,16 +130,16 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	config.usage.record_indicator_mode.addNotifier(refreshServiceList)
  
  	choicelist = [("-1", _("Disable"))]
-@@ -40,7 +40,7 @@
+@@ -40,7 +40,7 @@ def InitUsageConfig():
  	config.usage.servicelist_column = ConfigSelection(default="-1", choices=choicelist)
  	config.usage.servicelist_column.addNotifier(refreshServiceList)
  
 -	config.usage.service_icon_enable = ConfigYesNo(default = False)
 +	config.usage.service_icon_enable = ConfigYesNo(default = True)
  	config.usage.service_icon_enable.addNotifier(refreshServiceList)
- 	config.usage.servicelist_cursor_behavior = ConfigSelection(default = "standard", choices = [
+ 	config.usage.servicelist_cursor_behavior = ConfigSelection(default = "keep", choices = [
  		("standard", _("Standard")),
-@@ -57,7 +57,7 @@
+@@ -57,7 +57,7 @@ def InitUsageConfig():
  	config.usage.multiepg_ask_bouquet = ConfigYesNo(default = False)
  
  	config.usage.quickzap_bouquet_change = ConfigYesNo(default = False)
@@ -156,12 +148,12 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	choicelist = [("0", _("No timeout"))]
  	for i in range(1, 12):
  		choicelist.append((str(i), ngettext("%d second", "%d seconds", i) % i))
-@@ -80,13 +80,13 @@
+@@ -80,13 +80,13 @@ def InitUsageConfig():
  		("a_z", _("alphabetical")),
  		("default", _("Default")),
  		("user", _("user defined")),])
--	config.usage.menu_show_numbers = ConfigYesNo(default = False)
-+	config.usage.menu_show_numbers = ConfigYesNo(default = True)
+-	config.usage.menu_show_numbers = ConfigSelection(default = "no", choices = [("no", _("no")), ("menu&plugins", _("in menu and plugins")), ("menu", _("in menu only")), ("plugins", _("in plugins only"))])
++	config.usage.menu_show_numbers = ConfigSelection(default = "menu&plugins", choices = [("no", _("no")), ("menu&plugins", _("in menu and plugins")), ("menu", _("in menu only")), ("plugins", _("in plugins only"))])
  	config.usage.menu_path = ConfigSelection(default = "off", choices = [
  		("off", _("Disabled")),
  		("small", _("Small")),
@@ -172,7 +164,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	choicelist = []
  	for i in (10, 30):
  		choicelist.append((str(i), ngettext("%d second", "%d seconds", i) % i))
-@@ -118,7 +118,7 @@
+@@ -118,7 +118,7 @@ def InitUsageConfig():
  	config.usage.allowed_timeshift_paths = ConfigLocations(default = ["/media/hdd/"])
  
  	config.usage.movielist_trashcan = ConfigYesNo(default=True)
@@ -181,7 +173,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  	config.usage.movielist_trashcan_reserve = ConfigNumber(default=40)
  	config.usage.on_movie_start = ConfigSelection(default = "resume", choices = [
  		("ask yes", _("Ask user") + " " + _("default") + " " + _("yes")),
-@@ -135,7 +135,7 @@
+@@ -135,7 +135,7 @@ def InitUsageConfig():
  	config.usage.leave_movieplayer_onExit = ConfigSelection(default = "popup", choices = [
  		("no", _("no")), ("popup", _("With popup")), ("without popup", _("Without popup")), ("movielist", _("Return to movie list")) ])
  
@@ -190,7 +182,7 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  		("simple", _("Normal")),
  		("intermediate", _("Advanced")),
  		("expert", _("Expert")) ])
-@@ -215,7 +215,7 @@
+@@ -215,7 +215,7 @@ def InitUsageConfig():
  		choicelist.append((str(i), ngettext("%d minute", "%d minutes", m) % m))
  	config.usage.timeshift_start_delay = ConfigSelection(default = "0", choices = choicelist)
  
@@ -199,49 +191,20 @@ diff -Naur enigma2-PLi/lib/python/Components/UsageConfig.py enigma2-PersianPrinc
  		("0", "DVB-S/-C/-T"),
  		("1", "DVB-S/-T/-C"),
  		("2", "DVB-C/-S/-T"),
-@@ -281,9 +281,9 @@
- 	SystemInfo["DVB-C_priority_tuner_available"] = len(dvbc_nims) > 3 and any(len(i) > 2 for i in (dvbs_nims, dvbt_nims, atsc_nims))
- 	SystemInfo["ATSC_priority_tuner_available"] = len(atsc_nims) > 3 and any(len(i) > 2 for i in (dvbs_nims, dvbc_nims, dvbt_nims))
+@@ -287,7 +287,7 @@ def InitUsageConfig():
  
-	config.misc.disable_background_scan = ConfigYesNo(default = False)
+ 	config.misc.disable_background_scan = ConfigYesNo(default = False)
  	config.misc.use_ci_assignment = ConfigYesNo(default = False)
 -	config.usage.show_event_progress_in_servicelist = ConfigSelection(default = 'barright', choices = [
 +	config.usage.show_event_progress_in_servicelist = ConfigSelection(default = 'percright', choices = [
  		('barleft', _("Progress bar left")),
  		('barright', _("Progress bar right")),
  		('percleft', _("Percentage left")),
-diff --git a/lib/service/servicedvb.cpp b/lib/service/servicedvb.cpp
-index d1118ad7f..9791c3315 100644
---- a/lib/service/servicedvb.cpp
-+++ b/lib/service/servicedvb.cpp
-@@ -1737,9 +1737,9 @@ RESULT eDVBServicePlay::timeshift(ePtr<iTimeshiftService> &ptr)
- 				return -2;
- 			}
- 
--			if (((off_t)fs.f_bavail) * ((off_t)fs.f_bsize) < 200*1024*1024LL)
-+			if (((off_t)fs.f_bavail) * ((off_t)fs.f_bsize) < 1024*1024*1024LL)
- 			{
--				eDebug("[eDVBServicePlay] timeshift not enough diskspace for timeshift! (less than 200MB)");
-+				eDebug("[eDVBServicePlay] timeshift not enough diskspace for timeshift! (less than 1GB)");
- 				return -3;
- 			}
- 		}
-diff -Naur enigma2-PLi/configure.ac enigma2-PersianPrince/configure.ac
---- enigma2-PLi/configure.ac	2018-12-30 16:27:10.128276455 +0330
-+++ enigma2-PersianPrince/configure.ac	2018-12-30 16:47:05.221877040 +0330
-@@ -46,7 +46,7 @@
- 
- AC_ARG_WITH(crashlogemail,
- 	[  --with-crashlogemail=crash log email address],
--	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="the OpenPLi forum"])
-+	[CRASHLOGEMAIL="$withval"],[CRASHLOGEMAIL="crash@openvision.tech"])
- AC_SUBST(CRASHLOGEMAIL)
- AC_DEFINE_UNQUOTED(CRASH_EMAILADDR,"$CRASHLOGEMAIL",[crash log email address])
- 
-diff -Naur enigma2-PLi/lib/python/Plugins/Extensions/MediaPlayer/settings.py enigma2-PersianPrince/lib/python/Plugins/Extensions/MediaPlayer/settings.py
---- enigma2-PLi/lib/python/Plugins/Extensions/MediaPlayer/settings.py	2018-12-30 16:27:10.300273466 +0330
-+++ enigma2-PersianPrince/lib/python/Plugins/Extensions/MediaPlayer/settings.py	2018-12-30 16:30:10.309082040 +0330
-@@ -13,7 +13,7 @@
+diff --git a/lib/python/Plugins/Extensions/MediaPlayer/settings.py b/lib/python/Plugins/Extensions/MediaPlayer/settings.py
+index 1642091f2..8aac0f782 100644
+--- a/lib/python/Plugins/Extensions/MediaPlayer/settings.py
++++ b/lib/python/Plugins/Extensions/MediaPlayer/settings.py
+@@ -13,7 +13,7 @@ config.mediaplayer.saveDirOnExit = ConfigYesNo(default=False)
  config.mediaplayer.defaultDir = ConfigDirectory()
  config.mediaplayer.sortPlaylists = ConfigYesNo(default=False)
  config.mediaplayer.alwaysHideInfoBar = ConfigYesNo(default=True)
@@ -250,10 +213,11 @@ diff -Naur enigma2-PLi/lib/python/Plugins/Extensions/MediaPlayer/settings.py eni
  
  class DirectoryBrowser(Screen, HelpableScreen):
  
-diff -Naur enigma2-PLi/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py
---- enigma2-PLi/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py	2018-12-30 16:27:10.312273257 +0330
-+++ enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py	2018-12-30 16:49:12.355409152 +0330
-@@ -90,7 +90,7 @@
+diff --git a/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py b/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py
+index 9cdf68f69..014439a98 100644
+--- a/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py
++++ b/lib/python/Plugins/SystemPlugins/OSDPositionSetup/overscanwizard.py
+@@ -90,7 +90,7 @@ class OverscanWizard(Screen, ConfigListScreen):
  			self["introduction"].setText(_("It seems you did not see all the eight arrow heads. This means your TV "
  				"has overscan enabled, and is not configured properly.\n\n"
  				"Please refer to your TV's manual to find how you can disable overscan on your TV. Look for terms like 'Just fit', 'Full width', etc. "
@@ -262,10 +226,11 @@ diff -Naur enigma2-PLi/lib/python/Plugins/SystemPlugins/OSDPositionSetup/oversca
  			self.list.append(getConfigListEntry(_("Did you see all eight arrow heads?"), self.yes_no))
  			self.yes_no.value = True
  			self.save_new_position = False
-diff -Naur enigma2-PLi/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py
---- enigma2-PLi/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py	2018-12-30 16:27:10.320273118 +0330
-+++ enigma2-PersianPrince/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py	2018-12-30 16:30:51.852330057 +0330
-@@ -47,7 +47,7 @@
+diff --git a/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py b/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py
+index c472a35e3..67f6055fd 100644
+--- a/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py
++++ b/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.py
+@@ -47,7 +47,7 @@ config.plugins.softwaremanager.overwriteConfigFiles = ConfigSelection(
  				 ("N", _("No, never")),
  				 ("ask", _("Always ask"))
  				], "Y")
@@ -274,10 +239,11 @@ diff -Naur enigma2-PLi/lib/python/Plugins/SystemPlugins/SoftwareManager/plugin.p
  config.plugins.softwaremanager.onBlueButton = ConfigYesNo(default=False)
  config.plugins.softwaremanager.epgcache = ConfigYesNo(default=False)
  
-diff -Naur enigma2-PLi/lib/python/Screens/About.py enigma2-PersianPrince/lib/python/Screens/About.py
---- enigma2-PLi/lib/python/Screens/About.py	2018-12-30 16:27:10.328272979 +0330
-+++ enigma2-PersianPrince/lib/python/Screens/About.py	2018-12-30 16:38:44.503509547 +0330
-@@ -193,15 +193,15 @@
+diff --git a/lib/python/Screens/About.py b/lib/python/Screens/About.py
+index f497fb64e..47e554b3f 100644
+--- a/lib/python/Screens/About.py
++++ b/lib/python/Screens/About.py
+@@ -193,15 +193,15 @@ class CommitInfo(Screen):
  
  		self.project = 0
  		self.projects = [
@@ -301,10 +267,11 @@ diff -Naur enigma2-PLi/lib/python/Screens/About.py enigma2-PersianPrince/lib/pyt
  		]
  		self.cachedProjects = {}
  		self.Timer = eTimer()
-diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrince/lib/python/Screens/SoftwareUpdate.py
---- enigma2-PLi/lib/python/Screens/SoftwareUpdate.py	2018-12-30 16:27:10.336272840 +0330
-+++ enigma2-PersianPrince/lib/python/Screens/SoftwareUpdate.py	2018-12-30 16:48:22.892370031 +0330
-@@ -84,7 +84,7 @@
+diff --git a/lib/python/Screens/SoftwareUpdate.py b/lib/python/Screens/SoftwareUpdate.py
+index e9055d493..b6620ab2b 100644
+--- a/lib/python/Screens/SoftwareUpdate.py
++++ b/lib/python/Screens/SoftwareUpdate.py
+@@ -84,7 +84,7 @@ class UpdatePlugin(Screen, ProtectedScreen):
  		try:
  			# TODO: Use Twisted's URL fetcher, urlopen is evil. And it can
  			# run in parallel to the package update.
@@ -313,7 +280,7 @@ diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrinc
  			try:
  				status = urlopen(url, timeout=5).read().split('!', 1)
  			except:
-@@ -93,14 +93,14 @@
+@@ -93,14 +93,14 @@ class UpdatePlugin(Screen, ProtectedScreen):
  				status = urlopen(url, timeout=5, context=_create_unverified_context()).read().split('!', 1)
  				print status
  			if getBoxType() in status[0].split(','):
@@ -330,7 +297,7 @@ diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrinc
  			picon = MessageBox.TYPE_ERROR
  		socket.setdefaulttimeout(currentTimeoutDefault)
  		if message != "":
-@@ -119,7 +119,7 @@
+@@ -119,7 +119,7 @@ class UpdatePlugin(Screen, ProtectedScreen):
  			from datetime import datetime
  			imageVersion = about.getImageTypeString().split(" ")[1]
  			imageVersion = (int(imageVersion) < 5 and "%.1f" or "%s") % int(imageVersion)
@@ -339,3 +306,41 @@ diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrinc
  			try:
  				latestImageTimestamp = datetime.fromtimestamp(int(urlopen(url, timeout=5).read())).strftime(_("%Y-%m-%d %H:%M"))
  			except:
+diff --git a/lib/service/servicedvb.cpp b/lib/service/servicedvb.cpp
+index 4af3d3fc1..d5b0d8ba3 100644
+--- a/lib/service/servicedvb.cpp
++++ b/lib/service/servicedvb.cpp
+@@ -1737,9 +1737,9 @@ RESULT eDVBServicePlay::timeshift(ePtr<iTimeshiftService> &ptr)
+ 				return -2;
+ 			}
+ 
+-			if (((off_t)fs.f_bavail) * ((off_t)fs.f_bsize) < 200*1024*1024LL)
++			if (((off_t)fs.f_bavail) * ((off_t)fs.f_bsize) < 1024*1024*1024LL)
+ 			{
+-				eDebug("[eDVBServicePlay] timeshift not enough diskspace for timeshift! (less than 200MB)");
++				eDebug("[eDVBServicePlay] timeshift not enough diskspace for timeshift! (less than 1GB)");
+ 				return -3;
+ 			}
+ 		}
+diff --git a/main/bsod.cpp b/main/bsod.cpp
+index a1bea5f9a..8348051a5 100644
+--- a/main/bsod.cpp
++++ b/main/bsod.cpp
+@@ -23,7 +23,7 @@
+ 
+ static const char *crash_emailaddr =
+ #ifndef CRASH_EMAILADDR
+-	"the OpenPLi forum";
++	"the Open Vision forum or https://github.com/OpenVisionE2/openvision-oe/issues";
+ #else
+ 	CRASH_EMAILADDR;
+ #endif
+@@ -155,7 +155,7 @@ void bsodFatal(const char *component)
+ 		strftime(tm_str, sizeof(tm_str), "%a %b %_d %T %Y", &tm);
+ 
+ 		fprintf(f,
+-			"OpenPLi Enigma2 crash log\n\n"
++			"Open Vision Enigma2 crash log\n\n"
+ 			"crashdate=%s\n"
+ 			"compiledate=%s\n"
+ 			"skin=%s\n"
