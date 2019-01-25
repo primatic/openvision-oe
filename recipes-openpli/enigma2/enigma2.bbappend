@@ -4,6 +4,7 @@ SRC_URI_append += "\
 	file://09-undefine-macro-HAVE_CONFIG_H.patch \
 	file://biss-caid.patch \
 	file://openvision.patch \
+	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://amlogic.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "file://Revert-font-support-fallback-font-to-display-east-as.patch", "", d)} \
 	"
@@ -12,11 +13,11 @@ DEPENDS += "openvision-extra-rc-models"
 
 inherit upx_compress
 
-PV = "${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "amlogic+git${SRCPV}", "develop+git${SRCPV}", d)}"
-PKGV = "${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "amlogic+git${SRCPV}", "develop+git${SRCPV}", d)}"
+PV = "develop+git${SRCPV}"
+PKGV = "develop+git${GITPKGV}"
 
 SRC_URI = "\
-	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "git://github.com/OpenPLi/enigma2-openpli-amlogic.git;branch=develop;name=enigma2", "git://github.com/OpenPLi/enigma2.git;branch=develop;name=enigma2", d)} \
+	git://github.com/OpenPLi/enigma2.git;branch=develop;name=enigma2 \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "git://github.com/OpenVisionE2/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels", d)} \
 	"
 
