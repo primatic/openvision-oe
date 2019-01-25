@@ -19,7 +19,7 @@ index a1bea5f9a..f7fbf028b 100644
  static const char *crash_emailaddr =
  #ifndef CRASH_EMAILADDR
 -	"the OpenPLi forum";
-+	"the Open Vision forum or https://github.com/OpenVisionE2/openvision-oe/issues";
++	"the Open Vision forum (https://openvision.tech) or https://github.com/OpenVisionE2/openvision-oe/issues";
  #else
  	CRASH_EMAILADDR;
  #endif
@@ -283,6 +283,7 @@ diff -Naur enigma2-PLi/lib/python/Screens/About.py enigma2-PersianPrince/lib/pyt
 -			("https://api.github.com/repos/openpli/enigma2/commits" + branch, "Enigma2"),
 -			("https://api.github.com/repos/openpli/openpli-oe-core/commits" + branch, "Openpli Oe Core"),
 +			("https://api.github.com/repos/openpli/enigma2/commits" + branch, "Enigma2 - PLi"),
++			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-amlogic/commits" + branch, "Enigma2 - Amlogic"),
 +			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-rpi/commits" + branch, "Enigma2 - RPi"),
 +			("https://api.github.com/repos/OpenVisionE2/enigma2-openpli-sh4/commits" + branch, "Enigma2 - SH4"),
 +			("https://api.github.com/repos/openpli/openpli-oe-core/commits" + branch, "OE - PLi"),
