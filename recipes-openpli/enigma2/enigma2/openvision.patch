@@ -296,7 +296,7 @@ diff -Naur enigma2-PLi/lib/python/Screens/About.py enigma2-PersianPrince/lib/pyt
 diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrince/lib/python/Screens/SoftwareUpdate.py
 --- enigma2-PLi/lib/python/Screens/SoftwareUpdate.py	2018-12-30 16:27:10.336272840 +0330
 +++ enigma2-PersianPrince/lib/python/Screens/SoftwareUpdate.py	2018-12-30 16:48:22.892370031 +0330
-@@ -84,7 +84,7 @@
+@@ -80,7 +80,7 @@ class UpdatePlugin(Screen, ProtectedScreen):
  		try:
  			# TODO: Use Twisted's URL fetcher, urlopen is evil. And it can
  			# run in parallel to the package update.
@@ -305,7 +305,7 @@ diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrinc
  			try:
  				status = urlopen(url, timeout=5).read().split('!', 1)
  			except:
-@@ -93,14 +93,14 @@
+@@ -89,14 +89,14 @@ class UpdatePlugin(Screen, ProtectedScreen):
  				status = urlopen(url, timeout=5, context=_create_unverified_context()).read().split('!', 1)
  				print status
  			if getBoxType() in status[0].split(','):
@@ -320,14 +320,15 @@ diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrinc
 -			message = _("The status of the current image could not be checked because %s can not be reached.") % ("www.openpli.org")
 +			message = _("The status of the current image could not be checked because %s can not be reached.") % ("www.openvision.tech")
  			picon = MessageBox.TYPE_ERROR
- 		socket.setdefaulttimeout(currentTimeoutDefault)
  		if message != "":
-@@ -119,7 +119,7 @@
+ 			message += "\n" + _("Do you want to update your receiver?")
+@@ -111,7 +111,7 @@ class UpdatePlugin(Screen, ProtectedScreen):
+ 			from time import strftime
  			from datetime import datetime
- 			imageVersion = about.getImageTypeString().split(" ")[1]
- 			imageVersion = (int(imageVersion) < 5 and "%.1f" or "%s") % int(imageVersion)
--			url = "https://openpli.org/download/timestamp/%s~%s" % (HardwareInfo().get_device_model(), imageVersion)
-+			url = "https://openvision.tech/download/timestamp/%s~%s" % (HardwareInfo().get_device_model(), imageVersion)
- 			try:
- 				latestImageTimestamp = datetime.fromtimestamp(int(urlopen(url, timeout=5).read())).strftime(_("%Y-%m-%d %H:%M"))
- 			except:
+ 			import json
+-			jsonlist = json.loads(urlopen('http://downloads.openpli.org/json/%s' % HardwareInfo().get_device_model(), timeout=5).read())
++			jsonlist = json.loads(urlopen('http://downloads.openvision.tech/json/%s' % HardwareInfo().get_device_model(), timeout=5).read())
+ 			release = about.getImageTypeString().split()[1].lower()
+ 			date = sorted([jsonlist[release][x]['date'] for x in jsonlist[release]], reverse=True)[0]
+ 			return datetime.fromtimestamp(date).strftime('%Y-%m-%d %H:%M:%S')
+
