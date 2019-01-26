@@ -327,7 +327,7 @@ diff -Naur enigma2-PLi/lib/python/Screens/SoftwareUpdate.py enigma2-PersianPrinc
  			from datetime import datetime
  			import json
 -			jsonlist = json.loads(urlopen('http://downloads.openpli.org/json/%s' % HardwareInfo().get_device_model(), timeout=5).read())
-+			jsonlist = json.loads(urlopen('http://downloads.openvision.tech/json/%s' % HardwareInfo().get_device_model(), timeout=5).read())
++			jsonlist = json.loads(urlopen('https://openvision.tech/downloads/json/%s' % HardwareInfo().get_device_model(), timeout=5).read())
  			release = about.getImageTypeString().split()[1].lower()
  			date = sorted([jsonlist[release][x]['date'] for x in jsonlist[release]], reverse=True)[0]
  			return datetime.fromtimestamp(date).strftime('%Y-%m-%d %H:%M:%S')
