@@ -7,6 +7,7 @@ SRC_URI_append += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://amlogic.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "file://Revert-font-support-fallback-font-to-display-east-as.patch", "", d)} \
+	file://radio.mvi \
 	"
 
 DEPENDS += "openvision-extra-rc-models"
@@ -39,4 +40,8 @@ do_configure_prepend() {
 		done
 		cat "${WORKDIR}/extra_rc_models/rc_models.cfg" >> "${S}/data/rc_models/rc_models.cfg"
 	fi
+}
+
+do_install_prepend() {
+	mv ${WORKDIR}/radio.mvi ${B}/data/radio.mvi
 }
