@@ -7,7 +7,6 @@ SRC_URI_append += "\
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://display-skins.patch", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://amlogic.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "file://Revert-font-support-fallback-font-to-display-east-as.patch", "", d)} \
 	file://radio.mvi \
 	"
 
@@ -37,6 +36,11 @@ EXTRA_OECONF_append += "\
 
 SRCREV_extrarcmodels_pn-${PN} = "${AUTOREV}"
 SRCREV_FORMAT = "enigma2"
+
+DESCRIPTION_enigma2-plugin-font-wqy-microhei = "wqy-microhei font supports Chinese EPG"
+PACKAGES =+ "enigma2-plugin-font-wqy-microhei"
+FILES_enigma2-plugin-font-wqy-microhei = "${datadir}/fonts/wqy-microhei.ttc ${datadir}/fonts/fallback.font"
+ALLOW_EMPTY_enigma2-plugin-font-wqy-microhei = "1"
 
 do_configure_prepend() {
 	if [ ! "${TARGET_ARCH}" == "sh4" ]
