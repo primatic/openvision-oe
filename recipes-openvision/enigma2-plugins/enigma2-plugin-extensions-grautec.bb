@@ -5,7 +5,7 @@ PRIORITY = "required"
 LICENSE = "proprietary"
 require conf/license/license-gplv2.inc
 
-PACKAGE_ARCH = "${MACHINE_ARCH}
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit gitpkgv
 
@@ -27,8 +27,8 @@ do_install() {
     install -d ${D}${sysconfdir}/rc6.d
     chmod -R 777 ${S}/dreambox
     cp -rp ${S}/dreambox/* ${D}/
-	ln -sf ../init.d/usbtftdisplay.sh ${D}${sysconfdir}/rc3.d/S90usbtftdisplay
-	ln -sf ../init.d/killusbtftdisplay.sh ${D}${sysconfdir}/rc6.d/K50killusbtftdisplay
+    ln -sf ../init.d/usbtftdisplay.sh ${D}${sysconfdir}/rc3.d/S90usbtftdisplay
+    ln -sf ../init.d/killusbtftdisplay.sh ${D}${sysconfdir}/rc6.d/K50killusbtftdisplay
 }
 
 do_package_qa() {
