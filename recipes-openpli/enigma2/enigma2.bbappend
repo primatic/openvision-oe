@@ -4,6 +4,7 @@ SRC_URI_append += "\
 	file://09-undefine-macro-HAVE_CONFIG_H.patch \
 	file://biss-caid.patch \
 	file://openvision.patch \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://display-skins.patch", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://amlogic.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "debug4", "file://set-default-debug-level-at-4.patch", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "file://Revert-font-support-fallback-font-to-display-east-as.patch", "", d)} \
@@ -21,6 +22,18 @@ SRC_URI = "\
 	git://github.com/OpenPLi/enigma2.git;branch=develop;name=enigma2 \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "git://github.com/OpenVisionE2/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels", d)} \
 	"
+
+EXTRA_OECONF_append += "\
+    ${@bb.utils.contains("MACHINE_FEATURES", "bwlcd128", "--with-bwlcd128" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "bwlcd140", "--with-bwlcd140" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "bwlcd255", "--with-bwlcd255" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd220", "--with-colorlcd220" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd390", "--with-colorlcd390" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd400", "--with-colorlcd400" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd480", "--with-colorlcd480" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd720", "--with-colorlcd720" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd800", "--with-colorlcd800" , "", d)} \
+    "
 
 SRCREV_extrarcmodels_pn-${PN} = "${AUTOREV}"
 SRCREV_FORMAT = "enigma2"
