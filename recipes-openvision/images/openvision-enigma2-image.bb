@@ -107,6 +107,7 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "cdtextinfo", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "cdtextinfo", "", d)} \
 	enigma2 \
+	${@bb.utils.contains_any("MACHINE", "textlcd colorlcd colorlcd128 colorlcd220 colorlcd390 colorlcd400 colorlcd480 colorlcd720 colorlcd800 bwlcd96 bwlcd128 bwlcd140 bwlcd255", "enigma2-display-skins", "", d)} \
 	${ENIGMA2_PLUGINS} \
 	${@bb.utils.contains("MACHINE_FEATURES", "colorlcd", "enigma2-plugin-extensions-lcd4linux", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "colorlcd", "enigma2-plugin-extensions-lcd4linux", "", d)} \
