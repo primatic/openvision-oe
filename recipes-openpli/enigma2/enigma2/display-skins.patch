@@ -1,6 +1,6 @@
 diff -Naur enigma2-PLi/configure.ac enigma2-PersianPrince/configure.ac
 --- enigma2-PLi/configure.ac	2019-01-27 01:46:22.000000000 +0330
-+++ enigma2-PersianPrince/configure.ac	2019-01-27 14:17:10.448116930 +0330
++++ enigma2-PersianPrince/configure.ac	2019-01-27 14:17:10.000000000 +0330
 @@ -78,8 +78,108 @@
  	[[TEXTSKIN="7segment"]],
  	[[TEXTSKIN="default"]]
@@ -133,10 +133,10 @@ diff -Naur enigma2-PLi/configure.ac enigma2-PersianPrince/configure.ac
  data/hw_info/Makefile
 diff -Naur enigma2-PLi/data/7segment/Makefile.am enigma2-PersianPrince/data/7segment/Makefile.am
 --- enigma2-PLi/data/7segment/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/7segment/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/7segment/Makefile.am	2019-01-27 14:22:06.000000000 +0330
 @@ -0,0 +1,2 @@
 +installdir = $(pkgdatadir)
-+dist_install_DATA = *.xml
++dist_install_DATA = skin_display.xml
 diff -Naur enigma2-PLi/data/7segment/skin_display.xml enigma2-PersianPrince/data/7segment/skin_display.xml
 --- enigma2-PLi/data/7segment/skin_display.xml	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/7segment/skin_display.xml	2019-01-26 19:56:44.000000000 +0330
@@ -348,13 +348,13 @@ diff -Naur enigma2-PLi/data/display220/hd.png enigma2-PersianPrince/data/display
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display220/Makefile.am enigma2-PersianPrince/data/display220/Makefile.am
 --- enigma2-PLi/data/display220/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/display220/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/display220/Makefile.am	2019-01-27 14:35:22.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
-+dist_install_DATA = *.png
++dist_install_DATA = backward.png crypt.png dolby.png format.png forward.png hd.png pause.png play.png rec.png slow.png stop.png tuner-a.png tuner-a-act.png tuner-b.png tuner-b-act.png tuner-c.png tuner-c-act.png tuner-d.png tuner-d-act.png txt.png update_stable.png update_unstable.png
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml piconprev.png prev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml piconprev.png prev.png
 diff -Naur enigma2-PLi/data/display220/pause.png enigma2-PersianPrince/data/display220/pause.png
 --- enigma2-PLi/data/display220/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/display220/pause.png	2019-01-26 19:56:44.000000000 +0330
@@ -1456,13 +1456,13 @@ diff -Naur enigma2-PLi/data/display390/hd.png enigma2-PersianPrince/data/display
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display390/Makefile.am enigma2-PersianPrince/data/display390/Makefile.am
 --- enigma2-PLi/data/display390/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/display390/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/display390/Makefile.am	2019-01-27 14:37:26.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
-+dist_install_DATA = *.png
++dist_install_DATA = backward.png crypt.png dolby.png format.png forward.png hd.png pause.png play.png rec.png record.png slow.png stop.png tuner-a.png tuner-a-act.png tuner-b.png tuner-b-act.png tuner-c.png tuner-c-act.png tuner-d.png tuner-d-act.png txt.png update_stable.png update_unstable.png
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml piconprev.png prev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml piconprev.png prev.png
 diff -Naur enigma2-PLi/data/display390/pause.png enigma2-PersianPrince/data/display390/pause.png
 --- enigma2-PLi/data/display390/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/display390/pause.png	2019-01-26 19:56:44.000000000 +0330
@@ -2798,13 +2798,13 @@ diff -Naur enigma2-PLi/data/display400/hd.png enigma2-PersianPrince/data/display
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display400/Makefile.am enigma2-PersianPrince/data/display400/Makefile.am
 --- enigma2-PLi/data/display400/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/display400/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/display400/Makefile.am	2019-01-27 14:38:22.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
-+dist_install_DATA = *.png
++dist_install_DATA = backward.png crypt.png dolby.png format.png forward.png hd.png pause.png play.png rec.png record.png slow.png stop.png tuner-a.png tuner-a-act.png tuner-b.png tuner-b-act.png tuner-c.png tuner-c-act.png tuner-d.png tuner-d-act.png txt.png update_stable.png update_unstable.png
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml piconprev.png prev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml piconprev.png prev.png
 diff -Naur enigma2-PLi/data/display400/pause.png enigma2-PersianPrince/data/display400/pause.png
 --- enigma2-PLi/data/display400/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/display400/pause.png	2019-01-26 19:56:44.000000000 +0330
@@ -4118,13 +4118,13 @@ diff -Naur enigma2-PLi/data/display480/hd.png enigma2-PersianPrince/data/display
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display480/Makefile.am enigma2-PersianPrince/data/display480/Makefile.am
 --- enigma2-PLi/data/display480/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/display480/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/display480/Makefile.am	2019-01-27 14:39:22.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
-+dist_install_DATA = *.png
++dist_install_DATA = backward.png forward.png hd.png pause.png play.png record.png slow.png stop.png
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml piconprev.png prev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml piconprev.png prev.png
 diff -Naur enigma2-PLi/data/display480/pause.png enigma2-PersianPrince/data/display480/pause.png
 --- enigma2-PLi/data/display480/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/display480/pause.png	2019-01-26 19:56:44.000000000 +0330
@@ -6156,13 +6156,13 @@ diff -Naur enigma2-PLi/data/display720/hd.png enigma2-PersianPrince/data/display
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display720/Makefile.am enigma2-PersianPrince/data/display720/Makefile.am
 --- enigma2-PLi/data/display720/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/display720/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/display720/Makefile.am	2019-01-27 14:36:40.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
 +dist_install_DATA = analog_lcd.png ClockPoint.png dolby.png hd.png
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml piconprev.png prev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml piconprev.png prev.png
 diff -Naur enigma2-PLi/data/display720/piconprev.png enigma2-PersianPrince/data/display720/piconprev.png
 --- enigma2-PLi/data/display720/piconprev.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/display720/piconprev.png	2019-01-26 19:56:44.000000000 +0330
@@ -9192,11 +9192,11 @@ diff -Naur enigma2-PLi/data/display800/backward.png enigma2-PersianPrince/data/d
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display800/Default_with_Picon_Fullscreen/Makefile.am enigma2-PersianPrince/data/display800/Default_with_Picon_Fullscreen/Makefile.am
 --- enigma2-PLi/data/display800/Default_with_Picon_Fullscreen/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/display800/Default_with_Picon_Fullscreen/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/display800/Default_with_Picon_Fullscreen/Makefile.am	2019-01-27 14:41:26.000000000 +0330
 @@ -0,0 +1,3 @@
 +installdir = $(pkgdatadir)/Default_with_Picon_Fullscreen
 +
-+dist_install_DATA = *.png *.xml
++dist_install_DATA = prev.png skin_display.xml
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display800/Default_with_Picon_Fullscreen/prev.png enigma2-PersianPrince/data/display800/Default_with_Picon_Fullscreen/prev.png
 --- enigma2-PLi/data/display800/Default_with_Picon_Fullscreen/prev.png	1970-01-01 03:30:00.000000000 +0330
@@ -10167,15 +10167,15 @@ diff -Naur enigma2-PLi/data/display800/forward.png enigma2-PersianPrince/data/di
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/display800/Makefile.am enigma2-PersianPrince/data/display800/Makefile.am
 --- enigma2-PLi/data/display800/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/display800/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/display800/Makefile.am	2019-01-27 14:41:02.000000000 +0330
 @@ -0,0 +1,7 @@
 +SUBDIRS = Default_with_Picon_Fullscreen
 +
 +installdir = $(pkgdatadir)/skin_default
-+dist_install_DATA = *.png *.ttf
++dist_install_DATA = 1080.png 169.png 2160.png 4.3.png 480.png 576.png 720.png analogclock.png backward.png dolbydigital.png dolbyprologic.png forward.png pause.png play.png record.png recording.png slow.png stop.png verdana.ttf
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml piconprev.png prev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml skin_display_templates.xml piconprev.png prev.png
 diff -Naur enigma2-PLi/data/display800/pause.png enigma2-PersianPrince/data/display800/pause.png
 --- enigma2-PLi/data/display800/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/display800/pause.png	2019-01-26 19:56:44.000000000 +0330
@@ -14230,11 +14230,11 @@ diff -Naur enigma2-PLi/data/displaytext/alternate.png enigma2-PersianPrince/data
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/displaytext/Makefile.am enigma2-PersianPrince/data/displaytext/Makefile.am
 --- enigma2-PLi/data/displaytext/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/displaytext/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/displaytext/Makefile.am	2019-01-27 14:41:56.000000000 +0330
 @@ -0,0 +1,3 @@
 +installdir = $(pkgdatadir)
 +
-+dist_install_DATA = *.xml *.png
++dist_install_DATA = skin_display.xml skin_display_alternate.xml alternate.png prev.png
 diff -Naur enigma2-PLi/data/displaytext/prev.png enigma2-PersianPrince/data/displaytext/prev.png
 --- enigma2-PLi/data/displaytext/prev.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/displaytext/prev.png	2019-01-26 19:56:44.000000000 +0330
@@ -14772,7 +14772,7 @@ diff -Naur enigma2-PLi/data/displaytext/skin_display.xml enigma2-PersianPrince/d
 +</skin>
 diff -Naur enigma2-PLi/data/Makefile.am enigma2-PersianPrince/data/Makefile.am
 --- enigma2-PLi/data/Makefile.am	2019-01-27 01:46:22.000000000 +0330
-+++ enigma2-PersianPrince/data/Makefile.am	2019-01-27 14:12:20.117147093 +0330
++++ enigma2-PersianPrince/data/Makefile.am	2019-01-27 14:12:20.000000000 +0330
 @@ -1,5 +1,49 @@
  SUBDIRS = countries fonts extensions keymaps skin_default rc_models hw_info
  
@@ -14909,13 +14909,13 @@ diff -Naur enigma2-PLi/data/vfd128/hd.png enigma2-PersianPrince/data/vfd128/hd.p
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/vfd128/Makefile.am enigma2-PersianPrince/data/vfd128/Makefile.am
 --- enigma2-PLi/data/vfd128/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/vfd128/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/vfd128/Makefile.am	2019-01-27 14:36:40.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
 +dist_install_DATA = update.png txt.png tuner-d.png tuner-d-act.png tuner-c.png tuner-c-act.png tuner-b.png tuner-b-act.png tuner-a.png tuner-a-act.png stop.png slow.png rec.png play.png pause.png hd.png forward.png format.png dolby.png crypt.png backward.png 
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml prev.png piconprev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml prev.png piconprev.png
 diff -Naur enigma2-PLi/data/vfd128/pause.png enigma2-PersianPrince/data/vfd128/pause.png
 --- enigma2-PLi/data/vfd128/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/vfd128/pause.png	2019-01-26 19:56:44.000000000 +0330
@@ -16014,13 +16014,13 @@ diff -Naur enigma2-PLi/data/vfd140/hd.png enigma2-PersianPrince/data/vfd140/hd.p
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/vfd140/Makefile.am enigma2-PersianPrince/data/vfd140/Makefile.am
 --- enigma2-PLi/data/vfd140/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/vfd140/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/vfd140/Makefile.am	2019-01-27 14:36:40.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
 +dist_install_DATA = update.png txt.png tuner-d.png tuner-d-act.png tuner-c.png tuner-c-act.png tuner-b.png tuner-b-act.png tuner-a.png tuner-a-act.png stop.png slow.png rec.png play.png pause.png hd.png forward.png format.png dolby.png crypt.png backward.png 
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml prev.png piconprev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml prev.png piconprev.png
 diff -Naur enigma2-PLi/data/vfd140/pause.png enigma2-PersianPrince/data/vfd140/pause.png
 --- enigma2-PLi/data/vfd140/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/vfd140/pause.png	2019-01-26 19:56:44.000000000 +0330
@@ -17109,13 +17109,13 @@ diff -Naur enigma2-PLi/data/vfd255/hd.png enigma2-PersianPrince/data/vfd255/hd.p
 \ No newline at end of file
 diff -Naur enigma2-PLi/data/vfd255/Makefile.am enigma2-PersianPrince/data/vfd255/Makefile.am
 --- enigma2-PLi/data/vfd255/Makefile.am	1970-01-01 03:30:00.000000000 +0330
-+++ enigma2-PersianPrince/data/vfd255/Makefile.am	2019-01-27 12:32:56.000000000 +0330
++++ enigma2-PersianPrince/data/vfd255/Makefile.am	2019-01-27 14:36:40.000000000 +0330
 @@ -0,0 +1,5 @@
 +installdir = $(pkgdatadir)/skin_default
 +dist_install_DATA = txt.png stop.png slow.png rec.png play.png pause.png hd.png forward.png format.png dolby.png crypt.png backward.png 
 +
 +datainstalldir = $(pkgdatadir)
-+dist_datainstall_DATA = *.xml prev.png piconprev.png
++dist_datainstall_DATA = skin_display.xml skin_display_picon.xml prev.png piconprev.png
 diff -Naur enigma2-PLi/data/vfd255/pause.png enigma2-PersianPrince/data/vfd255/pause.png
 --- enigma2-PLi/data/vfd255/pause.png	1970-01-01 03:30:00.000000000 +0330
 +++ enigma2-PersianPrince/data/vfd255/pause.png	2019-01-26 19:56:44.000000000 +0330
