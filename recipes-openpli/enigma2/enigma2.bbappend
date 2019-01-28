@@ -10,7 +10,7 @@ PV = "develop+git${SRCPV}"
 PKGV = "develop+git${GITPKGV}"
 
 SRC_URI = "\
-	git://github.com/OpenVisionE2/enigma2-openvision-main.git;branch=develop;name=enigma2 \
+	git://github.com/OpenVisionE2/enigma2-openvision.git;branch=develop;name=enigma2 \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "git://github.com/OpenVisionE2/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels", d)} \
 	"
 
