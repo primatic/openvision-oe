@@ -1,12 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI_append += "\
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://09-undefine-macro-HAVE_CONFIG_H.patch", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://amlogic.patch file://defaultskin.patch", "", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://biss-caid.patch", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://openvision.patch", d)} \
-	file://radio.mvi \
-	"
+MAINTAINER = "Open Vision Developers"
 
 DEPENDS += "openvision-extra-rc-models"
 
@@ -16,9 +10,21 @@ PV = "develop+git${SRCPV}"
 PKGV = "develop+git${GITPKGV}"
 
 SRC_URI = "\
-	git://github.com/OpenPLi/enigma2.git;branch=develop;name=enigma2 \
+	git://github.com/OpenVisionE2/enigma2-openvision-main.git;branch=develop;name=enigma2 \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "git://github.com/OpenVisionE2/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels", d)} \
 	"
+
+EXTRA_OECONF_append += "\
+    ${@bb.utils.contains("MACHINE_FEATURES", "bwlcd128", "--with-bwlcd128" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "bwlcd140", "--with-bwlcd140" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "bwlcd255", "--with-bwlcd255" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd220", "--with-colorlcd220" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd390", "--with-colorlcd390" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd400", "--with-colorlcd400" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd480", "--with-colorlcd480" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd720", "--with-colorlcd720" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "colorlcd800", "--with-colorlcd800" , "", d)} \
+"
 
 SRCREV_extrarcmodels_pn-${PN} = "${AUTOREV}"
 SRCREV_FORMAT = "enigma2"
@@ -43,8 +49,4 @@ do_configure_prepend() {
 		done
 		cat "${WORKDIR}/extra_rc_models/rc_models.cfg" >> "${S}/data/rc_models/rc_models.cfg"
 	fi
-}
-
-do_install_prepend() {
-	mv ${WORKDIR}/radio.mvi ${B}/data/radio.mvi
 }
