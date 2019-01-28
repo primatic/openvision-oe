@@ -1,10 +1,10 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI_append += "\
-	file://09-undefine-macro-HAVE_CONFIG_H.patch \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://09-undefine-macro-HAVE_CONFIG_H.patch", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "file://amlogic.patch file://defaultskin.patch", "", d)} \
-	file://biss-caid.patch \
-	file://openvision.patch \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://biss-caid.patch", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "file://openvision.patch", d)} \
 	file://radio.mvi \
 	"
 
