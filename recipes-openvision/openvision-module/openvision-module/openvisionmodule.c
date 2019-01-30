@@ -27,7 +27,7 @@ static int openvisionmodule_read_proc (char *page, char **start, off_t off, int 
 
         mutex_lock(&openvisionmodule_table_mutex);
 
-        len = sprintf(page, "http://openvision.tech\n");
+        len = sprintf(page, "https://openvision.tech\n");
         mutex_unlock(&openvisionmodule_table_mutex);
         if (off >= len+begin)
                 return 0;
@@ -52,7 +52,7 @@ static int proc_openvisionmodule_show(struct seq_file *seq, void *v)
 {
         off_t   begin = 0;
 
-        seq_printf(seq, "http://openvision.tech\n");
+        seq_printf(seq, "https://openvision.tech\n");
         return 0;
 }
 
