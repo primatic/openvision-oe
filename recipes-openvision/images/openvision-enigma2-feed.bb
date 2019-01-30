@@ -84,12 +84,12 @@ OPTIONAL_PACKAGES += " \
 	python-requests \
 	rsync \
 	rtorrent \
-	rtl8723a \
+	${@bb.utils.contains_any("MACHINE", "cube dm800 su980", "", "rtl8723a", d)} \
 	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rtl8723bs", "", "rtl8723bs", d)} \
-	${@bb.utils.contains_any("MACHINE", "dm500hd dm500hdv2 dm800se dm800sev2 dm7020hd dm7020hdv2", "", "rtl8812au", d)} \
+	${@bb.utils.contains_any("MACHINE", "cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980", "", "rtl8812au", d)} \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8814au", d)} \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8822bu", d)} \
-	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k dm500hd dm500hdv2 dm800se dm800sev2 dm7020hd dm7020hdv2", "", "rtl8189es", d)} \
+	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980", "", "rtl8189es", d)} \
 	${@bb.utils.contains_any("MACHINE", "osmio4k", "", "rtl8192eu", d)} \
 	sabnzbd \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
@@ -117,6 +117,26 @@ OPTIONAL_PACKAGES += " \
 	zip \
 	zsh \
 	${OPTIONAL_BSP_PACKAGES} \
+	"
+
+OPTIONAL_PACKAGES_remove_dm800 = " \
+	rtl8723bs \
+	rtl8814au \
+	rtl8822bu \
+	"
+
+OPTIONAL_PACKAGES_remove_su980 = " \
+	rtl8723bs \
+	rtl8814au \
+	rtl8822bu \
+	smbnetfs \
+	"
+
+OPTIONAL_PACKAGES_remove_cube = " \
+	rtl8723bs \
+	rtl8814au \
+	rtl8822bu \
+	smbnetfs \
 	"
 
 OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
@@ -198,6 +218,14 @@ ENIGMA2_OPTIONAL = " \
 	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "streamproxy", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "multitranscoding", "streamproxy", "", d)} \
 	${OPTIONAL_BSP_ENIGMA2_PACKAGES} \
+	"
+
+ENIGMA2_OPTIONAL_remove_su980 = " \
+	enigma2-plugin-extensions-sdgradio \
+	"
+
+ENIGMA2_OPTIONAL_remove_cube = " \
+	enigma2-plugin-extensions-sdgradio \
 	"
 
 DEPENDS += "${OPTIONAL_PACKAGES} ${ENIGMA2_OPTIONAL}"	
