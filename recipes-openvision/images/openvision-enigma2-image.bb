@@ -144,6 +144,7 @@ IMAGE_INSTALL += "\
 	ntp \
 	ntfs-3g \
 	openssh-sftp-server \
+	python-imaging \
 	samba-base \
 	wscan", d)} \
 	"

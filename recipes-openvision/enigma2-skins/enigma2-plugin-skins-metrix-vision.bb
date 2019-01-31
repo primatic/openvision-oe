@@ -9,7 +9,7 @@ require conf/license/license-gplv2.inc
 inherit gitpkgv gettext allarch
 
 DEPENDS += "gettext-native"
-RDEPENDS_${PN} = "python-imaging"
+#RDEPENDS_${PN} = "python-imaging"
 
 PV = "2.2+git${SRCPV}"
 PKGV = "2.2+git${GITPKGV}"
