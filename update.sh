@@ -27,6 +27,7 @@ METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 # Lets restore Makefile first in case OpenPLi update it
 git checkout Makefile
+git pull
 sed -i "s#BUILD_DIR = \$(CURDIR)/build#BUILD_DIR = \$(CURDIR)/${BUILDDIR}#g" Makefile
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/openpli.conf/openvision.conf/g' {} \;
@@ -74,5 +75,5 @@ for i in ${METAS}
 do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> ${BUILDDIR}/conf/bblayers.conf
 done
-echo "BBLAYERS_append = \" ${SCRIPTPATH}\"" >> build/conf/bblayers.conf
+echo "BBLAYERS_append = \" ${SCRIPTPATH}\"" >> ${BUILDDIR}/conf/bblayers.conf
 rm -rf meta-openpli/recipes-extended/tzdata
