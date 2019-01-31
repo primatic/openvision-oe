@@ -104,6 +104,7 @@ OPTIONAL_PACKAGES += " \
 	tcpdump \
 	tmux \
 	transmission \
+	tsniv2ni \
 	udpxy \
 	upx \
 	usb-modeswitch \
