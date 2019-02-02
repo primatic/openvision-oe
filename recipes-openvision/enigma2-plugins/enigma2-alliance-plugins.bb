@@ -5,6 +5,8 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=8e37f34d0e40d32ea2bc90ee812c9131"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
+PACKAGES_DYNAMIC = "enigma2-plugin-alliance-.*"
+
 inherit autotools-brokensep gitpkgv pythonnative gettext
 
 PV = "git${SRCPV}"
@@ -36,7 +38,6 @@ PROVIDES += " \
     enigma2-plugin-systemplugins-multitranscodingsetup \
     enigma2-plugin-systemplugins-remotecontrolcode \
     enigma2-plugin-systemplugins-satipclient \
-    enigma2-plugin-systemplugins-tempfancontrol \
     enigma2-plugin-systemplugins-terrestrialscan \
     enigma2-plugin-systemplugins-vfdcontrol \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
@@ -74,6 +75,7 @@ DESCRIPTION_enigma2-plugin-extensions-webbrowser = "Webbrowser launcher"
 FILES_enigma2-plugin-extensions-webbrowser_append = "${datadir}/keymaps"
 RDEPENDS_enigma2-plugin-extensions-webbrowser = "python-gdata libqtwebkite4 webbrowser-utils qt4-embedded-fonts qt4-embedded-plugin-imageformat-gif qt4-embedded-plugin-imageformat-ico qt4-embedded-plugin-imageformat-jpeg qt4-embedded-plugin-imageformat-mng qt4-embedded-plugin-imageformat-svg qt4-embedded-plugin-imageformat-tiff qt4-embedded-plugin-iconengine-svgicon"
 DESCRIPTION_enigma2-plugin-systemplugins-abmcustommiximporter = "Imports ABM CustomMix files from Github."
+DESCRIPTION_enigma2-plugin-systemplugins-audioeffect = "Audio Effect setup"
 DESCRIPTION_enigma2-plugin-systemplugins-blindscan = "blindscan"
 RRECOMMENDS_enigma2-plugin-systemplugins-blindscan = "virtual/blindscan-dvbs"
 DESCRIPTION_enigma2-plugin-systemplugins-channelsimporter = "Imports a copy of the channel list from a remote receiver and loads it on the local receiver."
@@ -88,7 +90,6 @@ DEPENDS_enigma2-plugin-systemplugins-satipclient = "satipclient"
 DESCRIPTION_enigma2-plugin-systemplugins-satipclient = "Satip Client setup"
 REPLACES_enigma2-plugin-systemplugins-satipclient = "enigma2-plugin-extensions-satipclient"
 RDEPENDS_enigma2-plugin-systemplugins-satipclient = "satipclient"
-DESCRIPTION_enigma2-plugin-systemplugins-tempfancontrol = "Control your internal system fan."
 DESCRIPTION_enigma2-plugin-systemplugins-terrestrialscan = "Selects the strongest transponders where there are duplicates and allows filtering by network id."
 DESCRIPTION_enigma2-plugin-systemplugins-vfdcontrol = "vfd controller"
 DESCRIPTION_enigma2-plugin-systemplugins-wirelessaccesspoint = "Using a Wireless module as AP."
@@ -107,6 +108,11 @@ EXTRA_OECONF = " \
     --with-boxtype=${MACHINE} \
     --with-arch=${TARGET_ARCH} \
     "
+
+do_install_append() {
+	# remove unused .pyc files
+	find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
+}
 
 python populate_packages_prepend() {
     enigma2_plugindir = bb.data.expand('${libdir}/enigma2/python/Plugins', d)
