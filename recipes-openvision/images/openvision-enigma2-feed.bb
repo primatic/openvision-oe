@@ -15,6 +15,7 @@ DEPENDS = "openvision-enigma2-image"
 OPTIONAL_PACKAGES_BROKEN = "samba"
 OPTIONAL_PACKAGES ?= ""
 OPTIONAL_BSP_PACKAGES ?= ""
+
 OPTIONAL_PACKAGES += " \
 	astra-sm \
 	autofs \
@@ -119,20 +120,20 @@ OPTIONAL_PACKAGES += " \
 	${OPTIONAL_BSP_PACKAGES} \
 	"
 
-OPTIONAL_PACKAGES_remove_dm800 = " \
+OPTIONAL_PACKAGES_remove_dm800 += " \
 	rtl8723bs \
 	rtl8814au \
 	rtl8822bu \
 	"
 
-OPTIONAL_PACKAGES_remove_su980 = " \
+OPTIONAL_PACKAGES_remove_su980 += " \
 	rtl8723bs \
 	rtl8814au \
 	rtl8822bu \
 	smbnetfs \
 	"
 
-OPTIONAL_PACKAGES_remove_cube = " \
+OPTIONAL_PACKAGES_remove_cube += " \
 	rtl8723bs \
 	rtl8814au \
 	rtl8822bu \
@@ -140,12 +141,35 @@ OPTIONAL_PACKAGES_remove_cube = " \
 	"
 
 OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
-ENIGMA2_OPTIONAL = " \
+
+OEA_ENIGMA2_PLUGINS += " \
+	enigma2-plugin-extensions-fempa \
+	enigma2-plugin-extensions-ondemand \
+	enigma2-plugin-extensions-ondemand-openuitzendinggemist \
+	enigma2-plugin-extensions-rcuselect \
+	enigma2-plugin-extensions-rezap \
+	enigma2-plugin-extensions-streamtv \
+	enigma2-plugin-extensions-tunerserver \
+	enigma2-plugin-extensions-webbrowser \
+	enigma2-plugin-systemplugins-abmcustommiximporter \
+	enigma2-plugin-systemplugins-blindscan \
+	enigma2-plugin-systemplugins-channelsimporter \
+	enigma2-plugin-systemplugins-fancontrol \
+	enigma2-plugin-systemplugins-firmwareupgrade \
+	enigma2-plugin-systemplugins-fpgaupgrade \
+	enigma2-plugin-systemplugins-micomupgrade \
+	enigma2-plugin-systemplugins-multitranscodingsetup \
+	enigma2-plugin-systemplugins-remotecontrolcode \
+	enigma2-plugin-systemplugins-satipclient \
+	enigma2-plugin-systemplugins-terrestrialscan \
+	${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
+	"
+
+ENIGMA2_OPTIONAL += " \
 	cdtextinfo \
 	channelsettings-enigma2-meta \
 	dvb-usb-drivers-meta \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "textlcd colorlcd colorlcd220 colorlcd390 colorlcd400 colorlcd480 colorlcd720 colorlcd800 bwlcd96 bwlcd128 bwlcd140 bwlcd255", "enigma2-display-skins", "", d)} \
-	${@bb.utils.contains_any("OPENPLI_FEATURES", "textlcd colorlcd colorlcd220 colorlcd390 colorlcd400 colorlcd480 colorlcd720 colorlcd800 bwlcd96 bwlcd128 bwlcd140 bwlcd255", "enigma2-display-skins", "", d)} \
 	enigma2-pliplugins \
 	${@bb.utils.contains("EXTRA_IMAGEDEPENDS", "vuplus-tuner-turbo", "enigma2-plugin-drivers-dvb-usb-turbo", "", d)} \
 	enigma2-plugin-drivers-usbserial \
@@ -214,10 +238,9 @@ ENIGMA2_OPTIONAL = " \
 	picons-enigma2-meta \
 	softcams-enigma2-meta \
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "streamproxy", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "transcoding", "streamproxy", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "streamproxy", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "multitranscoding", "streamproxy", "", d)} \
 	${OPTIONAL_BSP_ENIGMA2_PACKAGES} \
+	${OEA_ENIGMA2_PLUGINS} \
 	"
 
 DEPENDS += "${OPTIONAL_PACKAGES} ${ENIGMA2_OPTIONAL}"	

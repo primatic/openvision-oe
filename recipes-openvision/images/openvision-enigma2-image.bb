@@ -41,6 +41,7 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "bluetooth", "enigma2-plugin-extensions-btdevicesmanager", "", d)} \
 	enigma2-plugin-extensions-graphmultiepg \
 	${@bb.utils.contains("MACHINE_FEATURES", "grautec", "enigma2-plugin-extensions-grautec", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "colorlcd", "enigma2-plugin-extensions-lcd4linux", "", d)} \
 	enigma2-plugin-extensions-mediaplayer \
 	enigma2-plugin-extensions-mediascanner \
 	enigma2-plugin-extensions-moviecut \
@@ -48,7 +49,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-pictureplayer \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-extensions-pluginskinmover", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer", "", d)} \
@@ -56,26 +56,27 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "fan", "enigma2-plugin-systemplugins-extrafancontrol", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "fan", "enigma2-plugin-systemplugins-extrafancontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "fanctrl", "enigma2-plugin-extensions-fancontrol2", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "fanctrl", "enigma2-plugin-extensions-fancontrol2", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "enigma2-plugin-extensions-rcuselect enigma2-plugin-extensions-rezap", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-blindscan enigma2-plugin-systemplugins-satscan" , "", d)} \
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hdmicec \
 	enigma2-plugin-systemplugins-hotplug \
+	${@bb.utils.contains("MACHINE_FEATURES", "micom", "enigma2-plugin-systemplugins-micomupgrade" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "enigma2-plugin-systemplugins-multitranscodingsetup", "", d)} \
 	enigma2-plugin-systemplugins-networkbrowser \
 	enigma2-plugin-systemplugins-osd3dsetup \
 	enigma2-plugin-systemplugins-osdpositionsetup \
 	enigma2-plugin-systemplugins-positionersetup \
+	${@bb.utils.contains("MACHINE_FEATURES", "ctrlrc", "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
 	enigma2-plugin-systemplugins-satfinder \
-	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "satip", "enigma2-plugin-systemplugins-satipclient" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "sh4booster", "enigma2-plugin-systemplugins-sh4boostercontrol", "", d)} \
 	enigma2-plugin-systemplugins-skinselector \
 	enigma2-plugin-systemplugins-softwaremanager \
-	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "multitranscoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "dvb-t", "enigma2-plugin-systemplugins-terrestrialscan" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "7seg", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "7seg", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "7segment", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "7segment", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
 	enigma2-plugin-systemplugins-videomode \
 	enigma2-plugin-systemplugins-videotune \
 	enigma2-plugin-systemplugins-wirelesslan \
@@ -109,12 +110,6 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "cdtextinfo", "", d)} \
 	enigma2 \
 	${ENIGMA2_PLUGINS} \
-	${@bb.utils.contains("MACHINE_FEATURES", "colorlcd", "enigma2-plugin-extensions-lcd4linux", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "colorlcd", "enigma2-plugin-extensions-lcd4linux", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "ctrlrc", "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "ctrlrc", "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "transcoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd", "", d)} \
 	libavahi-client \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto", "", d)} \
@@ -122,16 +117,12 @@ IMAGE_INSTALL += "\
 	openvision-version-info \
 	settings-autorestore \
 	${@bb.utils.contains("MACHINE_FEATURES", "streamproxy", "streamproxy", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "streamproxy", "streamproxy", "", d)} \
 	tuxbox-common \
 	${@bb.utils.contains_any("MACHINE", "vuuno vuduo vuultimo vusolo vusolo2 vuduo2 vusolose vuzero vuuno4k vuuno4kse vuzero4k vuultimo4k vusolo4k vuduo4k", "vuplus-tuner-turbo", "", d)} \
 	wget \
 	${@bb.utils.contains("MACHINE_FEATURES", "kernelwifi", "${KERNEL_WIFI_DRIVERS}", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "kernelwifi", "${KERNEL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "extrakernelwifi", "${EXTRA_KERNEL_WIFI_DRIVERS}", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "extrakernelwifi", "${EXTRA_KERNEL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "externalwifi", "${EXTERNAL_WIFI_DRIVERS}", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "externalwifi", "${EXTERNAL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	astra-sm \
 	busybox-cron \
