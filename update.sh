@@ -70,7 +70,6 @@ make init update
 # Remove existing meta-dream and meta-axasuhd from bblayers.conf
 sed -i "s# $(pwd)/meta-dream##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-axasuhd##g" ${BUILDDIR}/conf/bblayers.conf
-#sed -i "s# $(pwd)/meta-vuplus##g" ${BUILDDIR}/conf/bblayers.conf
 for i in ${METAS}
 do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> ${BUILDDIR}/conf/bblayers.conf
