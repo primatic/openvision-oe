@@ -5,12 +5,22 @@ NC='\033[0m' # No Color
 GREEN='\033[0;32m'
 echo "Welcome to Open Vision's OE cleanup script!"
 echo "After using this script the size of the build folder will be reduced."
-echo -e "Check ${RED}README.md ${NC}or ${RED}PLi-metas.md ${NC}and enter a specific machine to cleanup:"
-echo ""
+echo -e "First tell us what kind of cleanup do you want?"
+echo -e "Answers are in ${GREEN}green:${NC}"
+echo -e "${GREEN}Fast ${NC}- ${GREEN}Full"
+echo -e ""
+read CLEANMODE
+echo -e "${NC}"
+if [ $CLEANMODE != "Fast" -a $CLEANMODE != "Full" ]
+then
+	echo -e "${RED}Not a valid answer!${NC}"
+	echo -e ""
+	exit 0
+fi
+echo -e "Now check ${RED}README.md ${NC}or ${RED}PLi-metas.md ${NC}and enter a specific machine to cleanup:"
 echo -e "${GREEN}"
 read MACHINE
 echo -e "${NC}"
-echo ""
 echo -e "Removing ${GREEN}$MACHINE${NC} build folders, please wait ..."
 cd ..
 echo ""
@@ -62,24 +72,27 @@ rm -rf build/tmp/work/$MACHINE-oe-linu*
 echo ""
 echo "work cleaned!"
 echo ""
-cd build/tmp/work
-find \( -iname \*_$MACHINE_*.adb -o -iname \*_$MACHINE_*.ads \) -type f -exec rm -f {} \;
-cd ..
-cd ..
-cd ..
-echo ""
-echo "work's adb ads files cleaned!"
-echo ""
 rm -rf build/tmp/work-shared/$MACHINE
 echo ""
 echo "work-shared cleaned!"
 echo ""
-cd build/tmp/work-shared
-find \( -iname \*_$MACHINE_*.adb -o -iname \*_$MACHINE_*.ads \) -type f -exec rm -f {} \;
-cd ..
-cd ..
-cd ..
-echo ""
-echo "work-shared's adb ads files cleaned!"
-echo ""
+if [ $CLEANMODE = "Full" ]
+then
+	cd build/tmp/work
+	find \( -iname \*_$MACHINE_*.adb -o -iname \*_$MACHINE_*.ads \) -type f -exec rm -f {} \;
+	cd ..
+	cd ..
+	cd ..
+	echo ""
+	echo "work's adb ads files cleaned!"
+	echo ""
+	cd build/tmp/work-shared
+	find \( -iname \*_$MACHINE_*.adb -o -iname \*_$MACHINE_*.ads \) -type f -exec rm -f {} \;
+	cd ..
+	cd ..
+	cd ..
+	echo ""
+	echo "work-shared's adb ads files cleaned!"
+	echo ""
+fi
 echo "Done."
