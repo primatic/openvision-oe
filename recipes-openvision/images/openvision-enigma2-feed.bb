@@ -142,29 +142,6 @@ OPTIONAL_PACKAGES_remove_cube += " \
 
 OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
 
-OEA_ENIGMA2_PLUGINS += " \
-	enigma2-plugin-extensions-fempa \
-	enigma2-plugin-extensions-ondemand \
-	enigma2-plugin-extensions-ondemand-openuitzendinggemist \
-	enigma2-plugin-extensions-rcuselect \
-	enigma2-plugin-extensions-rezap \
-	enigma2-plugin-extensions-streamtv \
-	enigma2-plugin-extensions-tunerserver \
-	enigma2-plugin-extensions-webbrowser \
-	enigma2-plugin-systemplugins-abmcustommiximporter \
-	enigma2-plugin-systemplugins-blindscan \
-	enigma2-plugin-systemplugins-channelsimporter \
-	enigma2-plugin-systemplugins-fancontrol \
-	enigma2-plugin-systemplugins-firmwareupgrade \
-	enigma2-plugin-systemplugins-fpgaupgrade \
-	enigma2-plugin-systemplugins-micomupgrade \
-	enigma2-plugin-systemplugins-multitranscodingsetup \
-	enigma2-plugin-systemplugins-remotecontrolcode \
-	enigma2-plugin-systemplugins-satipclient \
-	enigma2-plugin-systemplugins-terrestrialscan \
-	${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
-	"
-
 ENIGMA2_OPTIONAL += " \
 	cdtextinfo \
 	channelsettings-enigma2-meta \
@@ -177,7 +154,7 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-blurayplayer \
 	enigma2-plugin-extensions-btdevicesmanager \
-	${@bb.utils.contains("MACHINE_FEATURES", "chromium", "enigma2-plugin-extensions-chromium", "", d)} \
+	${@bb.utils.contains_any("MACHINE_FEATURES", "chromium chromiumos", "enigma2-plugin-extensions-chromium", "", d)} \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \
 	enigma2-plugin-extensions-dreamplex \
@@ -240,7 +217,6 @@ ENIGMA2_OPTIONAL += " \
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "streamproxy", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "streamproxy", "", d)} \
 	${OPTIONAL_BSP_ENIGMA2_PACKAGES} \
-	${OEA_ENIGMA2_PLUGINS} \
 	"
 
 DEPENDS += "${OPTIONAL_PACKAGES} ${ENIGMA2_OPTIONAL}"	

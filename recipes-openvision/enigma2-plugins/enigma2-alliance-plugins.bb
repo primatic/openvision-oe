@@ -5,8 +5,6 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=8e37f34d0e40d32ea2bc90ee812c9131"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-PACKAGES_DYNAMIC = "enigma2-plugin-alliance-.*"
-
 inherit autotools-brokensep gitpkgv pythonnative gettext
 
 PV = "git${SRCPV}"
@@ -21,7 +19,7 @@ PROVIDES += " \
     enigma2-plugin-extensions-dlnaserver \
     enigma2-plugin-extensions-fempa \
     enigma2-plugin-extensions-ondemand \
-    enigma2-plugin-extensions-ondemand-openuitzendinggemist \
+    enigma2-plugin-extensions-openuitzendinggemist \
     enigma2-plugin-extensions-rcuselect \
     enigma2-plugin-extensions-remotechannelstreamconverter \
     enigma2-plugin-extensions-rezap \
@@ -48,28 +46,31 @@ DEPENDS = "\
     ${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "virtual/blindscan-dvbs" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "bridge-utils hostapd", d)} \
     djmount \
+    enigma2-plugin-systemplugins-autobouquetsmaker \
     hddtemp \
     librtmp \
+    libupnp \
     minidlna \
-    python-beautifulsoup python-dnspython python-lxml python-pyamf python-simplejson \
+    neon \
+    python-beautifulsoup python-dnspython python-gdata python-lxml python-pyamf python-simplejson \
     satipclient \
     "
 
 DESCRIPTION_enigma2-plugin-extensions-dlnabrowser = "this is dlna/upnp browser using djmount"
-RDEPENDS_enigma2-plugin-extensions-dlnabrowser = "djmount fuse-utils libfuse2 libupnp1.6 libneon27"
+RDEPENDS_enigma2-plugin-extensions-dlnabrowser = "djmount fuse-utils libfuse2 libupnp libneon27"
 DESCRIPTION_enigma2-plugin-extensions-dlnaserver = "this is dlna server using minidlna"
 RDEPENDS_enigma2-plugin-extensions-dlnaserver = "minidlna"
 DESCRIPTION_enigma2-plugin-extensions-fempa = "Norwegian P4 FEM PAA radio show player."
 DESCRIPTION_enigma2-plugin-extensions-ondemand = "Watch on demand TV."
-RDEPENDS_enigma2-plugin-extensions-ondemand = "python-dnspython python-beautifulsoup python-lxml python-simplejson python-pyamf"
-DESCRIPTION_enigma2-plugin-extensions-ondemand-openuitzendinggemist = "Watch NL-IP TV"
+RDEPENDS_enigma2-plugin-extensions-ondemand = "python-beautifulsoup python-dnspython python-lxml python-pyamf python-simplejson"
+DESCRIPTION_enigma2-plugin-extensions-openuitzendinggemist = "Watch NL-IP TV"
 DESCRIPTION_enigma2-plugin-extensions-rcuselect = "Change Remote for Wetek"
 DESCRIPTION_enigma2-plugin-extensions-remotechannelstreamconverter = "Fetch channels from remote bouquets and make them available locally"
 RDEPENDS_enigma2-plugin-extensions-remotechannelstreamconverter = "python-shell"
 RREPLACES_enigma2-plugin-extensions-remotechannelstreamconverter = "enigma2-plugin-extensions-remotestreamconvert"
 DESCRIPTION_enigma2-plugin-extensions-rezap = "ReZap Sync Tool for Wetek"
 DESCRIPTION_enigma2-plugin-extensions-streamtv = "iptv player"
-RDEPENDS_enigma2-plugin-extensions-streamtv = "librtmp1"
+RDEPENDS_enigma2-plugin-extensions-streamtv = "rtmpdump"
 DESCRIPTION_enigma2-plugin-extensions-tunerserver = "Builds a virtual channels list"
 DESCRIPTION_enigma2-plugin-extensions-webbrowser = "Webbrowser launcher"
 FILES_enigma2-plugin-extensions-webbrowser_append = "${datadir}/keymaps"
@@ -93,7 +94,7 @@ RDEPENDS_enigma2-plugin-systemplugins-satipclient = "satipclient"
 DESCRIPTION_enigma2-plugin-systemplugins-terrestrialscan = "Selects the strongest transponders where there are duplicates and allows filtering by network id."
 DESCRIPTION_enigma2-plugin-systemplugins-vfdcontrol = "vfd controller"
 DESCRIPTION_enigma2-plugin-systemplugins-wirelessaccesspoint = "Using a Wireless module as AP."
-RDEPENDS_enigma2-plugin-systemplugins-wirelessaccesspoint = "hostapd bridge-utils"
+RDEPENDS_enigma2-plugin-systemplugins-wirelessaccesspoint = "bridge-utils hostapd"
 
 ALLOW_EMPTY_${PN} = "1"
 PACKAGES += "${PN}-meta"
