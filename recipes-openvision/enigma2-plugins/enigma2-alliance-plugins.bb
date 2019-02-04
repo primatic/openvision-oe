@@ -21,7 +21,6 @@ PROVIDES += " \
     enigma2-plugin-extensions-ondemand \
     enigma2-plugin-extensions-openuitzendinggemist \
     enigma2-plugin-extensions-rcuselect \
-    enigma2-plugin-extensions-remotechannelstreamconverter \
     enigma2-plugin-extensions-rezap \
     enigma2-plugin-extensions-streamtv \
     enigma2-plugin-extensions-tunerserver \
