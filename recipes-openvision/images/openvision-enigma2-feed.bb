@@ -90,7 +90,7 @@ OPTIONAL_PACKAGES += " \
 	${@bb.utils.contains_any("MACHINE", "cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980", "", "rtl8812au", d)} \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8814au", d)} \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8822bu", d)} \
-	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 force1 force1plus iqonios100hd iqonios200hd iqonios300hd iqonios300hdv2 mediabox optimussos1 optimussos1plus optimussos2 optimussos2plus optimussos3plus tm2t tmnano2super tmnano2t tmnano3t tmnano tmsingle tmtwin worldvisionf1 worldvisionf1plus", "", "rtl8189es", d)} \
+	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 force1 force1plus iqonios100hd iqonios200hd iqonios300hd iqonios300hdv2 mediabox optimussos1 optimussos1plus optimussos2 optimussos2plus optimussos3plus tm2t tmnano2super tmnano2t tmnano3t tmnano tmsingle tmtwin worldvisionf1 worldvisionf1plus azboxhd azboxme azboxminime", "", "rtl8189es", d)} \
 	${@bb.utils.contains_any("MACHINE", "osmio4k dm800", "", "rtl8192eu", d)} \
 	sabnzbd \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
