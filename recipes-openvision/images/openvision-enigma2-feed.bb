@@ -121,6 +121,11 @@ OPTIONAL_PACKAGES_remove_su980 += " \
 	smbnetfs \
 	"
 
+OPTIONAL_PACKAGES_remove_sh4 += "\
+	lirc \
+	nodejs \
+	"
+
 EXTRA_WIFI_DRIVERS += "\
 	${@bb.utils.contains_any("MACHINE", "cube dm800 su980", "", "rtl8723a", d)} \
 	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rtl8723bs", "", "rtl8723bs", d)} \
@@ -147,6 +152,11 @@ EXTRA_WIFI_DRIVERS_remove_su980 += " \
 	rtl8723bs \
 	rtl8814au \
 	rtl8822bu \
+	"
+
+EXTRA_WIFI_DRIVERS_remove_sh4 += "\
+	rtl8189es \
+	rtl8812au \
 	"
 
 OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
