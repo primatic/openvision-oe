@@ -85,13 +85,6 @@ OPTIONAL_PACKAGES += " \
 	python-requests \
 	rsync \
 	rtorrent \
-	${@bb.utils.contains_any("MACHINE", "cube dm800 su980", "", "rtl8723a", d)} \
-	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rtl8723bs", "", "rtl8723bs", d)} \
-	${@bb.utils.contains_any("MACHINE", "cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 ixusszero ixussone dm820 dm8000 dm7080 dm520", "", "rtl8812au", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8814au", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8822bu", d)} \
-	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 force1 force1plus iqonios100hd iqonios200hd iqonios300hd iqonios300hdv2 mediabox optimussos1 optimussos1plus optimussos2 optimussos2plus optimussos3plus tm2t tmnano2super tmnano2t tmnano3t tmnano tmsingle tmtwin worldvisionf1 worldvisionf1plus azboxhd azboxme azboxminime maram9 k1plus ixusszero ixussone ventonhdx sezam5000hd mbtwin beyonwizt3 gb800ue gb800solo gb800se dm820 dm8000 dm7080 dm520 x8hp wetekhub wetekplay2  wetekplay", "", "rtl8189es", d)} \
-	${@bb.utils.contains_any("MACHINE", "osmio4k dm800", "", "rtl8192eu", d)} \
 	sabnzbd \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
 	screen \
@@ -119,21 +112,31 @@ OPTIONAL_PACKAGES += " \
 	zsh \
 	${OPTIONAL_BSP_PACKAGES} \
 	"
+	
+EXTRA_WIFI_DRIVERS += "\
+	${@bb.utils.contains_any("MACHINE", "cube dm800 su980", "", "rtl8723a", d)} \
+	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rtl8723bs", "", "rtl8723bs", d)} \
+	${@bb.utils.contains_any("MACHINE", "cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 ixusszero ixussone dm820 dm8000 dm7080 dm520", "", "rtl8812au", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8814au", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rtl8822bu", d)} \
+	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 force1 force1plus iqonios100hd iqonios200hd iqonios300hd iqonios300hdv2 mediabox optimussos1 optimussos1plus optimussos2 optimussos2plus optimussos3plus tm2t tmnano2super tmnano2t tmnano3t tmnano tmsingle tmtwin worldvisionf1 worldvisionf1plus azboxhd azboxme azboxminime maram9 k1plus ixusszero ixussone ventonhdx sezam5000hd mbtwin beyonwizt3 gb800ue gb800solo gb800se dm820 dm8000 dm7080 dm520 x8hp wetekhub wetekplay2  wetekplay", "", "rtl8189es", d)} \
+	${@bb.utils.contains_any("MACHINE", "osmio4k dm800", "", "rtl8192eu", d)} \
+	"
 
-OPTIONAL_PACKAGES_remove_dm800 += " \
+EXTRA_WIFI_DRIVERS_remove_dm800 += " \
 	rtl8723bs \
 	rtl8814au \
 	rtl8822bu \
 	"
 
-OPTIONAL_PACKAGES_remove_su980 += " \
+EXTRA_WIFI_DRIVERS_remove_su980 += " \
 	rtl8723bs \
 	rtl8814au \
 	rtl8822bu \
 	smbnetfs \
 	"
 
-OPTIONAL_PACKAGES_remove_cube += " \
+EXTRA_WIFI_DRIVERS_remove_cube += " \
 	rtl8723bs \
 	rtl8814au \
 	rtl8822bu \
@@ -220,4 +223,4 @@ ENIGMA2_OPTIONAL += " \
 	${OPTIONAL_BSP_ENIGMA2_PACKAGES} \
 	"
 
-DEPENDS += "${OPTIONAL_PACKAGES} ${ENIGMA2_OPTIONAL}"	
+DEPENDS += "${OPTIONAL_PACKAGES} ${ENIGMA2_OPTIONAL} ${EXTRA_WIFI_DRIVERS}"	
