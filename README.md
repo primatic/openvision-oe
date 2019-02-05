@@ -299,11 +299,14 @@
 * beyonwizu4
 * et13000
 
+# How to use sdcard images (E.g. raspberrypi):
+You could use https://sourceforge.net/projects/win32diskimager/ or similar tools to write the image on a sdcard.
+
 # You could compile Open Vision for other brands/models which PLi maintains them:
 https://github.com/OpenVisionE2/openvision-oe/blob/develop/PLi-metas.md
 
 # Ubuntu 18.04.x LTS setup:
-* Run our ltsubuntu.sh
+Run our ltsubuntu.sh
 
 # How to build an Open Vision image:
 1. Clone openpli-oe-core somewhere:
@@ -335,3 +338,14 @@ You could download our builds from https://openvision.tech/stb-images/
 # Support
 
 Please use our forum at https://openvision.tech or our issue page at https://github.com/OpenVisionE2/openvision-oe/issues
+
+* Are you allowed to compile development versions? Yes!
+* Are you allowed to distribute development versions? No!
+* Are you allowed to make our images compatible with clones? Yes!
+* Are you allowed to distribute cloned images? Yes but only with "clone-version" tag and no development versions.
+* Do we support clones? No!
+* Do we provide support for self-building? No! We prefer to work on our projects.
+* Do we need more Vision Developers? Absolutely yes! Contribute to our git and we contact you!
+* Do we need more Vision Testers? Absolutely yes! Test our images and report bugs, help us grow you'll see the title flows.
+
+If you see your model in https://github.com/OpenVisionE2/openvision-oe/blob/develop/README.md it means there will be Open Vision for it otherwise read https://openvision.tech/viewtopic.php?f=2&t=30 and don't spam the board!
