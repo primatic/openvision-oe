@@ -54,6 +54,7 @@ fi
 # Regenerate bblayers.conf so we can add our own
 rm -f ${BUILDDIR}/conf/bblayers.conf
 make init update
+echo ""
 echo "Let us fix the image names ..."
 echo ""
 find -maxdepth 1 -name "meta-a*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
