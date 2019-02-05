@@ -224,6 +224,7 @@
 * k2pro
 * k2prov2
 * k3pro
+* kvim2
 
 # MaxyTec
 * multibox
