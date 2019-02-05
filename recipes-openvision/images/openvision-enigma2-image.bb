@@ -103,7 +103,6 @@ MACHINE_FEATURE_RELATED_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "grautec", "enigma2-plugin-extensions-grautec", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "colorlcd", "enigma2-plugin-extensions-lcd4linux", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "enigma2-plugin-extensions-rcuselect enigma2-plugin-extensions-rezap", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "micom", "enigma2-plugin-systemplugins-micomupgrade" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "enigma2-plugin-systemplugins-multitranscodingsetup", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "ctrlrc", "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "satip", "enigma2-plugin-systemplugins-satipclient" , "", d)} \
