@@ -72,31 +72,31 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-wirelesslan \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	enigma2-plugin-extensions-blurayplayer \
-	${@bb.utils.contains("MACHINE_FEATURES", "bluetooth", "enigma2-plugin-extensions-btdevicesmanager", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer", "", d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'enigma2-plugin-extensions-btdevicesmanager', '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'dvd', 'enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer', '', d)} \
+	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer', '', d)} \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-e2iplayer \
 	enigma2-plugin-extensions-e2iplayer-deps \
 	enigma2-plugin-extensions-filebrowser \
 	enigma2-plugin-extensions-foreca \
-	${@bb.utils.contains("MACHINE_FEATURES", "grautec", "enigma2-plugin-extensions-grautec", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "colorlcd", "enigma2-plugin-extensions-lcd4linux", "", d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'grautec', 'enigma2-plugin-extensions-grautec', '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'colorlcd', 'enigma2-plugin-extensions-lcd4linux', '', d)} \
 	enigma2-plugin-extensions-openwebif-extras-terminal \
-	${@bb.utils.contains("MACHINE_FEATURES", "nogamma", "enigma2-plugin-extensions-rcuselect enigma2-plugin-extensions-rezap", "", d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'nogamma', 'enigma2-plugin-extensions-rcuselect enigma2-plugin-extensions-rezap', '', d)} \
 	enigma2-plugin-extensions-reconstructapsc \
 	enigma2-plugin-extensions-vlcplayer \
 	enigma2-plugin-extensions-xmodem \
 	enigma2-plugin-softcams-oscam \
 	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-systemplugins-bh-skin-support \
-	${@bb.utils.contains("MACHINE_FEATURES", "micom", "enigma2-plugin-systemplugins-micomupgrade" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "multitranscoding", "enigma2-plugin-systemplugins-multitranscodingsetup", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "ctrlrc", "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "satip", "enigma2-plugin-systemplugins-satipclient" , "", d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'micom', 'enigma2-plugin-systemplugins-micomupgrade' , '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'multitranscoding', 'enigma2-plugin-systemplugins-multitranscodingsetup', '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'ctrlrc', 'enigma2-plugin-systemplugins-remotecontrolcode', '', d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'satip', 'enigma2-plugin-systemplugins-satipclient' , '', d)} \
 	enigma2-plugin-systemplugins-setpasswd \
 	enigma2-plugin-systemplugins-systemtime \
-	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)}", d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'transcoding', 'enigma2-plugin-systemplugins-transcodingsetup', '', d)}", d)} \
 	"
 
 DEPENDS += "\
@@ -125,8 +125,8 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	astra-sm \
 	busybox-cron \
-	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "cdtextinfo", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "cdtextinfo", "", d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'dvd', 'cdtextinfo', '', d)} \
+	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'cdtextinfo', '', d)} \
 	curl \
 	dvbsnoop \
 	hddtemp \
@@ -138,7 +138,7 @@ IMAGE_INSTALL += "\
 	openssh-sftp-server \
 	python-imaging \
 	samba-base \
-	${@bb.utils.contains("MACHINE_FEATURES", "streamproxy", "streamproxy", "", d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'streamproxy', 'streamproxy', '', d)} \
 	wscan", d)} \
 	"
 
