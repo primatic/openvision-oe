@@ -1,6 +1,6 @@
 diff -Naur enigma2-plugins-PLi/configure.ac enigma2-plugins-PersianPrince/configure.ac
 --- enigma2-plugins-PLi/configure.ac	2019-01-21 02:02:42.000000000 +0330
-+++ enigma2-plugins-PersianPrince/configure.ac	2019-02-03 10:38:54.167664886 +0330
++++ enigma2-plugins-PersianPrince/configure.ac	2019-02-05 12:25:52.395686440 +0330
 @@ -96,12 +96,6 @@
  babelzapper/meta/Makefile
  babelzapper/src/Makefile
@@ -39,9 +39,21 @@ diff -Naur enigma2-plugins-PLi/configure.ac enigma2-plugins-PersianPrince/config
  tvcharts/Makefile
  tvcharts/meta/Makefile
  tvcharts/src/Makefile
+@@ -458,11 +441,6 @@
+ vps/src_cc/Makefile
+ vps/src_py/Makefile
+ 
+-vfdcontrol/Makefile
+-vfdcontrol/meta/Makefile
+-vfdcontrol/po/Makefile
+-vfdcontrol/src/Makefile
+-
+ weatherplugin/Makefile
+ weatherplugin/meta/Makefile
+ weatherplugin/po/Makefile
 diff -Naur enigma2-plugins-PLi/Makefile.am enigma2-plugins-PersianPrince/Makefile.am
 --- enigma2-plugins-PLi/Makefile.am	2019-01-21 02:02:42.000000000 +0330
-+++ enigma2-plugins-PersianPrince/Makefile.am	2019-02-03 10:38:53.455680716 +0330
++++ enigma2-plugins-PersianPrince/Makefile.am	2019-02-05 12:25:51.915691220 +0330
 @@ -9,7 +9,6 @@
  	autoresolution \
  	autotimer \
@@ -58,7 +70,7 @@ diff -Naur enigma2-plugins-PLi/Makefile.am enigma2-plugins-PersianPrince/Makefil
  	seekbar \
  	setpasswd \
  	shoutcast \
-@@ -71,7 +69,6 @@
+@@ -71,14 +69,12 @@
  	trafficinfo \
  	transcodingsetup \
  	transmission \
@@ -66,3 +78,10 @@ diff -Naur enigma2-plugins-PLi/Makefile.am enigma2-plugins-PersianPrince/Makefil
  	tvcharts \
  	unwetterinfo \
  	valixdcontrol \
+ 	virtualzap \
+ 	vlcplayer \
+ 	vps \
+-	vfdcontrol \
+ 	weatherplugin \
+ 	webcamviewer \
+ 	werbezapper \
