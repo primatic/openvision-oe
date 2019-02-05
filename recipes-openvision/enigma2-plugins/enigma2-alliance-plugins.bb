@@ -34,7 +34,7 @@ PROVIDES += " \
     enigma2-plugin-systemplugins-micomupgrade \
     enigma2-plugin-systemplugins-multitranscodingsetup \
     enigma2-plugin-systemplugins-remotecontrolcode \
-    enigma2-plugin-systemplugins-satipclient \
+    ${@bb.utils.contains_any("MACHINE", "dm800", "", "enigma2-plugin-systemplugins-satipclient", d)} \
     enigma2-plugin-systemplugins-terrestrialscan \
     enigma2-plugin-systemplugins-vfdcontrol \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
@@ -52,7 +52,7 @@ DEPENDS = "\
     minidlna \
     neon \
     python-beautifulsoup python-dnspython python-gdata python-lxml python-pyamf python-simplejson \
-    satipclient \
+    ${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
     "
 
 DESCRIPTION_enigma2-plugin-extensions-dlnabrowser = "this is dlna/upnp browser using djmount"
