@@ -109,6 +109,10 @@ EXTRA_OECONF = " \
 do_install_append() {
 	# remove unused .pyc files
 	find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
+	if [ "${MACHINE}" == "dm800" ]
+	then
+		rm -Rf ${D}/usr/lib/enigma2/python/Plugins/SystemPlugins/SatipClient
+	fi
 }
 
 python populate_packages_prepend() {
