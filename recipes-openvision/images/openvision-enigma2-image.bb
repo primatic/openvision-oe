@@ -21,7 +21,7 @@ KERNEL_WIFI_DRIVERS += "\
 EXTRA_KERNEL_WIFI_DRIVERS += "\
 	firmware-rtl8192cu \
 	firmware-rtl8188eu \
-	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd dm8000", "", "kernel-module-r8188eu", d)} \
+	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd dm8000 dm7020 dm7080 dm520 dm500hdv2", "", "kernel-module-r8188eu", d)} \
 	kernel-module-rtl8192cu \
 	"
 
