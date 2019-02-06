@@ -9,7 +9,7 @@ KERNEL_WIFI_DRIVERS += "\
 	firmware-rtl8712u \
 	firmware-zd1211 \
 	kernel-module-ath9k-htc \
-	kernel-module-carl9170 \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-carl9170", d)} \
 	kernel-module-r8712u \
 	kernel-module-rt2500usb \
 	kernel-module-rt2800usb \
