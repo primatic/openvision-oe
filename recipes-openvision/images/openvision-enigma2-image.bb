@@ -8,25 +8,32 @@ KERNEL_WIFI_DRIVERS += "\
 	firmware-rt73 \
 	firmware-rtl8712u \
 	firmware-zd1211 \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-ath9k-htc", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-carl9170", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-r8712u", d)} \
-	kernel-module-rt2500usb \
-	kernel-module-rt2800usb \
-	kernel-module-rt73usb \
-	kernel-module-rtl8187 \
-	kernel-module-zd1211rw \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-ath9k-htc", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-carl9170", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-r8712u", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rt2500usb", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rt2800usb", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rt73usb", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rtl8187", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-zd1211rw", d)} \
+	"
+
+KERNEL_WIFI_DRIVERS_remove_sh4 += "\
+	kernel-module-ath9k-htc \
+	kernel-module-carl9170 \
+	kernel-module-r8712u \
 	"
 
 EXTRA_KERNEL_WIFI_DRIVERS += "\
 	firmware-rtl8192cu \
 	firmware-rtl8188eu \
-	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd dm8000 dm7020 dm7080 dm520 dm500hdv2", "", "kernel-module-r8188eu", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-rtl8192cu", d)} \
+	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd k1plus k1pro k2pro k2prov2 k3pro kvim2 dm8000 dm7020 dm7080 dm520 dm500hdv2", "", "kernel-module-r8188eu", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rtl8192cu", d)} \
 	"
 
 EXTRA_KERNEL_WIFI_DRIVERS_remove_sh4 += "\
 	kernel-module-r8188eu \
+	kernel-module-rtl8192cu \
 	"
 
 EXTERNAL_WIFI_DRIVERS += "\
@@ -68,6 +75,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-skinselector \
 	enigma2-plugin-systemplugins-softwaremanager \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-t", "enigma2-plugin-systemplugins-terrestrialscan" , "", d)} \
+	${@bb.utils.contains_any("MACHINE_FEATURES", "7seg 7segment", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "", "enigma2-plugin-systemplugins-videoenhancement", d)} \
 	enigma2-plugin-systemplugins-videomode \
 	enigma2-plugin-systemplugins-videotune \
