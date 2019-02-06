@@ -36,7 +36,6 @@ PROVIDES += " \
     enigma2-plugin-systemplugins-remotecontrolcode \
     ${@bb.utils.contains_any("MACHINE", "dm800", "", "enigma2-plugin-systemplugins-satipclient", d)} \
     enigma2-plugin-systemplugins-terrestrialscan \
-    enigma2-plugin-systemplugins-vfdcontrol \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
     "
 
@@ -88,7 +87,6 @@ DESCRIPTION_enigma2-plugin-systemplugins-satipclient = "Satip Client setup"
 REPLACES_enigma2-plugin-systemplugins-satipclient = "enigma2-plugin-extensions-satipclient"
 RDEPENDS_enigma2-plugin-systemplugins-satipclient = "satipclient"
 DESCRIPTION_enigma2-plugin-systemplugins-terrestrialscan = "Selects the strongest transponders where there are duplicates and allows filtering by network id."
-DESCRIPTION_enigma2-plugin-systemplugins-vfdcontrol = "vfd controller"
 DESCRIPTION_enigma2-plugin-systemplugins-wirelessaccesspoint = "Using a Wireless module as AP."
 RDEPENDS_enigma2-plugin-systemplugins-wirelessaccesspoint = "bridge-utils hostapd"
 
