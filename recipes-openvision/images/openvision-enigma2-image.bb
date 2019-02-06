@@ -8,7 +8,7 @@ KERNEL_WIFI_DRIVERS += "\
 	firmware-rt73 \
 	firmware-rtl8712u \
 	firmware-zd1211 \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-ath9k-htc", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-ath9k-htc", d)} \
 	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-carl9170", d)} \
 	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-r8712u", d)} \
 	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rt2500usb", d)} \
