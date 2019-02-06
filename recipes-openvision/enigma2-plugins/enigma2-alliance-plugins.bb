@@ -26,16 +26,25 @@ PROVIDES += " \
     enigma2-plugin-extensions-tunerserver \
     enigma2-plugin-extensions-webbrowser \
     enigma2-plugin-systemplugins-abmcustommiximporter \
+    enigma2-plugin-systemplugins-animationsetup \
+    enigma2-plugin-systemplugins-audioeffect \
     enigma2-plugin-systemplugins-blindscan \
     enigma2-plugin-systemplugins-channelsimporter \
+    enigma2-plugin-systemplugins-ewvfdcontrol \
+    enigma2-plugin-systemplugins-f3ledcontrol \
     enigma2-plugin-systemplugins-fancontrol \
     enigma2-plugin-systemplugins-firmwareupgrade \
     enigma2-plugin-systemplugins-fpgaupgrade \
+    enigma2-plugin-systemplugins-gigabluevfdcontrol \
+    enigma2-plugin-systemplugins-inivfdcontrol \
     enigma2-plugin-systemplugins-micomupgrade \
     enigma2-plugin-systemplugins-multitranscodingsetup \
+    enigma2-plugin-systemplugins-odinm7vfdcontrol \
     enigma2-plugin-systemplugins-remotecontrolcode \
     ${@bb.utils.contains_any("MACHINE", "dm800", "", "enigma2-plugin-systemplugins-satipclient", d)} \
+    enigma2-plugin-systemplugins-sf8vfdcontrol \
     enigma2-plugin-systemplugins-terrestrialscan \
+    enigma2-plugin-systemplugins-vpledcontrol \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
     "
 
