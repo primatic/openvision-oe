@@ -8,9 +8,9 @@ KERNEL_WIFI_DRIVERS += "\
 	firmware-rt73 \
 	firmware-rtl8712u \
 	firmware-zd1211 \
-	kernel-module-ath9k-htc \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-ath9k-htc", d)} \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-carl9170", d)} \
-	kernel-module-r8712u \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-r8712u", d)} \
 	kernel-module-rt2500usb \
 	kernel-module-rt2800usb \
 	kernel-module-rt73usb \
@@ -22,7 +22,11 @@ EXTRA_KERNEL_WIFI_DRIVERS += "\
 	firmware-rtl8192cu \
 	firmware-rtl8188eu \
 	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd dm8000 dm7020 dm7080 dm520 dm500hdv2", "", "kernel-module-r8188eu", d)} \
-	kernel-module-rtl8192cu \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "kernel-module-rtl8192cu", d)} \
+	"
+
+EXTRA_KERNEL_WIFI_DRIVERS_remove_sh4 += "\
+	kernel-module-r8188eu \
 	"
 
 EXTERNAL_WIFI_DRIVERS += "\
@@ -64,8 +68,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-skinselector \
 	enigma2-plugin-systemplugins-softwaremanager \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-t", "enigma2-plugin-systemplugins-terrestrialscan" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "7seg", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "7segment", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "", "enigma2-plugin-systemplugins-videoenhancement", d)} \
 	enigma2-plugin-systemplugins-videomode \
 	enigma2-plugin-systemplugins-videotune \
