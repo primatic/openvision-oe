@@ -74,7 +74,6 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "sh4booster", "enigma2-plugin-systemplugins-sh4boostercontrol", "", d)} \
 	enigma2-plugin-systemplugins-skinselector \
 	enigma2-plugin-systemplugins-softwaremanager \
-	${@bb.utils.contains("MACHINE_FEATURES", "dvb-t", "enigma2-plugin-systemplugins-terrestrialscan" , "", d)} \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "7seg 7segment", "enigma2-plugin-systemplugins-vfdcontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "", "enigma2-plugin-systemplugins-videoenhancement", d)} \
 	enigma2-plugin-systemplugins-videomode \
@@ -83,19 +82,23 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	enigma2-plugin-extensions-blurayplayer \
 	enigma2-plugin-extensions-dlnabrowser \
+	enigma2-plugin-extensions-dlnaserver \
 	enigma2-plugin-extensions-e2iplayer \
 	enigma2-plugin-extensions-e2iplayer-deps \
 	enigma2-plugin-extensions-filebrowser \
 	enigma2-plugin-extensions-foreca \
 	enigma2-plugin-extensions-openwebif-extras-terminal \
 	enigma2-plugin-extensions-reconstructapsc \
+	enigma2-plugin-extensions-tunerserver \
 	enigma2-plugin-extensions-vlcplayer \
 	enigma2-plugin-extensions-xmodem \
 	enigma2-plugin-softcams-oscam \
 	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-systemplugins-bh-skin-support \
+	enigma2-plugin-systemplugins-channelsimporter \
 	enigma2-plugin-systemplugins-setpasswd \
-	enigma2-plugin-systemplugins-systemtime", d)} \
+	enigma2-plugin-systemplugins-systemtime \
+	enigma2-plugin-systemplugins-terrestrialscan", d)} \
 	"
 
 DEPENDS += "\
