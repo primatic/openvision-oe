@@ -28,7 +28,7 @@ EXTRA_KERNEL_WIFI_DRIVERS += "\
 	firmware-rtl8192cu \
 	firmware-rtl8188eu \
 	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd k1plus k1pro k2pro k2prov2 k3pro kvim2 dm8000 dm7020hd dm7080 dm520 dm500hdv2 dm820 dm800sev2 azboxme azboxminime ebox5000 cube force1 force1plus iqonios100hd iqonios200hd iqonios300hd iqonios300hdv2 mediabox optimussos1plus optimussos1 optimussos2", "", "kernel-module-r8188eu", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rtl8192cu", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-rtl8192cu", d)} \
 	"
 
 EXTRA_KERNEL_WIFI_DRIVERS_remove_sh4 += "\
