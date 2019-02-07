@@ -9,13 +9,13 @@ KERNEL_WIFI_DRIVERS += "\
 	firmware-rtl8712u \
 	firmware-zd1211 \
 	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-ath9k-htc", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-carl9170", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-r8712u", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rt2500usb", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rt2800usb", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rt73usb", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rtl8187", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-zd1211rw", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-carl9170", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-r8712u", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-rt2500usb", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-rt2800usb", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-rt73usb", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-rtl8187", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 cube", "", "kernel-module-zd1211rw", d)} \
 	"
 
 KERNEL_WIFI_DRIVERS_remove_sh4 += "\
@@ -27,8 +27,8 @@ KERNEL_WIFI_DRIVERS_remove_sh4 += "\
 EXTRA_KERNEL_WIFI_DRIVERS += "\
 	firmware-rtl8192cu \
 	firmware-rtl8188eu \
-	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd k1plus k1pro k2pro k2prov2 k3pro kvim2 dm8000 dm7020hd dm7080 dm520 dm500hdv2 dm820 dm800sev2 azboxme azboxminime", "", "kernel-module-r8188eu", d)} \
-	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2 dm800sev2", "", "kernel-module-rtl8192cu", d)} \
+	${@bb.utils.contains_any("MACHINE", "ventonhdx beyonwizt3 mbtwin sezam5000hd k1plus k1pro k2pro k2prov2 k3pro kvim2 dm8000 dm7020hd dm7080 dm520 dm500hdv2 dm820 dm800sev2 azboxme azboxminime ebox5000", "", "kernel-module-r8188eu", d)} \
+	${@bb.utils.contains_any("MACHINE", "k1plus k1pro k2pro k2prov2 k3pro kvim2", "", "kernel-module-rtl8192cu", d)} \
 	"
 
 EXTRA_KERNEL_WIFI_DRIVERS_remove_sh4 += "\
