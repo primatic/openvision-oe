@@ -1,6 +1,6 @@
 #!/bin/sh
 echo ""
-echo "This is only for Open Vision members with push access"
+echo "This is only for Open Vision Developers with push access"
 echo ""
 echo "Stage 1: git pull for new changes"
 echo ""
