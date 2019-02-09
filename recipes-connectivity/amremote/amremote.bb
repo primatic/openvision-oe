@@ -69,8 +69,9 @@ do_install() {
     install -m 0644 ${S}/wetek3.conf ${D}${sysconfdir}/amremote/
     install -m 0644 ${S}/wetek_et10000remote.conf ${D}${sysconfdir}/amremote/
     install -m 0644 ${S}/wetek_hd2400remote.conf ${D}${sysconfdir}/amremote/
-    install -m 0644 ${S}/wetek_tmnanoremote.conf ${D}${sysconfdir}/amremote/
+    install -m 0644 ${S}/wetek_ipbox9900remote.conf ${D}${sysconfdir}/amremote/
     install -m 0644 ${S}/wetek_play2.conf ${D}${sysconfdir}/amremote/
+    install -m 0644 ${S}/wetek_tmnanoremote.conf ${D}${sysconfdir}/amremote/
     install -m 0644 ${S}/x96.conf ${D}${sysconfdir}/amremote/
     install -m 0644 ${S}/x98.conf ${D}${sysconfdir}/amremote/
     install -m 0644 ${S}/zgemmastar.conf ${D}${sysconfdir}/amremote/
