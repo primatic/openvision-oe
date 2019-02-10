@@ -1,5 +1,5 @@
 SUMMARY = "Additional plugins for Enigma2"
-MAINTAINER = "oe-alliance team"
+MAINTAINER = "Open Vision Developers"
 LICENSE = "Proprietary"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8e37f34d0e40d32ea2bc90ee812c9131"
 
@@ -71,7 +71,7 @@ DESCRIPTION_enigma2-plugin-extensions-fempa = "Norwegian P4 FEM PAA radio show p
 DESCRIPTION_enigma2-plugin-extensions-ondemand = "Watch on demand TV."
 RDEPENDS_enigma2-plugin-extensions-ondemand = "python-beautifulsoup python-dnspython python-lxml python-pyamf python-simplejson"
 DESCRIPTION_enigma2-plugin-extensions-openuitzendinggemist = "Watch NL-IP TV"
-DESCRIPTION_enigma2-plugin-extensions-rcuselect = "Change Remote for Wetek"
+DESCRIPTION_enigma2-plugin-extensions-rcuselect = "Change Remote for Amlogic"
 DESCRIPTION_enigma2-plugin-extensions-rezap = "ReZap Sync Tool for Wetek"
 DESCRIPTION_enigma2-plugin-extensions-streamtv = "iptv player"
 RDEPENDS_enigma2-plugin-extensions-streamtv = "rtmpdump"
