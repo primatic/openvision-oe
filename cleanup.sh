@@ -56,11 +56,7 @@ rm -rf build/tmp/stamps/$MACHINE-oe-linu*
 echo ""
 echo "stamps cleaned!"
 echo ""
-cd build/tmp/stamps
-find -name "*.$MACHINE" -type f -exec rm -f {} \;
-cd ..
-cd ..
-cd ..
+find build/tmp/stamps -name "*.$MACHINE" -type f -exec rm -f {} \;
 echo ""
 echo "packagedata_setscene cleaned!"
 echo ""
@@ -78,6 +74,10 @@ echo "work-shared cleaned!"
 echo ""
 if [ $CLEANMODE = "Full" ]
 then
+	find build/tmp/work/*/*/*/temp -type f -exec rm -f {} \;
+	echo ""
+	echo "temp cleaned!"
+	echo ""
 	cd build/tmp/work
 	find \( -iname \*_$MACHINE_*.adb -o -iname \*_$MACHINE_*.ads \) -type f -exec rm -f {} \;
 	cd ..
