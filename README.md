@@ -219,6 +219,9 @@
 
 # Linkdroid
 * alien5
+* c300
+* c300pro
+* c400plus
 * k1plus
 * k1pro
 * k2pro
