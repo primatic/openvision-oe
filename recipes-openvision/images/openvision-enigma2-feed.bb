@@ -192,7 +192,7 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-extensions-moviemanager \
 	enigma2-plugin-extensions-openmultiboot \
 	enigma2-plugin-extensions-refreshbouquet \
-	${@bb.utils.contains_any("MACHINE", "cube su980", "", "enigma2-plugin-extensions-sdgradio", d)} \
+	${@bb.utils.contains_any("MACHINE", "cube su980 raspberrypi raspberrypi0", "", "enigma2-plugin-extensions-sdgradio", d)} \
 	enigma2-plugin-extensions-tmbd \
 	enigma2-plugin-extensions-vcs \
 	enigma2-plugin-extensions-weathermsn \
