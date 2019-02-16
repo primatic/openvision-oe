@@ -348,6 +348,8 @@ Please use our forum at https://forum.openvision.tech or our issue page at https
 * Are you allowed to make our images compatible with clones? Yes!
 * Are you allowed to distribute cloned images? Yes but only with "clone-version" tag and no development versions.
 * Do we support clones? No!
+* Are you allowed to make backup of our images? Yes!
+* Are you allowed to distribute backup images? Yes but only with "backup-version" tag and no development versions.
 * Do we provide support for self-building? No! We prefer to work on our projects.
 * Do we need more Vision Developers? Absolutely yes! Contribute to our git and we contact you!
 * Do we need more Vision Testers? Absolutely yes! Test our images and report bugs, help us grow you'll see the title flows.
