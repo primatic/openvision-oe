@@ -285,6 +285,7 @@ then
 	MACHINE=gbipbox $IMAGECMD
 	MACHINE=gbquad $IMAGECMD
 	MACHINE=gbquadplus $IMAGECMD
+	MACHINE=gbtrio4k $IMAGECMD
 	MACHINE=gbultrase $IMAGECMD
 	MACHINE=gbultraue $IMAGECMD
 	MACHINE=gbultraueh $IMAGECMD
@@ -702,6 +703,7 @@ then
 	MACHINE=gbipbox $IMAGECMD
 	MACHINE=gbquad $IMAGECMD
 	MACHINE=gbquadplus $IMAGECMD
+	MACHINE=gbtrio4k $IMAGECMD
 	MACHINE=gbultrase $IMAGECMD
 	MACHINE=gbultraue $IMAGECMD
 	MACHINE=gbultraueh $IMAGECMD

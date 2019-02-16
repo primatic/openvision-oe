@@ -177,6 +177,7 @@
 * gbipbox
 * gbquad
 * gbquadplus
+* gbtrio4k
 * gbultrase
 * gbultraue
 * gbultraueh
