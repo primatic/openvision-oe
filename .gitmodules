@@ -122,3 +122,6 @@
 	path = meta-xt
 	url = https://github.com/OpenVisionE2/meta-xt.git
 	shallow = true
+[submodule "meta-beyonwiz"]
+	path = meta-beyonwiz
+	url = https://github.com/OpenVisionE2/meta-beyonwiz.git
