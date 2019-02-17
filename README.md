@@ -9,6 +9,9 @@
 * azboxme
 * azboxminime
 
+# Beyonwiz
+* beyonwizv2
+
 # BlackBox
 * sogno8800hd
 * uniboxhde

@@ -6,6 +6,10 @@
 	path = meta-azbox
 	url = https://github.com/OpenVisionE2/meta-azbox.git
 	shallow = true
+[submodule "meta-beyonwiz"]
+	path = meta-beyonwiz
+	url = https://github.com/OpenVisionE2/meta-beyonwiz.git
+	shallow = true
 [submodule "meta-blackbox"]
 	path = meta-blackbox
 	url = https://github.com/OpenVisionE2/meta-blackbox.git
@@ -122,6 +126,3 @@
 	path = meta-xt
 	url = https://github.com/OpenVisionE2/meta-xt.git
 	shallow = true
-[submodule "meta-beyonwiz"]
-	path = meta-beyonwiz
-	url = https://github.com/OpenVisionE2/meta-beyonwiz.git

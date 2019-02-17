@@ -7,7 +7,7 @@ echo -e "${RED}Welcome to Open Vision's image compile script!"
 echo -e "Check ${NC}README.md ${RED}or ${NC}PLi-metas.md ${RED}and enter a meta or a specific machine to compile."
 echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
-echo -e "${GREEN}Amiko ${NC}- ${GREEN}AX ${NC}- ${GREEN}AZBox ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon"
+echo -e "${GREEN}Amiko ${NC}- ${GREEN}AX ${NC}- ${GREEN}AZBox  ${NC}- ${GREEN}Beyonwiz ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon"
 echo -e "Clap ${NC}- ${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Edision"
 echo -e "Entwopia ${NC}- ${GREEN}Formuler ${NC}- ${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}GFutures ${NC}- ${GREEN}GI ${NC}- ${GREEN}GigaBlue"
 echo -e "HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid ${NC}- ${GREEN}MaxyTec ${NC}- ${GREEN}MINIX ${NC}- ${GREEN}MiracleBox ${NC}- ${GREEN}Octagon"
@@ -23,7 +23,7 @@ echo -e "${RED}Enter the meta name:${NC}"
 echo -e "${GREEN}"
 read META
 echo -e "${NC}"
-if [ $META != "Amiko" -a $META != "AX" -a $META != "AZBox" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "Fulan" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MaxyTec" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xpeed" -a $META != "Xsarius" -a $META != "XT" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
+if [ $META != "Amiko" -a $META != "AX" -a $META != "AZBox" -a $META != "Beyonwiz" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "Fulan" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MaxyTec" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xpeed" -a $META != "Xsarius" -a $META != "XT" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
 then
 	echo -e "${RED}Not a valid answer!${NC}"
 	echo -e ""
@@ -87,6 +87,10 @@ then
 	MACHINE=azboxhd $IMAGECMD
 	MACHINE=azboxme $IMAGECMD
 	MACHINE=azboxminime $IMAGECMD
+fi
+if [ $META = "Beyonwiz" ]
+then
+	MACHINE=beyonwizv2 $IMAGECMD
 fi
 if [ $META = "BlackBox" ]
 then
@@ -547,6 +551,7 @@ then
 	MACHINE=azboxhd $IMAGECMD
 	MACHINE=azboxme $IMAGECMD
 	MACHINE=azboxminime $IMAGECMD
+	MACHINE=beyonwizv2 $IMAGECMD
 	MACHINE=sogno8800hd $IMAGECMD
 	MACHINE=uniboxhde $IMAGECMD
 	MACHINE=bre2zet2c $IMAGECMD
