@@ -16,6 +16,12 @@ git checkout develop
 git pull
 echo -e "\n"
 cd ..
+cd meta-beyonwiz
+echo "Checking out meta-beyonwiz develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
 cd meta-blackbox
 echo "Checking out meta-blackbox develop branch:"
 git checkout develop
