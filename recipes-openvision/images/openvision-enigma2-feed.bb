@@ -186,6 +186,7 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-extensions-install-exteplayer3 \
 	enigma2-plugin-extensions-install-ffmpeg \
 	enigma2-plugin-extensions-install-gstplayer \
+	${@bb.utils.contains_any("MACHINE_FEATURES", "azbox", "enigma2-plugin-extensions-keymapconfig enigma2-plugin-extensions-rsiconfig enigma2-plugin-extensions-rsimediacenter enigma2-plugin-systemplugins-ofwlauncher", "", d)} \
 	enigma2-plugin-extensions-lcd4linux \
 	enigma2-plugin-extensions-managerautofs \
 	enigma2-plugin-extensions-modifyplifullhd \
