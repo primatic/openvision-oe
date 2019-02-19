@@ -1,4 +1,4 @@
-SUMMARY = "Additional plugins for Enigma2"
+SUMMARY = "OE-Alliance plugins for Open Vision "
 MAINTAINER = "Open Vision Developers"
 LICENSE = "Proprietary"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8e37f34d0e40d32ea2bc90ee812c9131"
@@ -14,7 +14,7 @@ SRC_URI = "git://github.com/OpenVisionE2/alliance-plugins.git;protocol=http"
 
 S = "${WORKDIR}/git"
 
-PROVIDES += " \
+PROVIDES += "\
     enigma2-plugin-extensions-dlnabrowser \
     enigma2-plugin-extensions-dlnaserver \
     enigma2-plugin-extensions-fempa \
@@ -99,6 +99,10 @@ DESCRIPTION_enigma2-plugin-systemplugins-terrestrialscan = "Selects the stronges
 DESCRIPTION_enigma2-plugin-systemplugins-wirelessaccesspoint = "Using a Wireless module as AP."
 RDEPENDS_enigma2-plugin-systemplugins-wirelessaccesspoint = "bridge-utils hostapd"
 
+do_compile() {
+    python -O -m compileall ${S}
+}
+
 ALLOW_EMPTY_${PN} = "1"
 PACKAGES += "${PN}-meta"
 FILES_${PN}-meta = "${datadir}/meta"
@@ -114,12 +118,12 @@ EXTRA_OECONF = " \
     "
 
 do_install_append() {
-	# remove unused .pyc files
-	find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
-	if [ "${MACHINE}" == "dm800" ]
-	then
-		rm -Rf ${D}/usr/lib/enigma2/python/Plugins/SystemPlugins/SatipClient
-	fi
+    # remove unused .pyc files
+    find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
+    if [ "${MACHINE}" == "dm800" ]
+    then
+        rm -Rf ${D}/usr/lib/enigma2/python/Plugins/SystemPlugins/SatipClient
+    fi
 }
 
 python populate_packages_prepend() {
