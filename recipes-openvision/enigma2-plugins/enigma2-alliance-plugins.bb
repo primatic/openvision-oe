@@ -3,8 +3,6 @@ MAINTAINER = "Open Vision Developers"
 LICENSE = "Proprietary"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8e37f34d0e40d32ea2bc90ee812c9131"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
 inherit autotools-brokensep gitpkgv pythonnative gettext
 
 PV = "git${SRCPV}"
