@@ -42,6 +42,7 @@ PROVIDES += "\
     "
 
 DEPENDS = "\
+    dvb-apps \
     hairtunes \
     hddtemp \
     python-shell python-subprocess \
@@ -59,6 +60,7 @@ FILES_enigma2-plugin-extensions-pureprestige_append = "$(sysconfdir)/cron"
 RDEPENDS_enigma2-plugin-extensions-pureprestige = "${@bb.utils.contains_any("IMAGE_FSTYPES", "jffs2nfi ubinfi", "dreambox-buildimage mtd-utils-jffs2" , "", d)}"
 DESCRIPTION_enigma2-plugin-extensions-vusolo2cihighbitratefix = "Fixes VU Solo2 CI high bitrate bug"
 FILES_enigma2-plugin-systemplugins-pepanel_append = "${bindir}"
+RDEPENDS_enigma2-plugin-systemplugins-pepanel = "dvbdate"
 DESCRIPTION_enigma2-plugin-systemplugins-satelliteeditor = "Satellites Editor"
 DESCRIPTION_enigma2-plugin-systemplugins-serviceeditor = "Services Editor"
 RDEPENDS_enigma2-plugin-systemplugins-serviceeditor = "enigma2-plugin-systemplugins-satelliteeditor"
