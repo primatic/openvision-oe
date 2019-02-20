@@ -32,7 +32,6 @@ PROVIDES += "\
     enigma2-plugin-extensions-softcamupdater \
     enigma2-plugin-extensions-vusolo2cihighbitratefix \
     enigma2-plugin-systemplugins-bouquetprotection \
-    enigma2-plugin-systemplugins-mountmanager \
     enigma2-plugin-systemplugins-networkserver \
     enigma2-plugin-systemplugins-pepanel \
     enigma2-plugin-systemplugins-sambaserver \
@@ -89,6 +88,7 @@ EXTRA_OECONF = " \
 do_install_append() {
     # remove unused .pyc files
     find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
+    rm -Rf ${D}/usr/lib/enigma2/python/Plugins/SystemPlugins/MountManager
 }
 
 python populate_packages_prepend() {
