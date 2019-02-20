@@ -12,10 +12,15 @@ SRC_URI = "git://github.com/OpenVisionE2/alliance-plugins.git;protocol=http"
 
 S = "${WORKDIR}/git"
 
+PACKAGES += "\
+    enigma2-plugin-extensions-lcd4linux \
+"
+
 PROVIDES += "\
     enigma2-plugin-extensions-dlnabrowser \
     enigma2-plugin-extensions-dlnaserver \
     enigma2-plugin-extensions-fempa \
+    enigma2-plugin-extensions-lcd4linux \
     enigma2-plugin-extensions-ondemand \
     enigma2-plugin-extensions-openuitzendinggemist \
     enigma2-plugin-extensions-rcuselect \
@@ -57,7 +62,7 @@ DEPENDS = "\
     libupnp \
     minidlna \
     neon \
-    python-beautifulsoup python-dnspython python-gdata python-lxml python-pyamf python-simplejson \
+    python-beautifulsoup python-dnspython python-gdata python-icalendar python-lxml python-pyamf python-pyusb python-simplejson \
     ${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
     "
 
@@ -66,6 +71,11 @@ RDEPENDS_enigma2-plugin-extensions-dlnabrowser = "djmount fuse-utils libfuse2 li
 DESCRIPTION_enigma2-plugin-extensions-dlnaserver = "this is dlna server using minidlna"
 RDEPENDS_enigma2-plugin-extensions-dlnaserver = "minidlna"
 DESCRIPTION_enigma2-plugin-extensions-fempa = "Norwegian P4 FEM PAA radio show player."
+DESCRIPTION_enigma2-plugin-extensions-lcd4linux = "Web/DPF/Samsung LCD control"
+DEPENDS_enigma2-plugin-extensions-lcd4linux = "lcd4linux png-util"
+RDEPENDS_enigma2-plugin-extensions-lcd4linux = "lcd4linux enigma2-plugin-extensions-lcd4linux-src python-icalendar python-pyusb python-codecs python-datetime python-imaging python-textutils python-shell python-ctypes libusb1 python-mutagen python-zlib python-email python-subprocess python-simplejson python-soco"
+FILES_enigma2-plugin-extensions-lcd4linux_append = "${libdir}/enigma2/python/Components/Renderer/*.pyo"
+FILES_enigma2-plugin-extensions-lcd4linux-src_append = "${libdir}/enigma2/python/Components/Renderer/*.py"
 DESCRIPTION_enigma2-plugin-extensions-ondemand = "Watch on demand TV."
 RDEPENDS_enigma2-plugin-extensions-ondemand = "python-beautifulsoup python-dnspython python-lxml python-pyamf python-simplejson"
 DESCRIPTION_enigma2-plugin-extensions-openuitzendinggemist = "Watch NL-IP TV"
