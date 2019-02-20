@@ -57,6 +57,7 @@ FILES_enigma2-plugin-extensions-deviceinfo-src_append = "${libdir}/enigma2/pytho
 RDEPENDS_enigma2-plugin-extensions-deviceinfo = "hddtemp"
 DESCRIPTION_enigma2-plugin-extensions-fontmagnifier = "Tool to modify enigma 2 gui font sizes"
 RDEPENDS_enigma2-plugin-extensions-packagemanager = "unrar"
+RDEPENDS_enigma2-plugin-extensions-peinfo = "unrar"
 FILES_enigma2-plugin-extensions-pureprestige += "$(sysconfdir)/PurePrestigefeeds.xml"
 FILES_enigma2-plugin-extensions-pureprestige_append = "$(sysconfdir)/cron"
 RDEPENDS_enigma2-plugin-extensions-pureprestige = "${@bb.utils.contains_any("IMAGE_FSTYPES", "jffs2nfi ubinfi", "dreambox-buildimage mtd-utils-jffs2" , "", d)}"
