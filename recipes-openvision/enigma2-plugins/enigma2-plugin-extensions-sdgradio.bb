@@ -10,14 +10,15 @@ SRC_URI = "git://github.com/satdreamgr/SDGRadio.git;protocol=http"
 
 S = "${WORKDIR}/git"
 
-inherit gitpkgv
+inherit gitpkgv distutils-openplugins
+
 PV = "1+git${SRCPV}"
 PKGV = "1+git${GITPKGV}"
-
-inherit distutils-openplugins
 
 RDEPENDS_${PN} = "python-core rtl-sdr redsea dab-cmdline-sdgradio dab-cmdline-sdgradio-pcm dab-cmdline-sdgradio-wav"
 
 PACKAGES =+ "${PN}-src"
+
 RDEPENDS_{PN}-src = "${PN}"
+
 FILES_${PN}-src = "${libdir}/enigma2/python/Plugins/Extensions/SDGRadio/*.py"
