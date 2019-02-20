@@ -88,7 +88,6 @@ EXTRA_OECONF = " \
 do_install_append() {
     # remove unused .pyc files
     find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
-    rm -Rf ${D}/usr/lib/enigma2/python/Plugins/SystemPlugins/MountManager
 }
 
 python populate_packages_prepend() {
