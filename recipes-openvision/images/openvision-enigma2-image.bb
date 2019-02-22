@@ -79,7 +79,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-videotune \
 	enigma2-plugin-systemplugins-wirelesslan \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
-	enigma2-plugin-extensions-blurayplayer \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \
 	enigma2-plugin-extensions-e2iplayer \
@@ -151,18 +150,14 @@ IMAGE_INSTALL += "\
 	astra-sm \
 	busybox-cron \
 	curl \
-	dvbsnoop \
-	hddtemp \
 	fuse-exfat \
-	libbluray \
 	${MACHINE_FEATURE_RELATED_PLUGINS} \
 	nfs-utils \
 	ntp \
 	ntfs-3g \
 	openssh-sftp-server \
 	python-imaging \
-	samba-base \
-	wscan", d)} \
+	samba-base", d)} \
 	"
 
 export IMAGE_BASENAME = "openvision-enigma2"
