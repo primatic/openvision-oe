@@ -42,6 +42,7 @@ EXTERNAL_WIFI_DRIVERS += "\
 	rtl8188eu \
 	rtl8192eu \
 	"
+
 MACHINE_SPECIFIC_VFD = "${@bb.utils.contains_any("MACHINE", "gbquad4k gbue4k gb800se gb800seplus gb800solo gb800ue gb800ueplus gbipbox gbquad gbquadplus gbultrase gbultraue gbultraueh gbx1 gbx2 gbx3 gbx3h sezam1000hd xpeedlx mbmini atemio5x00 bwidowx atemio6000 atemio6100 atemio6200 mbminiplus mbhybrid bwidowx2 beyonwizt2 opticumtt evoslim sf128 sf138 bre2zet2c bre2ze4k et1x000 g100 g101 hd51 hd1100 hd1200 hd1265 hd1500 hd500c hd530c formuler3 formuler4 formuler4turbo tiviarmin xcombo enibox mago x1plus sf108 t2cable 9910lx 9911lx 9920lx e4hdcombo odin2hybrid odinplus sh1 h3 h5 h7 lc vs1000 enfinity marvel1 bre2ze xp1000 classm axodin axodinc starsatlx genius evo galaxym6 9900lx sf8008 spycat spycatmini spycatminiplus bcm7358 vp7358ci osnino osninoplus gbtrio4k", "", "enigma2-plugin-systemplugins-vfdcontrol", d)}"
 
 ENIGMA2_PLUGINS += "\
@@ -60,9 +61,6 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "fan", "enigma2-plugin-systemplugins-extrafancontrol", "", d)} \
-	${@bb.utils.contains("OPENPLI_FEATURES", "fan", "enigma2-plugin-systemplugins-extrafancontrol", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "fanctrl", "enigma2-plugin-extensions-fancontrol2", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-blindscan enigma2-plugin-systemplugins-satscan" , "", d)} \
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hdmicec \
@@ -92,7 +90,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-reconstructapsc \
 	enigma2-plugin-extensions-tunerserver \
 	enigma2-plugin-extensions-vlcplayer \
-	enigma2-plugin-extensions-xmodem \
 	enigma2-plugin-softcams-oscam \
 	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-systemplugins-bh-skin-support \

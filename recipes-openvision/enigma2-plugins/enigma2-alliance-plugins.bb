@@ -33,22 +33,28 @@ PROVIDES += "\
     enigma2-plugin-systemplugins-audioeffect \
     enigma2-plugin-systemplugins-blindscan \
     enigma2-plugin-systemplugins-channelsimporter \
+    enigma2-plugin-systemplugins-dmblindscan \
     enigma2-plugin-systemplugins-ewvfdcontrol \
     enigma2-plugin-systemplugins-f3ledcontrol \
-    enigma2-plugin-systemplugins-fancontrol \
     enigma2-plugin-systemplugins-firmwareupgrade \
     enigma2-plugin-systemplugins-fpgaupgrade \
+    enigma2-plugin-systemplugins-gigablueremote \
     enigma2-plugin-systemplugins-gigabluevfdcontrol \
     enigma2-plugin-systemplugins-inivfdcontrol \
     enigma2-plugin-systemplugins-micomupgrade \
     enigma2-plugin-systemplugins-multitranscodingsetup \
     enigma2-plugin-systemplugins-odinm7vfdcontrol \
-    enigma2-plugin-systemplugins-remotecontrolcode \
     ${@bb.utils.contains_any("MACHINE", "dm800", "", "enigma2-plugin-systemplugins-satipclient", d)} \
     enigma2-plugin-systemplugins-sf8vfdcontrol \
+    enigma2-plugin-systemplugins-simplefancontrol \
     enigma2-plugin-systemplugins-terrestrialscan \
+    enigma2-plugin-systemplugins-ventonfancontrol \
     enigma2-plugin-systemplugins-vpledcontrol \
+    enigma2-plugin-systemplugins-vuduofancontrol \
+    enigma2-plugin-systemplugins-vuremote \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
+    enigma2-plugin-systemplugins-xtrendfancontrol \
+    enigma2-plugin-systemplugins-xtrendremote \
     "
 
 DEPENDS = "\
@@ -92,13 +98,14 @@ DESCRIPTION_enigma2-plugin-systemplugins-audioeffect = "Audio Effect setup"
 DESCRIPTION_enigma2-plugin-systemplugins-blindscan = "blindscan"
 RRECOMMENDS_enigma2-plugin-systemplugins-blindscan = "virtual/blindscan-dvbs"
 DESCRIPTION_enigma2-plugin-systemplugins-channelsimporter = "Imports a copy of the channel list from a remote receiver and loads it on the local receiver."
-DESCRIPTION_enigma2-plugin-systemplugins-fancontrol = "Control your internal system fan."
-RDEPENDS_enigma2-plugin-systemplugins-fancontrol = "hddtemp"
+DESCRIPTION_enigma2-plugin-systemplugins-dmblindscan = "blindscan"
+RRECOMMENDS_enigma2-plugin-systemplugins-dmblindscan = "virtual/blindscan-dvbs"
+DESCRIPTION_enigma2-plugin-systemplugins-xtrendfancontrol = "Control your internal system fan."
+RDEPENDS_enigma2-plugin-systemplugins-xtrendfancontrol = "hddtemp"
 DESCRIPTION_enigma2-plugin-systemplugins-firmwareupgrade = "Upgrade your system Firmware"
 DESCRIPTION_enigma2-plugin-systemplugins-fpgaupgrade = "Upgrade your system FPGA"
 DESCRIPTION_enigma2-plugin-systemplugins-micomupgrade = "micomupgrade"
 DESCRIPTION_enigma2-plugin-systemplugins-multitranscodingsetup = "Setup multitranscoding"
-DESCRIPTION_enigma2-plugin-systemplugins-remotecontrolcode = "Change Remote Control Code"
 DEPENDS_enigma2-plugin-systemplugins-satipclient = "satipclient"
 DESCRIPTION_enigma2-plugin-systemplugins-satipclient = "Satip Client setup"
 REPLACES_enigma2-plugin-systemplugins-satipclient = "enigma2-plugin-extensions-satipclient"
