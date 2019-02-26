@@ -9,7 +9,7 @@ PR = "${VISIONREVISION}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI = "file://settings file://openvision-remover.sh file://openvision-timesync.sh"
+SRC_URI = "file://settings file://ov.py file://openvision-remover.sh file://openvision-timesync.sh"
 
 FILES_${PN} = "/etc /usr"
 
@@ -27,6 +27,10 @@ INITSCRIPT_NAME = "openvision-timesync.sh"
 INITSCRIPT_PARAMS = "start 19 3 ."
 
 inherit update-rc.d
+
+do_compile() {
+	python -O -m compileall ${S}
+}
 
 do_install() {
 			install -d ${D}/etc
@@ -47,6 +51,8 @@ do_install() {
 			install -d ${D}${sysconfdir}/enigma2
 			install -m 0755 ${WORKDIR}/settings	${D}${sysconfdir}/enigma2
 			install -d ${D}/usr/share/enigma2/picon
+			install -d ${D}/usr/lib/python2.7
+			install -m 0644 ${WORKDIR}/ov.pyo	${D}/usr/lib/python2.7
 			install -d ${D}${sysconfdir}/init.d
 			install -m 0755 ${WORKDIR}/openvision-remover.sh ${D}${sysconfdir}/init.d
 			install -d ${D}${sysconfdir}/rcS.d
