@@ -1,7 +1,8 @@
 DESCRIPTION = "Azbox AZplayer app plugin"
-RDEPENDS = "enigma2 curl fuse libupnp"
 DEPENDS = "python-native"
 require conf/license/openpli-gplv2.inc
+
+RDEPENDS_${PN} = "curl fuse libupnp djmount"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -31,11 +32,6 @@ do_install() {
 	install -d ${D}/usr/bin/
 	install -m 0755 ${S}/bin/rmfp_player ${D}/usr/bin/
 
-	install -m 0755 ${S}/bin/djmount ${D}/usr/bin/
-
-	install -d ${D}/etc/init.d
-	install -m 0755 ${S}/bin/init ${D}/etc/init.d/djmount
-
 	install -d ${D}/usr/lib/
 	install -m 0755 ${S}/lib/lib* ${D}/usr/lib/
 
@@ -49,11 +45,6 @@ do_install() {
 do_install_azboxhd() {
 	install -d ${D}/usr/bin/
 	install -m 0755 ${S}/bin/rmfp_player-ForHD ${D}/usr/bin/rmfp_player
-
-	install -m 0755 ${S}/bin/djmount ${D}/usr/bin/
-
-	install -d ${D}/etc/init.d
-	install -m 0755 ${S}/bin/init ${D}/etc/init.d/djmount
 
 	install -d ${D}/usr/lib/
 	install -m 0755 ${S}/lib/lib* ${D}/usr/lib/
