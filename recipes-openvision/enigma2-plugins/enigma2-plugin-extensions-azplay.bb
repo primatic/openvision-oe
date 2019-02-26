@@ -2,7 +2,7 @@ DESCRIPTION = "Azbox AZplayer app plugin"
 DEPENDS = "python-native"
 require conf/license/openpli-gplv2.inc
 
-RDEPENDS_${PN} = "curl fuse libupnp djmount"
+RDEPENDS_${PN} = "curl fuse libupnp djmount libjpeg-turbo libpng"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -32,9 +32,6 @@ do_install() {
 	install -d ${D}/usr/bin/
 	install -m 0755 ${S}/bin/rmfp_player ${D}/usr/bin/
 
-	install -d ${D}/usr/lib/
-	install -m 0755 ${S}/lib/lib* ${D}/usr/lib/
-
 	install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/AZPlay/
 	install -m 0644 ${S}/plugin/*.pyo ${D}/usr/lib/enigma2/python/Plugins/Extensions/AZPlay/
 
@@ -45,9 +42,6 @@ do_install() {
 do_install_azboxhd() {
 	install -d ${D}/usr/bin/
 	install -m 0755 ${S}/bin/rmfp_player-ForHD ${D}/usr/bin/rmfp_player
-
-	install -d ${D}/usr/lib/
-	install -m 0755 ${S}/lib/lib* ${D}/usr/lib/
 
 	install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/AZPlay/
 	install -m 0644 ${S}/plugin/*.pyo ${D}/usr/lib/enigma2/python/Plugins/Extensions/AZPlay/
