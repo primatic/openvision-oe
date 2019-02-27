@@ -104,11 +104,11 @@ DEPENDS += "\
 	enigma2-persianempire-plugins \
 	enigma2-pliplugins \
 	enigma2-plugins \
+	${EXTERNAL_WIFI_DRIVERS} \
 	"
 
 # These machine feature related plugins should not be enabled for smallflash STBs as there isn't enough space for them!
 MACHINE_FEATURE_RELATED_PLUGINS += "\
-	${EXTERNAL_WIFI_DRIVERS} \
 	${EXTRA_KERNEL_WIFI_DRIVERS} \
 	${KERNEL_WIFI_DRIVERS} \
 	${@bb.utils.contains("MACHINE_FEATURES", "bluetooth", "enigma2-plugin-extensions-btdevicesmanager", "", d)} \
