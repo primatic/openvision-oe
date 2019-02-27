@@ -142,6 +142,7 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto", "", d)} \
 	openvision-module \
 	openvision-version-info \
+	python-pyusb \
 	settings-autorestore \
 	tuxbox-common \
 	${@bb.utils.contains_any("MACHINE", "vuuno vuduo vuultimo vusolo vusolo2 vuduo2 vusolose vuzero vuuno4k vuuno4kse vuzero4k vuultimo4k vusolo4k vuduo4k", "vuplus-tuner-turbo", "", d)} \
