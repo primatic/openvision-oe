@@ -41,7 +41,7 @@ MACHINE_SPECIFIC_VFD = "${@bb.utils.contains_any("MACHINE", "gbquad4k gbue4k gb8
 ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-audiosync \
 	enigma2-plugin-extensions-autobackup \
-	enigma2-plugin-extensions-backupsuite \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "enigma2-plugin-extensions-backupsuite", d)} \
 	enigma2-plugin-extensions-cacheflush \
 	enigma2-plugin-extensions-cutlisteditor \
 	enigma2-plugin-extensions-graphmultiepg \
