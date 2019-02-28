@@ -44,6 +44,7 @@ PROVIDES += "\
     enigma2-plugin-systemplugins-micomupgrade \
     enigma2-plugin-systemplugins-multitranscodingsetup \
     enigma2-plugin-systemplugins-odinm7vfdcontrol \
+    enigma2-plugin-systemplugins-remotecontrolcode \
     ${@bb.utils.contains_any("MACHINE", "dm800", "", "enigma2-plugin-systemplugins-satipclient", d)} \
     enigma2-plugin-systemplugins-sf8vfdcontrol \
     enigma2-plugin-systemplugins-simplefancontrol \
@@ -51,7 +52,6 @@ PROVIDES += "\
     enigma2-plugin-systemplugins-ventonfancontrol \
     enigma2-plugin-systemplugins-vpledcontrol \
     enigma2-plugin-systemplugins-vuduofancontrol \
-    enigma2-plugin-systemplugins-vuremote \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "enigma2-plugin-systemplugins-wirelessaccesspoint", d)} \
     enigma2-plugin-systemplugins-xtrendfancontrol \
     enigma2-plugin-systemplugins-xtrendremote \
