@@ -13,7 +13,6 @@ SRC_URI = "file://settings \
            file://ov.py \
            file://openvision-remover.sh \
            file://openvision-timesync.sh \
-           ${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash", "file://smallflash", "", d)} \
           "
 
 FILES_${PN} = "/etc /usr"
@@ -53,8 +52,8 @@ do_install() {
     echo "catalog=https://github.com/OpenVisionE2" >> ${D}/etc/image-version
     echo "distro=${DISTRO_NAME}" >> ${D}/etc/image-version
     echo "${MACHINE}" > ${D}/etc/model
-    if [ -e ${WORKDIR}/smallflash ]; then
-	install -m 0644 ${WORKDIR}/smallflash	${D}/etc
+    if ${@bb.utils.contains_any("MACHINE_FEATURES", "smallflash", "true", "false", d)}; then
+        echo "smallflash" > ${D}/etc/smallflash
     install -d ${D}${sysconfdir}/enigma2
     install -m 0755 ${WORKDIR}/settings	${D}${sysconfdir}/enigma2
     install -d ${D}/usr/share/enigma2/picon
