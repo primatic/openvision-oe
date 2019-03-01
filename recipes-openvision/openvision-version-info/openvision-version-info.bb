@@ -52,7 +52,7 @@ do_install() {
 	echo "catalog=https://github.com/OpenVisionE2" >> ${D}/etc/image-version
 	echo "distro=${DISTRO_NAME}" >> ${D}/etc/image-version
 	echo "${MACHINE}" > ${D}/etc/model
-	if ${@bb.utils.contains('MACHINE_FEATURES','smallflash','true','false',d)}; then
+	if [ "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "1", "0", d)}" = "1" ]; then
 		echo "smallflash" > ${D}/etc/smallflash
 	fi
 	install -d ${D}${sysconfdir}/enigma2
