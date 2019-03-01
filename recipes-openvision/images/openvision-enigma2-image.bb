@@ -143,7 +143,6 @@ IMAGE_INSTALL += "\
 	curl \
 	fuse-exfat \
 	${MACHINE_FEATURE_RELATED_PLUGINS} \
-	enigma2-plugin-skins-metrix-vision \
 	nfs-utils \
 	ntp \
 	ntfs-3g \
