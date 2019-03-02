@@ -17,11 +17,9 @@ SRC_URI = "file://settings \
 
 FILES_${PN} = "/etc /usr"
 
-INHIBIT_PACKAGE_STRIP = "1"
-
 do_configure[nostamp] = "1"
 
-ALLOW_EMPTY_${PN} = "1"
+BB_HASH_IGNORE_MISMATCH = "1"
 
 S = "${WORKDIR}"
 
