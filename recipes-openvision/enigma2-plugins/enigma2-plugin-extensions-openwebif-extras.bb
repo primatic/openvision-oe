@@ -170,6 +170,7 @@ python do_cleanup () {
         ('vipert2c', 'vipert2c.png', 'amiko.png', 'amiko.html'),
         ('lunix3-4k', 'lunix3-4k.png', 'qviart.png', 'qviart.html'),
         ('lunix', 'lunix.png', 'qviart.png', 'qviart.html'),
+        ('lunix4k', 'lunix4k.png', 'lunix4k.png', 'lunix4k.html'),
         ('e4hd', 'e4hd.png', 'e4hd.png', 'e4hd.html'),
         ('spark', 'spark.jpg', 'spark.png', 'spark.html'),
         ('spark7162', 'spark7162.jpg', 'spark.png', 'spark.html'),
