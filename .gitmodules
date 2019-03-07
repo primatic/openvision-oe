@@ -50,10 +50,6 @@
 	path = meta-entwopia
 	url = https://github.com/OpenVisionE2/meta-entwopia.git
 	shallow = true
-[submodule "meta-fulan"]
-	path = meta-fulan
-	url = https://github.com/OpenVisionE2/meta-fulan.git
-	shallow = true
 [submodule "meta-gb"]
 	path = meta-gb
 	url = https://github.com/OpenVisionE2/meta-gb.git
