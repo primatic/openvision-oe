@@ -9,7 +9,6 @@ RCONFLICTS_${PN} = "vuplus-opera-browser-util"
 PACKAGES = "${PN}"
 
 SRC_DATE = "20181117_0"
-PR = "r2_${SRC_DATE}"
 
 SRC_URI = "https://raw.githubusercontent.com/OpenVisionE2/hypercube-files/master/opera-hbbtv_${SRC_DATE}.tar.gz"
 
