@@ -9,9 +9,9 @@ echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
 echo -e "${GREEN}Amiko ${NC}- ${GREEN}AX ${NC}- ${GREEN}AZBox  ${NC}- ${GREEN}Beyonwiz ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon"
 echo -e "Clap ${NC}- ${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${NC}- ${GREEN}Dreambox ${NC}- ${GREEN}EBox ${NC}- ${GREEN}Edision"
-echo -e "Entwopia ${NC}- ${GREEN}Formuler ${NC}- ${GREEN}Fulan ${NC}- ${GREEN}GB ${NC}- ${GREEN}GFutures ${NC}- ${GREEN}GI ${NC}- ${GREEN}GigaBlue"
+echo -e "Entwopia ${NC}- ${GREEN}Formuler ${NC}- ${GREEN}GB ${NC}- ${GREEN}GFutures ${NC}- ${GREEN}GI ${NC}- ${GREEN}GigaBlue"
 echo -e "HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS ${NC}- ${GREEN}Linkdroid ${NC}- ${GREEN}MaxyTec ${NC}- ${GREEN}MINIX ${NC}- ${GREEN}MiracleBox ${NC}- ${GREEN}Octagon"
-echo -e "Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}Qviart ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}Sab ${NC}- ${GREEN}SpyCat"
+echo -e "Odin ${NC}- ${GREEN}Odroid ${NC}- ${GREEN}Protek ${NC}- ${GREEN}Qviart ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}SH4 ${NC}- ${GREEN}Sab ${NC}- ${GREEN}SpyCat"
 echo -e "Tiviar ${NC}- ${GREEN}Tripledot ${NC}- ${GREEN}Uclan ${NC}- ${GREEN}VuPlus ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XP"
 echo -e "Xpeed ${NC}- ${GREEN}Xsarius ${NC}- ${GREEN}XT ${NC}- ${GREEN}Xtrend ${NC}- ${GREEN}Zgemma ${NC}- ${GREEN}ALL ${NC}- ${GREEN}Specific"
 echo -e ""
@@ -23,7 +23,7 @@ echo -e "${RED}Enter the meta name:${NC}"
 echo -e "${GREEN}"
 read META
 echo -e "${NC}"
-if [ $META != "Amiko" -a $META != "AX" -a $META != "AZBox" -a $META != "Beyonwiz" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "Fulan" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MaxyTec" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xpeed" -a $META != "Xsarius" -a $META != "XT" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
+if [ $META != "Amiko" -a $META != "AX" -a $META != "AZBox" -a $META != "Beyonwiz" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MaxyTec" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "SH4" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xpeed" -a $META != "Xsarius" -a $META != "XT" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
 then
 	echo -e "${RED}Not a valid answer!${NC}"
 	echo -e ""
@@ -239,46 +239,6 @@ then
 	MACHINE=formuler4 $IMAGECMD
 	MACHINE=formuler4turbo $IMAGECMD
 fi
-if [ $META = "Fulan" ]
-then
-	MACHINE=adb_box $IMAGECMD
-	MACHINE=arivalink200 $IMAGECMD
-	MACHINE=atemio520 $IMAGECMD
-	MACHINE=atemio530 $IMAGECMD
-	MACHINE=atevio7500 $IMAGECMD
-	MACHINE=cuberevo $IMAGECMD
-	MACHINE=cuberevo_2000hd $IMAGECMD
-	MACHINE=cuberevo_250hd $IMAGECMD
-	MACHINE=cuberevo_3000hd $IMAGECMD
-	MACHINE=cuberevo_9500hd $IMAGECMD
-	MACHINE=cuberevo_mini $IMAGECMD
-	MACHINE=cuberevo_mini2 $IMAGECMD
-	MACHINE=fortis_hdbox $IMAGECMD
-	MACHINE=hl101 $IMAGECMD
-	MACHINE=hs7110 $IMAGECMD
-	MACHINE=hs7119 $IMAGECMD
-	MACHINE=hs7420 $IMAGECMD
-	MACHINE=hs7429 $IMAGECMD
-	MACHINE=hs7810a $IMAGECMD
-	MACHINE=hs7819 $IMAGECMD
-	MACHINE=ipbox55 $IMAGECMD
-	MACHINE=ipbox99 $IMAGECMD
-	MACHINE=ipbox9900 $IMAGECMD
-	MACHINE=octagon1008 $IMAGECMD
-	MACHINE=pace7241 $IMAGECMD
-	MACHINE=sagemcom88 $IMAGECMD
-	MACHINE=spark $IMAGECMD
-	MACHINE=spark7162 $IMAGECMD
-	MACHINE=tf7700 $IMAGECMD
-	MACHINE=ufc960 $IMAGECMD
-	MACHINE=ufs910 $IMAGECMD
-	MACHINE=ufs912 $IMAGECMD
-	MACHINE=ufs913 $IMAGECMD
-	MACHINE=ufs922 $IMAGECMD
-	MACHINE=vip1_v2 $IMAGECMD
-	MACHINE=vip2_v1 $IMAGECMD
-	MACHINE=vitamin_hd5000 $IMAGECMD
-fi
 if [ $META = "GB" ]
 then
 	MACHINE=gb800se $IMAGECMD
@@ -429,6 +389,46 @@ then
 	MACHINE=raspberrypi0 $IMAGECMD
 	MACHINE=raspberrypi2 $IMAGECMD
 	MACHINE=raspberrypi3 $IMAGECMD
+fi
+if [ $META = "SH4" ]
+then
+	MACHINE=adb_box $IMAGECMD
+	MACHINE=arivalink200 $IMAGECMD
+	MACHINE=atemio520 $IMAGECMD
+	MACHINE=atemio530 $IMAGECMD
+	MACHINE=atevio7500 $IMAGECMD
+	MACHINE=cuberevo $IMAGECMD
+	MACHINE=cuberevo_2000hd $IMAGECMD
+	MACHINE=cuberevo_250hd $IMAGECMD
+	MACHINE=cuberevo_3000hd $IMAGECMD
+	MACHINE=cuberevo_9500hd $IMAGECMD
+	MACHINE=cuberevo_mini $IMAGECMD
+	MACHINE=cuberevo_mini2 $IMAGECMD
+	MACHINE=fortis_hdbox $IMAGECMD
+	MACHINE=hl101 $IMAGECMD
+	MACHINE=hs7110 $IMAGECMD
+	MACHINE=hs7119 $IMAGECMD
+	MACHINE=hs7420 $IMAGECMD
+	MACHINE=hs7429 $IMAGECMD
+	MACHINE=hs7810a $IMAGECMD
+	MACHINE=hs7819 $IMAGECMD
+	MACHINE=ipbox55 $IMAGECMD
+	MACHINE=ipbox99 $IMAGECMD
+	MACHINE=ipbox9900 $IMAGECMD
+	MACHINE=octagon1008 $IMAGECMD
+	MACHINE=pace7241 $IMAGECMD
+	MACHINE=sagemcom88 $IMAGECMD
+	MACHINE=spark $IMAGECMD
+	MACHINE=spark7162 $IMAGECMD
+	MACHINE=tf7700 $IMAGECMD
+	MACHINE=ufc960 $IMAGECMD
+	MACHINE=ufs910 $IMAGECMD
+	MACHINE=ufs912 $IMAGECMD
+	MACHINE=ufs913 $IMAGECMD
+	MACHINE=ufs922 $IMAGECMD
+	MACHINE=vip1_v2 $IMAGECMD
+	MACHINE=vip2_v1 $IMAGECMD
+	MACHINE=vitamin_hd5000 $IMAGECMD
 fi
 if [ $META = "Sab" ]
 then
@@ -663,43 +663,6 @@ then
 	MACHINE=formuler3 $IMAGECMD
 	MACHINE=formuler4 $IMAGECMD
 	MACHINE=formuler4turbo $IMAGECMD
-	MACHINE=adb_box $IMAGECMD
-	MACHINE=arivalink200 $IMAGECMD
-	MACHINE=atemio520 $IMAGECMD
-	MACHINE=atemio530 $IMAGECMD
-	MACHINE=atevio7500 $IMAGECMD
-	MACHINE=cuberevo $IMAGECMD
-	MACHINE=cuberevo_2000hd $IMAGECMD
-	MACHINE=cuberevo_250hd $IMAGECMD
-	MACHINE=cuberevo_3000hd $IMAGECMD
-	MACHINE=cuberevo_9500hd $IMAGECMD
-	MACHINE=cuberevo_mini $IMAGECMD
-	MACHINE=cuberevo_mini2 $IMAGECMD
-	MACHINE=fortis_hdbox $IMAGECMD
-	MACHINE=hl101 $IMAGECMD
-	MACHINE=hs7110 $IMAGECMD
-	MACHINE=hs7119 $IMAGECMD
-	MACHINE=hs7420 $IMAGECMD
-	MACHINE=hs7429 $IMAGECMD
-	MACHINE=hs7810a $IMAGECMD
-	MACHINE=hs7819 $IMAGECMD
-	MACHINE=ipbox55 $IMAGECMD
-	MACHINE=ipbox99 $IMAGECMD
-	MACHINE=ipbox9900 $IMAGECMD
-	MACHINE=octagon1008 $IMAGECMD
-	MACHINE=pace7241 $IMAGECMD
-	MACHINE=sagemcom88 $IMAGECMD
-	MACHINE=spark $IMAGECMD
-	MACHINE=spark7162 $IMAGECMD
-	MACHINE=tf7700 $IMAGECMD
-	MACHINE=ufc960 $IMAGECMD
-	MACHINE=ufs910 $IMAGECMD
-	MACHINE=ufs912 $IMAGECMD
-	MACHINE=ufs913 $IMAGECMD
-	MACHINE=ufs922 $IMAGECMD
-	MACHINE=vip1_v2 $IMAGECMD
-	MACHINE=vip2_v1 $IMAGECMD
-	MACHINE=vitamin_hd5000 $IMAGECMD
 	MACHINE=gb800se $IMAGECMD
 	MACHINE=gb800seplus $IMAGECMD
 	MACHINE=gb800solo $IMAGECMD
@@ -800,6 +763,43 @@ then
 	MACHINE=raspberrypi0 $IMAGECMD
 	MACHINE=raspberrypi2 $IMAGECMD
 	MACHINE=raspberrypi3 $IMAGECMD
+	MACHINE=adb_box $IMAGECMD
+	MACHINE=arivalink200 $IMAGECMD
+	MACHINE=atemio520 $IMAGECMD
+	MACHINE=atemio530 $IMAGECMD
+	MACHINE=atevio7500 $IMAGECMD
+	MACHINE=cuberevo $IMAGECMD
+	MACHINE=cuberevo_2000hd $IMAGECMD
+	MACHINE=cuberevo_250hd $IMAGECMD
+	MACHINE=cuberevo_3000hd $IMAGECMD
+	MACHINE=cuberevo_9500hd $IMAGECMD
+	MACHINE=cuberevo_mini $IMAGECMD
+	MACHINE=cuberevo_mini2 $IMAGECMD
+	MACHINE=fortis_hdbox $IMAGECMD
+	MACHINE=hl101 $IMAGECMD
+	MACHINE=hs7110 $IMAGECMD
+	MACHINE=hs7119 $IMAGECMD
+	MACHINE=hs7420 $IMAGECMD
+	MACHINE=hs7429 $IMAGECMD
+	MACHINE=hs7810a $IMAGECMD
+	MACHINE=hs7819 $IMAGECMD
+	MACHINE=ipbox55 $IMAGECMD
+	MACHINE=ipbox99 $IMAGECMD
+	MACHINE=ipbox9900 $IMAGECMD
+	MACHINE=octagon1008 $IMAGECMD
+	MACHINE=pace7241 $IMAGECMD
+	MACHINE=sagemcom88 $IMAGECMD
+	MACHINE=spark $IMAGECMD
+	MACHINE=spark7162 $IMAGECMD
+	MACHINE=tf7700 $IMAGECMD
+	MACHINE=ufc960 $IMAGECMD
+	MACHINE=ufs910 $IMAGECMD
+	MACHINE=ufs912 $IMAGECMD
+	MACHINE=ufs913 $IMAGECMD
+	MACHINE=ufs922 $IMAGECMD
+	MACHINE=vip1_v2 $IMAGECMD
+	MACHINE=vip2_v1 $IMAGECMD
+	MACHINE=vitamin_hd5000 $IMAGECMD
 	MACHINE=alphatriplehd $IMAGECMD
 	MACHINE=spycat $IMAGECMD
 	MACHINE=spycatmini $IMAGECMD

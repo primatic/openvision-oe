@@ -82,12 +82,6 @@ git checkout develop
 git pull
 echo -e "\n"
 cd ..
-cd meta-fulan
-echo "Checking out meta-fulan develop branch:"
-git checkout develop
-git pull
-echo -e "\n"
-cd ..
 cd meta-gb
 echo "Checking out meta-gb develop branch:"
 git checkout develop
@@ -156,6 +150,12 @@ echo -e "\n"
 cd ..
 cd meta-raspberrypi
 echo "Checking out meta-raspberrypi develop branch:"
+git checkout develop
+git pull
+echo -e "\n"
+cd ..
+cd meta-sh4
+echo "Checking out meta-sh4 develop branch:"
 git checkout develop
 git pull
 echo -e "\n"
