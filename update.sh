@@ -23,6 +23,7 @@ git submodule update --init
 echo ""
 echo "Done!"
 echo ""
+rm -rf meta-fulan
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 # Lets restore Makefile first in case OpenPLi update it
