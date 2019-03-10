@@ -35,8 +35,8 @@ PROVIDES = "\
     "
 
 DEPENDS = "\
-    enigma2 \
-    python-pycurl python-requests \
+    bitratecalc \
+    python-pycurl \
     "
 
 DESCRIPTION_enigma2-plugin-extensions-arbouquet = "Add remove bouquet plugin by 2boom"
@@ -50,6 +50,7 @@ DESCRIPTION_enigma2-plugin-extensions-ltv = "2boom's Lanet Loader"
 DESCRIPTION_enigma2-plugin-extensions-m2b = "2boom's m3u/bouquet converter"
 DESCRIPTION_enigma2-plugin-extensions-qcifh = "QuickChannelInfo for Hotkey plugin by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-qeifh = "QuickEcmInfo for Hotkey plugin by 2boom"
+RDEPENDS_enigma2-plugin-extensions-qeifh = "bitratecalc"
 DESCRIPTION_enigma2-plugin-extensions-qerfh = "QuickEmuRestart for Hotkey plugin by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-quickecminfo = "Quick Ecm Info plugin by 2boom"
 FILES_enigma2-plugin-extensions-quickecminfo_append = "${libdir}/enigma2/python/Components/Converter/QuickEcmInfo2.pyo"
