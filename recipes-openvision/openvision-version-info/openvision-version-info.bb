@@ -4,6 +4,8 @@ PRIORITY = "required"
 MAINTAINER = "Open Vision Developers"
 require conf/license/license-gplv2.inc
 
+RDEPENDS_${PN} = "ntpdate"
+
 PV = "${VISIONVERSION}"
 PR = "${VISIONREVISION}"
 
