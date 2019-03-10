@@ -89,7 +89,6 @@ OPTIONAL_PACKAGES += " \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
 	screen \
 	sed \
-	shell-script-compiler \
 	shellinabox \
 	smartmontools \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "smbnetfs", d)} \
