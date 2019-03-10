@@ -10,7 +10,8 @@ inherit gitpkgv autotools pythonnative pkgconfig
 PV = "git${SRCPV}"
 PKGV = "git${GITPKGV}"
 
-SRC_URI = "git://github.com/Taapat/bitratecalc.git"
+SRC_URI = "git://github.com/OpenVisionE2/bitratecalc.git;protocol=http"
+SRC_URI_sh4 = "git://github.com/OpenVisionE2/bitratecalc.git;protocol=http;branch=sh4"
 
 S = "${WORKDIR}/git"
 
