@@ -13,7 +13,7 @@ SRC_URI = "git://github.com/OpenVisionE2/2boom-plugins.git;protocol=http"
 S = "${WORKDIR}/git"
 
 PROVIDES = "\
-    enigma2-plugin-extensions-arb \
+    enigma2-plugin-extensions-arbouquet \
     enigma2-plugin-extensions-ecccam \
     enigma2-plugin-extensions-epanel \
     enigma2-plugin-extensions-epgdd \
@@ -29,7 +29,7 @@ PROVIDES = "\
     enigma2-plugin-extensions-remountnetshare \
     enigma2-plugin-extensions-rpulite \
     enigma2-plugin-extensions-tpulite \
-    enigma2-plugin-extensions-updpreview \
+    enigma2-plugin-extensions-updatepreview \
     enigma2-plugin-extensions-yweather \
     enigma2-plugin-extensions-ywfh \
     "
@@ -39,7 +39,7 @@ DEPENDS = "\
     python-pycurl python-requests \
     "
 
-DESCRIPTION_enigma2-plugin-extensions-arb = "Add remove bouquet plugin by 2boom"
+DESCRIPTION_enigma2-plugin-extensions-arbouquet = "Add remove bouquet plugin by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-ecccam = "Easy edit CCcam.cfg plugin by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-epanel = "epanel plugin by 2boom"
 FILES_enigma2-plugin-extensions-epanel_append = "/usr/script/*.sh"
@@ -60,8 +60,8 @@ DESCRIPTION_enigma2-plugin-extensions-rpulite = "Rostelecom (Sibtelecom) IPTV-up
 RDEPENDS_enigma2-plugin-extensions-rpulite = "curl python-pycurl"
 DESCRIPTION_enigma2-plugin-extensions-tpulite = "Triolan (Ukraine) IPTV-updater pluign by 2boom"
 RDEPENDS_enigma2-plugin-extensions-tpulite = "curl"
-DESCRIPTION_enigma2-plugin-extensions-updpreview = "Update preview plugin by 2boom"
-FILES_enigma2-plugin-extensions-updpreview_append = "${libdir}/enigma2/python/Screens/Console2.pyo"
+DESCRIPTION_enigma2-plugin-extensions-updatepreview = "Update preview plugin by 2boom"
+FILES_enigma2-plugin-extensions-updatepreview_append = "${libdir}/enigma2/python/Screens/Console2.pyo"
 DESCRIPTION_enigma2-plugin-extensions-yweather = "Yahoo weather plugin by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-ywfh = "Yahoo weather plugin for Hotkey by 2boom"
 
