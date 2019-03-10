@@ -1,6 +1,6 @@
 SUMMARY = "Persian Empire plugins for Open Vision"
 MAINTAINER = "Open Vision Developers"
-LICENSE = "Proprietary"
+LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
 inherit autotools-brokensep gitpkgv pythonnative gettext
@@ -88,6 +88,8 @@ EXTRA_OECONF = " \
 do_install_append() {
     # remove unused .pyc files
     find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
+    # make scripts executable
+    find "${D}" -name '*.sh' -exec chmod a+x '{}' ';'
 }
 
 do_package_qa() {

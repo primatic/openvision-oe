@@ -1,6 +1,6 @@
 SUMMARY = "OE-Alliance plugins for Open Vision "
 MAINTAINER = "Open Vision Developers"
-LICENSE = "Proprietary"
+LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8e37f34d0e40d32ea2bc90ee812c9131"
 
 inherit autotools-brokensep gitpkgv pythonnative gettext
@@ -135,6 +135,9 @@ EXTRA_OECONF = " \
 do_install_append() {
     # remove unused .pyc files
     find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
+    # make scripts executable
+    find "${D}" -name '*.sh' -exec chmod a+x '{}' ';'
+
     if [ "${MACHINE}" == "dm800" ]
     then
         rm -Rf ${D}/usr/lib/enigma2/python/Plugins/SystemPlugins/SatipClient
