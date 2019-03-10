@@ -16,7 +16,7 @@ PACKAGES += "\
     enigma2-plugin-extensions-lcd4linux \
 "
 
-PROVIDES += "\
+PROVIDES = "\
     enigma2-plugin-extensions-dlnabrowser \
     enigma2-plugin-extensions-dlnaserver \
     enigma2-plugin-extensions-fempa \
@@ -114,7 +114,7 @@ DESCRIPTION_enigma2-plugin-systemplugins-terrestrialscan = "Selects the stronges
 DESCRIPTION_enigma2-plugin-systemplugins-wirelessaccesspoint = "Using a Wireless module as AP."
 RDEPENDS_enigma2-plugin-systemplugins-wirelessaccesspoint = "bridge-utils hostapd"
 
-do_compile() {
+do_compile_append() {
     python -O -m compileall ${S}
 }
 
@@ -123,7 +123,7 @@ PACKAGES += "${PN}-meta"
 FILES_${PN}-meta = "${datadir}/meta"
 INSANE_SKIP_${PN} += "build-deps"
 
-EXTRA_OECONF = " \
+EXTRA_OECONF = "\
     BUILD_SYS=${BUILD_SYS} \
     HOST_SYS=${HOST_SYS} \
     STAGING_INCDIR=${STAGING_INCDIR} \

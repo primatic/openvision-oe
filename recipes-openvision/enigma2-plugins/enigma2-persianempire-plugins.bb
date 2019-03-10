@@ -12,7 +12,7 @@ SRC_URI = "git://github.com/OpenVisionE2/persianempire-plugins.git;protocol=http
 
 S = "${WORKDIR}/git"
 
-PROVIDES += "\
+PROVIDES = "\
     enigma2-plugin-extensions-airplayer \
     enigma2-plugin-extensions-blockcontent \
     enigma2-plugin-extensions-camrestart \
@@ -67,16 +67,14 @@ DESCRIPTION_enigma2-plugin-systemplugins-satelliteeditor = "Satellites Editor"
 DESCRIPTION_enigma2-plugin-systemplugins-serviceeditor = "Services Editor"
 RDEPENDS_enigma2-plugin-systemplugins-serviceeditor = "enigma2-plugin-systemplugins-satelliteeditor"
 
-do_compile() {
+do_compile_append() {
     python -O -m compileall ${S}
 }
 
 ALLOW_EMPTY_${PN} = "1"
-PACKAGES += "${PN}-meta"
-FILES_${PN}-meta = "${datadir}/meta"
 INSANE_SKIP_${PN} += "build-deps"
 
-EXTRA_OECONF = " \
+EXTRA_OECONF = "\
     BUILD_SYS=${BUILD_SYS} \
     HOST_SYS=${HOST_SYS} \
     STAGING_INCDIR=${STAGING_INCDIR} \
