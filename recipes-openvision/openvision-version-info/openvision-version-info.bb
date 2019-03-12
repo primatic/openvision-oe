@@ -36,6 +36,8 @@ do_compile() {
 	python -O -m compileall ${S}
 }
 
+do_install[vardepsexclude] = "DATETIME"
+
 do_install() {
 	install -d ${D}/etc
 	echo "STB=${MACHINE}" > ${D}/etc/image-version

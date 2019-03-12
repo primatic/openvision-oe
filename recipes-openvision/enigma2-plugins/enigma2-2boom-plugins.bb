@@ -56,6 +56,7 @@ DESCRIPTION_enigma2-plugin-extensions-qerfh = "QuickEmuRestart for Hotkey plugin
 DESCRIPTION_enigma2-plugin-extensions-quickecminfo = "Quick Ecm Info plugin by 2boom"
 RDEPENDS_enigma2-plugin-extensions-quickecminfo = "bitratecalc"
 FILES_enigma2-plugin-extensions-quickecminfo_append = "${libdir}/enigma2/python/Components/Converter/QuickEcmInfo2.pyo"
+FILES_enigma2-plugin-extensions-quickecminfo-src_append = "${libdir}/enigma2/python/Components/Converter/QuickEcmInfo2.py"
 DESCRIPTION_enigma2-plugin-extensions-quickemurestart = "Quick Emu Restart plugin by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-reloadsl = "ReloadSL plugin simply re-reads the channels and favorites lists without rebooting the enigma by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-remountnetshare = "Remount Net Share plugin by 2boom"
@@ -65,6 +66,7 @@ DESCRIPTION_enigma2-plugin-extensions-tpulite = "Triolan (Ukraine) IPTV-updater 
 RDEPENDS_enigma2-plugin-extensions-tpulite = "curl"
 DESCRIPTION_enigma2-plugin-extensions-updatepreview = "Update preview plugin by 2boom"
 FILES_enigma2-plugin-extensions-updatepreview_append = "${libdir}/enigma2/python/Screens/Console2.pyo"
+FILES_enigma2-plugin-extensions-updatepreview-src_append = "${libdir}/enigma2/python/Screens/Console2.py"
 DESCRIPTION_enigma2-plugin-extensions-yweather = "Yahoo weather plugin by 2boom"
 DESCRIPTION_enigma2-plugin-extensions-ywfh = "Yahoo weather plugin for Hotkey by 2boom"
 
