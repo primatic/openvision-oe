@@ -315,6 +315,10 @@ https://github.com/OpenVisionE2/openvision-oe/blob/develop/PLi-metas.md
 # Ubuntu 18.04.x LTS setup:
 Run our ltsubuntu.sh
 
+# How to get latest Ubuntu 18.04.x updates:
+* sudo apt-get update
+* sudo apt-get install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04
+
 # How to build an Open Vision image:
 1. Clone openpli-oe-core somewhere:
 * git clone -b develop --depth 1 https://github.com/OpenPLi/openpli-oe-core.git
