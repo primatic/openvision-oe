@@ -871,4 +871,4 @@ then
 fi
 echo -e ""
 echo -e "${RED}Done, the compiled image is in ${NC}build/tmp/deploy/images/${GREEN}$MACHINE$MACHINESPECIFIC ${RED}folder!"
-echo -e "It's a zipped file like ${NC}openvision-enigma2-develop-7.0-rx-${GREEN}$MACHINE$MACHINESPECIFIC${NC}.zip"
+echo -e "It's a zipped file like ${NC}openvision-enigma2-develop-7.1-rx-${GREEN}$MACHINE$MACHINESPECIFIC${NC}.zip"
