@@ -92,6 +92,7 @@
 * anadol4kv2
 * axashis4kcombo
 * axashis4kcomboplus
+* axashisc4k
 * axashistwin
 * dinobot4k
 * dinobot4kl
