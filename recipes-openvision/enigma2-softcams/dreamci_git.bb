@@ -1,9 +1,6 @@
-SUMMARY = "dreambox ci plus module"
+SUMMARY = "dreamci module"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
-
-Replaces_${PN} = "dreamciplus"
-Provides_${PN} = "dreamciplus"
 
 RDEPENDS_${PN} = "enigma2-plugin-extensions-socketmmi"
 
@@ -16,7 +13,7 @@ inherit gitpkgv
 PV = "9.7+git${SRCPV}"
 PKGV = "9.7+git${GITPKGV}"
 
-FILES_${PN} = "${bindir}"
+FILES_${PN} = "/usr/bin"
 
 do_compile () {
         make -C ${S}/src dreamciplus
@@ -25,7 +22,6 @@ do_compile () {
 do_install() {
   install -d ${D}/usr/bin
   install -m 0755 ${S}/src/dreamciplus ${D}/usr/bin/dreamciplus
-
 }
 
 pkg_postinst_${PN} () {
