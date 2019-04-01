@@ -86,6 +86,7 @@ OPTIONAL_PACKAGES += " \
 	rsync \
 	rtorrent \
 	sabnzbd \
+	samba-base \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
 	screen \
 	sed \

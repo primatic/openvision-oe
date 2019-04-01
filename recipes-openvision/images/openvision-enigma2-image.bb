@@ -148,8 +148,7 @@ IMAGE_INSTALL += "\
 	ntp \
 	ntfs-3g \
 	openssh-sftp-server \
-	python-imaging \
-	samba-base", d)} \
+	python-imaging", d)} \
 	"
 
 export IMAGE_BASENAME = "openvision-enigma2"
