@@ -26,9 +26,9 @@ echo ""
 rm -rf meta-fulan
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
-# Lets restore Makefile first in case OpenPLi update it
-git checkout Makefile
-git pull
+# Lets restore everything first in case OpenPLi update it
+git checkout .
+git pull --rebase
 sed -i "s#BUILD_DIR = \$(CURDIR)/.*#BUILD_DIR = \$(CURDIR)/${BUILDDIR}#g" Makefile
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/openpli.conf/openvision.conf/g' {} \;
