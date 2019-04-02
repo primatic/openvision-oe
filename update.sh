@@ -28,6 +28,8 @@ METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 # Lets restore everything first in case OpenPLi update it
 git checkout .
+# Clear the modifications we've done to the submodules before updating
+git submodule foreach git checkout .
 git pull --rebase
 sed -i "s#BUILD_DIR = \$(CURDIR)/.*#BUILD_DIR = \$(CURDIR)/${BUILDDIR}#g" Makefile
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
