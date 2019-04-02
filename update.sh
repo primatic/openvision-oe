@@ -23,7 +23,6 @@ git submodule update --init
 echo ""
 echo "Done!"
 echo ""
-rm -rf meta-fulan
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 # Lets restore everything first in case OpenPLi update it
