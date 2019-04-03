@@ -12,7 +12,7 @@ require conf/license/openpli-gplv2.inc
 # Depend on the image, so that it gets build
 DEPENDS = "openvision-enigma2-image"
 
-OPTIONAL_PACKAGES_BROKEN = "samba"
+OPTIONAL_PACKAGES_BROKEN = ""
 OPTIONAL_PACKAGES ?= ""
 OPTIONAL_BSP_PACKAGES ?= ""
 
@@ -86,7 +86,7 @@ OPTIONAL_PACKAGES += " \
 	rsync \
 	rtorrent \
 	sabnzbd \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "samba", "", d)} \
+	samba \
 	${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
 	screen \
 	sed \
