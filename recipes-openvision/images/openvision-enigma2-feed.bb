@@ -177,7 +177,6 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-extensions-automatic-fullbackup \
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-blurayplayer \
-	enigma2-plugin-extensions-btdevicesmanager \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "chromium chromiumos", "enigma2-plugin-extensions-chromium", "", d)} \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \

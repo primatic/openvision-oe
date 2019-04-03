@@ -17,6 +17,7 @@ PACKAGES += "\
 "
 
 PROVIDES = "\
+    enigma2-plugin-extensions-btdevicesmanager \
     enigma2-plugin-extensions-dlnabrowser \
     enigma2-plugin-extensions-dlnaserver \
     enigma2-plugin-extensions-fempa \
@@ -60,6 +61,9 @@ PROVIDES = "\
 DEPENDS = "\
     ${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbc", "virtual/blindscan-dvbc" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "virtual/blindscan-dvbs" , "", d)} \
+    bluez-alsa \
+    bluez-conf \
+    bluez-hidd \
     ${@bb.utils.contains("MACHINE_FEATURES", "legacykernel", "" , "bridge-utils hostapd", d)} \
     djmount \
     enigma2-plugin-systemplugins-autobouquetsmaker \
@@ -72,6 +76,8 @@ DEPENDS = "\
     ${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
     "
 
+DESCRIPTION_enigma2-plugin-extensions-btdevicesmanager = "BT devices manger to pair e.x keyboard or mouse"
+RDEPENDS_enigma2-plugin-extensions-btdevicesmanager = "${BLUEZ}-testtools ${BLUEZ} bluez-hcidump bluez-conf bluez-hidd bluez-alsa alsa-utils-aplay python-pexpect"
 DESCRIPTION_enigma2-plugin-extensions-dlnabrowser = "this is dlna/upnp browser using djmount"
 RDEPENDS_enigma2-plugin-extensions-dlnabrowser = "djmount fuse-utils libfuse2 libupnp libneon27"
 DESCRIPTION_enigma2-plugin-extensions-dlnaserver = "this is dlna server using minidlna"
