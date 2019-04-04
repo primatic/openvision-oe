@@ -1,5 +1,7 @@
 # Open Vision enigma2 images based on Open PLi sources
 
+![alt tag](https://raw.github.com/OpenVisionE2/openvision-oe/develop/recipes-openvision/bootlogo/openvision-bootlogo/bootlogo.jpg)
+
 # AX
 * triplex
 * ultrabox
