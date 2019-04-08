@@ -122,3 +122,6 @@
 	path = meta-xt
 	url = https://github.com/OpenVisionE2/meta-xt.git
 	shallow = true
+[submodule "meta-sh4"]
+	path = meta-sh4
+	url = https://github.com/OpenVisionE2/meta-sh4.git
