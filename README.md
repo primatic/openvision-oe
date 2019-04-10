@@ -324,6 +324,13 @@ Run our ltsubuntu.sh
 * sudo apt-get update
 * sudo apt-get install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04
 
+# How to use Xfce 4 desktop on Ubuntu (as GNOME 3 wastes so many resources):
+1- Disable wayland:
+* sudo gedit /etc/gdm3/custom.conf (Change "#WaylandEnable=false" to "WaylandEnable=false")
+* reboot
+
+2- sudo apt-get install xfce4
+
 # How to build an Open Vision image:
 1. Clone openpli-oe-core somewhere:
 * git clone -b develop --depth 1 https://github.com/OpenPLi/openpli-oe-core.git
