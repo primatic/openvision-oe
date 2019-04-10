@@ -28,6 +28,7 @@ OPTIONAL_PACKAGES += " \
 	diffutils \
 	djmount \
 	dosfstools \
+	dreamci \
 	dvblast \
 	dvbsnoop \
 	dvdfs \

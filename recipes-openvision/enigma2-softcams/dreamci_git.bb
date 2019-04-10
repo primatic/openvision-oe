@@ -21,8 +21,10 @@ do_compile () {
 }
 
 do_install() {
+  find "${D}" -name '*.sh' -exec chmod a+x '{}' ';'
   install -d ${D}/usr/bin
-  install -m 0755 ${S}/src/dreamciplus ${D}/usr/bin/dreamciplus
+  install -m 0755 ${S}/src/dreamciplus ${D}/usr/bin
+  install -m 0755 ${S}/src/enigma2_pre_start_ciplus.sh ${D}/usr/bin
 }
 
 pkg_postinst_${PN} () {
@@ -39,4 +41,7 @@ pkg_prerm_${PN} () {
      /usr/bin/dreamciplus $1
   fi
 exit 0
+}
+
+do_package_qa() {
 }
