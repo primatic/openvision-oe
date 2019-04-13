@@ -1,11 +1,14 @@
 #!/bin/sh
+echo ""
 if [ $# -eq 0 ]
 then
 	BUILDDIR="build"
 else
 	BUILDDIR="$1"
 fi
-echo ""
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+GREEN='\033[0;32m'
 echo "Open Vision by"
 echo "https://github.com/orgs/OpenVisionE2/people"
 echo ""
@@ -13,6 +16,18 @@ echo "Each time you run this script all git repositories will get updated to the
 echo ""
 echo "For extra RC support you need to add your STB files to https://github.com/OpenVisionE2/extra_rc_models"
 echo ""
+echo -e "Is there a merge conflict with PLi's repos?"
+echo -e "Answers are in ${GREEN}green:${NC}"
+echo -e "${GREEN}Yes ${NC}- ${GREEN}No"
+echo -e ""
+read CONFLICTMODE
+echo -e "${NC}"
+if [ $CONFLICTMODE != "Yes" -a $CONFLICTMODE != "No" ]
+then
+	echo -e "${RED}Not a valid answer!${NC}"
+	echo -e ""
+	exit 0
+fi
 echo "Updating from git, please wait ..."
 echo ""
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
@@ -25,13 +40,20 @@ echo "Done!"
 echo ""
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
-# Lets restore everything first in case OpenPLi update it
-git checkout Makefile
-#git checkout .
-# Clear the modifications we've done to the submodules before updating
-#git submodule foreach git checkout .
-git pull
-#git pull --rebase
+if [ $CONFLICTMODE = "No" ]
+then
+	# Lets restore Makefile first in case OpenPLi update it
+	git checkout Makefile
+	git pull
+fi
+if [ $CONFLICTMODE = "Yes" ]
+then
+	# Lets restore everything first in case OpenPLi update it
+	git checkout .
+	# Clear the modifications we've done to the submodules before updating
+	git submodule foreach git checkout .
+	git pull --rebase
+fi
 sed -i "s#BUILD_DIR = \$(CURDIR)/.*#BUILD_DIR = \$(CURDIR)/${BUILDDIR}#g" Makefile
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/openpli.conf/openvision.conf/g' {} \;
