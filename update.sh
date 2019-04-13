@@ -16,9 +16,9 @@ echo "Each time you run this script all git repositories will get updated to the
 echo ""
 echo "For extra RC support you need to add your STB files to https://github.com/OpenVisionE2/extra_rc_models"
 echo ""
-echo -e "Is there a merge conflict with PLi's repos?"
+echo -e "${RED}Is there a merge conflict with PLi's repos?"
 echo -e "Answers are in ${GREEN}green:${NC}"
-echo -e "${GREEN}Yes ${NC}- ${GREEN}No"
+echo -e "${GREEN}No ${NC}- ${GREEN}Yes"
 echo -e ""
 read CONFLICTMODE
 echo -e "${NC}"
