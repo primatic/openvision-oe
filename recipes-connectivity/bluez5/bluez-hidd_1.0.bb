@@ -7,7 +7,6 @@ inherit bluetooth
 
 DEPENDS = "glib-2.0 bluez5"
 
-
 SRC_URI[md5sum] = "9b8203723ead15813ca731f10ba640aa"
 SRC_URI[sha256sum] = "1889fe89b1ec8e725d3404f3d8125d5e824a4cc0ab05891ef1b755a61a1cea46"
 
@@ -23,3 +22,5 @@ do_install() {
     install -d ${D}/usr/bin
     install -m 755 ${S}/hidd ${D}/usr/bin/
 }
+
+INSANE_SKIP_${PN} = "ldflags"
