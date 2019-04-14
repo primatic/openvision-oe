@@ -1,9 +1,8 @@
 require conf/license/openpli-gplv2.inc
 require softcam.inc
-inherit cmake
-inherit gitpkgv
+inherit cmake gitpkgv upx_compress
 
-DESCRIPTION = "OScam ${PV} Open Source Softcam"
+DESCRIPTION = "ncam ${PV} Open Source Softcam"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 
@@ -28,7 +27,7 @@ SRC_URI += " \
 	file://ncam.user \
 	file://ncam.provid"
 
-CONFFILES = "/etc/tuxbox/config/oscam/ncam.conf /etc/tuxbox/config/ncam/oscam.server /etc/tuxbox/config/ncam/oscam.srvid /etc/tuxbox/config/ncam/oscam.user /etc/tuxbox/config/ncam/oscam.provid"
+CONFFILES = "/etc/tuxbox/config/oscam/ncam.conf /etc/tuxbox/config/ncam/ncam.server /etc/tuxbox/config/ncam/ncam.srvid /etc/tuxbox/config/ncam/ncam.user /etc/tuxbox/config/ncam/ncam.provid"
 
 FILES_${PN} = "/usr/bin/ncam /etc/tuxbox/config/ncam/* /etc/init.d/softcam.ncam"
 
