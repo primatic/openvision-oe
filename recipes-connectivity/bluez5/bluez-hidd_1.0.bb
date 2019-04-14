@@ -23,4 +23,4 @@ do_install() {
     install -m 755 ${S}/hidd ${D}/usr/bin/
 }
 
-INSANE_SKIP_${PN} = "ldflags"
+INSANE_SKIP_${PN} += "ldflags"
