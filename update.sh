@@ -21,6 +21,8 @@ echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
 echo -e "${GREEN}No ${NC}- ${GREEN}Yes"
 echo -e ""
+echo -e "${RED}Enter conflict mode:${NC}"
+echo -e "${GREEN}"
 read CONFLICTMODE
 echo -e "${NC}"
 if [ $CONFLICTMODE != "Yes" -a $CONFLICTMODE != "No" ]
@@ -29,7 +31,7 @@ then
 	echo -e ""
 	exit 0
 fi
-echo "Updating from git, please wait ..."
+echo -e "${RED}Updating from git, please wait ...${NC}"
 echo ""
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
@@ -37,7 +39,7 @@ git pull
 git submodule sync
 git submodule update --init
 echo ""
-echo "Done!"
+echo -e "${RED}Done!${NC}"
 echo ""
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
@@ -60,29 +62,29 @@ find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DIS
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/openpli.conf/openvision.conf/g' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/bitbake openpli/bitbake openvision/g' {} \;
 echo ""
-echo "Check for dm7020hdv2 required changes ..."
+echo -e "${RED}Check for dm7020hdv2 required changes ...${NC}"
 if grep -Fqi "DMTYPE" Makefile
 then
     echo ""
-    echo "No need to modify Makefile."
-    echo "You can compile dm7020hdv2 image too."
+    echo -e "${RED}No need to modify Makefile."
+    echo -e "You can compile dm7020hdv2 image too.${NC}"
     echo ""
 else
     echo ""
-    echo "We need to modify Makefile ..."
+    echo -e "${RED}We need to modify Makefile ...${NC}"
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/$(MACHINE)/$(MACHINE)$(DMTYPE)/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/"MACHINE"/"MACHINE DMTYPE"/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i "s/.@echo 'export MACHINE' >> $@.*/&\n\t@echo 'export DMTYPE' >> \$\@/" {} \;
     cat openvision-oe/dm7020hdv2-changes >> Makefile
     rm -f ${BUILDDIR}/env.source
-    echo "Done, now you can compile dm7020hdv2 image too."
+    echo -e "${RED}Done, now you can compile dm7020hdv2 image too.${NC}"
     echo ""
 fi
 # Regenerate bblayers.conf so we can add our own
 rm -f ${BUILDDIR}/conf/bblayers.conf
 make init update
 echo ""
-echo "Let us fix the image names ..."
+echo -e "${RED}Let us fix the image names ...${NC}"
 echo ""
 find -maxdepth 1 -name "meta-a*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
 find -maxdepth 1 -name "meta-e*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
@@ -94,7 +96,7 @@ find -maxdepth 1 -name "meta-s*" -type d -exec find {} -type f \( -iname \*.conf
 find -maxdepth 1 -name "meta-v*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
 find -maxdepth 1 -name "meta-x*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
 find -maxdepth 1 -name "meta-z*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
-echo "Done!"
+echo -e "${RED}Done!${NC}"
 # Remove existing meta-dream and meta-axasuhd from bblayers.conf
 sed -i "s# $(pwd)/meta-dream##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-axasuhd##g" ${BUILDDIR}/conf/bblayers.conf
