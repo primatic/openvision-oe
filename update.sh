@@ -18,6 +18,7 @@ echo "For extra RC support you need to add your STB files to https://github.com/
 echo ""
 echo -e "${RED}Is there a merge conflict with PLi's repos?"
 echo -e "Answers are in ${GREEN}green:${NC}"
+echo -e ""
 echo -e "${GREEN}No ${NC}- ${GREEN}Yes"
 echo -e ""
 read CONFLICTMODE
