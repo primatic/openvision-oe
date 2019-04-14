@@ -7,7 +7,7 @@ index c4dd10ff..66178845 100644
  
  			lastresponsetm = latestclient->cwlastresptime;
 -			if(latestclient->ip) {
-+			if(latestclient!= NULL) {
++			if(latestclient != NULL) {
  				connected_users += 1;
  				tpl_addVar(vars, TPLADD, "CLIENTIP", cs_inet_ntoa(latestclient->ip));
  				if(isactive > 0 || conn > 0)
