@@ -9,6 +9,8 @@ echo -e "First tell us what kind of cleanup do you want?"
 echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e "${GREEN}Fast ${NC}- ${GREEN}Full"
 echo -e ""
+echo -e "${NC}Enter cleanup mode:${GREEN}"
+echo -e ""
 read CLEANMODE
 echo -e "${NC}"
 if [ $CLEANMODE != "Fast" -a $CLEANMODE != "Full" ]
