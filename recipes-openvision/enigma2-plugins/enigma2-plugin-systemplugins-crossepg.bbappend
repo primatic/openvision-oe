@@ -1,1 +1,1 @@
-INSANE_SKIP_${PN} += "already-stripped libdir"
+INSANE_SKIP_${PN} += "libdir"
