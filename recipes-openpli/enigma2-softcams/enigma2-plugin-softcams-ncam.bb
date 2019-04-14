@@ -17,7 +17,7 @@ DEPENDS = "libusb openssl"
 S = "${WORKDIR}/git"
 B = "${S}"
 CAMNAME = "ncam"
-CAMSTART = "/usr/bin/oscam --wait 0 --config-dir /etc/tuxbox/config/ncam --daemon --pidfile /tmp/ncam.pid --restart 2 --utf8"
+CAMSTART = "/usr/bin/ncam --wait 0 --config-dir /etc/tuxbox/config/ncam --daemon --pidfile /tmp/ncam.pid --restart 2 --utf8"
 CAMSTOP = "kill \`cat /tmp/ncam.pid\` 2> /dev/null"
 
 SRC_URI += " \
@@ -27,7 +27,7 @@ SRC_URI += " \
 	file://ncam.user \
 	file://ncam.provid"
 
-CONFFILES = "/etc/tuxbox/config/oscam/ncam.conf /etc/tuxbox/config/ncam/ncam.server /etc/tuxbox/config/ncam/ncam.srvid /etc/tuxbox/config/ncam/ncam.user /etc/tuxbox/config/ncam/ncam.provid"
+CONFFILES = "/etc/tuxbox/config/ncam/ncam.conf /etc/tuxbox/config/ncam/ncam.server /etc/tuxbox/config/ncam/ncam.srvid /etc/tuxbox/config/ncam/ncam.user /etc/tuxbox/config/ncam/ncam.provid"
 
 FILES_${PN} = "/usr/bin/ncam /etc/tuxbox/config/ncam/* /etc/init.d/softcam.ncam"
 
