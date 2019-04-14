@@ -1,0 +1,51 @@
+require conf/license/openpli-gplv2.inc
+require softcam.inc
+inherit cmake
+inherit gitpkgv
+
+DESCRIPTION = "OScam ${PV} Open Source Softcam"
+LICENSE = "GPLv3"
+LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
+
+PV = "git${SRCPV}"
+PKGV = "git${GITPKGV}"
+SRC_URI = " git://github.com/javilonas/NCam.git;protocol=https \
+			file://fix-build.patch \
+			"
+
+DEPENDS = "libusb openssl"
+
+S = "${WORKDIR}/git"
+B = "${S}"
+CAMNAME = "ncam"
+CAMSTART = "/usr/bin/oscam --wait 0 --config-dir /etc/tuxbox/config/ncam --daemon --pidfile /tmp/ncam.pid --restart 2 --utf8"
+CAMSTOP = "kill \`cat /tmp/ncam.pid\` 2> /dev/null"
+
+SRC_URI += " \
+	file://ncam.conf \
+	file://ncam.server \
+	file://ncam.srvid \
+	file://ncam.user \
+	file://ncam.provid"
+
+CONFFILES = "/etc/tuxbox/config/oscam/ncam.conf /etc/tuxbox/config/ncam/oscam.server /etc/tuxbox/config/ncam/oscam.srvid /etc/tuxbox/config/ncam/oscam.user /etc/tuxbox/config/ncam/oscam.provid"
+
+FILES_${PN} = "/usr/bin/ncam /etc/tuxbox/config/ncam/* /etc/init.d/softcam.ncam"
+
+EXTRA_OECMAKE += "\
+	-DOSCAM_SYSTEM_NAME=Tuxbox \
+	-DWEBIF=1 \
+	-DWITH_STAPI=0 \
+	-DHAVE_LIBUSB=1 \
+	-DSTATIC_LIBUSB=1 \
+	-DWITH_SSL=1 \
+	-DIPV6SUPPORT=1 \
+	-DCLOCKFIX=0 \
+	-DHAVE_PCSC=0"
+
+do_install() {
+	install -d ${D}/etc/tuxbox/config/ncam
+	install -m 0644 ${WORKDIR}/ncam.* ${D}/etc/tuxbox/config/ncam/
+	install -d ${D}/usr/bin
+	install -m 0755 ${B}/ncam ${D}/usr/bin
+}
