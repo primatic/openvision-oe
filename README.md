@@ -6,6 +6,7 @@
 
 You could download our builds from https://openvision.tech/stb-images/
 * How to use sdcard images (E.g. raspberrypi):
+
 You could use https://sourceforge.net/projects/win32diskimager/ or similar tools to write the image on a sdcard.
 
 # Support
@@ -44,6 +45,7 @@ sudo apt-get install --install-recommends linux-generic-hwe-18.04 xserver-xorg-h
 ```
 # How to use Xfce 4 desktop on Ubuntu
 (as GNOME 3 wastes so many resources)
+
 1- Disable wayland:
 ```
 sudo gedit /etc/gdm3/custom.conf
