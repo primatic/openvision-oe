@@ -27,7 +27,7 @@ Please use our forum at https://forum.openvision.tech or our issue page at https
 
 If you see your model in https://github.com/OpenVisionE2/openvision-oe/blob/develop/README.md it means there will be Open Vision for it otherwise read https://forum.openvision.tech/viewtopic.php?f=2&t=30 and don't spam the board!
 
-==========
+---
 
 # Compile
 You could compile Open Vision for so many brands/models:
