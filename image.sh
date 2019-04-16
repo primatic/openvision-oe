@@ -4,7 +4,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 GREEN='\033[0;32m'
 echo -e "${RED}Welcome to Open Vision's image compile script!"
-echo -e "Check ${NC}README.md ${RED}or ${NC}PLi-metas.md ${RED}and enter a meta or a specific machine to compile."
+echo -e "Check ${NC}Vision-metas.md ${RED}or ${NC}PLi-metas.md ${RED}and enter a meta or a specific machine to compile."
 echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
 echo -e "${GREEN}Amiko ${NC}- ${GREEN}AX ${NC}- ${GREEN}AZBox  ${NC}- ${GREEN}Beyonwiz ${NC}- ${GREEN}BlackBox ${NC}- ${GREEN}BroadMedia ${NC}- ${GREEN}Ceryon"
@@ -17,7 +17,7 @@ echo -e "ALL ${NC}- ${GREEN}Specific"
 echo -e ""
 echo -e "${GREEN}ALL${RED}: Compiles all brands/models, As it requires huge free space it's not recommended!"
 echo -e ""
-echo -e "${GREEN}Specific${RED}: You have a specific machine in mind, Check ${NC}README.md ${RED}or ${NC}PLi-metas.md"
+echo -e "${GREEN}Specific${RED}: You have a specific machine in mind, Check ${NC}Vision-metas.md ${RED}or ${NC}PLi-metas.md"
 echo -e ""
 echo -e "${RED}Enter the meta name:${NC}"
 echo -e "${GREEN}"
@@ -62,7 +62,7 @@ then
 fi
 if [ $META = "Specific" ]
 then
-	echo -e "${RED}Enter your specific machine name exactly like what you see in ${NC}README.md ${RED}or ${NC}PLi-metas.md"
+	echo -e "${RED}Enter your specific machine name exactly like what you see in ${NC}Vision-metas.md ${RED}or ${NC}PLi-metas.md"
 	echo -e "${GREEN}"
 	read MACHINESPECIFIC
 	echo -e "${NC}"
