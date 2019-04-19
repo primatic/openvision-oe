@@ -1,4 +1,8 @@
 #!/bin/sh
+rm -rf meta-amlogic
+rm -rf meta-fulan
+rm -rf meta-maxytec
+rm -rf meta-meson
 echo ""
 if [ $# -eq 0 ]
 then
@@ -42,7 +46,6 @@ echo ""
 echo -e "${RED}Done!${NC}"
 echo ""
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
-rm -rf meta-maxytec
 cd ..
 if [ $CONFLICTMODE = "No" ]
 then
