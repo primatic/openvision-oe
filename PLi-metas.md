@@ -45,6 +45,9 @@
 * gbquad4k
 * gbue4k
 
+# MaxyTec
+* multibox
+
 # MiracleBox
 * mbmicro
 * mbmicrov2

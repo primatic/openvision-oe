@@ -197,10 +197,6 @@
 * k3pro
 * kvim2
 
-# MaxyTec
-* multibox
-* v8plus
-
 # MINIX
 * x8hp
 
@@ -292,6 +288,12 @@
 
 # Uclan
 * ustym4kpro
+
+# V8Plus
+* v8plus
+
+# Viper
+* viper4k
 
 # WeTek
 * wetekhub

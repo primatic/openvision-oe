@@ -12,8 +12,8 @@ echo -e "Clap ${NC}- ${GREEN}Cube ${NC}- ${GREEN}DAGS ${NC}- ${GREEN}Dinobot ${N
 echo -e "Formuler ${NC}- ${GREEN}GB ${NC}- ${GREEN}GFutures ${NC}- ${GREEN}GI ${NC}- ${GREEN}GigaBlue ${NC}- ${GREEN}HyperCube ${NC}- ${GREEN}INI ${NC}- ${GREEN}IXUSS"
 echo -e "Linkdroid ${NC}- ${GREEN}MaxyTec ${NC}- ${GREEN}MINIX ${NC}- ${GREEN}MiracleBox ${NC}- ${GREEN}Octagon ${NC}- ${GREEN}Odin ${NC}- ${GREEN}Odroid"
 echo -e "Protek ${NC}- ${GREEN}Qviart ${NC}- ${GREEN}RaspberryPi ${NC}- ${GREEN}SH4 ${NC}- ${GREEN}Sab ${NC}- ${GREEN}SpyCat ${NC}- ${GREEN}Tiviar ${NC}- ${GREEN}Tripledot"
-echo -e "Uclan ${NC}- ${GREEN}VuPlus ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XP ${NC}- ${GREEN}Xpeed ${NC}- ${GREEN}Xsarius ${NC}- ${GREEN}XT ${NC}- ${GREEN}Xtrend ${NC}- ${GREEN}Zgemma"
-echo -e "ALL ${NC}- ${GREEN}Specific"
+echo -e "Uclan ${NC}- ${GREEN}V8Plus ${NC}- ${GREEN}Viper ${NC}- ${GREEN}VuPlus ${NC}- ${GREEN}WeTek ${NC}- ${GREEN}XCore ${NC}- ${GREEN}XP ${NC}- ${GREEN}Xpeed ${NC}- ${GREEN}Xsarius ${NC}- ${GREEN}XT"
+echo -e "Xtrend ${NC}- ${GREEN}Zgemma ${NC}- ${GREEN}ALL ${NC}- ${GREEN}Specific"
 echo -e ""
 echo -e "${GREEN}ALL${RED}: Compiles all brands/models, As it requires huge free space it's not recommended!"
 echo -e ""
@@ -23,7 +23,7 @@ echo -e "${RED}Enter the meta name:${NC}"
 echo -e "${GREEN}"
 read META
 echo -e "${NC}"
-if [ $META != "Amiko" -a $META != "AX" -a $META != "AZBox" -a $META != "Beyonwiz" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MaxyTec" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "SH4" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xpeed" -a $META != "Xsarius" -a $META != "XT" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
+if [ $META != "Amiko" -a $META != "AX" -a $META != "AZBox" -a $META != "Beyonwiz" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "GB" -a $META != "GFutures" -a $META != "GI" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MaxyTec" -a $META != "MINIX" -a $META != "MiracleBox" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "Qviart" -a $META != "RaspberryPi" -a $META != "SH4" -a $META != "Sab" -a $META != "SpyCat" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "V8Plus" -a $META != "Viper" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xpeed" -a $META != "Xsarius" -a $META != "XT" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
 then
 	echo -e "${RED}Not a valid answer!${NC}"
 	echo -e ""
@@ -339,7 +339,6 @@ fi
 if [ $META = "MaxyTec" ]
 then
 	MACHINE=multibox $IMAGECMD
-	MACHINE=v8plus $IMAGECMD
 fi
 if [ $META = "MINIX" ]
 then
@@ -464,6 +463,14 @@ fi
 if [ $META = "Uclan" ]
 then
 	MACHINE=ustym4kpro $IMAGECMD
+fi
+if [ $META = "V8Plus" ]
+then
+	MACHINE=v8plus $IMAGECMD
+fi
+if [ $META = "Viper" ]
+then
+	MACHINE=viper4k $IMAGECMD
 fi
 if [ $META = "VuPlus" ]
 then
@@ -823,6 +830,8 @@ then
 	MACHINE=x1plus $IMAGECMD
 	MACHINE=xcombo $IMAGECMD
 	MACHINE=ustym4kpro $IMAGECMD
+	MACHINE=v8plus $IMAGECMD
+	MACHINE=viper4k $IMAGECMD
 	MACHINE=vuduo $IMAGECMD
 	MACHINE=vuduo2 $IMAGECMD
 	MACHINE=vuduo4k $IMAGECMD
