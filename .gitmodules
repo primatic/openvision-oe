@@ -110,6 +110,14 @@
 	path = meta-uclan
 	url = https://github.com/OpenVisionE2/meta-uclan.git
 	shallow = true
+[submodule "meta-v8plus"]
+	path = meta-v8plus
+	url = https://github.com/OpenVisionE2/meta-v8plus.git
+	shallow = true
+[submodule "meta-viper"]
+	path = meta-viper
+	url = https://github.com/OpenVisionE2/meta-viper.git
+	shallow = true
 [submodule "meta-wetek"]
 	path = meta-wetek
 	url = https://github.com/OpenVisionE2/meta-wetek.git
@@ -122,9 +130,3 @@
 	path = meta-xt
 	url = https://github.com/OpenVisionE2/meta-xt.git
 	shallow = true
-[submodule "meta-viper"]
-	path = meta-viper
-	url = https://github.com/OpenVisionE2/meta-viper.git
-[submodule "meta-v8plus"]
-	path = meta-v8plus
-	url = https://github.com/OpenVisionE2/meta-v8plus.git
