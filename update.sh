@@ -50,7 +50,6 @@ cd ..
 if [ $CONFLICTMODE = "No" ]
 then
 	# Lets restore Makefile first in case OpenPLi update it
-	git checkout Makefile
 	git pull
 fi
 if [ $CONFLICTMODE = "Yes" ]
