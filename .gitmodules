@@ -122,3 +122,6 @@
 	path = meta-xt
 	url = https://github.com/OpenVisionE2/meta-xt.git
 	shallow = true
+[submodule "meta-viper"]
+	path = meta-viper
+	url = https://github.com/OpenVisionE2/meta-viper.git
