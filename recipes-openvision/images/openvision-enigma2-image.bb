@@ -80,7 +80,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-filebrowser \
 	enigma2-plugin-extensions-foreca \
 	enigma2-plugin-extensions-openwebif-extras-terminal \
-	enigma2-plugin-extensions-openwebif-extras-themes \
 	enigma2-plugin-extensions-reconstructapsc \
 	enigma2-plugin-extensions-tunerserver \
 	enigma2-plugin-extensions-vlcplayer \
