@@ -219,7 +219,7 @@ python do_cleanup () {
 
 addtask do_cleanup after do_populate_sysroot before do_package
 
-PACKAGES += "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "${PN}-vxg ${PN}-themes ${PN}-webtv", "${PN}-terminal", d)}"
+PACKAGES =+ "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "${PN}-vxg ${PN}-terminal ${PN}-themes ${PN}-webtv", "", d)}"
 FILES_${PN}-vxg = "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "${libdir}/enigma2/python/Plugins/Extensions/OpenWebif/public/vxg", "", d)}"
 FILES_${PN}-themes = "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "${libdir}/enigma2/python/Plugins/Extensions/OpenWebif/public/themes", "", d)}"
 FILES_${PN}-webtv = "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "${libdir}/enigma2/python/Plugins/Extensions/OpenWebif/public/webtv", "", d)}"
