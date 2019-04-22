@@ -221,6 +221,7 @@ then
 	MACHINE=osmini $IMAGECMD
 	MACHINE=osminiplus $IMAGECMD
 	MACHINE=osmio4k $IMAGECMD
+	MACHINE=osmio4kplus $IMAGECMD
 	MACHINE=osnino $IMAGECMD
 	MACHINE=osninoplus $IMAGECMD
 	MACHINE=osninopro $IMAGECMD
@@ -662,6 +663,7 @@ then
 	MACHINE=osmini $IMAGECMD
 	MACHINE=osminiplus $IMAGECMD
 	MACHINE=osmio4k $IMAGECMD
+	MACHINE=osmio4kplus $IMAGECMD
 	MACHINE=osnino $IMAGECMD
 	MACHINE=osninoplus $IMAGECMD
 	MACHINE=osninopro $IMAGECMD
