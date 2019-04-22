@@ -123,6 +123,12 @@ then
 	git pull
 	echo -e "\n"
 	cd ..
+	cd meta-edision
+	echo "Checking out meta-edision develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
+	cd ..
 	cd meta-entwopia
 	echo "Checking out meta-entwopia develop branch:"
 	git checkout develop
