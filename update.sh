@@ -100,9 +100,10 @@ find -maxdepth 1 -name "meta-v*" -type d -exec find {} -type f \( -iname \*.conf
 find -maxdepth 1 -name "meta-x*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
 find -maxdepth 1 -name "meta-z*" -type d -exec find {} -type f \( -iname \*.conf -o -iname \*.inc \) \; | xargs -L1 sed -i 's|${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}|${IMAGE_NAME}|g'
 echo -e "${RED}Done!${NC}"
-# Remove existing meta-dream and meta-axasuhd from bblayers.conf
+# Remove existing meta-dream, meta-axasuhd and meta-edision from bblayers.conf
 sed -i "s# $(pwd)/meta-dream##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-axasuhd##g" ${BUILDDIR}/conf/bblayers.conf
+sed -i "s# $(pwd)/meta-edision##g" ${BUILDDIR}/conf/bblayers.conf
 for i in ${METAS}
 do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> ${BUILDDIR}/conf/bblayers.conf

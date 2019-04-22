@@ -6,15 +6,6 @@
 * viperslim
 * vipert2c
 
-# Edision
-* osmega
-* osmini
-* osminiplus
-* osmio4k
-* osnino
-* osninoplus
-* osninopro
-
 # Formuler
 * formuler1
 * formuler3

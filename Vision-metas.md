@@ -126,6 +126,16 @@
 * ebox7358
 * eboxlumi
 
+# Edision
+* osmega
+* osmini
+* osminiplus
+* osmio4k
+* osmio4kplus
+* osnino
+* osninoplus
+* osninopro
+
 # Entwopia
 * bre2ze
 * enfinity
