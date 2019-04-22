@@ -46,6 +46,10 @@
 	path = meta-ebox
 	url = https://github.com/OpenVisionE2/meta-ebox.git
 	shallow = true
+[submodule "meta-edision"]
+	path = meta-edision
+	url = https://github.com/OpenVisionE2/meta-edision.git
+	shallow = true
 [submodule "meta-entwopia"]
 	path = meta-entwopia
 	url = https://github.com/OpenVisionE2/meta-entwopia.git
@@ -130,6 +134,3 @@
 	path = meta-xt
 	url = https://github.com/OpenVisionE2/meta-xt.git
 	shallow = true
-[submodule "meta-edision"]
-	path = meta-edision
-	url = https://github.com/OpenVisionE2/meta-edision.git
