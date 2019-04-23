@@ -39,7 +39,7 @@ then
 	git commit --dry-run
 	read -p "The above changes will be committed and pushed to Open Vision, [A]bort [P]roceed: " choice
 	if [ "$choice" = "P" -o "$choice" = "p" ];then
-		git commit -S -m "Update meta-${SUBMODULENAME} submodule"
+		git commit -S -m "Update meta-${SUBMODULENAME} submodule using submodule.sh"
 		echo "Stage 3: git push for new changes"
 		echo ""
 		git push
@@ -261,7 +261,7 @@ then
 	git commit --dry-run
 	read -p "The above changes will be committed and pushed to Open Vision, [A]bort [P]roceed: " choice
 	if [ "$choice" = "P" -o "$choice" = "p" ];then
-		git commit -S -m "Update submodules"
+		git commit -S -m "Update submodules using submodule.sh"
 		echo "Stage 3: git push for new changes"
 		echo ""
 		git push
