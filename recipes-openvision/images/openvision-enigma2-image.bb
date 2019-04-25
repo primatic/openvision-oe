@@ -131,8 +131,8 @@ IMAGE_INSTALL += "\
 	${ENIGMA2_PLUGINS} \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd", "", d)} \
 	libavahi-client \
-	libcrypto-compat \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto", "", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto-compat", "", d)} \
 	openvision-module \
 	openvision-version-info \
 	python-pyusb \
