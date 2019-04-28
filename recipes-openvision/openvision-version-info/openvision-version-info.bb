@@ -41,6 +41,7 @@ do_install[vardepsexclude] = "DATETIME"
 do_install() {
 	install -d ${D}/etc
 	echo "STB=${MACHINE}" > ${D}/etc/image-version
+	echo "Brand=${BOX_BRAND}" > ${D}/etc/image-version
 	echo "box_type=${MACHINE}" >> ${D}/etc/image-version
 	echo "build_type=0" >> ${D}/etc/image-version
 	echo "version=${VISIONVERSION}-${VISIONREVISION}" >> ${D}/etc/image-version
@@ -54,6 +55,7 @@ do_install() {
 	echo "catalog=https://github.com/OpenVisionE2" >> ${D}/etc/image-version
 	echo "distro=${DISTRO_NAME}" >> ${D}/etc/image-version
 	echo "${MACHINE}" > ${D}/etc/model
+	echo "${BOX_BRAND}" > ${D}/etc/brand
 	if [ "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "1", "0", d)}" = "1" ]; then
 		echo "smallflash" > ${D}/etc/smallflash
 	fi
