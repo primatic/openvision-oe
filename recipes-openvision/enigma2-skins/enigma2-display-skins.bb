@@ -42,6 +42,6 @@ EXTRA_OECONF += "\
 
 python populate_packages_prepend () {
     if bb.data.expand('${REL_MINOR}', d) != "4":
-        enigma2_skindir = bb.data.expand('${datadir}/enigma2/display', d)
+        enigma2_skindir = bb.data.expand('${datadir}/enigma2', d)
         do_split_packages(d, enigma2_skindir, '(.*?)/.*', 'enigma2-plugin-display-%s', 'Enigma2 Display Skin: %s', recursive=True, match_path=True, prepend=True)
 }
