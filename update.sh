@@ -1,8 +1,4 @@
 #!/bin/sh
-rm -rf meta-amlogic
-rm -rf meta-fulan
-rm -rf meta-maxytec
-rm -rf meta-meson
 echo ""
 if [ $# -eq 0 ]
 then
@@ -41,6 +37,10 @@ echo -e "${RED}Updating from git, please wait ...${NC}"
 echo ""
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
+rm -Rf meta-amlogic
+rm -Rf meta-fulan
+rm -Rf meta-maxytec
+rm -Rf meta-meson
 git pull
 git submodule sync
 git submodule update --init
