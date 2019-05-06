@@ -4,13 +4,13 @@ MAINTAINER = "Open Vision Developers"
 
 DEPENDS += "\
     openvision-extra-rc-models \
-    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "vuplus-libgles-${MACHINE} libvugles2" , "", d)} \
-    ${@bb.utils.contains("MACHINE_FEATURES", "hiaccel", "dinobot-libs-${MACHINE}" , "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "vuplus-libgles-${MACHINE} libvugles2", "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "hiaccel", "dinobot-libs-${MACHINE}", "", d)} \
     "
 
-RDEPENDS_${PN} + "\
-    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "vuplus-libgles-${MACHINE} libvugles2" , "", d)} \
-    ${@bb.utils.contains("MACHINE_FEATURES", "hiaccel", "dinobot-libs-${MACHINE}" , "", d)} \
+RDEPENDS_${PN} += "\
+    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "vuplus-libgles-${MACHINE} libvugles2", "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "hiaccel", "dinobot-libs-${MACHINE}", "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "enigma2-plugin-font-wqy-microhei", d)} \
     "
 
