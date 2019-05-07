@@ -16,7 +16,7 @@ SRC_URI = "git://github.com/OpenVisionE2/enigma2-display-skins.git;protocol=git"
 
 # note that enigma2-skins is just an empty package to satisfy silly dependencies.
 ALLOW_EMPTY_${PN} = "1"
-FILES_${PN} = "/usr/share/enigma2"
+FILES_${PN} = "/usr/share/enigma2/display"
 FILES_${PN}-meta = "${datadir}/meta"
 RDEPENDS_${PN}-meta = ""
 
@@ -42,6 +42,6 @@ EXTRA_OECONF += "\
 
 python populate_packages_prepend () {
     if bb.data.expand('${REL_MINOR}', d) != "4":
-        enigma2_skindir = bb.data.expand('${datadir}/enigma2', d)
+        enigma2_skindir = bb.data.expand('${datadir}/enigma2/display', d)
         do_split_packages(d, enigma2_skindir, '(.*?)/.*', 'enigma2-plugin-display-%s', 'Enigma2 Display Skin: %s', recursive=True, match_path=True, prepend=True)
 }
