@@ -65,7 +65,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-systemplugins-positionersetup \
 	enigma2-plugin-systemplugins-satfinder \
 	${@bb.utils.contains("MACHINE_FEATURES", "sh4booster", "enigma2-plugin-systemplugins-sh4boostercontrol", "", d)} \
-	enigma2-plugin-systemplugins-skinselector \
 	enigma2-plugin-systemplugins-softwaremanager \
 	${@bb.utils.contains_any("MACHINE_FEATURES", "7seg 7segment", "${MACHINE_SPECIFIC_VFD}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "enigma2-plugin-systemplugins-videoenhancement", "", d)} \
