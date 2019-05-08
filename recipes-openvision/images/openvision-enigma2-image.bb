@@ -58,6 +58,7 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-blindscan enigma2-plugin-systemplugins-satscan" , "", d)} \
+	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hdmicec \
 	enigma2-plugin-systemplugins-hotplug \
@@ -86,7 +87,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-tunerserver \
 	enigma2-plugin-extensions-vlcplayer \
 	enigma2-plugin-softcams-oscam \
-	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-systemplugins-bh-skin-support \
 	enigma2-plugin-systemplugins-setpasswd \
 	enigma2-plugin-systemplugins-systemtime \
