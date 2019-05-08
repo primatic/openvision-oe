@@ -14,6 +14,15 @@ RDEPENDS_${PN} += "\
     ${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "enigma2-plugin-font-wqy-microhei", d)} \
     "
 
+RRECOMMENDS_${PN} = " \
+	enigma2-plugin-skins-pli-hd \
+	hotplug-e2-helper \
+	glibc-gconv-utf-16 \
+	python-sendfile \
+	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "ofgwrite", d)} \
+	virtual/enigma2-mediaservice \
+"
+
 inherit upx_compress
 
 PV = "develop+git${SRCPV}"
