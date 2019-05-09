@@ -97,6 +97,7 @@ DEPENDS += "\
 	enigma2 \
 	enigma2-2boom-plugins \
 	enigma2-alliance-plugins \
+	enigma2-locale-meta \
 	enigma2-persianempire-plugins \
 	enigma2-pliplugins \
 	enigma2-plugins \
@@ -131,6 +132,7 @@ IMAGE_INSTALL += "\
 	aio-grab \
 	enigma2 \
 	${ENIGMA2_PLUGINS} \
+	enigma2-locale-meta \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd", "", d)} \
 	libavahi-client \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto", "", d)} \
