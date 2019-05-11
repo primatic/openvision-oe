@@ -125,6 +125,7 @@ MACHINE_FEATURE_RELATED_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "cdtextinfo", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "cdtextinfo", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "streamproxy", "streamproxy", "", d)} \
+	${@bb.utils.contains("MACHINE", "dm900", "enigma2-plugin-systemplugins-fsblupdater", "", d)} \
 	"
 
 IMAGE_INSTALL += "\
