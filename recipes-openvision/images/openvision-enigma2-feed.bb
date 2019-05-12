@@ -227,7 +227,6 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-systemplugins-crossepg \
 	enigma2-plugin-systemplugins-extnumberzap \
 	enigma2-plugin-systemplugins-extrafancontrol \
-	${@bb.utils.contains_any("MACHINE", "dm900 dm920", "enigma2-plugin-systemplugins-fsblupdater", "", d)} \
 	enigma2-plugin-systemplugins-hrtunerproxy \
 	${@bb.utils.contains("MACHINE_FEATURES", "micom", "enigma2-plugin-systemplugins-micomupgrade" , "", d)} \
 	enigma2-plugin-systemplugins-mountmanager \
