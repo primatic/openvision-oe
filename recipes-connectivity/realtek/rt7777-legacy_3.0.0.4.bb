@@ -7,9 +7,12 @@ require conf/license/license-gplv2.inc
 inherit module
 
 SRC_URI = " \
-	file://MT7601.zip \
+	https://raw.githubusercontent.com/OpenVisionE2/linux-firmwares/master/MT7601.zip \
 	file://fwpath.patch \
 	"
+
+SRC_URI[md5sum] = "dfd849b989fc55bdb7908dd5f51945f9"
+SRC_URI[sha256sum] = "883a72561db243c7c4337031658ee588b087682099aeab8012fb6006cf57d1b5"
 
 S = "${WORKDIR}/DPO_MT7601U_LinuxSTA_3.0.0.4_20130913"
 
