@@ -20,6 +20,7 @@ OPTIONAL_PACKAGES += " \
 	astra-sm \
 	autofs \
 	autossh \
+	ccextractor \
 	ccid \
 	ctorrent \
 	cups \
