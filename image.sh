@@ -177,6 +177,7 @@ then
 	MACHINE=anadol4k $IMAGECMD
 	MACHINE=anadol4kcombo $IMAGECMD
 	MACHINE=anadol4kv2 $IMAGECMD
+	MACHINE=anadolprohd5 $IMAGECMD
 	MACHINE=axashis4kcombo $IMAGECMD
 	MACHINE=axashis4kcomboplus $IMAGECMD
 	MACHINE=axashisc4k $IMAGECMD
@@ -628,6 +629,7 @@ then
 	MACHINE=anadol4k $IMAGECMD
 	MACHINE=anadol4kcombo $IMAGECMD
 	MACHINE=anadol4kv2 $IMAGECMD
+	MACHINE=anadolprohd5 $IMAGECMD
 	MACHINE=axashis4kcombo $IMAGECMD
 	MACHINE=axashis4kcomboplus $IMAGECMD
 	MACHINE=axashisc4k $IMAGECMD

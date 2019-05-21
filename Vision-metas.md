@@ -90,6 +90,7 @@
 * anadol4k
 * anadol4kcombo
 * anadol4kv2
+* anadolprohd5
 * axashis4kcombo
 * axashis4kcomboplus
 * axashisc4k
