@@ -24,6 +24,7 @@ RRECOMMENDS_${PN} = "\
 "
 
 PYTHON_RDEPS += "\
+	python-process \
 	python-pyusb \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "python-imaging", d)} \ 
 	"
