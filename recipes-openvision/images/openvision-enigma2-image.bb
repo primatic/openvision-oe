@@ -130,6 +130,7 @@ MACHINE_FEATURE_RELATED_PLUGINS += "\
 
 IMAGE_INSTALL += "\
 	aio-grab \
+	cronie \
 	enigma2 \
 	${ENIGMA2_PLUGINS} \
 	enigma2-locale-meta \
@@ -145,7 +146,6 @@ IMAGE_INSTALL += "\
 	wget \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	astra-sm \
-	busybox-cron \
 	curl \
 	fuse-exfat \
 	${MACHINE_FEATURE_RELATED_PLUGINS} \
