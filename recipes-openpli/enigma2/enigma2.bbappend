@@ -9,11 +9,12 @@ DEPENDS += "\
     "
 
 RDEPENDS_${PN} += "\
+    ${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "glibc-gconv-cp1250", d)} \    
     ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "vuplus-libgles-${MACHINE} libvugles2", "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "hiaccel", "dinobot-libs-${MACHINE}", "", d)} \
     "
 
-RRECOMMENDS_${PN} = " \
+RRECOMMENDS_${PN} = "\
 	enigma2-plugin-skins-pli-hd \
 	hotplug-e2-helper \
 	glibc-gconv-utf-16 \
@@ -21,6 +22,11 @@ RRECOMMENDS_${PN} = " \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "ofgwrite", d)} \
 	virtual/enigma2-mediaservice \
 "
+
+PYTHON_RDEPS += "\
+	python-pyusb \
+	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "python-imaging", d)} \ 
+	"
 
 inherit upx_compress
 
