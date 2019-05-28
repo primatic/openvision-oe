@@ -47,7 +47,7 @@ OPTIONAL_PACKAGES += " \
 	inetutils \
 	iperf3 \
 	iproute2 \
-	${@bb.utils.contains_any("MACHINE", "dm800", "", "iptraf lirc satipclient", d)} \
+	${@bb.utils.contains("MACHINE", "dm800", "", "iptraf lirc satipclient", d)} \
 	iputils \
 	joe \
 	less \
@@ -213,6 +213,7 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-skins-metrix-vision \
 	enigma2-plugin-skins-mx-hq7 \
 	enigma2-plugin-skins-mx-hq9w \
+	enigma2-plugin-skins-openvix \
 	enigma2-plugin-skins-pd1loi-hd-night \
 	enigma2-plugin-skins-pli-hd \
 	enigma2-plugin-skins-pli-hd-fullnight \
@@ -234,7 +235,6 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-systemplugins-quadpip \
 	enigma2-plugins \
 	enigma2-skins \
-	enigma2-skins-openvix \
 	libcrypto-compat \
 	meta-enigma2-dvdburn \
 	packagegroup-openplugins \

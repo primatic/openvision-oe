@@ -1,18 +1,36 @@
-SUMMARY = "Enigma2 DreamPlex skin pack"
-MAINTAINER = "OpenViX"
-SECTION = "misc"
-PRIORITY = "optional"
-LICENSE = "CLOSED"
-
+SUMMARY = "Dreamplex FHD skins"
+MAINTAINER = "rossi2000"
 inherit allarch
 
-SRC_URI = "file://skins.zip"
+require conf/license/license-gplv2.inc
 
-S = "${WORKDIR}"
+inherit gitpkgv
 
-FILES_${PN} = "/usr/*"
+EPSM = "enigma2-plugin-skinpacks-dreamplex"
+PV = "git${SRCPV}"
+PKGV = "git${GITPKGV}"
+
+PACKAGES = "${EPSM}-youplex-blue ${EPSM}-youplex-red ${EPSM}-youplex-green ${EPSM}-youplex-purple ${EPSM}-plex-experience"
+
+SRC_URI = "git://github.com/OpenViX/DreamPlexSkins.git;protocol=git"
+
+FILES_${EPSM}-youplex-blue = "/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/YouPlex-Blue"
+FILES_${EPSM}-youplex-red = "/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/YouPlex-Red"
+FILES_${EPSM}-youplex-green = "/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/YouPlex-Green"
+FILES_${EPSM}-youplex-purple = "/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/YouPlex-Purple"
+FILES_${EPSM}-plex-experience = "/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/Plex_Experience"
+
+S = "${WORKDIR}/git"
+
+do_compile_append() {
+   python -O -m compileall ${S}
+}
 
 do_install() {
-    mkdir -p ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins
-    cp -r --preserve=mode,links ${S}/DreamPlexSkins/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/
+    install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/
+    cp -rp ${S}/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/
+    chmod -R a+rX ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/
 }
+
+do_populate_sysroot[noexec] = "1"
+do_package_qa[noexec] = "1"
