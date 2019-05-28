@@ -8,14 +8,8 @@ KERNEL_WIFI_DRIVERS += "\
 	firmware-rt73 \
 	firmware-rtl8712u \
 	firmware-zd1211 \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4", "", "kernel-module-ath9k-htc", d)} \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4", "", "kernel-module-carl9170", d)} \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4", "", "kernel-module-r8712u", d)} \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4 hs7429 hs7420 hs7119 hs7110 fortis_hdbox cuberevo_mini cuberevo_mini2 cuberevo cuberevo_9500hd cuberevo_3000hd cuberevo_250hd cuberevo_2000hd atevio7500 hs7810a hs7819 ipbox55 ipbox9900 ipbox99 tf7700 ufs910 ufs912", "", "kernel-module-rt2500usb", d)} \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4 hs7429 hs7420 hs7119 hs7110 fortis_hdbox cuberevo_mini cuberevo_mini2 cuberevo cuberevo_9500hd cuberevo_3000hd cuberevo_250hd cuberevo_2000hd atevio7500 hs7810a hs7819 ipbox55 ipbox9900 ipbox99 tf7700 ufs910 ufs912", "", "kernel-module-rt2800usb", d)} \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4 hs7429 hs7420 hs7119 hs7110 fortis_hdbox cuberevo_mini cuberevo_mini2 cuberevo cuberevo_9500hd cuberevo_3000hd cuberevo_250hd cuberevo_2000hd atevio7500 hs7810a hs7819 ipbox55 ipbox9900 ipbox99 tf7700 ufs910 ufs912", "", "kernel-module-rt73usb", d)} \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4 hs7429 hs7420 hs7119 hs7110 fortis_hdbox cuberevo_mini cuberevo_mini2 cuberevo cuberevo_9500hd cuberevo_3000hd cuberevo_250hd cuberevo_2000hd atevio7500 hs7810a hs7819 ipbox55 ipbox9900 ipbox99 tf7700 ufs910 ufs912", "", "kernel-module-rtl8187", d)} \
-	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4 hs7429 hs7420 hs7119 hs7110 fortis_hdbox cuberevo_mini cuberevo_mini2 cuberevo cuberevo_9500hd cuberevo_3000hd cuberevo_250hd cuberevo_2000hd atevio7500 hs7810a hs7819 ipbox55 ipbox9900 ipbox99 tf7700 ufs910 ufs912", "", "kernel-module-zd1211rw", d)} \
+	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4", "", "kernel-module-ath9k-htc kernel-module-carl9170 kernel-module-r8712u", d)} \
+	${@bb.utils.contains_any("MACHINE", "c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 cube su980 et13000 alien5 alien4 sf5008 beyonwizu4 hs7429 hs7420 hs7119 hs7110 fortis_hdbox cuberevo_mini cuberevo_mini2 cuberevo cuberevo_9500hd cuberevo_3000hd cuberevo_250hd cuberevo_2000hd atevio7500 hs7810a hs7819 ipbox55 ipbox9900 ipbox99 tf7700 ufs910 ufs912", "", "kernel-module-rt2500usb kernel-module-rt2800usb kernel-module-rt73usb kernel-module-rtl8187 kernel-module-zd1211rw", d)} \
 	"
 
 KERNEL_WIFI_DRIVERS_remove_sh4 += "\
@@ -125,7 +119,7 @@ MACHINE_FEATURE_RELATED_PLUGINS += "\
 	${@bb.utils.contains_any("MACHINE", "sf8008 spycat spycatmini spycatminiplus bcm7358 vp7358ci osnino osninoplus", "enigma2-plugin-systemplugins-vpledcontrol", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvd", "cdtextinfo", "", d)} \
 	${@bb.utils.contains("OPENPLI_FEATURES", "dvd", "cdtextinfo", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "streamproxy", "streamproxy", "", d)} \
+	${@bb.utils.contains_any("MACHINE_FEATURES", "streamproxy transcoding multitranscoding", "streamproxy", "", d)} \
 	"
 
 IMAGE_INSTALL += "\
@@ -134,10 +128,8 @@ IMAGE_INSTALL += "\
 	enigma2 \
 	${ENIGMA2_PLUGINS} \
 	enigma2-locale-meta \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd", "", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd libcrypto libcrypto-compat", "", d)} \
 	libavahi-client \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto", "", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "libcrypto-compat", "", d)} \
 	openvision-module \
 	openvision-version-info \
 	settings-autorestore \
