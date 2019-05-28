@@ -52,6 +52,11 @@ S = "${WORKDIR}/git"
 
 EXTRA_OECONF += "--with-skins1080"
 
+do_install_append() {
+    # remove unused .pyc files
+    find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
+}
+
 python populate_packages_prepend() {
     enigma2_skindir = bb.data.expand('${datadir}/enigma2', d)
     do_split_packages(d, enigma2_skindir, '(.*?)/.*', 'enigma2-plugin-skins-openvix-%s', 'Enigma2 Skin Pack: %s', recursive=True, match_path=True, prepend=True, extra_depends="enigma2")
