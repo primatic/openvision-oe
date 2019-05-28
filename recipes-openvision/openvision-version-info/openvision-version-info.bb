@@ -56,6 +56,8 @@ do_install() {
 	echo "distro=${DISTRO_NAME}" >> ${D}/etc/image-version
 	echo "${MACHINE}" > ${D}/etc/model
 	echo "${BOX_BRAND}" > ${D}/etc/brand
+	echo "${VISIONVERSION}" > ${D}/etc/visionversion
+	echo "${VISIONREVISION}" > ${D}/etc/visionrevision
 	if [ "${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "1", "0", d)}" = "1" ]; then
 		echo "smallflash" > ${D}/etc/smallflash
 	fi
