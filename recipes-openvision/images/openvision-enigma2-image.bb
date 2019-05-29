@@ -139,6 +139,7 @@ IMAGE_INSTALL += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	astra-sm \
 	curl \
+	enigma2-plugin-skins-octetfhd \
 	fuse-exfat \
 	${MACHINE_FEATURE_RELATED_PLUGINS} \
 	nfs-utils \
