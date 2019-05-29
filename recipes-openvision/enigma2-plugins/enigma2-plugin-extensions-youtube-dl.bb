@@ -6,16 +6,17 @@ HOMEPAGE = "http://rg3.github.io/youtube-dl/"
 SECTION = "devel/python"
 LICENSE = "LGPLv2.1"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=7246f848faa4e9c9fc0ea91122d6e680"
+
 DEPENDS = "libxml2 bash-completion"
-PV = "2019.05.11+git${SRCPV}"
-PKGV = "2019.05.11+git${GITPKGV}"
-PR = "r1"
+
+inherit gitpkgv setuptools
+
+PV = "git${SRCPV}"
+PKGV = "git${GITPKGV}"
 
 SRC_URI = "git://github.com/ytdl-org/youtube-dl.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
-
-inherit gitpkgv setuptools
 
 EXTRA_OEMAKE = "PYTHON=${PYTHON}"
 
@@ -40,7 +41,9 @@ RDEPENDS_${PN} = " \
     "
 
 PACKAGES =+ " ${PN}-src"
+
 RDEPENDS_{PN}-src = "${PN}"
+
 FILES_${PN}-src = " \
     ${libdir}/${PYTHON_DIR}/site-packages/*/*.py \
     ${libdir}/${PYTHON_DIR}/site-packages/*/*/*.py \
