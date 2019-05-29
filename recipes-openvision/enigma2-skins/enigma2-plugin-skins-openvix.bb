@@ -57,6 +57,10 @@ do_install_append() {
     find ${D}/usr/lib/enigma2/python/ -name '*.pyc' -exec rm {} \;
 }
 
+do_compile_append() {
+    python -O -m compileall ${S}
+}
+
 python populate_packages_prepend() {
     enigma2_skindir = bb.data.expand('${datadir}/enigma2', d)
     do_split_packages(d, enigma2_skindir, '(.*?)/.*', 'enigma2-plugin-skins-openvix-%s', 'Enigma2 Skin Pack: %s', recursive=True, match_path=True, prepend=True, extra_depends="enigma2")
