@@ -140,6 +140,7 @@ IMAGE_INSTALL += "\
 	astra-sm \
 	curl \
 	enigma2-plugin-skins-octetfhd \
+	enigma2-plugin-skins-octetsd \
 	fuse-exfat \
 	${MACHINE_FEATURE_RELATED_PLUGINS} \
 	nfs-utils \
