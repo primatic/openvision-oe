@@ -45,6 +45,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-mediascanner \
 	enigma2-plugin-extensions-moviecut \
 	enigma2-plugin-extensions-openwebif-extras \
+	enigma2-plugin-extensions-pespeedup \
 	enigma2-plugin-extensions-pictureplayer \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-extensions-pluginskinmover", "", d)} \
 	enigma2-plugin-extensions-socketmmi \
