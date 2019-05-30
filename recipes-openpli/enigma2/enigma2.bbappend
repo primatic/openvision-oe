@@ -12,6 +12,7 @@ RDEPENDS_${PN} += "\
     ${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "glibc-gconv-cp1250", d)} \    
     ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "vuplus-libgles-${MACHINE} libvugles2", "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "hiaccel", "dinobot-libs-${MACHINE}", "", d)} \
+    enigma2-plugin-extensions-pespeedup \
     "
 
 RRECOMMENDS_${PN} = "\
