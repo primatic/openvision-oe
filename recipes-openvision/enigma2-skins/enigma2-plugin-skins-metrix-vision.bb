@@ -1,5 +1,5 @@
-SUMMARY = "Enigma2 Skin Metrix HD"
-MAINTAINER = "http://open-store.net"
+SUMMARY = "Enigma2 Skin MetrixHD"
+MAINTAINER = "Open Vision Developers"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "proprietary"
@@ -18,7 +18,8 @@ PACKAGES =+ "enigma2-plugin-skins-metrix-vision-fhd-icons enigma2-plugin-skins-m
 PROVIDES =+ "enigma2-plugin-skins-metrix-vision-fhd-icons enigma2-plugin-skins-metrix-vision-uhd-icons"
 RPROVIDES_enigma2-plugin-skins-metrix-vision-fhd-icons += "enigma2-plugin-skins-metrix-vision-fhd-icons"
 RPROVIDES_enigma2-plugin-skins-metrix-vision-uhd-icons += "enigma2-plugin-skins-metrix-vision-uhd-icons"
-SRC_URI="git://github.com/OpenVisionE2/MetrixHD.git"
+
+SRC_URI="git://github.com/OpenVisionE2/MetrixHD-skin.git"
 
 S = "${WORKDIR}/git"
 
