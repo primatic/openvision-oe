@@ -47,7 +47,7 @@ PROVIDES = "\
     enigma2-plugin-systemplugins-multitranscodingsetup \
     enigma2-plugin-systemplugins-odinm7vfdcontrol \
     enigma2-plugin-systemplugins-remotecontrolcode \
-    ${@bb.utils.contains_any("MACHINE", "dm800", "", "enigma2-plugin-systemplugins-satipclient", d)} \
+    ${@bb.utils.contains("MACHINE", "dm800", "", "enigma2-plugin-systemplugins-satipclient", d)} \
     enigma2-plugin-systemplugins-sf8vfdcontrol \
     enigma2-plugin-systemplugins-simplefancontrol \
     enigma2-plugin-systemplugins-terrestrialscan \
@@ -74,7 +74,7 @@ DEPENDS = "\
     minidlna \
     neon \
     python-beautifulsoup python-dnspython python-gdata python-icalendar python-lxml python-pexpect python-pyamf python-pyusb python-simplejson \
-    ${@bb.utils.contains_any("MACHINE", "dm800", "", "satipclient", d)} \
+    ${@bb.utils.contains("MACHINE", "dm800", "", "satipclient", d)} \
     "
 
 DESCRIPTION_enigma2-plugin-extensions-btdevicesmanager = "BT devices manger to pair e.x keyboard or mouse"
