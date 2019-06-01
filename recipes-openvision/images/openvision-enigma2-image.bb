@@ -49,6 +49,7 @@ ENIGMA2_PLUGINS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-extensions-pluginskinmover", "", d)} \
 	enigma2-plugin-extensions-socketmmi \
 	enigma2-plugin-skins-pli-fullnighthd \
+	enigma2-plugin-skins-pli-fullhd \
 	enigma2-plugin-skins-pli-hd \
 	enigma2-plugin-softcams-oscam-emu \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
