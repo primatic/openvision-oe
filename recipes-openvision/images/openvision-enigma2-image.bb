@@ -48,9 +48,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-pictureplayer \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-extensions-pluginskinmover", "", d)} \
 	enigma2-plugin-extensions-socketmmi \
-	enigma2-plugin-skins-pli-fullnighthd \
-	enigma2-plugin-skins-pli-fullhd \
-	enigma2-plugin-skins-pli-hd \
+	enigma2-plugin-skins-octetsd \
 	enigma2-plugin-softcams-oscam-emu \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "ci", "enigma2-plugin-systemplugins-commoninterfaceassignment", "", d)} \
@@ -143,7 +141,6 @@ IMAGE_INSTALL += "\
 	astra-sm \
 	curl \
 	enigma2-plugin-skins-octetfhd \
-	enigma2-plugin-skins-octetsd \
 	fuse-exfat \
 	${MACHINE_FEATURE_RELATED_PLUGINS} \
 	nfs-utils \
