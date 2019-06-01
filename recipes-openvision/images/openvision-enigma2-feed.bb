@@ -215,11 +215,9 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-skins-metrix-vision \
 	enigma2-plugin-skins-mx-hq7 \
 	enigma2-plugin-skins-mx-hq9w \
-	enigma2-plugin-skins-octetfhd \
 	enigma2-plugin-skins-octetsd \
 	enigma2-plugin-skins-openvix \
 	enigma2-plugin-skins-pd1loi-hd-night \
-	enigma2-plugin-skins-pli-hd \
 	enigma2-plugin-skins-pli-hd-fullnight \
 	enigma2-plugin-skins-sevenhd \
 	enigma2-plugin-skins-simple-gray-hd \
