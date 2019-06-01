@@ -16,7 +16,6 @@ RDEPENDS_${PN} += "\
     "
 
 RRECOMMENDS_${PN} = "\
-	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-skins-pli-hd", "", d)} \
 	hotplug-e2-helper \
 	glibc-gconv-utf-16 \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "ofgwrite", d)} \
