@@ -41,6 +41,7 @@ OPTIONAL_PACKAGES += " \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gdb smbnetfs", d)} \
 	grep \
 	gstplayer \
+	gstreamer1.0-libav \
 	hddtemp \
 	hdparm \
 	inadyn-mt \
