@@ -12,6 +12,7 @@ SRC_URI = " git://anongit.freedesktop.org/gstreamer/gst-libav;branch=master;name
 			file://001-Disable-yasm-for-libav-when-disable-yasm.patch \
 			file://002-configure-check-for-armv7ve-variant.patch \
 			file://003-mips64_cpu_detection.patch \
+			file://004-fix-host-contamination.patch \
 "
 
 LIBAV_EXTRA_CONFIGURE_COMMON_ARG = "--target-os=linux \
