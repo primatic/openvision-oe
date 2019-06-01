@@ -98,6 +98,7 @@
 * et9x00
 
 # Zgemma
+* h10
 * h3
 * h4
 * h5
