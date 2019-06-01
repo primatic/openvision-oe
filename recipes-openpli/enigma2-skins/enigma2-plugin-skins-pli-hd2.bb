@@ -12,13 +12,13 @@ SRC_URI = "git://github.com/littlesat/skin-PLiHD.git"
 
 FILES_${PN} = "/usr/share/enigma2/PLi-HD2/"
 
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/git/usr/share/enigma2/PLi-HD2"
 
 do_compile() {
 }
 
 do_install() {
 	install -d ${D}/usr/share/enigma2/PLi-HD2
-	cp -r ${S}/usr/share/enigma2/PLi-HD2/* ${D}/usr/share/enigma2/PLi-HD2/
+	cp -r ${S}/* ${D}/usr/share/enigma2/PLi-HD2/
 	chmod -R a+rX ${D}/usr/share/enigma2/PLi-HD2/
 }
