@@ -18,7 +18,7 @@ do_compile() {
 }
 
 do_install() {
-	install -d ${D}/usr/share
+	install -d ${D}/usr/share/enigma2/PLi-HD1
 	cp -r ${S}/usr/share/enigma2/PLi-HD1/* ${D}/usr/share/enigma2/PLi-HD1/
 	chmod -R a+rX ${D}/usr/share/enigma2/PLi-HD1/
 }
