@@ -51,12 +51,12 @@ then
 fi
 if [ $SUBMODULETYPE = "All" ]
 then
-	cd ..
 	cd meta-amiko
 	echo "Checking out meta-amiko develop branch:"
 	git checkout develop
 	git pull
 	echo -e "\n"
+	cd ..
 	cd meta-ax
 	echo "Checking out meta-ax develop branch:"
 	git checkout develop
