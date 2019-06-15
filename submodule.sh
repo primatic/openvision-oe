@@ -51,6 +51,12 @@ then
 fi
 if [ $SUBMODULETYPE = "All" ]
 then
+	cd ..
+	cd meta-amiko
+	echo "Checking out meta-amiko develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
 	cd meta-ax
 	echo "Checking out meta-ax develop branch:"
 	git checkout develop
@@ -135,8 +141,14 @@ then
 	git pull
 	echo -e "\n"
 	cd ..
-	cd meta-gb
-	echo "Checking out meta-gb develop branch:"
+	cd meta-formuler
+	echo "Checking out meta-formuler develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
+	cd ..
+	cd meta-gigablue
+	echo "Checking out meta-gigablue develop branch:"
 	git checkout develop
 	git pull
 	echo -e "\n"
@@ -231,12 +243,6 @@ then
 	git pull
 	echo -e "\n"
 	cd ..
-	cd meta-viper
-	echo "Checking out meta-viper develop branch:"
-	git checkout develop
-	git pull
-	echo -e "\n"
-	cd ..
 	cd meta-wetek
 	echo "Checking out meta-wetek develop branch:"
 	git checkout develop
@@ -249,8 +255,14 @@ then
 	git pull
 	echo -e "\n"
 	cd ..
-	cd meta-xt
-	echo "Checking out meta-xt develop branch:"
+	cd meta-xtrend
+	echo "Checking out meta-xtrend develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
+	cd ..
+	cd meta-zgemma
+	echo "Checking out meta-zgemma develop branch:"
 	git checkout develop
 	git pull
 	echo -e "\n"
