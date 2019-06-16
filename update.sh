@@ -94,8 +94,8 @@ make init update
 echo ""
 # Remove existing PLi metas from bblayers.conf
 sed -i "s# $(pwd)/meta-amiko##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-dream##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-axasuhd##g" ${BUILDDIR}/conf/bblayers.conf
+sed -i "s# $(pwd)/meta-dream##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-edision##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-formuler##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-gigablue##g" ${BUILDDIR}/conf/bblayers.conf
