@@ -243,6 +243,12 @@ then
 	git pull
 	echo -e "\n"
 	cd ..
+	cd meta-vuplus
+	echo "Checking out meta-vuplus develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
+	cd ..
 	cd meta-wetek
 	echo "Checking out meta-wetek develop branch:"
 	git checkout develop
@@ -251,6 +257,12 @@ then
 	cd ..
 	cd meta-xcore
 	echo "Checking out meta-xcore develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
+	cd ..
+	cd meta-xp
+	echo "Checking out meta-xp develop branch:"
 	git checkout develop
 	git pull
 	echo -e "\n"
