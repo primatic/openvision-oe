@@ -54,14 +54,13 @@ METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
 if [ $CONFLICTMODE = "No" ]
 then
-	# Lets restore Makefile first in case OpenPLi update it
 	git pull
 fi
 if [ $CONFLICTMODE = "Yes" ]
 then
-	# Lets restore everything first in case OpenPLi update it
+	# Lets restore everything first.
 	git checkout .
-	# Clear the modifications we've done to the submodules before updating
+	# Clear the modifications we've done to the submodules before updating.
 	git submodule foreach git checkout .
 	git pull --rebase
 fi
@@ -69,6 +68,20 @@ sed -i "s#BUILD_DIR = \$(CURDIR)/.*#BUILD_DIR = \$(CURDIR)/${BUILDDIR}#g" Makefi
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/DISTRO = "openpli"/DISTRO = "openvision"/g' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/openpli.conf/openvision.conf/g' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/bitbake openpli/bitbake openvision/g' {} \;
+# Remove existing PLi metas from bblayers.conf
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-amiko/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-axasuhd/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-dream/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-edision/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-formuler/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-gigablue/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-qviart/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-spycat/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-vuplus/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-xp/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-xsarius.pli5/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-xtrend/d' {} \;
+find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-zgemma/d' {} \;
 echo ""
 echo -e "${RED}Check for dm7020hdv2 required changes ...${NC}"
 if grep -Fqi "DMTYPE" Makefile
@@ -92,20 +105,6 @@ fi
 rm -f ${BUILDDIR}/conf/bblayers.conf
 make init update
 echo ""
-# Remove existing PLi metas from bblayers.conf
-sed -i "s# $(pwd)/meta-amiko##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-axasuhd##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-dream##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-edision##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-formuler##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-gigablue##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-qviart##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-spycat##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-vuplus##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-xp##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-xsarius.pli5##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-xtrend##g" ${BUILDDIR}/conf/bblayers.conf
-sed -i "s# $(pwd)/meta-zgemma##g" ${BUILDDIR}/conf/bblayers.conf
 for i in ${METAS}
 do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> ${BUILDDIR}/conf/bblayers.conf
