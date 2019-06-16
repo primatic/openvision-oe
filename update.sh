@@ -101,6 +101,8 @@ sed -i "s# $(pwd)/meta-formuler##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-gigablue##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-qviart##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-spycat##g" ${BUILDDIR}/conf/bblayers.conf
+sed -i "s# $(pwd)/meta-vuplus##g" ${BUILDDIR}/conf/bblayers.conf
+sed -i "s# $(pwd)/meta-xp##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-xsarius.pli5##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-xtrend##g" ${BUILDDIR}/conf/bblayers.conf
 sed -i "s# $(pwd)/meta-zgemma##g" ${BUILDDIR}/conf/bblayers.conf
