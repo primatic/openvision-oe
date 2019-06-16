@@ -109,8 +109,9 @@ do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> ${BUILDDIR}/conf/bblayers.conf
 done
 echo "BBLAYERS_append = \" ${SCRIPTPATH}\"" >> ${BUILDDIR}/conf/bblayers.conf
+rm -rf meta-openpli/recipes-connectivity/minidlna
 rm -rf meta-openpli/recipes-extended/tzdata
+rm -rf meta-openpli/recipes-multimedia/readymedia
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dlnabrowser.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dlnaserver.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-lcd4linux.bb
-rm -rf meta-openpli/recipes-connectivity/minidlna
