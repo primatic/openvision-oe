@@ -147,6 +147,12 @@ then
 	git pull
 	echo -e "\n"
 	cd ..
+	cd meta-gfutures
+	echo "Checking out meta-gfutures develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
+	cd ..
 	cd meta-gigablue
 	echo "Checking out meta-gigablue develop branch:"
 	git checkout develop
@@ -173,6 +179,12 @@ then
 	cd ..
 	cd meta-linkdroid
 	echo "Checking out meta-linkdroid develop branch:"
+	git checkout develop
+	git pull
+	echo -e "\n"
+	cd ..
+	cd meta-maxytec
+	echo "Checking out meta-maxytec develop branch:"
 	git checkout develop
 	git pull
 	echo -e "\n"
@@ -237,8 +249,8 @@ then
 	git pull
 	echo -e "\n"
 	cd ..
-	cd meta-v8plus
-	echo "Checking out meta-v8plus develop branch:"
+	cd meta-ultramini
+	echo "Checking out meta-ultramini develop branch:"
 	git checkout develop
 	git pull
 	echo -e "\n"
