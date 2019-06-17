@@ -77,6 +77,7 @@ OPTIONAL_PACKAGES += " \
 	pv \
 	pyload \
 	python-beautifulsoup4 \
+	python-futures \
 	python-ipaddress \
 	python-js2py \
 	python-lxml \
@@ -85,6 +86,7 @@ OPTIONAL_PACKAGES += " \
 	python-pip \
 	python-pyexecjs \
 	python-requests \
+	radiotimesxmltvemulator \
 	rsync \
 	rtorrent \
 	sabnzbd \
