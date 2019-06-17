@@ -40,8 +40,8 @@ cd "${SCRIPTPATH}"
 rm -Rf meta-amlogic
 rm -Rf meta-fulan
 rm -Rf meta-gb
-rm -Rf meta-maxytec
 rm -Rf meta-meson
+rm -Rf meta-v8plus
 rm -Rf meta-viper
 rm -Rf meta-xt
 git pull
