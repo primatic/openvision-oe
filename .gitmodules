@@ -109,3 +109,9 @@
 [submodule "meta-vuplus"]
 	path = meta-vuplus
 	url = https://github.com/OpenVisionE2/meta-vuplus.git
+[submodule "meta-gfutures"]
+	path = meta-gfutures
+	url = https://github.com/OpenVisionE2/meta-gfutures.git
+[submodule "meta-maxytec"]
+	path = meta-maxytec
+	url = https://github.com/OpenVisionE2/meta-maxytec.git
