@@ -82,9 +82,6 @@
 [submodule "meta-uclan"]
 	path = meta-uclan
 	url = https://github.com/OpenVisionE2/meta-uclan.git
-[submodule "meta-v8plus"]
-	path = meta-v8plus
-	url = https://github.com/OpenVisionE2/meta-v8plus.git
 [submodule "meta-wetek"]
 	path = meta-wetek
 	url = https://github.com/OpenVisionE2/meta-wetek.git
