@@ -71,7 +71,7 @@ cd openpli-oe-core
 ```
 git clone --depth 1 https://github.com/OpenVisionE2/openvision-oe.git
 ```
-4. Run our image.sh script:
+4. Run our image.sh script (Do not run bitbake or any related script as root!):
 ```
 cd openvision-oe
 ./image.sh
