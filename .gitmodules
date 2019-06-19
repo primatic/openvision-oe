@@ -1,3 +1,6 @@
+[submodule "meta-amiko"]
+	path = meta-amiko
+	url = https://github.com/OpenVisionE2/meta-amiko.git
 [submodule "meta-ax"]
 	path = meta-ax
 	url = https://github.com/OpenVisionE2/meta-ax.git
@@ -31,6 +34,7 @@
 [submodule "meta-dream"]
 	path = meta-dream
 	url = https://github.com/OpenVisionE2/meta-dream.git
+	branch = develop
 [submodule "meta-ebox"]
 	path = meta-ebox
 	url = https://github.com/OpenVisionE2/meta-ebox.git
@@ -40,6 +44,15 @@
 [submodule "meta-entwopia"]
 	path = meta-entwopia
 	url = https://github.com/OpenVisionE2/meta-entwopia.git
+[submodule "meta-formuler"]
+	path = meta-formuler
+	url = https://github.com/OpenVisionE2/meta-formuler.git
+[submodule "meta-gfutures"]
+	path = meta-gfutures
+	url = https://github.com/OpenVisionE2/meta-gfutures.git
+[submodule "meta-gigablue"]
+	path = meta-gigablue
+	url = https://github.com/OpenVisionE2/meta-gigablue.git
 [submodule "meta-hypercube"]
 	path = meta-hypercube
 	url = https://github.com/OpenVisionE2/meta-hypercube.git
@@ -52,6 +65,9 @@
 [submodule "meta-linkdroid"]
 	path = meta-linkdroid
 	url = https://github.com/OpenVisionE2/meta-linkdroid.git
+[submodule "meta-maxytec"]
+	path = meta-maxytec
+	url = https://github.com/OpenVisionE2/meta-maxytec.git
 [submodule "meta-minix"]
 	path = meta-minix
 	url = https://github.com/OpenVisionE2/meta-minix.git
@@ -73,6 +89,7 @@
 [submodule "meta-sh4"]
 	path = meta-sh4
 	url = https://github.com/OpenVisionE2/meta-sh4.git
+	branch = develop
 [submodule "meta-tiviar"]
 	path = meta-tiviar
 	url = https://github.com/OpenVisionE2/meta-tiviar.git
@@ -82,39 +99,24 @@
 [submodule "meta-uclan"]
 	path = meta-uclan
 	url = https://github.com/OpenVisionE2/meta-uclan.git
+[submodule "meta-ultramini"]
+	path = meta-ultramini
+	url = https://github.com/OpenVisionE2/meta-ultramini.git
+[submodule "meta-vuplus"]
+	path = meta-vuplus
+	url = https://github.com/OpenVisionE2/meta-vuplus.git
 [submodule "meta-wetek"]
 	path = meta-wetek
 	url = https://github.com/OpenVisionE2/meta-wetek.git
 [submodule "meta-xcore"]
 	path = meta-xcore
 	url = https://github.com/OpenVisionE2/meta-xcore.git
-[submodule "meta-gigablue"]
-	path = meta-gigablue
-	url = https://github.com/OpenVisionE2/meta-gigablue.git
-[submodule "meta-amiko"]
-	path = meta-amiko
-	url = https://github.com/OpenVisionE2/meta-amiko.git
-[submodule "meta-formuler"]
-	path = meta-formuler
-	url = https://github.com/OpenVisionE2/meta-formuler.git
-[submodule "meta-zgemma"]
-	path = meta-zgemma
-	url = https://github.com/OpenVisionE2/meta-zgemma.git
-[submodule "meta-xtrend"]
-	path = meta-xtrend
-	url = https://github.com/OpenVisionE2/meta-xtrend.git
 [submodule "meta-xp"]
 	path = meta-xp
 	url = https://github.com/OpenVisionE2/meta-xp.git
-[submodule "meta-vuplus"]
-	path = meta-vuplus
-	url = https://github.com/OpenVisionE2/meta-vuplus.git
-[submodule "meta-gfutures"]
-	path = meta-gfutures
-	url = https://github.com/OpenVisionE2/meta-gfutures.git
-[submodule "meta-maxytec"]
-	path = meta-maxytec
-	url = https://github.com/OpenVisionE2/meta-maxytec.git
-[submodule "meta-ultramini"]
-	path = meta-ultramini
-	url = https://github.com/OpenVisionE2/meta-ultramini.git
+[submodule "meta-xtrend"]
+	path = meta-xtrend
+	url = https://github.com/OpenVisionE2/meta-xtrend.git
+[submodule "meta-zgemma"]
+	path = meta-zgemma
+	url = https://github.com/OpenVisionE2/meta-zgemma.git
