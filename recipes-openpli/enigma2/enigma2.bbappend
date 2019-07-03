@@ -3,14 +3,14 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 MAINTAINER = "Open Vision Developers"
 
 DEPENDS += "\
-    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "libvugles2 libgles-${MACHINE}", "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "libvugles2-${MACHINE} libgles-${MACHINE}", "", d)} \
     openvision-extra-rc-models \
     "
 
 RDEPENDS_${PN} += "\
     enigma2-plugin-extensions-pespeedup \
     ${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", "glibc-gconv-cp1250", d)} \
-    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "libvugles2 libgles-${MACHINE}", "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "libvugles2-${MACHINE} libgles-${MACHINE}", "", d)} \
     "
 
 RRECOMMENDS_${PN} = "\
