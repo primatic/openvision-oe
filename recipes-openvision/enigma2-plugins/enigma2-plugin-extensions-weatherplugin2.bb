@@ -1,9 +1,9 @@
-DESCRIPTION = "WeatherPlugin2 by Dr.Best Mod RAED"
-MAINTAINER = "RAED"
+DESCRIPTION = "WeatherPlugin2 by Dr.Best modified by RAED"
+MAINTAINER = "Open Vision Developers"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 
-inherit gitpkgv distutils-openplugins
+inherit gitpkgv distutils-openplugins gettext
 
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
@@ -23,7 +23,7 @@ do_install() {
 	cp -r ${S}/usr/* ${D}/usr/
 }
 
-FILES_${PN}-dev = "\
+FILES_${PN}-src = "\
 	${libdir}/enigma2/python/Plugins/Extensions/WeatherPlugin2/*.py \
 	${libdir}/enigma2/python/Plugins/SystemPlugins/WeatherComponentHandler/*.py \
 	${libdir}/enigma2/python/Components/*.py \
