@@ -10,7 +10,7 @@ PKGV = "2.1+git${GITPKGV}"
 
 RDEPENDS_${PN} = "smartmontools libcrypto-compat"
 
-SRC_URI = "git://github.com/OpenVisionE2/merlininfo;protocol=git"
+SRC_URI = "git://github.com/OpenVisionE2/merlininfo.git;protocol=git"
 
 FILES_${PN} = "/usr/"
 
@@ -30,5 +30,7 @@ FILES_${PN}-src = "\
 "
 
 PACKAGES =+ " ${PN}-src"
+
 RDEPENDS_{PN}-src = "${PN}"
+
 FILES_${PN}-src = "${libdir}/enigma2/python/Plugins/Extensions/MerlinInfo/*.py"

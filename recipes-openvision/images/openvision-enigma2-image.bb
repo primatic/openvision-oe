@@ -82,6 +82,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-e2iplayer-deps \
 	enigma2-plugin-extensions-filecommander \
 	enigma2-plugin-extensions-foreca \
+	enigma2-plugin-extensions-keyadder \
 	enigma2-plugin-extensions-openwebif-extras-terminal \
 	enigma2-plugin-extensions-reconstructapsc \
 	enigma2-plugin-extensions-tunerserver \
