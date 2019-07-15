@@ -89,7 +89,6 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-vlcplayer \
 	enigma2-plugin-softcams-oscam \
 	enigma2-plugin-softcams-oscam-emu \
-	enigma2-plugin-systemplugins-netspeedtest \
 	enigma2-plugin-systemplugins-serviceapp \
 	enigma2-plugin-systemplugins-setpasswd \
 	enigma2-plugin-systemplugins-systemtime \
