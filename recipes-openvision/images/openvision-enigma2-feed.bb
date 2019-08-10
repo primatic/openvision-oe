@@ -132,7 +132,6 @@ EXTRA_WIFI_DRIVERS += "\
 	firmware-rtl8188eu \
 	firmware-rtl8192eu \
 	rtl8188eu \
-	rtl8192eu \
 	${@bb.utils.contains_any("MACHINE", "cube dm800 su980", "", "rtl8723a", d)} \
 	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rtl8723bs", "", "rtl8723bs", d)} \
 	${@bb.utils.contains_any("MACHINE", "cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 ixusszero ixussone dm820 dm8000 dm7080 dm520", "", "rtl8812au", d)} \
