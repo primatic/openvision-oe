@@ -7,7 +7,7 @@
 require recipes-core/meta/package-index.bb
 
 # We have a GPLv2 license for this recipe...
-require conf/license/openpli-gplv2.inc
+require conf/license/openvision-gplv2.inc
 
 # Depend on the image, so that it gets build
 DEPENDS = "openvision-enigma2-image"
