@@ -135,7 +135,6 @@ IMAGE_INSTALL += "\
 	enigma2-locale-meta \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "kernel-module-block2mtd libcrypto libcrypto-compat", "", d)} \
 	libavahi-client \
-	openvision-branding \
 	openvision-module \
 	openvision-version-info \
 	settings-autorestore \
