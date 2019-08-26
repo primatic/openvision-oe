@@ -55,7 +55,7 @@ EXTRA_OECONF = "'LOGIN_PROGRAM=${base_bindir}/login' \
                 --without-zlib-version-check \
                 --with-privsep-path=/var/run/sshd \
                 --sysconfdir=${sysconfdir}/ssh \
-                --with-xauth=/usr/bin/xauth \
+                --with-xauth=${bindir}/xauth \
                 --disable-strip \
                 "
 

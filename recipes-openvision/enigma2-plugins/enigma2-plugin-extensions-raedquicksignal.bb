@@ -16,7 +16,7 @@ PKGV = "5.1+git${GITPKGV}"
 FILES_${PN} = "/usr/"
 
 do_compile() {
-	python -O -m compileall ${S}/usr/lib/enigma2/python/
+	python -O -m compileall ${S}${libdir}/enigma2/python/
 }
 
 do_install() {
@@ -25,16 +25,16 @@ do_install() {
 }
 
 FILES_${PN}-src = "\
-    /usr/lib/enigma2/python/*/*.py \
-    /usr/lib/enigma2/python/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*/*/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*/*/*/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*/*/*/*/*/*/*.py \
-    /usr/lib/enigma2/python/*/*/*/*/*/*/*/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*.py \
+    ${libdir}/enigma2/python/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*/*/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*/*/*/*/*/*/*.py \
+    ${libdir}/enigma2/python/*/*/*/*/*/*/*/*/*/*/*.py \
     "
 
 python populate_packages_prepend() {

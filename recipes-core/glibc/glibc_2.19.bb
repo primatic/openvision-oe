@@ -6,7 +6,7 @@ SRC_URI = "http://downloads.yoctoproject.org/releases/eglibc/eglibc-${PV}-svnr25
            file://eglibc-svn-arm-lowlevellock-include-tls.patch \
            file://IO-acquire-lock-fix.patch \
            file://mips-rld-map-check.patch \
-           file://etc/ld.so.conf \
+           file:/${sysconfdir}/ld.so.conf \
            file://generate-supported.mk \
            file://glibc.fix_sqrt2.patch \
            file://multilib_readlib.patch \
@@ -136,7 +136,7 @@ do_compile () {
 # Use the host locale archive when built for nativesdk so that we don't need to
 # ship a complete (100MB) locale set.
 do_compile_prepend_class-nativesdk() {
-    echo "complocaledir=/usr/lib/locale" >> ${S}/configparms
+    echo "complocaledir=${libdir}/locale" >> ${S}/configparms
 }
 
 require glibc-package.inc

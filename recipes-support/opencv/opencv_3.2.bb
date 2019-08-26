@@ -53,8 +53,8 @@ EXTRA_OECMAKE = "-DOPENCV_EXTRA_MODULES_PATH=${WORKDIR}/contrib/modules \
     ${@bb.utils.contains("TARGET_CC_ARCH", "-msse3", "-DENABLE_SSE=1 -DENABLE_SSE2=1 -DENABLE_SSE3=1 -DENABLE_SSSE3=1", "", d)} \
     ${@bb.utils.contains("TARGET_CC_ARCH", "-msse4.1", "-DENABLE_SSE=1 -DENABLE_SSE2=1 -DENABLE_SSE3=1 -DENABLE_SSSE3=1 -DENABLE_SSE41=1", "", d)} \
     ${@bb.utils.contains("TARGET_CC_ARCH", "-msse4.2", "-DENABLE_SSE=1 -DENABLE_SSE2=1 -DENABLE_SSE3=1 -DENABLE_SSSE3=1 -DENABLE_SSE41=1 -DENABLE_SSE42=1", "", d)} \
-    ${@base_conditional("libdir", "/usr/lib64", "-DLIB_SUFFIX=64", "", d)} \
-    ${@base_conditional("libdir", "/usr/lib32", "-DLIB_SUFFIX=32", "", d)} \
+    ${@base_conditional("libdir", "${libdir}64", "-DLIB_SUFFIX=64", "", d)} \
+    ${@base_conditional("libdir", "${libdir}32", "-DLIB_SUFFIX=32", "", d)} \
 "
 EXTRA_OECMAKE_append_x86 = " -DX86=ON"
 
@@ -93,9 +93,9 @@ inherit ${@bb.utils.contains('PACKAGECONFIG', 'python2', 'distutils-base', '', d
 
 export PYTHON_CSPEC="-I${STAGING_INCDIR}/${PYTHON_DIR}"
 export PYTHON="${STAGING_BINDIR_NATIVE}/${@bb.utils.contains('PACKAGECONFIG', 'python3', 'python3', 'python', d)}"
-export ORACLE_JAVA_HOME="${STAGING_DIR_NATIVE}/usr/bin/java"
-export JAVA_HOME="${STAGING_DIR_NATIVE}/usr/lib/jvm/openjdk-8-native"
-export ANT_DIR="${STAGING_DIR_NATIVE}/usr/share/ant/"
+export ORACLE_JAVA_HOME="${STAGING_DIR_NATIVE}${bindir}/java"
+export JAVA_HOME="${STAGING_DIR_NATIVE}${libdir}/jvm/openjdk-8-native"
+export ANT_DIR="${STAGING_DIR_NATIVE}${datadir}/ant/"
 
 TARGET_CC_ARCH += "-I${S}/include "
 
@@ -163,9 +163,9 @@ do_install_append() {
     sed -i '/blobtrack/d' ${D}${includedir}/opencv/cvaux.h
 
     # Move Python files into correct library folder (for multilib build)
-    if [ "$libdir" != "/usr/lib" -a -d ${D}/usr/lib ]; then
-        mv ${D}/usr/lib/* ${D}/${libdir}/
-        rm -rf ${D}/usr/lib
+    if [ "$libdir" != "${libdir}" -a -d ${D}${libdir} ]; then
+        mv ${D}${libdir}/* ${D}/${libdir}/
+        rm -rf ${D}${libdir}
     fi
 
     if ${@bb.utils.contains("PACKAGECONFIG", "samples", "true", "false", d)}; then

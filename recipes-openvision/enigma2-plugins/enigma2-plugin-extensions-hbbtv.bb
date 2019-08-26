@@ -13,25 +13,25 @@ PV = "git${SRCPV}"
 PKGV = "git${GITPKGV}"
 
 RDEPENDS_${PN}  = "vuplus-opera-browser vuplus-hbbtv-dumpait"
-FILES_${PN}     = "/usr/lib/enigma2/python/Plugins/Extensions/HbbTV/* \
-        /usr/lib/enigma2/python/Components/Sources/* \
-        /usr/lib/enigma2/python/Components/Converter/* \
+FILES_${PN}     = "${libdir}/enigma2/python/Plugins/Extensions/HbbTV/* \
+        ${libdir}/enigma2/python/Components/Sources/* \
+        ${libdir}/enigma2/python/Components/Converter/* \
 "
 
 do_install() {
-	install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV
-	install -m 0644 ${S}/lib/python/Plugins/Extensions/HbbTV/*.py ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV
-	install -m 0644 ${S}/lib/python/Plugins/Extensions/HbbTV/keymap.xml ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV
+	install -d ${D}${libdir}/enigma2/python/Plugins/Extensions/HbbTV
+	install -m 0644 ${S}/lib/python/Plugins/Extensions/HbbTV/*.py ${D}${libdir}/enigma2/python/Plugins/Extensions/HbbTV
+	install -m 0644 ${S}/lib/python/Plugins/Extensions/HbbTV/keymap.xml ${D}${libdir}/enigma2/python/Plugins/Extensions/HbbTV
 
-	install -d ${D}/usr/lib/enigma2/python/Components/Sources
-	install -m 0644 ${S}/lib/python/Components/Sources/HbbtvApplication.py ${D}/usr/lib/enigma2/python/Components/Sources
-	install -d ${D}/usr/lib/enigma2/python/Components/Converter
-	install -m 0644 ${S}/lib/python/Components/Converter/HbbtvApplicationInfo.py ${D}/usr/lib/enigma2/python/Components/Converter
+	install -d ${D}${libdir}/enigma2/python/Components/Sources
+	install -m 0644 ${S}/lib/python/Components/Sources/HbbtvApplication.py ${D}${libdir}/enigma2/python/Components/Sources
+	install -d ${D}${libdir}/enigma2/python/Components/Converter
+	install -m 0644 ${S}/lib/python/Components/Converter/HbbtvApplicationInfo.py ${D}${libdir}/enigma2/python/Components/Converter
 
-	install -m 0755 -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV/locale
-	cp -av ${S}/lib/python/Plugins/Extensions/HbbTV/locale/*.po ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV/locale
+	install -m 0755 -d ${D}${libdir}/enigma2/python/Plugins/Extensions/HbbTV/locale
+	cp -av ${S}/lib/python/Plugins/Extensions/HbbTV/locale/*.po ${D}${libdir}/enigma2/python/Plugins/Extensions/HbbTV/locale
 
-	python -O -m compileall ${D}/usr/lib/enigma2/python/Plugins/
+	python -O -m compileall ${D}${libdir}/enigma2/python/Plugins/
 }
 
 do_install_append() {

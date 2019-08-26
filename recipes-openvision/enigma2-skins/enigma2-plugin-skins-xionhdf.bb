@@ -22,15 +22,15 @@ do_compile() {
 
 do_install() {
     cp -r --preserve=mode,links ${S}/usr ${D}/
-    install -m 0644 ${WORKDIR}/pli.png ${D}/usr/share/enigma2/XionHDF/
+    install -m 0644 ${WORKDIR}/pli.png ${D}${datadir}/enigma2/XionHDF/
 }
 
 do_postrm_append() {
 #!/bin/sh
-rm -rf /usr/share/enigma2/XionHDF
-rm -rf /usr/lib/enigma2/python/Plugins/Extensions/XionHDF
-rm -rf /usr/lib/enigma2/python/Components/Converter/XionHDF*
-rm -rf /usr/lib/enigma2/python/Components/Renderer/XionHDF*
+rm -rf ${datadir}/enigma2/XionHDF
+rm -rf ${libdir}/enigma2/python/Plugins/Extensions/XionHDF
+rm -rf ${libdir}/enigma2/python/Components/Converter/XionHDF*
+rm -rf ${libdir}/enigma2/python/Components/Renderer/XionHDF*
 echo "                                                          "
 echo "              ...Skin successful removed.                 "
 echo "                                                          "
