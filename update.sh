@@ -37,13 +37,6 @@ echo -e "${RED}Updating from git, please wait ...${NC}"
 echo ""
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
-rm -Rf meta-amlogic
-rm -Rf meta-fulan
-rm -Rf meta-gb
-rm -Rf meta-meson
-rm -Rf meta-v8plus
-rm -Rf meta-viper
-rm -Rf meta-xt
 git pull
 git submodule sync
 git submodule update --init
