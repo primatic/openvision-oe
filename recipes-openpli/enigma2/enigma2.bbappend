@@ -4,7 +4,6 @@ MAINTAINER = "Open Vision Developers"
 
 DEPENDS += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "libvugles2-${MACHINE} libgles-${MACHINE}", "", d)} \
-	openvision-extra-rc-models \
 	"
 
 RDEPENDS_${PN} += "\
@@ -34,10 +33,7 @@ inherit upx_compress
 PV = "develop+git${SRCPV}"
 PKGV = "develop+git${GITPKGV}"
 
-SRC_URI = "\
-	git://github.com/OpenVisionE2/enigma2-openvision.git;branch=develop;name=enigma2 \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "git://github.com/OpenVisionE2/extra_rc_models.git;protocol=git;destsuffix=extra_rc_models;name=extrarcmodels", d)} \
-	"
+SRC_URI = "git://github.com/OpenVisionE2/enigma2-openvision.git;branch=develop"
 
 EXTRA_OECONF_append += "\
 	--with-boxbrand="${BOX_BRAND}" \
@@ -57,30 +53,10 @@ EXTRA_OECONF_append += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "olde2api", "--with-olde2api" , "", d)} \
 	"
 
-SRCREV_extrarcmodels_pn-${PN} = "${AUTOREV}"
-SRCREV_FORMAT = "enigma2"
-
 DESCRIPTION_enigma2-plugin-font-wqy-microhei = "wqy-microhei font supports Chinese EPG"
 PACKAGES =+ "enigma2-plugin-font-wqy-microhei"
 FILES_enigma2-plugin-font-wqy-microhei = "${datadir}/fonts/wqy-microhei.ttc ${datadir}/fonts/fallback.font"
 ALLOW_EMPTY_enigma2-plugin-font-wqy-microhei = "1"
-
-do_configure_prepend() {
-	if [ ! "${TARGET_ARCH}" == "sh4" ]
-	then
-		# Restore the files first in case we run configure twice between checking out the source
-		git --git-dir="${S}/.git" --work-tree="${S}" checkout "${S}/data/rc_models/Makefile.am"
-		git --git-dir="${S}/.git" --work-tree="${S}" checkout "${S}/data/rc_models/rc_models.cfg"
-		git --git-dir="${WORKDIR}/extra_rc_models/.git" --work-tree="${WORKDIR}/extra_rc_models" pull
-		for i in $(find "${WORKDIR}/extra_rc_models" -maxdepth 1 -type f -name "*.xml" -o -name "*.png")
-		do
-			file="$(echo "${i}" | sed 's:.*/::')"
-			sed -i '${s/$/'" $file"'/}' "${S}/data/rc_models/Makefile.am"
-			cp -f "${i}" "${S}/data/rc_models/"
-		done
-		cat "${WORKDIR}/extra_rc_models/rc_models.cfg" >> "${S}/data/rc_models/rc_models.cfg"
-	fi
-}
 
 python populate_packages_prepend() {
     enigma2_plugindir = bb.data.expand('${libdir}/enigma2/python/Plugins', d)
