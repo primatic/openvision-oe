@@ -3,5 +3,5 @@ DEPENDS_remove += "\
 "
 
 DEPENDS_append += "\
-	enigma2-plugin-extensions-openwebif-extras \
+	enigma2-plugin-extensions-openwebif-vision \
 "
