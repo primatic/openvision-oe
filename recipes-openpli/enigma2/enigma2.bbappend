@@ -37,6 +37,7 @@ SRC_URI = "git://github.com/OpenVisionE2/enigma2-openvision.git;branch=develop"
 
 EXTRA_OECONF_append += "\
 	--with-boxbrand="${BOX_BRAND}" \
+	--with-oever="${VISIONVERSION}" \
 	${@bb.utils.contains("MACHINE_FEATURES", "bwlcd128", "--with-bwlcd128" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "bwlcd140", "--with-bwlcd140" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "bwlcd255", "--with-bwlcd255" , "", d)} \
