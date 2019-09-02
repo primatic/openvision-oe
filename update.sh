@@ -111,5 +111,6 @@ echo "BBLAYERS_append = \" ${SCRIPTPATH}\"" >> ${BUILDDIR}/conf/bblayers.conf
 rm -rf meta-openpli/recipes-extended/tzdata
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dlnabrowser.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dlnaserver.bb
+rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-epgimport-rytec.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-lcd4linux.bb
 rm -rf meta-openpli/recipes-openpli/images
