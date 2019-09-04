@@ -116,4 +116,5 @@ rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dl
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dlnaserver.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-epgimport-rytec.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-lcd4linux.bb
+rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugins.bb
 rm -rf meta-openpli/recipes-openpli/images
