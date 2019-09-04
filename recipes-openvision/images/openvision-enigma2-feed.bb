@@ -2,6 +2,10 @@
 # but that should be built for the feed so that other
 # components may use them and install on demand.
 
+# Trick: We want to create the package index, and we don't actually
+# package anything, so we "inherit" the package indexer recipe.
+require recipes-core/meta/package-index.bb
+
 # We have a GPLv2 license for this recipe...
 require conf/license/openvision-gplv2.inc
 
@@ -58,6 +62,7 @@ OPTIONAL_PACKAGES += "\
 	nano \
 	nbench-byte \
 	net-tools \
+	${@bb.utils.contains("TARGET_FPU", "soft", "", "nodejs", d)} \
 	ntfs-3g \
 	ntp \
 	ofgwrite \
