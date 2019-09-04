@@ -2,10 +2,6 @@
 # but that should be built for the feed so that other
 # components may use them and install on demand.
 
-# Trick: We want to create the package index, and we don't actually
-# package anything, so we "inherit" the package indexer recipe.
-require recipes-core/meta/package-index.bb
-
 # We have a GPLv2 license for this recipe...
 require conf/license/openvision-gplv2.inc
 
@@ -16,7 +12,7 @@ OPTIONAL_PACKAGES_BROKEN = ""
 OPTIONAL_PACKAGES ?= ""
 OPTIONAL_BSP_PACKAGES ?= ""
 
-OPTIONAL_PACKAGES += " \
+OPTIONAL_PACKAGES += "\
 	astra-sm \
 	autofs \
 	autossh \
@@ -62,7 +58,6 @@ OPTIONAL_PACKAGES += " \
 	nano \
 	nbench-byte \
 	net-tools \
-	${@bb.utils.contains("TARGET_FPU", "soft", "", "nodejs", d)} \
 	ntfs-3g \
 	ntp \
 	ofgwrite \
@@ -115,13 +110,9 @@ OPTIONAL_PACKAGES += " \
 	${OPTIONAL_BSP_PACKAGES} \
 	"
 
-OPTIONAL_PACKAGES_remove_cube += " \
-	smbnetfs \
-	"
+OPTIONAL_PACKAGES_remove_cube += "smbnetfs"
 
-OPTIONAL_PACKAGES_remove_su980 += " \
-	smbnetfs \
-	"
+OPTIONAL_PACKAGES_remove_su980 += "smbnetfs"
 
 OPTIONAL_PACKAGES_remove_sh4 += "\
 	lirc \
@@ -129,45 +120,51 @@ OPTIONAL_PACKAGES_remove_sh4 += "\
 	"
 
 EXTRA_WIFI_DRIVERS += "\
-	firmware-rtl8188eu \
+	firmware-mt7601u \
+	firmware-rt3070 \
+	firmware-rt8188fu \
+	firmware-rtl8192cufw \
 	firmware-rtl8192eu \
-	${@bb.utils.contains("MACHINE", "dm800", "", "rtl8188eu", d)} \
+	mt7601u \
+	mt7603u \
+	rt3070 \
+	rt8188fu \
 	${@bb.utils.contains_any("MACHINE", "cube dm800 su980", "", "rt8723a", d)} \
-	${@bb.utils.contains("MACHINE_ESSENTIAL_EXTRA_RDEPENDS", "spycat-rt8723bs", "", "rt8723bs", d)} \
+	rt8723bs \
 	${@bb.utils.contains_any("MACHINE", "cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 ixusszero ixussone dm820 dm8000 dm7080 dm520", "", "rt8812au", d)} \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rt8814au rt8822bu", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "rt8822bu", d)} \
+	rtl8188eu \
 	${@bb.utils.contains_any("MACHINE", "et5x00 et6x00 et9x00 vuduo vusolo vuuno vuultimo osmio4k osmio4kplus cube dm500hd dm500hdv2 dm800 dm800se dm800sev2 dm7020hd dm7020hdv2 su980 force1 force1plus iqonios100hd iqonios200hd iqonios300hd iqonios300hdv2 mediabox optimussos1 optimussos1plus optimussos2 optimussos2plus optimussos3plus tm2t tmnano2super tmnano2t tmnano3t tmnano tmsingle tmtwin worldvisionf1 worldvisionf1plus azboxhd azboxme azboxminime maram9 c300 c300pro c400plus k1plus k1pro k2pro k2prov2 k3pro kvim2 alien4 ixusszero ixussone ventonhdx sezam5000hd mbtwin beyonwizt3 gb800ue gb800solo gb800se dm820 dm8000 dm7080 dm520 x8hp wetekhub wetekplay2  wetekplay", "", "rtl8189es", d)} \
-	${@bb.utils.contains_any("MACHINE", "osmio4k osmio4kplus dm800", "", "rtl8192eu", d)} \
+	rtl8192cu \
+	${@bb.utils.contains_any("MACHINE", "osmio4k osmio4kplus dm800", "", "rt8814au rtl8192eu", d)} \
 	"
 
-EXTRA_WIFI_DRIVERS_remove_cube += " \
+EXTRA_WIFI_DRIVERS_remove_cube += "\
 	rt8723bs \
 	rt8814au \
 	rt8822bu \
 	"
 
-EXTRA_WIFI_DRIVERS_remove_dm800 += " \
+EXTRA_WIFI_DRIVERS_remove_dm800 += "\
 	rt8723bs \
 	rt8814au \
 	rt8822bu \
 	"
 
-EXTRA_WIFI_DRIVERS_remove_su980 += " \
+EXTRA_WIFI_DRIVERS_remove_su980 += "\
 	rt8723bs \
 	rt8814au \
 	rt8822bu \
 	"
 
 EXTRA_WIFI_DRIVERS_remove_sh4 += "\
-	rtl8188eu \
-	rtl8189es \
-	rtl8192eu \
 	rt8812au \
+	rtl8189es \
 	"
 
 OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
 
-ENIGMA2_OPTIONAL += " \
+ENIGMA2_OPTIONAL += "\
 	cdtextinfo \
 	channelsettings-enigma2-meta \
 	dvb-usb-drivers-meta \
@@ -185,7 +182,6 @@ ENIGMA2_OPTIONAL += " \
 	enigma2-plugin-extensions-dreamplex \
 	enigma2-plugin-extensions-e2iplayer \
 	enigma2-plugin-extensions-e2iplayer-deps \
-	enigma2-plugin-extensions-e2istream \
 	enigma2-plugin-extensions-epgimport \
 	enigma2-plugin-extensions-fontinfo \
 	enigma2-plugin-extensions-hdmitest \
