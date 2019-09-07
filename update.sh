@@ -112,6 +112,8 @@ rm -rf meta-openpli/recipes-connectivity/mediatek
 rm -rf meta-openpli/recipes-connectivity/realtek
 rm -rf meta-openpli/recipes-extended/tzdata
 rm -rf meta-openpli/recipes-multimedia/tuxtxt
+rm -rf meta-openpli/recipes-openpli/enigma2/kernel-params
+rm -rf meta-openpli/recipes-openpli/enigma2/kernel-params.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dlnabrowser.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-dlnaserver.bb
 rm -rf meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-epgimport-rytec.bb
