@@ -1,3 +1,6 @@
+PV = "1.0+git${SRCPV}"
+PKGV = "1.0+git${GITPKGV}"
+
 RDEPENDS_${PN} = "\
 	mtd-utils \
 	mtd-utils-ubifs \
