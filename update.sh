@@ -108,6 +108,7 @@ do
     echo "BBLAYERS_append = \" ${SCRIPTPATH}/${i}\"" >> ${BUILDDIR}/conf/bblayers.conf
 done
 echo "BBLAYERS_append = \" ${SCRIPTPATH}\"" >> ${BUILDDIR}/conf/bblayers.conf
+cp -f openvision-oe/conf/license/LICENSE-CLOSE meta-openpli/licenses
 rm -rf meta-openpli/recipes-connectivity/mediatek
 rm -rf meta-openpli/recipes-connectivity/realtek
 rm -rf meta-openpli/recipes-core/base-files
