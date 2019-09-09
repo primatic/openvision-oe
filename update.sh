@@ -16,22 +16,22 @@ echo "https://github.com/orgs/OpenVisionE2/people"
 echo ""
 echo "Each time you run this script all git repositories will get updated to their latest versions!"
 echo ""
-echo -e "${RED}Is there a merge conflict with PLi's repos?"
+echo -e "${BLUE}Is there a merge conflict with PLi's repos?"
 echo -e "Answers are in ${GREEN}green:${NC}"
 echo -e ""
 echo -e "${GREEN}No ${NC}- ${GREEN}Yes"
 echo -e ""
-echo -e "${RED}Enter conflict mode:${NC}"
+echo -e "${BLUE}Enter conflict mode:${NC}"
 echo -e "${GREEN}"
 read CONFLICTMODE
 echo -e "${NC}"
 if [ $CONFLICTMODE != "Yes" -a $CONFLICTMODE != "No" ]
 then
-	echo -e "${RED}Not a valid answer!${NC}"
+	echo -e "${BLUE}Not a valid answer!${NC}"
 	echo -e ""
 	exit 0
 fi
-echo -e "${RED}Updating from git, please wait ...${NC}"
+echo -e "${BLUE}Updating from git, please wait ...${NC}"
 echo ""
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd "${SCRIPTPATH}"
@@ -39,7 +39,7 @@ git pull
 git submodule sync
 git submodule update --init
 echo ""
-echo -e "${RED}Done!${NC}"
+echo -e "${BLUE}Done!${NC}"
 echo ""
 METAS="$( ls | grep meta- | tr '\n' ' ' | sed 's/ $//g' )"
 cd ..
@@ -81,22 +81,22 @@ find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-xsarius.pli5/d' {}
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-xtrend/d' {} \;
 find -maxdepth 1 -name "Makefile" -type f -exec sed -i '/meta-zgemma/d' {} \;
 echo ""
-echo -e "${RED}Check for dm7020hdv2 required changes ...${NC}"
+echo -e "${BLUE}Check for dm7020hdv2 required changes ...${NC}"
 if grep -Fqi "DMTYPE" Makefile
 then
     echo ""
-    echo -e "${RED}No need to modify Makefile."
+    echo -e "${BLUE}No need to modify Makefile."
     echo -e "You can compile dm7020hdv2 image too.${NC}"
     echo ""
 else
     echo ""
-    echo -e "${RED}We need to modify Makefile ...${NC}"
+    echo -e "${BLUE}We need to modify Makefile ...${NC}"
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/$(MACHINE)/$(MACHINE)$(DMTYPE)/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i 's/"MACHINE"/"MACHINE DMTYPE"/g' {} \;
     find -maxdepth 1 -name "Makefile" -type f -exec sed -i "s/.@echo 'export MACHINE' >> $@.*/&\n\t@echo 'export DMTYPE' >> \$\@/" {} \;
     cat openvision-oe/dm7020hdv2-changes >> Makefile
     rm -f ${BUILDDIR}/env.source
-    echo -e "${RED}Done, now you can compile dm7020hdv2 image too.${NC}"
+    echo -e "${BLUE}Done, now you can compile dm7020hdv2 image too.${NC}"
     echo ""
 fi
 # Regenerate bblayers.conf so we can add our own
