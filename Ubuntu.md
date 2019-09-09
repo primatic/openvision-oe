@@ -1,11 +1,12 @@
 # Ubuntu 18.04.x LTS setup
-* Run our https://github.com/OpenVisionE2/openvision-oe/blob/develop/ltsubuntu.sh
+* Run our https://github.com/OpenVisionE2/openvision-development-platform/blob/upcoming/ltsubuntu.sh
 
 # How to get latest Ubuntu 18.04.x updates
 ```
 sudo apt-get update
 sudo apt-get install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04
 ```
+* Or just run our "ltsubuntu.sh" again!
 # How to use Xfce 4 desktop on Ubuntu
 (as GNOME 3 wastes so many resources)
 
