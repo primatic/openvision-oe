@@ -50,10 +50,12 @@ If you see your model in https://github.com/OpenVisionE2/openvision-oe/blob/deve
 ---
 
 # Compile
+
 You could compile Open Vision for so many brands/models:
 * Vision-metas: https://github.com/OpenVisionE2/openvision-oe/blob/develop/Vision-metas.md
 
 # How to build an Open Vision image
+
 1. Clone openpli-oe-core somewhere:
 ```
 git clone -b develop --depth 1 https://github.com/OpenPLi/openpli-oe-core.git
@@ -74,7 +76,11 @@ cd openvision-oe
 If you want to compile an image for only 1 machine just choose "Specific".
 
 If you want to go clean again, do not remove your "sources" directoy! Never!
+
+If you answered something wrong don't worry, just remove "user.ovstep"!
+
 # Hints for multiple architectures
+
 * Removing the "build" directory solves most of the errors. For a fast remove use "rm -rf build".
 (If you just want to reduce the build size use "cleanup.sh".)
 * If you want to compile images for old machines like dm800/cube/su980, first build for them.
