@@ -34,7 +34,7 @@ inherit upx_compress
 PV = "develop+git${SRCPV}"
 PKGV = "develop+git${GITPKGV}"
 
-SRC_URI = "git://github.com/OpenVisionE2/enigma2-openvision.git"
+SRC_URI = "git://github.com/OpenVisionE2/enigma2-openvision.git;branch=develop"
 
 EXTRA_OECONF_append += "\
 	--with-boxbrand="${BOX_BRAND}" \
