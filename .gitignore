@@ -1,2 +1,4 @@
 *.ovstep
 /conf/distro/openvision-testers.conf
+conf/distro/openvision-testers.conf
+openvision-testers.conf
