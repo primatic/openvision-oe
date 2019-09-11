@@ -29,12 +29,18 @@ PYTHON_RDEPS += "\
 	python-service-identity \
 	"
 
+DESCRIPTION_enigma2-plugin-font-wqy-microhei = "wqy-microhei font supports Chinese EPG"
+PACKAGES =+ "enigma2-plugin-font-wqy-microhei"
+FILES_enigma2-plugin-font-wqy-microhei = "${datadir}/fonts/wqy-microhei.ttc ${datadir}/fonts/fallback.font"
+ALLOW_EMPTY_enigma2-plugin-font-wqy-microhei = "1"
+
 inherit upx_compress
 
+ENIGMA2_BRANCH ?= "develop"
 PV = "develop+git${SRCPV}"
 PKGV = "develop+git${GITPKGV}"
 
-SRC_URI = "git://github.com/OpenVisionE2/enigma2-openvision.git;branch=develop"
+SRC_URI = "git://github.com/OpenVisionE2/enigma2-openvision.git;branch=${ENIGMA2_BRANCH}"
 
 EXTRA_OECONF_append += "\
 	--with-boxbrand="${BOX_BRAND}" \
@@ -55,10 +61,37 @@ EXTRA_OECONF_append += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "olde2api", "--with-olde2api" , "", d)} \
 	"
 
-DESCRIPTION_enigma2-plugin-font-wqy-microhei = "wqy-microhei font supports Chinese EPG"
-PACKAGES =+ "enigma2-plugin-font-wqy-microhei"
-FILES_enigma2-plugin-font-wqy-microhei = "${datadir}/fonts/wqy-microhei.ttc ${datadir}/fonts/fallback.font"
-ALLOW_EMPTY_enigma2-plugin-font-wqy-microhei = "1"
+# some plugins contain so's, their stripped symbols should not end up in the enigma2 package
+FILES_${PN}-dbg += "\
+	${libdir}/enigma2/python/*/.debug \
+	${libdir}/enigma2/python/*/*/*.debug \
+	${libdir}/enigma2/python/*/*/*/.debug \
+	${libdir}/enigma2/python/*/*/*/*/.debug \
+	${libdir}/enigma2/python/Plugins/*/*/.debug \
+	"
+
+# Swig generated 200k enigma.py file has no purpose for end users
+# Save some space by not installing sources (mytest.py must remain)
+FILES_${PN}-src = "\
+	${libdir}/enigma2/python/GlobalActions.py \
+	${libdir}/enigma2/python/Navigation.py \
+	${libdir}/enigma2/python/NavigationInstance.py \
+	${libdir}/enigma2/python/RecordTimer.py \
+	${libdir}/enigma2/python/ServiceReference.py \
+	${libdir}/enigma2/python/SleepTimer.py \
+	${libdir}/enigma2/python/e2reactor.py \
+	${libdir}/enigma2/python/enigma.py \
+	${libdir}/enigma2/python/keyids.py \
+	${libdir}/enigma2/python/keymapparser.py \
+	${libdir}/enigma2/python/skin.py \
+	${libdir}/enigma2/python/timer.py \
+	${libdir}/enigma2/python/BoxBrandingTest.py \
+	${libdir}/enigma2/python/*/*.py \
+	${libdir}/enigma2/python/*/*/*.py \
+	${libdir}/enigma2/python/*/*/*/*.py \
+	${libdir}/enigma2/python/*/*/*/*/*.py \
+	${libdir}/enigma2/python/*/*/*/*/*/*.py \
+	"
 
 python populate_packages_prepend() {
     enigma2_plugindir = bb.data.expand('${libdir}/enigma2/python/Plugins', d)
