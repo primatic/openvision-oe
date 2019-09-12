@@ -163,7 +163,8 @@ EXTRA_WIFI_DRIVERS_remove_su980 += "\
 	"
 
 EXTRA_WIFI_DRIVERS_remove_sh4 += "\
-	rt8812au \
+	mt7603u \
+	rt8814au \
 	rtl8189es \
 	"
 
