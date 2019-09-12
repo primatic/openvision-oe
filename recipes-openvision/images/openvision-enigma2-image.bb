@@ -137,6 +137,7 @@ IMAGE_INSTALL += "\
 	openvision-version-info \
 	settings-autorestore \
 	tuxbox-common \
+	tuxbox-links \
 	wget \
 	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "", " \
 	curl \
