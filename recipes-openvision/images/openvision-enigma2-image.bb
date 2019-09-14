@@ -146,7 +146,8 @@ IMAGE_INSTALL += "\
 	nfs-utils \
 	ntp \
 	ntfs-3g \
-	openssh-sftp-server", d)} \
+	openssh-sftp-server \
+	v4l-utils", d)} \
 	"
 
 export IMAGE_BASENAME = "openvision-enigma2"
