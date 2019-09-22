@@ -180,6 +180,7 @@ ENIGMA2_OPTIONAL += "\
 	enigma2-plugin-drivers-usbserial \
 	enigma2-plugin-extensions-arabicsavior \
 	enigma2-plugin-extensions-automatic-fullbackup \
+	enigma2-plugin-extensions-autotimer \
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-bhweather \
 	enigma2-plugin-extensions-blurayplayer \
