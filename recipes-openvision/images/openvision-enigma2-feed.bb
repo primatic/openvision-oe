@@ -38,7 +38,7 @@ OPTIONAL_PACKAGES += "\
 	exfat-utils \
 	exteplayer3 \
 	fuse-exfat \
-	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gdb smbnetfs", d)} \
+	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gdb", d)} \
 	grep \
 	gstplayer \
 	gstreamer1.0-libav \
@@ -53,6 +53,7 @@ OPTIONAL_PACKAGES += "\
 	joe \
 	less \
 	libbluray \
+	libsdl2 \
 	libudfread \
 	mc \
 	mediainfo \
@@ -79,6 +80,9 @@ OPTIONAL_PACKAGES += "\
 	python-beautifulsoup4 \
 	python-futures \
 	python-ipaddress \
+	python-iso3166 \
+	python-iso639 \
+	python-isodate \
 	python-js2py \
 	python-lxml \
 	python-mechanize \
@@ -86,6 +90,9 @@ OPTIONAL_PACKAGES += "\
 	python-pip \
 	python-pyexecjs \
 	python-requests \
+	python-singledispatch \
+	python-websocket \
+	${@bb.utils.contains("TARGET_FPU", "soft", "", "rclone", d)} \
 	rsync \
 	rtorrent \
 	sabnzbd \
@@ -110,14 +117,11 @@ OPTIONAL_PACKAGES += "\
 	wscan \
 	yafc \
 	zeroconf \
+	zerotier \
 	zip \
 	zsh \
 	${OPTIONAL_BSP_PACKAGES} \
 	"
-
-OPTIONAL_PACKAGES_remove_cube += "smbnetfs"
-
-OPTIONAL_PACKAGES_remove_su980 += "smbnetfs"
 
 OPTIONAL_PACKAGES_remove_sh4 += "\
 	lirc \
@@ -237,6 +241,7 @@ ENIGMA2_OPTIONAL += "\
 	enigma2-plugin-skins-sevenhd \
 	enigma2-plugin-skins-simple-gray-hd \
 	enigma2-plugin-skins-turbo-raed \
+	enigma2-plugin-skins-turquoisehd \
 	enigma2-plugin-skins-universehd \
 	enigma2-plugin-skins-xionhdf \
 	enigma2-plugin-skins-whitetransfhd-raed \
