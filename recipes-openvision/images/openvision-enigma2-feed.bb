@@ -126,6 +126,7 @@ OPTIONAL_PACKAGES += "\
 OPTIONAL_PACKAGES_remove_sh4 += "\
 	lirc \
 	nodejs \
+	rclone \
 	"
 
 EXTRA_WIFI_DRIVERS += "\
