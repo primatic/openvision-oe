@@ -112,6 +112,7 @@ cp -f openvision-oe/conf/license/LICENSE-CLOSE meta-openpli/licenses
 rm -rf meta-openpli/recipes-connectivity/mediatek
 rm -rf meta-openpli/recipes-connectivity/realtek
 rm -rf meta-openpli/recipes-core/base-files
+rm -rf meta-openpli/recipes-core/busybox
 rm -rf meta-openpli/recipes-extended/tzdata
 rm -rf meta-openpli/recipes-multimedia/tuxtxt
 rm -rf meta-openpli/recipes-openpli/e2openplugins/enigma2-plugin-extensions-openwebif.bb
