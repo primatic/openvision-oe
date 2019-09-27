@@ -54,7 +54,7 @@ If you see your model in https://github.com/OpenVisionE2/openvision-oe/blob/deve
 You could compile Open Vision for so many brands/models:
 * Vision-metas: https://github.com/OpenVisionE2/openvision-oe/blob/develop/Vision-metas.md
 
-# How to build an Open Vision image
+# How to build an Open Vision image (on native Ubuntu)
 
 1. Clone openpli-oe-core somewhere:
 ```
