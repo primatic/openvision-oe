@@ -73,6 +73,8 @@ git clone --depth 1 https://github.com/OpenVisionE2/openvision-oe.git
 cd openvision-oe
 ./image.sh
 ```
+Always go with "Vision" first, compile and test the image then go with "Feed".
+
 If you want to compile an image for only 1 machine just choose "Specific".
 
 If you want to go clean again, do not remove your "sources" directoy! Never!
