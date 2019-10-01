@@ -224,6 +224,7 @@ ENIGMA2_OPTIONAL += "\
 	enigma2-plugin-skins-dreamplexskins \
 	enigma2-plugin-skins-glamouraurafhd \
 	enigma2-plugin-skins-hdlinesuper-raed \
+	enigma2-plugin-skins-iflatfhd \
 	enigma2-plugin-skins-kravenfhd \
 	enigma2-plugin-skins-kravenhd \
 	enigma2-plugin-skins-kravenvb \

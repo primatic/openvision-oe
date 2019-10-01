@@ -84,7 +84,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-reconstructapsc \
 	enigma2-plugin-extensions-tunerserver \
 	enigma2-plugin-extensions-vlcplayer \
-	enigma2-plugin-skins-octetfhd \
+	enigma2-plugin-skins-iflatfhd \
 	enigma2-plugin-softcams-oscam \
 	enigma2-plugin-softcams-oscam-emu \
 	enigma2-plugin-systemplugins-mountmanager \
