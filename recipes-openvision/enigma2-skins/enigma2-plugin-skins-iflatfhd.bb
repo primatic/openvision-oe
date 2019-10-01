@@ -20,3 +20,4 @@ FILES_${PN} = "/usr"
 do_package_qa[noexec] = "1"
 
 require skin-data.inc
+require skin-python.inc
