@@ -1,4 +1,4 @@
-Open Vision 7.2 (Stable) enigma2 images [![Build Status](https://travis-ci.org/OpenVisionE2/openvision-oe.svg?branch=develop)](https://travis-ci.org/OpenVisionE2/openvision-oe) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+Open Vision 7.3 (Stable) enigma2 images [![Build Status](https://travis-ci.org/OpenVisionE2/openvision-oe.svg?branch=develop)](https://travis-ci.org/OpenVisionE2/openvision-oe) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ==========================
 ![alt tag](https://raw.github.com/OpenVisionE2/openvision-oe/develop/recipes-openvision/bootlogo/openvision-bootlogo/bootlogo.jpg)
 
@@ -54,7 +54,7 @@ If you see your model in https://github.com/OpenVisionE2/openvision-oe/blob/deve
 You could compile Open Vision for so many brands/models:
 * Vision-metas: https://github.com/OpenVisionE2/openvision-oe/blob/develop/Vision-metas.md
 
-# How to build an Open Vision image
+# How to build an Open Vision image (on native Ubuntu)
 
 1. Clone openpli-oe-core somewhere:
 ```
@@ -73,6 +73,8 @@ git clone --depth 1 https://github.com/OpenVisionE2/openvision-oe.git
 cd openvision-oe
 ./image.sh
 ```
+Always go with "Vision" first, compile and test the image then go with "Feed".
+
 If you want to compile an image for only 1 machine just choose "Specific".
 
 If you want to go clean again, do not remove your "sources" directoy! Never!

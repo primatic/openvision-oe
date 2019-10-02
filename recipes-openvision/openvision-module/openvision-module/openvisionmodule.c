@@ -84,6 +84,6 @@ static void __exit cleanup_openvisionmodule(void)
 module_init(init_openvisionmodule);
 module_exit(cleanup_openvisionmodule);
 
-MODULE_LICENSE("CLOSED");
+MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Open Vision Developers");
-MODULE_DESCRIPTION("Open Vision Information");
+MODULE_DESCRIPTION("Open Vision information");

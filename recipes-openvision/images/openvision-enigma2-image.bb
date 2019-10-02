@@ -39,7 +39,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-audiosync \
 	enigma2-plugin-extensions-autobackup \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "${BACKUPSUITE_CHECK}", d)} \
-	enigma2-plugin-extensions-cacheflush \
+	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-extensions-cacheflush", "", d)} \
 	enigma2-plugin-extensions-cutlisteditor \
 	enigma2-plugin-extensions-graphmultiepg \
 	enigma2-plugin-extensions-mediaplayer \
