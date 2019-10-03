@@ -225,7 +225,6 @@ ENIGMA2_OPTIONAL += "\
 	enigma2-plugin-skins-dreamplexskins \
 	enigma2-plugin-skins-glamouraurafhd \
 	enigma2-plugin-skins-hdlinesuper-raed \
-	enigma2-plugin-skins-iflatfhd \
 	enigma2-plugin-skins-kravenfhd \
 	enigma2-plugin-skins-kravenhd \
 	enigma2-plugin-skins-kravenvb \
@@ -258,7 +257,6 @@ ENIGMA2_OPTIONAL += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "micom", "enigma2-plugin-systemplugins-micomupgrade" , "", d)} \
 	enigma2-plugin-systemplugins-mountmanager \
 	enigma2-plugin-systemplugins-netspeedtest \
-	enigma2-plugin-systemplugins-newvirtualkeyboard \
 	enigma2-plugin-systemplugins-radiotimesemulator \
 	enigma2-plugin-systemplugins-serviceapp \
 	enigma2-plugin-systemplugins-signalfinder \
