@@ -86,4 +86,4 @@ module_exit(cleanup_openvisionmodule);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Open Vision Developers");
-MODULE_DESCRIPTION("Open Vision information");
+MODULE_DESCRIPTION("Open Vision Information");
