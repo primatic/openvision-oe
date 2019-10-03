@@ -54,7 +54,7 @@ If you see your model in https://github.com/OpenVisionE2/openvision-oe/blob/deve
 You could compile Open Vision for so many brands/models:
 * Vision-metas: https://github.com/OpenVisionE2/openvision-oe/blob/develop/Vision-metas.md
 
-# How to build an Open Vision image (on native Ubuntu)
+# How to build an Open Vision image
 
 1. Clone openpli-oe-core somewhere:
 ```
@@ -73,8 +73,6 @@ git clone --depth 1 https://github.com/OpenVisionE2/openvision-oe.git
 cd openvision-oe
 ./image.sh
 ```
-Always go with "Vision" first, compile and test the image then go with "Feed".
-
 If you want to compile an image for only 1 machine just choose "Specific".
 
 If you want to go clean again, do not remove your "sources" directoy! Never!
