@@ -22,7 +22,7 @@ Do you want to contribute to Open Vision and you don’t know where to start? ht
 
 # Download
 
-You could download our builds from https://openvision.tech/stb-images/
+<strike>You could download our builds from https://openvision.tech/stb-images/</strike>
 * How to use sdcard images (E.g. raspberrypi):
 
 You could use https://sourceforge.net/projects/win32diskimager/ or similar tools to write the image on a sdcard.
