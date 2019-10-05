@@ -117,7 +117,6 @@ OPTIONAL_PACKAGES += "\
 	wscan \
 	yafc \
 	zeroconf \
-	zerotier \
 	zip \
 	zsh \
 	${OPTIONAL_BSP_PACKAGES} \
@@ -127,6 +126,7 @@ OPTIONAL_PACKAGES_remove_sh4 += "\
 	lirc \
 	nodejs \
 	rclone \
+	zerotier \
 	"
 
 EXTRA_WIFI_DRIVERS += "\
