@@ -23,7 +23,12 @@ echo -e "${GREEN}No ${NC}- ${GREEN}Yes"
 echo -e ""
 echo -e "${BLUE}Enter conflict mode:${NC}"
 echo -e "${GREEN}"
-read CONFLICTMODE
+if [ "$2" == "" ]
+then
+    read CONFLICTMODE
+else
+    CONFLICTMODE=$2
+fi
 echo -e "${NC}"
 if [ $CONFLICTMODE != "Yes" -a $CONFLICTMODE != "No" ]
 then

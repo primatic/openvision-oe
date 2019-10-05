@@ -36,7 +36,12 @@ echo -e "${GREEN}Specific${BLUE}: You have a specific machine in mind, Check ${N
 echo -e ""
 echo -e "${BLUE}Enter the meta name:${NC}"
 echo -e "${GREEN}"
-read META
+if [ "$1" = "" ]
+then
+    read META
+else
+    META=$1
+fi
 echo -e "${NC}"
 if [ $META != "Amiko" -a $META != "AX" -a $META != "AZBox" -a $META != "Beyonwiz" -a $META != "BlackBox" -a $META != "BroadMedia" -a $META != "Ceryon" -a $META != "Clap" -a $META != "Cube" -a $META != "DAGS" -a $META != "Dinobot" -a $META != "Dreambox" -a $META != "EBox" -a $META != "Edision" -a $META != "Entwopia" -a $META != "Formuler" -a $META != "GFutures" -a $META != "GigaBlue" -a $META != "HyperCube" -a $META != "INI" -a $META != "IXUSS" -a $META != "Linkdroid" -a $META != "MaxyTec" -a $META != "MINIX" -a $META != "Octagon" -a $META != "Odin" -a $META != "Odroid" -a $META != "Protek" -a $META != "RaspberryPi" -a $META != "SH4" -a $META != "Tiviar" -a $META != "Tripledot" -a $META != "Uclan" -a $META != "UltraMini" -a $META != "VuPlus" -a $META != "WeTek" -a $META != "XCore" -a $META != "XP" -a $META != "Xtrend" -a $META != "Zgemma" -a $META != "ALL" -a $META != "Specific" ]
 then
@@ -51,7 +56,12 @@ echo -e "${GREEN}Vision ${NC}- ${GREEN}Feed${NC}"
 echo -e ""
 echo -e "${BLUE}Enter image type:${NC}"
 echo -e "${GREEN}"
-read IMAGETYPE
+if [ "$2" = ""]
+then
+    read IMAGETYPE
+else
+    IMAGETYPE=$2
+fi
 echo -e "${NC}"
 if [ $IMAGETYPE != "Vision" -a $IMAGETYPE != "Feed" ]
 then
@@ -60,11 +70,11 @@ then
 	exit 0
 fi
 echo -e "${BLUE}First update everything, please wait ...${NC}"
-/bin/sh update.sh
+/bin/sh update.sh build $4
 echo -e ""
 echo -e "${BLUE}Updated.${NC}"
 echo -e ""
-echo -e "${BLUE}Compiling${GREEN} $META ${BLUE}images, please wait ...${NC}"
+echo -e "${BLUE}Compiling${GREEN} $META $IMAGETYPE ${BLUE}images, please wait ...${NC}"
 echo -e ""
 if [ $IMAGETYPE = "Vision" ]
 then
@@ -117,7 +127,12 @@ if [ $META = "Specific" ]
 then
 	echo -e "${BLUE}Enter your specific machine name exactly like what you see in ${NC}Vision-metas.md"
 	echo -e "${GREEN}"
-	read MACHINESPECIFIC
+        if [ "$3" = "" ]
+        then
+	    read MACHINESPECIFIC
+        else
+            MACHINESPECIFIC=$3
+        fi
 	echo -e "${NC}"
 	echo -e "${BLUE}Compiling${GREEN} $MACHINESPECIFIC ${BLUE}image, please wait ...${NC}"
 	echo -e ""
