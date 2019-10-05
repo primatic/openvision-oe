@@ -56,7 +56,7 @@ echo -e "${GREEN}Vision ${NC}- ${GREEN}Feed${NC}"
 echo -e ""
 echo -e "${BLUE}Enter image type:${NC}"
 echo -e "${GREEN}"
-if [ "$2" = ""]
+if [ "$2" = "" ]
 then
     read IMAGETYPE
 else
