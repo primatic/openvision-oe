@@ -1,4 +1,4 @@
-Open Vision 7.2 (Stable) enigma2 images [![Build Status](https://travis-ci.org/OpenVisionE2/openvision-oe.svg?branch=develop)](https://travis-ci.org/OpenVisionE2/openvision-oe) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+Open Vision 7.3 (Stable) enigma2 images [![Build Status](https://travis-ci.org/OpenVisionE2/openvision-oe.svg?branch=develop)](https://travis-ci.org/OpenVisionE2/openvision-oe) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ==========================
 ![alt tag](https://raw.github.com/OpenVisionE2/openvision-oe/develop/recipes-openvision/bootlogo/openvision-bootlogo/bootlogo.jpg)
 
@@ -22,7 +22,7 @@ Do you want to contribute to Open Vision and you don’t know where to start? ht
 
 # Download
 
-You could download our builds from https://openvision.tech/stb-images/
+<strike>You could download our builds from https://openvision.tech/stb-images/</strike>
 * How to use sdcard images (E.g. raspberrypi):
 
 You could use https://sourceforge.net/projects/win32diskimager/ or similar tools to write the image on a sdcard.
@@ -54,7 +54,7 @@ If you see your model in https://github.com/OpenVisionE2/openvision-oe/blob/deve
 You could compile Open Vision for so many brands/models:
 * Vision-metas: https://github.com/OpenVisionE2/openvision-oe/blob/develop/Vision-metas.md
 
-# How to build an Open Vision image
+# How to build an Open Vision image (on native Ubuntu)
 
 1. Clone openpli-oe-core somewhere:
 ```

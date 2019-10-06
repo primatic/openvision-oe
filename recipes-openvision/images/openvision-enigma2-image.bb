@@ -1,7 +1,5 @@
 require openvision-image.bb
 
-BB_HASH_IGNORE_MISMATCH = "1"
-
 KERNEL_WIFI_DRIVERS += "\
 	firmware-carl9170 \
 	firmware-htc7010 \
@@ -41,7 +39,7 @@ ENIGMA2_PLUGINS += "\
 	enigma2-plugin-extensions-audiosync \
 	enigma2-plugin-extensions-autobackup \
 	${@bb.utils.contains("TARGET_ARCH", "sh4", "", "${BACKUPSUITE_CHECK}", d)} \
-	enigma2-plugin-extensions-cacheflush \
+	${@bb.utils.contains("MACHINE_FEATURES", "smallflash", "enigma2-plugin-extensions-cacheflush", "", d)} \
 	enigma2-plugin-extensions-cutlisteditor \
 	enigma2-plugin-extensions-graphmultiepg \
 	enigma2-plugin-extensions-mediaplayer \
